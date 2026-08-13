@@ -1,0 +1,69 @@
+{
+  "protocol_version": "vultriage-preregistered-v1",
+  "split_salt": "vultriage-v1",
+  "source_partition": {
+    "train_end": 70,
+    "model_validation_end": 80,
+    "calibration_end": 100
+  },
+  "official_validation_calibration_split": {
+    "salt": "vultriage-official-valid-v1",
+    "model_validation_end": 50
+  },
+  "target_groups": {
+    "linux": ["linux", "linux-2.6"],
+    "chrome": ["Chrome"],
+    "imagemagick": ["ImageMagick", "ImageMagick6"],
+    "tensorflow": ["tensorflow"],
+    "php": ["php", "php-src"],
+    "qemu": ["qemu", "qemu-kvm", "qemu_qemu"],
+    "openssl": ["openssl"],
+    "ffmpeg": ["FFmpeg"],
+    "vim": ["vim"],
+    "tcpdump": ["tcpdump"],
+    "gpac": ["gpac"],
+    "radare2": ["radare2"]
+  },
+  "target_eligibility": {
+    "minimum_total": 200,
+    "minimum_vulnerable": 20,
+    "minimum_safe": 20
+  },
+  "risk_budgets": {
+    "vulnerable": [0.01, 0.05, 0.1],
+    "safe": [0.05, 0.1, 0.2]
+  },
+  "seeds": [13, 37, 73, 101, 137],
+  "hashing_vectorizer": {
+    "n_features": 262144,
+    "ngram_range": [1, 2],
+    "alternate_sign": false,
+    "norm": "l2",
+    "lowercase": false,
+    "token_pattern": "(?u)\\b\\w+\\b"
+  },
+  "sgd_grid": {
+    "alpha": [0.000001, 0.00001, 0.0001],
+    "loss": "log_loss",
+    "penalty": "l2",
+    "epochs": 3,
+    "batch_size": 2048
+  },
+  "density_ratio": {
+    "crossfit_folds": 5,
+    "candidate_upper_clips": [10.0, 20.0, 50.0],
+    "selected_upper_clip": 20.0,
+    "domain_alpha": 0.0001,
+    "domain_epochs": 5
+  },
+  "support_rules": {
+    "minimum_total_ess": 200,
+    "minimum_positive_neighbours": 10,
+    "minimum_class_ess": 20,
+    "class_ess_multiplier_over_alpha": 2.0
+  },
+  "bootstrap": {
+    "replicates": 10000,
+    "confidence_level": 0.95
+  }
+}
