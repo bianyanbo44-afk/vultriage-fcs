@@ -12,12 +12,13 @@ VulTriage converts a binary vulnerability detector into three deployment actions
 
 The frozen E1 experiment completed without a retry: 12 project-disjoint targets, five technical seeds, nine budget pairs, 17 method variants, 130 sealed prediction artifacts, and 9,495 metric rows. At the 10% vulnerable / 20% safe operating point, 10/12 projects pass the label-free support audit and retain 57.83% median singleton coverage. Across the full grid, estimated weighting reduces worst-class budget violation in 74/108 project--operating-point pairs. These are positive empirical results, not target-risk guarantees.
 
-Final manuscript:
+Submission materials:
 
-- `paper_rewriting_output/final_paper/paper.pdf`
-- `paper_rewriting_output/final_paper/paper.docx`
-- `paper_rewriting_output/final_paper/main.tex`
-- `paper_rewriting_output/reports/2026-08-13/citation_verification_final.html`
+- `paper/paper.pdf`: eight-page manuscript in the official FCS 2026 template
+- `paper/main.tex`: LaTeX source with confirmed authorship and CRediT roles
+- `paper/fcs.cls`, `paper/fcs.bst`, `paper/logo.pdf`, `paper/xurl.sty`: build dependencies
+- `paper/VulTriage_FCS_highlights.pptx`: official three-page Highlights deck
+- `validation/citation_verification_final.html`: citation-verification report
 
 Public repository: <https://github.com/bianyanbo44-afk/vultriage-fcs>
 
@@ -38,6 +39,12 @@ python src/make_paper_figures.py --help
 
 The exact arguments and immutable hashes are recorded in the manifests under `public_results/` and the manuscript validation materials. Run the unit tests with `$env:PYTHONPATH='src'; pytest -q` on Windows PowerShell or `PYTHONPATH=src pytest -q` on POSIX systems.
 
+Build the manuscript from `paper/` with:
+
+```powershell
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```
+
 Reproduction entry points:
 
 - `configs/preregistered_experiment.json`
@@ -45,12 +52,12 @@ Reproduction entry points:
 - `src/evaluate_e1.py`
 - `src/analyze_e1.py`
 - `src/make_paper_figures.py`
-- `outputs/exp-e1-cpu-full-evaluation/evaluation_manifest.json`
-- `outputs/exp-e1-cpu-full-analysis-v2/analysis_manifest.json`
+- `public_results/evaluation_manifest.json`
+- `public_results/analysis_manifest.json`
 
 ## Integrity boundary
 
 - Public data: PrimeVul original release, MIT-licensed repository metadata.
 - Local user data: excluded.
 - Experimental numbers: generated only by the committed public-data pipeline and tied to immutable manifests/hashes.
-- Novelty wording: search-bounded; the manuscript does not claim “first” or state-of-the-art performance.
+- Novelty wording: search-bounded; the manuscript does not claim "first" or state-of-the-art performance.

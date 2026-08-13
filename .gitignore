@@ -19,6 +19,14 @@ paper_rewriting_output/final_paper/*.direct.docx
 paper_rewriting_output/final_paper/*.patched.docx
 paper_rewriting_output/final_paper/paper_word_render.pdf
 paper_rewriting_output/final_paper/main.word.tex
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/main.pdf
 *.zip
 *.pt
 *.bin

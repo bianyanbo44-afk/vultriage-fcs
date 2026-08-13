@@ -1,45 +1,39 @@
-\documentclass[10pt,twocolumn]{article}
+\documentclass[research]{fcs}
 
-\usepackage[a4paper,margin=1.65cm,columnsep=0.65cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-\usepackage{amsmath,amssymb}
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{array}
-\usepackage{enumitem}
-\usepackage{xcolor}
-\usepackage{url}
-\usepackage[hidelinks]{hyperref}
-\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{xspace}
 
+% The FCS class creates the title automatically; retain portability to other classes.
+\makeatletter
+\@ifclassloaded{fcs}{}{\AtBeginDocument{\maketitle}}
+\makeatother
+
 \graphicspath{{figures/}}
-\setlength{\emergencystretch}{2em}
-\setlist{nosep,leftmargin=*}
 \newcommand{\method}{VulTriage\xspace}
 \newcommand{\av}{\alpha_{\mathrm{v}}}
 \newcommand{\as}{\alpha_{\mathrm{s}}}
 
 \title{VulTriage: Auditable Automation under Project Shift for Vulnerability Detection}
-\author{Yanbo Bian$^{1,*}$ and Zhihai Wang$^{2,*}$\\
-\small $^1$Computer Science and Technology Program, Weihai International College,\\
-\small Beijing Jiaotong University, Weihai 264401, China\\
-\small $^2$School of Computer Science and Technology, Beijing Jiaotong University, Beijing 100044, China\\
-\small $^*$Corresponding authors: 24722081@bjtu.edu.cn; zhhwang@bjtu.edu.cn}
-\date{}
-
-\begin{document}
-\maketitle
+\shorttitle{VulTriage: Auditable Automation under Project Shift}
+\author[1,+]{Yanbo~Bian}
+\author[2,+]{Zhihai~Wang}
+\address[1]{Computer Science and Technology Program, Weihai International College, Beijing Jiaotong University, Weihai 264401, China}
+\address[2]{School of Computer Science and Technology, Beijing Jiaotong University, Beijing 100044, China}
+\corremail{24722081@bjtu.edu.cn; zhhwang@bjtu.edu.cn}
+\fcssetup{
+  received = {month dd, yyyy},
+  accepted = {month dd, yyyy},
+  article-id = {1},
+  first-page = {1},
+}
 
 \begin{abstract}
 Vulnerability detectors moved to an unseen repository face asymmetric costs: excluding the vulnerable label can miss a defect, whereas excluding the safe label can create an avoidable alert. A confidence score alone does not reveal whether the labeled source evidence supports a requested pair of class-specific risk budgets on the new project. We introduce \method, a deployment layer that combines class-conditional set-valued decisions, cross-fitted source--target density-ratio estimates, and a fail-closed support audit. It returns a singleton label only at support-qualified operating points and otherwise sends the function to review. We evaluate the protocol on the public PrimeVul release using 12 frozen project-disjoint targets, five technical seeds, nine preregistered budget pairs, 17 method variants, and prediction artifacts sealed before target-label access. At a 10\% vulnerable-class budget, 10 of 12 projects pass the label-free support audit; at the paired 20\% safe-class budget, these projects retain 57.83\% median singleton coverage and issue singleton decisions for both true classes. Across the full grid, estimated weighting reduces the maximum class-specific budget violation in 74 of 108 project--operating-point pairs. Support qualification is not a target-risk certificate: after label release, 6 of the 10 supported projects meet the vulnerable budget, 5 meet the safe budget, and 1 meets both after seed averaging. The positive result is therefore an auditable partial-automation protocol with explicit refusal and measurable coverage, not a guarantee under arbitrary project shift.
 \end{abstract}
 
-\noindent\textbf{Keywords:} vulnerability detection; conformal prediction; selective prediction; project shift; uncertainty; software security
+\keywords{Vulnerability detection; Conformal prediction; Selective prediction; Project shift; Uncertainty; Software security}
+
+\begin{document}
 
 \section{Introduction}
 
@@ -300,9 +294,9 @@ The authors received no specific funding for this work.
 The authors declare that they have no competing interests.
 
 \section*{Author contributions}
-The authors will confirm their CRediT contribution roles before submission.
+Yanbo Bian: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Visualization, Writing--original draft, Writing--review and editing. Zhihai Wang: Conceptualization, Formal analysis, Methodology, Supervision, Validation, Writing--review and editing. Both authors approved the final manuscript and agree to be accountable for the integrity of the work.
 
-\bibliographystyle{unsrt}
+\bibliographystyle{fcs}
 \bibliography{references}
 
 \end{document}
