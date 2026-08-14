@@ -1,0 +1,31 @@
+{
+  "batch_size": 8,
+  "created_at_utc": "2026-08-14T05:10:53.138039+00:00",
+  "device": "cuda",
+  "dtype": "float32",
+  "elapsed_seconds": 1521.7714090999943,
+  "embeddings_sha256": "61FCF45FF9CBE156590BBDDF3CD532AF4BAFEE5D5DE1DDD408E12DD4B2AF9AAF",
+  "encoder_precision": "float16",
+  "hidden_size": 768,
+  "labels_used": false,
+  "manifest_metadata_sha256": "AE20E2D94C944FEF859D6AB91EBCCE68FC28B8F28E08D32C9B46F803910806D5",
+  "manifest_sha256": "3727411D10C659F079B50F170CD466E9A6B5D12ED76BEE8457194CAB36353761",
+  "maximum_tokens": 512,
+  "model": "microsoft/codebert-base",
+  "peak_gpu_allocated_bytes": 368445440,
+  "peak_gpu_reserved_bytes": 429916160,
+  "peak_host_rss_bytes": 3439824896,
+  "pooling": "attention-mask mean excluding special tokens",
+  "python": "3.12.10",
+  "revision": "3b0952feddeffad0063f274080e3c23d75e7eb39",
+  "row_ids_sha256": "19916E15C76B400906C657EE1C0F67EDC04B60A5F05DF185A9F5E9C567301A7F",
+  "rows": 305937,
+  "shape": [
+    305937,
+    768
+  ],
+  "source_rows": 226582,
+  "target_rows": 79355,
+  "torch": "2.12.0+cu126",
+  "transformers": "4.51.3"
+}

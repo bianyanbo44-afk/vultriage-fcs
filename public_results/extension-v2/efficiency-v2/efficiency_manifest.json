@@ -1,0 +1,36 @@
+{
+  "analysis_type": "sealed observational efficiency audit",
+  "claims_not_supported": [
+    "hardware-independent speedup",
+    "energy efficiency",
+    "direct wall-clock superiority between differently parallelized runs"
+  ],
+  "claims_supported": [
+    "recorded CodeBERT embedding throughput and peak memory",
+    "recorded detector head-fit durations under the frozen seed policies",
+    "recorded hashing sequential wall time and CodeBERT four-part critical-path/aggregate wall time"
+  ],
+  "codebert_embedding_metadata_sha256": "DB7AFD02D27E7E3DA1FB041A8C9DB1291A996018C8F8B799FB19A56753CAAD4F",
+  "codebert_part_rows": 4,
+  "codebert_part_runtime_sha256": "EF0ADF128B52D12A3CD67D4C81BC0E623BF236D98A1841CEC9D92499F9F3E7FF",
+  "codebert_part_seals": {
+    "predictions/codebert-v2-balanced-parts/part-a/prediction_seal.json": "A71447E4C6AD5376130FE76F5593FA732E7006F838D8FCADC367C2B8F1DCE491",
+    "predictions/codebert-v2-balanced-parts/part-b/prediction_seal.json": "4827B3731784D7ADBF9BA485AF8189422A38BA36AA585EC116F204B1428466D2",
+    "predictions/codebert-v2-balanced-parts/part-c/prediction_seal.json": "4C2B3BCED1E70EF2CCE0D3DA54183410F6F0D9FFC2BDD6E047F151616CA03832",
+    "predictions/codebert-v2-balanced-parts/part-d/prediction_seal.json": "0132F06A8BC4EF1D2E2A0FA16BEBDAFC2FA37972C2CCDBF89A63A123A24666EB"
+  },
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "created_at_utc": "2026-08-14T14:26:52.983258+00:00",
+  "detector_efficiency_summary_sha256": "AEB2991DEF499C6E7FDBE0FC7C90C36DC5A971370E3879F4B1B2A297D793D98A",
+  "executed_head_fit_rows": 144,
+  "executed_head_fits_sha256": "0E4FE083AA588475A0F3E1C101E94FFCDDBBD622483978D9BBBDA41B716B2562",
+  "package_summary_sha256": "5D507C38C643C14A73EA26CC58B59EF07E3C81BD7F6C524A634E7A7C7D8554F7",
+  "prediction_seals": {
+    "codebert": "85A5DF4EE1DE0E9A99181CE5CDDDC0CDE55237E1AEB584C35F55BE54227E1020",
+    "hashing": "F064A3D126FA1423331486226702609A7D45AA9C4BCF2708A12677C7BAF98DB7"
+  },
+  "protocol_version": "vultriage-extension-v2",
+  "script_sha256": "5E381179371F244D6B95847EB08AA37424678D5085C0E61E69179538F50C03B4",
+  "summary_rows": 2,
+  "target_vulnerability_labels_accessed": false
+}

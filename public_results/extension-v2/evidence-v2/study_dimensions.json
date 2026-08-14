@@ -1,0 +1,36 @@
+{
+  "codebert_revision": "3b0952feddeffad0063f274080e3c23d75e7eb39",
+  "codebert_seed_policy": "fit seed 13 once per project; copy deterministic head to five frozen seed addresses",
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "detectors": [
+    "codebert",
+    "hashing"
+  ],
+  "hashing_seed_policy": "five independently fitted technical seeds per project",
+  "main_metric_rows": 54000,
+  "primary_operating_point": {
+    "alpha_safe": 0.2,
+    "alpha_vulnerable": 0.1
+  },
+  "project_mean_rows": 1200,
+  "projects": 24,
+  "protocol_version": "vultriage-extension-v2",
+  "risk_budgets_safe": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "risk_budgets_vulnerable": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "seed_addresses": [
+    13,
+    37,
+    73,
+    101,
+    137
+  ],
+  "target_labels_accessed_by_builder": false
+}

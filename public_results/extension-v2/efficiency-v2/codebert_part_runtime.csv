@@ -1,0 +1,5 @@
+part,projects,elapsed_seconds,prediction_files,seal_relative_path,seal_sha256
+part-a,6,8961.815946899995,60,predictions/codebert-v2-balanced-parts/part-a/prediction_seal.json,A71447E4C6AD5376130FE76F5593FA732E7006F838D8FCADC367C2B8F1DCE491
+part-b,6,9890.154509600005,60,predictions/codebert-v2-balanced-parts/part-b/prediction_seal.json,4827B3731784D7ADBF9BA485AF8189422A38BA36AA585EC116F204B1428466D2
+part-c,6,9915.957075800005,60,predictions/codebert-v2-balanced-parts/part-c/prediction_seal.json,4C2B3BCED1E70EF2CCE0D3DA54183410F6F0D9FFC2BDD6E047F151616CA03832
+part-d,6,9743.926883299995,60,predictions/codebert-v2-balanced-parts/part-d/prediction_seal.json,0132F06A8BC4EF1D2E2A0FA16BEBDAFC2FA37972C2CCDBF89A63A123A24666EB

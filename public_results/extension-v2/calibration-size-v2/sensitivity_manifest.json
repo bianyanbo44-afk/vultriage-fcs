@@ -1,0 +1,26 @@
+{
+  "aggregate_summary_rows": 216,
+  "aggregate_summary_sha256": "88B0D05611CC184ED07EDA3C3A55FE88F1B1BAF50919D899D12C4DEDBE912A9D",
+  "created_at_utc": "2026-08-14T09:55:01.353500+00:00",
+  "fractions": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "independent_unit": "target_project_group",
+  "label_vault_sha256": "918B2D8FC677F7C7678B6EC39A3B9B94FBD871588111C297AF8635D1313BF067",
+  "minimum_per_class": 20,
+  "primary_budget": {
+    "alpha_safe": 0.2,
+    "alpha_vulnerable": 0.1
+  },
+  "project_summary_rows": 576,
+  "project_summary_sha256": "38B1B7913E2A1ABE00FD98849962417BACE7ABFCD9A944905B5FD7BA35224A71",
+  "protocol_version": "vultriage-extension-v2",
+  "repetitions": 5,
+  "rows": 14400,
+  "script_sha256": "362801E29A7A3E26F7538DC73762A1DE38D4833F6E6426ACFC70F9B36174B3FA",
+  "table_sha256": "2B19E9D95EEF764A0329B84E5FB87F11FC68D171343A3B1AFA93FAFF84E0AFF4",
+  "within_project_aggregation": "mean over technical seeds and deterministic subsample repetitions"
+}

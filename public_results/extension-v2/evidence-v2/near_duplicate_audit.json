@@ -1,0 +1,11 @@
+{
+  "affected_projects": 24,
+  "candidate_generation_approximate": true,
+  "candidate_pairs": 866094,
+  "excluded_target_rows": 15026,
+  "flagged_pairs": 24606,
+  "reported_pair_verification_exact": true,
+  "retained_target_rows": 64329,
+  "threshold": 0.9,
+  "verified_candidates": 866094
+}

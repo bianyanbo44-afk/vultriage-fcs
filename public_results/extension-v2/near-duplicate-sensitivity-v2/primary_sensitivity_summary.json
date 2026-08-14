@@ -1,0 +1,50 @@
+[
+  {
+    "both_budget_attainment_projects": 0,
+    "detector": "hashing",
+    "median_max_relative_violation": 1.8834733893557423,
+    "median_singleton_coverage": 0.7040710639558181,
+    "method": "unweighted_mondrian",
+    "projects": 24
+  },
+  {
+    "both_budget_attainment_projects": 3,
+    "detector": "hashing",
+    "median_max_relative_violation": 0.4343441090034731,
+    "median_singleton_coverage": 0.5276596097115829,
+    "method": "estimated_weight_no_gate_clip_20",
+    "projects": 24
+  },
+  {
+    "both_budget_attainment_projects": 14,
+    "detector": "hashing",
+    "median_max_relative_violation": 0.0,
+    "median_singleton_coverage": 0.214968580872471,
+    "method": "vultriage_full_gate_clip_20",
+    "projects": 24
+  },
+  {
+    "both_budget_attainment_projects": 1,
+    "detector": "codebert",
+    "median_max_relative_violation": 1.7512738853503182,
+    "median_singleton_coverage": 0.7692627252622875,
+    "method": "unweighted_mondrian",
+    "projects": 24
+  },
+  {
+    "both_budget_attainment_projects": 0,
+    "detector": "codebert",
+    "median_max_relative_violation": 1.798667237595675,
+    "median_singleton_coverage": 0.7694575471698113,
+    "method": "estimated_weight_no_gate_clip_20",
+    "projects": 24
+  },
+  {
+    "both_budget_attainment_projects": 2,
+    "detector": "codebert",
+    "median_max_relative_violation": 1.4344903278913432,
+    "median_singleton_coverage": 0.7356135840186956,
+    "method": "vultriage_full_gate_clip_20",
+    "projects": 24
+  }
+]

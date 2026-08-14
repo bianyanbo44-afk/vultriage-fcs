@@ -1,0 +1,184 @@
+{
+  "protocol_version": "vultriage-extension-v2",
+  "frozen_local_time": "2026-08-14T01:49:35+08:00",
+  "status": "design freeze before any extension-v2 outcome-bearing run",
+  "known_results": {
+    "primevul_e1_metrics_sha256": "1B6DFC08F9291D1978C1DC2627CEF37C22D8EF588CBA3EA78E9DF6D971D27181",
+    "use": "development and retrospective diagnosis only",
+    "external_confirmation": "DiverseVul labels may be counted for frozen eligibility but are not joined to model outputs until prediction sealing"
+  },
+  "datasets": {
+    "development": "PrimeVul original public release",
+    "external_confirmation": "DiverseVul official public release",
+    "function_language": ["C", "C++"],
+    "external_fold": {
+      "labeled_source": "all exact-deduplicated PrimeVul rows except every row in the same frozen alias group as the DiverseVul target project",
+      "unlabeled_target_context": "the complete exact-deduplicated selected DiverseVul target project",
+      "evaluation_target": "the same DiverseVul target project, with labels kept in a separate vault until prediction sealing",
+      "source_partition": "commit-hash buckets under split_salt vultriage-extension-source-v2: train 0-69, model validation 70-79, calibration 80-99",
+      "same_name_exclusion": "apply the union of the v1 and extension-v2 alias maps; exact and aliased project-group matches are excluded from PrimeVul source"
+    },
+    "deduplication": {
+      "canonicalization": "normalize CRLF to LF, strip trailing horizontal whitespace per line, trim outer whitespace",
+      "exact_key": "sha256 of canonicalized function text",
+      "within_dataset": "retain the first deterministic row; quarantine conflicting labels",
+      "cross_dataset": "exclude every DiverseVul row whose exact key occurs in PrimeVul from external confirmation",
+      "near_duplicate_audit": {
+        "tokenizer": "C/C++ lexical alphanumeric and operator tokens",
+        "minhash_permutations": 128,
+        "jaccard_flag_threshold": 0.9,
+        "action": "report sensitivity excluding flagged cross-dataset pairs; do not replace the primary exact-deduplicated analysis"
+      }
+    }
+  },
+  "detectors": {
+    "hashing_sgd": {
+      "inherit": "configs/preregistered_experiment.json",
+      "seeds": [13, 37, 73, 101, 137]
+    },
+    "frozen_codebert": {
+      "model": "microsoft/codebert-base",
+      "revision": "resolved commit must be recorded before embedding extraction",
+      "pooling": "attention-mask mean of final hidden states excluding special tokens",
+      "maximum_tokens": 512,
+      "batch_size": 8,
+      "precision": "float16 encoder inference; float32 stored embeddings",
+      "head": "class-weighted L2 logistic regression",
+      "head_standardization": "StandardScaler fit on source train only; transform source validation, calibration, and target unchanged",
+      "head_solver": "scikit-learn LogisticRegression solver=liblinear, penalty=l2, dual=false, fit_intercept=true, class_weight=balanced, max_iter=2000, tol=1e-6",
+      "c_grid": [0.01, 0.1, 1.0, 10.0],
+      "selection": "source validation PR-AUC; ties choose smaller C",
+      "seeds": [13, 37, 73, 101, 137]
+    }
+  },
+  "risk_budgets": {
+    "vulnerable": [0.01, 0.05, 0.1],
+    "safe": [0.05, 0.1, 0.2],
+    "primary_operating_point": {
+      "vulnerable": 0.1,
+      "safe": 0.2,
+      "reason": "fixed in v1 and highlighted before extension-v2"
+    }
+  },
+  "methods": {
+    "required": [
+      "forced_argmax",
+      "msp_matched",
+      "entropy_matched",
+      "temperature_msp_matched",
+      "pooled_split_conformal",
+      "unweighted_mondrian",
+      "prom_official_or_exactly_labeled_adapter",
+      "estimated_weight_no_gate",
+      "vultriage_support_gated"
+    ],
+    "prom_reference": {
+      "repository": "https://github.com/HuantWang/PROM",
+      "commit": "f16b52772123064551b6450f10b308971c4cdd39",
+      "label": "PROM-derived (binary, deterministic bug-fixed adapter)",
+      "experts": ["LAC", "TopK", "APS", "RAPS"],
+      "binary_fix": "explicit two-column one-hot encoding for APS and RAPS",
+      "local_space": "sealed two-class probability simplex with Euclidean distance",
+      "neighbors": "all calibration points when n_calibration<200, otherwise floor(0.1*n_calibration), stable index tie-break",
+      "local_p_value": "per test point mean(calibration_score_at_neighbors >= test_score), no finite-sample plus-one correction",
+      "credibility": "strict p > 1-alpha, preserving the PROM-specific rule",
+      "acceptance": "an expert accepts only a singleton prediction set with credibility true; union/OR rejection means automation requires all experts to accept",
+      "randomness": "explicit expert seed equal to detector seed; no automatic alpha selection and no target-label expert selection",
+      "raps": "20% deterministic calibration tuning split; lambda grid 0.001,0.01,0.1,0.2,0.5; ties choose smaller lambda",
+      "report": "report four experts, their union, and LAC-only; never call this official PROM or official reproduction"
+    }
+  },
+  "support_gate": {
+    "development_policy": "fit only on the 12 PrimeVul project-disjoint pseudo-targets and their already-visible v1 raw clip-20 results; no DiverseVul model output or outcome is available",
+    "confirmation_policy": "apply the frozen gate unchanged to exact-deduplicated DiverseVul projects",
+    "features": [
+      "total calibration Kish ESS",
+      "vulnerable calibration Kish ESS",
+      "safe calibration Kish ESS",
+      "maximum and p99 test-point infinity mass per label",
+      "domain-classifier AUROC",
+      "fraction of weights clipped at each boundary"
+    ],
+    "learner": {
+      "aggregation_unit": "one row per PrimeVul project and risk-budget cell after averaging the five detector seeds",
+      "feature_transform": "log1p total and class ESS; for each target point take the maximum test-point infinity mass over the two calibration labels, then use the project maximum and p99; domain AUROC; lower and upper calibration-weight clipping fractions; StandardScaler fit inside each training fold",
+      "model": "L2 logistic regression, solver=liblinear, C=1.0, class_weight=balanced, fit_intercept=true, max_iter=2000, tol=1e-6, random_state=20260814",
+      "group_crossfit": "LeaveOneGroupOut by target project; each held-out project's nine budget rows are scored by a model that never saw that project",
+      "severe_violation": "max(vulnerable_violation/alpha_vulnerable, safe_violation/alpha_safe) > 0.5 for estimated_weight_no_support_clip_20 after seed averaging",
+      "threshold": "0.5 on the cross-fitted severe-violation probability; the final scaler and model are refit on all PrimeVul development rows without tuning",
+      "gate_pass": "predicted severe-violation probability < 0.5 and the raw prediction set contains at least one singleton; probability exactly 0.5 fails",
+      "missing_or_nonfinite": "fail closed",
+      "detector_transfer": "the one frozen gate is used unchanged for both hashing-SGD and frozen-CodeBERT outputs; detector identity is not a feature"
+    },
+    "removed_v1_feature": "positive_neighbours because clipped weights are strictly positive and the count is not local support",
+    "primary_effectiveness_outcome": "raw pre-gate maximum class-specific violation",
+    "secondary_effectiveness_outcomes": [
+      "raw both-budget attainment",
+      "raw singleton coverage",
+      "selective utility conditional on passing"
+    ],
+    "comparison_unit": "held-out target project",
+    "failure_rule": "if pass does not predict lower raw violation on DiverseVul, remove predictive-gate claims and retain the gate only as a model-based conservative refusal heuristic; do not describe it as a valid risk predictor"
+  },
+  "diversevul_target_selection": {
+    "project_aliases": {
+      "linux": ["linux", "linux-2.6"],
+      "imagemagick": ["ImageMagick", "ImageMagick6"],
+      "php": ["php", "php-src"],
+      "qemu": ["qemu", "qemu-kvm", "qemu_qemu"],
+      "ffmpeg": ["FFmpeg"]
+    },
+    "eligibility": {
+      "minimum_total": 200,
+      "minimum_vulnerable": 20,
+      "minimum_safe": 20
+    },
+    "selection": "after the frozen alias map and exact deduplication, rank eligible project groups by vulnerable count then total count then normalized group name; use all eligible groups up to 24, never inspect model outcomes",
+    "freeze_requirement": "write project list and source hashes before any DiverseVul label-bearing evaluation"
+  },
+  "ablations": [
+    "unweighted class-conditional calibration",
+    "estimated weights without support gate",
+    "ESS-only support gate",
+    "infinity-mass-only support gate",
+    "full frozen support gate",
+    "weight clips 10, 20, and 50"
+  ],
+  "calibration_size_sensitivity": {
+    "fractions": [0.25, 0.5, 0.75, 1.0],
+    "nested_subsample_salt": "vultriage-calibration-size-v2",
+    "repetitions": 5,
+    "minimum_per_class": 20
+  },
+  "efficiency": {
+    "report": [
+      "feature or embedding extraction wall time",
+      "head fitting wall time",
+      "triage calibration wall time",
+      "prediction wall time",
+      "peak host RSS",
+      "peak allocated and reserved GPU memory",
+      "serialized artifact size"
+    ],
+    "hardware": "record exact CPU, GPU, driver, framework, batch size, and sample count"
+  },
+  "statistics": {
+    "independent_unit": "target project",
+    "seed_handling": "average seeds within project before inference",
+    "paired_test": "two-sided exact Wilcoxon only with at least 10 nonzero project differences",
+    "binary_test": "two-sided exact sign test",
+    "intervals": "10000 project-bootstrap resamples at 95% confidence",
+    "multiplicity": "Holm within each outcome by detector and budget family",
+    "gate_discrimination": ["AUROC", "AUPRC", "median pass-fail difference with project bootstrap interval"],
+    "unfavorable_results": "retained without project, seed, budget, or method removal"
+  },
+  "stopping": {
+    "lightweight": "all eligible projects, both detectors, and five seeds complete or fail once with a recorded error",
+    "no_adaptive_addition": "do not add projects, seeds, thresholds, or budgets in response to observed results"
+  },
+  "protocol_amendment": {
+    "amended_local_time": "2026-08-14T02:10:51+08:00",
+    "reason": "close the source-fold, gate-learner, PROM-adapter, and CodeBERT-head degrees of freedom before any extension-v2 model output exists",
+    "outcomes_visible_at_amendment": "PrimeVul v1 only; DiverseVul model outputs and label-probability joins do not exist"
+  }
+}

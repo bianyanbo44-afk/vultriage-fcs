@@ -1,0 +1,3 @@
+detector,projects,passed_all_seed,pass_rate_mean,gate_auroc_severe_violation,gate_auprc_severe_violation,median_raw_violation_pass_minus_fail,median_raw_violation_pass_minus_fail_bootstrap_ci_lower,median_raw_violation_pass_minus_fail_bootstrap_ci_upper,bootstrap_replicates,project_pass_fail_definition
+codebert,24,22,0.9166666666666666,0.4285714285714286,0.8732815591871801,-1.0099110796348756,-2.4498070970835695,0.7270353326546579,10000,all five technical seeds pass
+hashing,24,13,0.5416666666666666,0.8601398601398602,0.8173274957365867,-0.5473055229798404,-1.005741836511067,-0.22435844025995666,10000,all five technical seeds pass

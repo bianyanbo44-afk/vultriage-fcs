@@ -1,6 +1,6 @@
 # Integrity Audit
 
-- Output directory: `paper_rewriting_output`
+- Output directory: `F:\CCFA\crc_cpvd_fcs\paper_rewriting_output`
 - Total findings: 5
 - LaTeX gate: READY
 
@@ -24,7 +24,7 @@
 
 ## Reasoning Depth
 
-**RSN-000** ✅ All 8 rationale rows have adequate depth
+**RSN-000** ✅ All 10 rationale rows have adequate depth
 
 ---
 

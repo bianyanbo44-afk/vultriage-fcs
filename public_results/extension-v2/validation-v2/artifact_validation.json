@@ -1,0 +1,49 @@
+{
+  "analysis_manifest_sha256": "64CE50B7DD7FF8D18D8049768CE47A939635053E1465592AC832F744D2F000DB",
+  "calibration_manifest_sha256": "880CA25447E95715837DDBCE0676EE893312DFEFB9B68CFAAD00465BDC51450E",
+  "calibration_sensitivity_rows": 14400,
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "detectors": [
+    "hashing",
+    "codebert"
+  ],
+  "efficiency_manifest_sha256": "3494D7439AD3BAA16EB3FE18F57E804B17A2781EF0F7434D0F9E06E5E9171BF4",
+  "efficiency_validation_sha256": "B59A5EDCBADFD8786A8FCC4CF42377628CE02DB78C0C95DA9C850A23306E0F13",
+  "evaluation_manifest_sha256": "D3C87FC6F5975E3DEB5E0F283E12CE9DDBD5F1F3AB31071F599C23364B34B39D",
+  "figure_assets": 20,
+  "figure_data_assets": 5,
+  "figure_manifest_sha256": "FDBDE32D8DF5C691C167B76437D3104719EE101E29E00EF4093A5DCD05B67C50",
+  "main_metric_rows": 54000,
+  "methods": 25,
+  "near_duplicate_excluded_rows": 15026,
+  "near_duplicate_manifest_sha256": "501CF58D95614DDA2875EAD5AFDCF6E9158A74D9752DEC600D4E29C8B96D7BE2",
+  "near_duplicate_retained_rows": 64329,
+  "near_duplicate_sensitivity_rows": 6480,
+  "prediction_seals": {
+    "codebert": {
+      "path": "outputs\\extension-v2\\predictions\\codebert-v2\\prediction_seal.json",
+      "prediction_files": 240,
+      "seed_reuse_mode": "deterministic_liblinear_replicates",
+      "sha256": "85A5DF4EE1DE0E9A99181CE5CDDDC0CDE55237E1AEB584C35F55BE54227E1020"
+    },
+    "hashing": {
+      "path": "outputs\\extension-v2\\predictions\\hashing-v8\\prediction_seal.json",
+      "prediction_files": 240,
+      "seed_reuse_mode": "independent",
+      "sha256": "F064A3D126FA1423331486226702609A7D45AA9C4BCF2708A12677C7BAF98DB7"
+    }
+  },
+  "project_rows": 10800,
+  "projects": 24,
+  "risk_grid_cells": 9,
+  "seeds": [
+    13,
+    37,
+    73,
+    101,
+    137
+  ],
+  "status": "PASS",
+  "validated_at_utc": "2026-08-14T16:23:56.566258+00:00",
+  "validator_sha256": "F074FBAB0653C992EB9E749CF655DD68B04FEC39A989B5507D32B8BD22DBDA29"
+}

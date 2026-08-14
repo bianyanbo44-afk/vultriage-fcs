@@ -1,0 +1,321 @@
+{
+  "algorithm": {
+    "candidate_cardinality_bound": "min(|A|,|B|)/max(|A|,|B|) >= threshold",
+    "candidate_generation_only_is_approximate": true,
+    "flag_rule": "candidate pair has exact lexical-token-set Jaccard >= 0.90",
+    "flag_threshold": 0.9,
+    "lsh_bands": 16,
+    "lsh_candidate_probability_at_threshold": 0.9998774538341496,
+    "lsh_rows_per_band": 8,
+    "minhash_permutations": 128,
+    "minhash_seed": "vultriage-extension-v2|minhash|sha256-v1",
+    "reported_pair_verification_is_exact": true,
+    "similarity_object": "set of unique case-sensitive lexical tokens",
+    "tokenizer": "deterministic C/C++ identifier, pp-number, and longest-match operator tokens; whitespace, comments, and string/character literal contents omitted"
+  },
+  "artifacts": {
+    "flagged_pairs": {
+      "bytes": 2665277,
+      "path": "outputs\\extension-v2\\near-duplicate-v1\\near_duplicate_flagged_pairs.csv.gz",
+      "sha256": "99A997DF72C7A4DC4D65D888ADD223832B64D04A0C8A5464DA39018C8F746184"
+    },
+    "near_duplicate_exclusions": {
+      "bytes": 987714,
+      "path": "outputs\\extension-v2\\near-duplicate-v1\\near_duplicate_exclusions.csv.gz",
+      "sha256": "DCCF5C5C7B52BF2F14CC63DE5538A9EADD0F8AA65DDB10E0F1D3972FD2083B2B"
+    },
+    "sensitivity_cohort": {
+      "bytes": 4049166,
+      "path": "outputs\\extension-v2\\near-duplicate-v1\\near_duplicate_sensitivity_cohort.csv.gz",
+      "sha256": "8702992C3CA53F273BDCFB189D2D455ACD4456BF6DE277C2B07BC6ECEE59EEF4"
+    },
+    "work_index": {
+      "bytes": 858284032,
+      "path": "outputs\\extension-v2\\near-duplicate-v1\\near_duplicate_work.sqlite",
+      "public_release": false,
+      "sha256": "F43446DB033918140F1FEDEB8638B9743FF4F617EBF03F0704533E97EBF1FD45"
+    }
+  },
+  "audit_version": "vultriage-extension-v2-near-duplicate-audit-v1",
+  "counts": {
+    "affected_projects": [
+      {
+        "affected_target_rows": 23,
+        "flagged_pairs": 24,
+        "project_group": "envoy"
+      },
+      {
+        "affected_target_rows": 387,
+        "flagged_pairs": 692,
+        "project_group": "ffmpeg"
+      },
+      {
+        "affected_target_rows": 92,
+        "flagged_pairs": 113,
+        "project_group": "FreeRDP"
+      },
+      {
+        "affected_target_rows": 122,
+        "flagged_pairs": 154,
+        "project_group": "ghostpdl"
+      },
+      {
+        "affected_target_rows": 600,
+        "flagged_pairs": 2801,
+        "project_group": "imagemagick"
+      },
+      {
+        "affected_target_rows": 290,
+        "flagged_pairs": 585,
+        "project_group": "jasper"
+      },
+      {
+        "affected_target_rows": 153,
+        "flagged_pairs": 208,
+        "project_group": "krb5"
+      },
+      {
+        "affected_target_rows": 35,
+        "flagged_pairs": 38,
+        "project_group": "librsvg"
+      },
+      {
+        "affected_target_rows": 7,
+        "flagged_pairs": 8,
+        "project_group": "libtpms"
+      },
+      {
+        "affected_target_rows": 347,
+        "flagged_pairs": 623,
+        "project_group": "libxml2"
+      },
+      {
+        "affected_target_rows": 7432,
+        "flagged_pairs": 10688,
+        "project_group": "linux"
+      },
+      {
+        "affected_target_rows": 301,
+        "flagged_pairs": 558,
+        "project_group": "mongo"
+      },
+      {
+        "affected_target_rows": 388,
+        "flagged_pairs": 464,
+        "project_group": "mysql-server"
+      },
+      {
+        "affected_target_rows": 366,
+        "flagged_pairs": 581,
+        "project_group": "net"
+      },
+      {
+        "affected_target_rows": 1371,
+        "flagged_pairs": 2456,
+        "project_group": "openssl"
+      },
+      {
+        "affected_target_rows": 796,
+        "flagged_pairs": 1344,
+        "project_group": "php"
+      },
+      {
+        "affected_target_rows": 61,
+        "flagged_pairs": 72,
+        "project_group": "postgres"
+      },
+      {
+        "affected_target_rows": 465,
+        "flagged_pairs": 634,
+        "project_group": "qemu"
+      },
+      {
+        "affected_target_rows": 158,
+        "flagged_pairs": 172,
+        "project_group": "qpdf"
+      },
+      {
+        "affected_target_rows": 473,
+        "flagged_pairs": 696,
+        "project_group": "radare2"
+      },
+      {
+        "affected_target_rows": 132,
+        "flagged_pairs": 155,
+        "project_group": "samba"
+      },
+      {
+        "affected_target_rows": 257,
+        "flagged_pairs": 549,
+        "project_group": "tcpdump"
+      },
+      {
+        "affected_target_rows": 191,
+        "flagged_pairs": 241,
+        "project_group": "tensorflow"
+      },
+      {
+        "affected_target_rows": 579,
+        "flagged_pairs": 750,
+        "project_group": "vim"
+      }
+    ],
+    "candidate_batches": 40,
+    "candidate_pairs": 866094,
+    "excluded_target_rows": 15026,
+    "flagged_pairs": 24606,
+    "flagged_target_rows": 15026,
+    "retained_row_id_sequence_sha256": "282625F225250D8DB564D1779D90C5B2E40BEF171ECFEFD4FF202F36D3F85849",
+    "retained_rows_by_project": {
+      "FreeRDP": 888,
+      "envoy": 5229,
+      "ffmpeg": 596,
+      "ghostpdl": 1010,
+      "imagemagick": 183,
+      "jasper": 318,
+      "krb5": 338,
+      "librsvg": 635,
+      "libtpms": 483,
+      "libxml2": 1713,
+      "linux": 25498,
+      "mongo": 2326,
+      "mysql-server": 3450,
+      "net": 1444,
+      "openssl": 2981,
+      "php": 2796,
+      "postgres": 2544,
+      "qemu": 2169,
+      "qpdf": 1628,
+      "radare2": 1137,
+      "samba": 1829,
+      "tcpdump": 171,
+      "tensorflow": 2486,
+      "vim": 2477
+    },
+    "retained_target_rows": 64329,
+    "targets_with_candidates": 36522,
+    "verified_candidates": 866094
+  },
+  "created_at_utc": "2026-08-14T05:18:13.568778+00:00",
+  "frozen_inputs": {
+    "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+    "diversevul_sha256": "7937C26003C4C24A396747432487E8ABDD1C4622B5547AE93855BEE15266BD57",
+    "exact_index_sha256": "BE0735BD17A1E4A586BA59C78D663E05C798C8491E3816F55FE86C009BD4BD06",
+    "manifest_sha256": "0377CE5A21E56155F101BDBBD8C9D12EA2297D67F1389D52D5639F8A82AC4841",
+    "manifest_summary_sha256": "9447DD45CD254480A63FF84C7F074BF3FDE10DC76BE40A9C039B8726B1A10392",
+    "primevul_input_sha256": {
+      "primevul_test.jsonl": "7F0DB8408BDD614F7EB8B4DF145D7BC7DBFDA0243F7A29C7CAA6F89B9A756245",
+      "primevul_train.jsonl": "9FEA452F1B7C7FFAFB28D6131789F722AD820C1032D3BCD90B7FC17DA3D9B117",
+      "primevul_valid.jsonl": "56B91474FB7D75B313013766E0F5D1D8150C98E70961CF2B26DF93875E87FB27"
+    },
+    "protocol_version": "vultriage-extension-v2",
+    "selected_project_groups": [
+      "linux",
+      "openssl",
+      "tensorflow",
+      "php",
+      "qemu",
+      "imagemagick",
+      "qpdf",
+      "envoy",
+      "tcpdump",
+      "jasper",
+      "radare2",
+      "postgres",
+      "mysql-server",
+      "FreeRDP",
+      "libxml2",
+      "krb5",
+      "samba",
+      "vim",
+      "net",
+      "ffmpeg",
+      "mongo",
+      "ghostpdl",
+      "libtpms",
+      "librsvg"
+    ]
+  },
+  "privacy_and_schema_check": {
+    "function_text_exported": false,
+    "index_validation_used_metadata_only": true,
+    "sqlite_columns": {
+      "candidates": [
+        "target_doc_id",
+        "prime_doc_id"
+      ],
+      "documents": [
+        "doc_id",
+        "dataset",
+        "row_id",
+        "source_file",
+        "line_number",
+        "project",
+        "project_group",
+        "exact_code_key",
+        "token_count",
+        "token_set_sha256",
+        "token_blob",
+        "signature_blob"
+      ],
+      "flagged_pairs": [
+        "target_doc_id",
+        "prime_doc_id",
+        "intersection_count",
+        "union_count",
+        "minhash_agreement"
+      ]
+    },
+    "target_label_vault_accessed": false,
+    "target_labels_exported_or_read": false
+  },
+  "provenance": {
+    "execution_mode": "completion from preserved full document index",
+    "initial_index_reused_without_rebuilding_or_model_access": true,
+    "initial_wrapper_timeout": true
+  },
+  "resource_record": {
+    "durations_seconds": {
+      "candidate_generation_seconds": 11.813971,
+      "exact_verification_seconds": 9.870037,
+      "output_seconds": 1.95307,
+      "total_seconds": 48.111366
+    },
+    "peak_host_rss_bytes": 181678080,
+    "system": {
+      "cpu_logical_cores": 32,
+      "cpu_physical_cores": 24,
+      "host_memory_bytes": 34141495296,
+      "numpy": "1.26.4",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+      "psutil": "7.0.0",
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "python_executable": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "sqlite": "3.49.1"
+    }
+  },
+  "scope": {
+    "comparison": "unique PrimeVul functions versus the frozen exact-deduplicated selected DiverseVul cohort",
+    "outcome_bearing_models_run": false,
+    "outcome_labels_read": false,
+    "primary_analysis_changed": false
+  },
+  "status": "complete",
+  "token_set_cardinality": {
+    "diversevul_selected": {
+      "documents": 79355,
+      "empty": 0,
+      "maximum": 2155,
+      "mean": 47.78806628441812,
+      "minimum": 5
+    },
+    "primevul": {
+      "documents": 226582,
+      "empty": 18,
+      "maximum": 3958,
+      "mean": 45.69629096750845,
+      "minimum": 0
+    }
+  }
+}

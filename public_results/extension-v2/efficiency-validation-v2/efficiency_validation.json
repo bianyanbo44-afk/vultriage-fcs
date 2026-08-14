@@ -1,0 +1,19 @@
+{
+  "codebert_parallel_parts": 4,
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "efficiency_manifest_sha256": "3494D7439AD3BAA16EB3FE18F57E804B17A2781EF0F7434D0F9E06E5E9171BF4",
+  "executed_head_fit_rows": 144,
+  "projects": 24,
+  "seeds": [
+    13,
+    37,
+    73,
+    101,
+    137
+  ],
+  "status": "PASS",
+  "summary_rows": 2,
+  "target_vulnerability_labels_accessed": false,
+  "validated_at_utc": "2026-08-14T14:27:06.885617+00:00",
+  "validator_sha256": "2A4CB962E8F358C276A283079F43AA05FB2ED6B17A2D1A3F5B64314C9417E7D5"
+}

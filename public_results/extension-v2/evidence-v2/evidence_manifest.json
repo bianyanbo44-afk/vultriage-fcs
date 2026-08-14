@@ -1,0 +1,345 @@
+{
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "counts": {
+    "calibration_rows": 24,
+    "detector_paired_rows": 5,
+    "detector_performance_rows": 10,
+    "detectors": 2,
+    "efficiency_rows": 2,
+    "gate_rows": 3,
+    "main_metric_rows": 54000,
+    "near_duplicate_rows": 12,
+    "primary_method_rows": 50,
+    "primary_weighting_rows": 10,
+    "projects": 24,
+    "seeds": 5
+  },
+  "input_artifacts": {
+    "analysis_manifest": {
+      "bytes": 935,
+      "path": "outputs/extension-v2/analysis-v2/analysis_manifest.json",
+      "sha256": "64CE50B7DD7FF8D18D8049768CE47A939635053E1465592AC832F744D2F000DB"
+    },
+    "artifact_validation": {
+      "bytes": 2029,
+      "path": "outputs/extension-v2/validation-v2/artifact_validation.json",
+      "sha256": "7E757B42FA3BCE4A6D164BC212852011AA02CB47183FCAE97BE33F0F267E031A"
+    },
+    "calibration_manifest": {
+      "bytes": 1004,
+      "path": "outputs/extension-v2/calibration-size-v2/sensitivity_manifest.json",
+      "sha256": "880CA25447E95715837DDBCE0676EE893312DFEFB9B68CFAAD00465BDC51450E"
+    },
+    "calibration_project_summary": {
+      "bytes": 116063,
+      "path": "outputs/extension-v2/calibration-size-v2/calibration_size_project_summary.csv",
+      "sha256": "38B1B7913E2A1ABE00FD98849962417BACE7ABFCD9A944905B5FD7BA35224A71"
+    },
+    "calibration_sensitivity": {
+      "bytes": 11148738,
+      "path": "outputs/extension-v2/calibration-size-v2/calibration_size_sensitivity.csv",
+      "sha256": "2B19E9D95EEF764A0329B84E5FB87F11FC68D171343A3B1AFA93FAFF84E0AFF4"
+    },
+    "config": {
+      "bytes": 10552,
+      "path": "configs/preregistered_extension_v2.json",
+      "sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2"
+    },
+    "detector_project_performance": {
+      "bytes": 10954,
+      "path": "outputs/extension-v2/analysis-v2/detector_project_performance.csv",
+      "sha256": "E173653B26C82E0C97865FC8373439D14DD23E9DE0FE69225C19437EB9F80180"
+    },
+    "efficiency_manifest": {
+      "bytes": 2249,
+      "path": "outputs/extension-v2/efficiency-v2/efficiency_manifest.json",
+      "sha256": "3494D7439AD3BAA16EB3FE18F57E804B17A2781EF0F7434D0F9E06E5E9171BF4"
+    },
+    "efficiency_summary": {
+      "bytes": 1384,
+      "path": "outputs/extension-v2/efficiency-v2/detector_efficiency_summary.csv",
+      "sha256": "AEB2991DEF499C6E7FDBE0FC7C90C36DC5A971370E3879F4B1B2A297D793D98A"
+    },
+    "efficiency_validation": {
+      "bytes": 589,
+      "path": "outputs/extension-v2/efficiency-validation-v2/efficiency_validation.json",
+      "sha256": "B59A5EDCBADFD8786A8FCC4CF42377628CE02DB78C0C95DA9C850A23306E0F13"
+    },
+    "evaluation_manifest": {
+      "bytes": 29422,
+      "path": "outputs/extension-v2/evaluation-v2/evaluation_manifest.json",
+      "sha256": "D3C87FC6F5975E3DEB5E0F283E12CE9DDBD5F1F3AB31071F599C23364B34B39D"
+    },
+    "evaluation_metrics": {
+      "bytes": 41978307,
+      "path": "outputs/extension-v2/evaluation-v2/fold_seed_metrics.csv",
+      "sha256": "AB48DFC01263DED8E63A64ACF12E31DBB942C21200E5F4B940A2BA545B3AB491"
+    },
+    "figure_manifest": {
+      "bytes": 5490,
+      "path": "outputs/extension-v2/figures-v2/figure_manifest.json",
+      "sha256": "FDBDE32D8DF5C691C167B76437D3104719EE101E29E00EF4093A5DCD05B67C50"
+    },
+    "gate_discrimination": {
+      "bytes": 641,
+      "path": "outputs/extension-v2/analysis-v2/gate_discrimination.csv",
+      "sha256": "F2543FFF37DFC9A1D473676B66D3DFA978CF1771F5C87A84CEF81EC58F584B5F"
+    },
+    "gate_seal": {
+      "bytes": 2157,
+      "path": "outputs/extension-v2/gate-v1/gate_seal.json",
+      "sha256": "5FD8146133584188FA30888057E69F648134590D5D3B33C3B55F41838293FE20"
+    },
+    "near_duplicate_audit": {
+      "bytes": 9690,
+      "path": "outputs/extension-v2/near-duplicate-v1/near_duplicate_summary.json",
+      "sha256": "6BA69F9BDBB37B875AB28EB1C336E3EE33CAC3EFDA9E69E06286EE8B1CA72034"
+    },
+    "near_duplicate_manifest": {
+      "bytes": 1208,
+      "path": "outputs/extension-v2/near-duplicate-sensitivity-v2/sensitivity_manifest.json",
+      "sha256": "501CF58D95614DDA2875EAD5AFDCF6E9158A74D9752DEC600D4E29C8B96D7BE2"
+    },
+    "near_duplicate_primary_summary": {
+      "bytes": 1546,
+      "path": "outputs/extension-v2/near-duplicate-sensitivity-v2/primary_sensitivity_summary.json",
+      "sha256": "7084B725F3F5BA620A8DFF1F8924B1FEC2498B171A7BAB5B0A3659711C78900A"
+    },
+    "paired_project_comparisons": {
+      "bytes": 101956,
+      "path": "outputs/extension-v2/analysis-v2/paired_project_comparisons.csv",
+      "sha256": "01E735AE9270C3C5FC27F594B5A59421EDC68B89DD7DD4936B72604C62AC1E20"
+    },
+    "project_means": {
+      "bytes": 1296151,
+      "path": "outputs/extension-v2/analysis-v2/project_seed_averages.csv",
+      "sha256": "8F0EF0EFCE0EFC9572306FCC9B38D89287DF7DC45FC3306C67E5DC422A46E971"
+    }
+  },
+  "near_duplicate_audit": {
+    "affected_projects": 24,
+    "candidate_generation_approximate": true,
+    "candidate_pairs": 866094,
+    "excluded_target_rows": 15026,
+    "flagged_pairs": 24606,
+    "reported_pair_verification_exact": true,
+    "retained_target_rows": 64329,
+    "threshold": 0.9,
+    "verified_candidates": 866094
+  },
+  "notes": [
+    "All rows are project-level or frozen artifact summaries; no row-level code or target labels are exported.",
+    "Support qualification is separate from empirical risk attainment; gate-fail review-only cases are not treated as informative risk successes.",
+    "Cell counts across the 3 x 3 grid are descriptive and correlated within project.",
+    "Runtime observations are hardware- and parallelization-specific; no speedup or energy claim is supported."
+  ],
+  "outputs": {
+    "calibration_summary.csv": {
+      "bytes": 2361,
+      "columns": [
+        "detector",
+        "fraction",
+        "method",
+        "projects",
+        "median_max_relative_violation",
+        "median_singleton_coverage",
+        "both_budget_attainment_projects",
+        "cell_pass_rate",
+        "all_cells_pass_projects",
+        "any_cell_pass_projects"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/calibration_summary.csv",
+      "rows": 24,
+      "sha256": "BC4CCDEBB903C52D9E964B5ECF200E65E5808857BED19106AADB07157E00DF11"
+    },
+    "detector_paired_differences.csv": {
+      "bytes": 802,
+      "columns": [
+        "metric",
+        "projects",
+        "codebert_minus_hashing_median",
+        "q25",
+        "q75",
+        "bootstrap_ci_lower",
+        "bootstrap_ci_upper",
+        "codebert_wins",
+        "ties",
+        "hashing_wins",
+        "bootstrap_replicates"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/detector_paired_differences.csv",
+      "rows": 5,
+      "sha256": "6B6547570C168390BBA4F2B287E81C6C04C3255E5B0E423A6B1EB8A96AF94089"
+    },
+    "detector_performance_summary.csv": {
+      "bytes": 1745,
+      "columns": [
+        "detector",
+        "metric",
+        "projects",
+        "median",
+        "q25",
+        "q75",
+        "bootstrap_ci_lower",
+        "bootstrap_ci_upper",
+        "bootstrap_replicates",
+        "unit"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/detector_performance_summary.csv",
+      "rows": 10,
+      "sha256": "5FE5DDCE3618F154994E7CAEB61F95C7B791BF850CB07514F8806E6A0430D76D"
+    },
+    "efficiency_summary.csv": {
+      "bytes": 1384,
+      "columns": [
+        "detector",
+        "representation",
+        "representation_device",
+        "representation_rows",
+        "representation_wall_seconds",
+        "representation_rows_per_second",
+        "peak_gpu_allocated_bytes",
+        "peak_gpu_reserved_bytes",
+        "peak_host_rss_bytes",
+        "executed_head_fits",
+        "head_fit_seconds_sum",
+        "head_fit_seconds_median",
+        "head_fit_seconds_q25",
+        "head_fit_seconds_q75",
+        "head_fit_seconds_min",
+        "head_fit_seconds_max",
+        "prediction_pipeline_wall_seconds",
+        "prediction_parallel_parts",
+        "prediction_aggregate_part_seconds",
+        "target_rows",
+        "seed_policy",
+        "comparison_boundary"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/efficiency_summary.csv",
+      "rows": 2,
+      "sha256": "687272633A09E533E687F031899B0D072F98491801205F292A01EE04EA9215C3"
+    },
+    "gate_external_projects.csv": {
+      "bytes": 7464,
+      "columns": [
+        "detector",
+        "target_group",
+        "alpha_vulnerable",
+        "alpha_safe",
+        "method",
+        "max_relative_violation",
+        "vulnerable_violation",
+        "safe_violation",
+        "singleton_coverage",
+        "review_load",
+        "support_pass_all_seeds",
+        "severe_raw_violation"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/gate_external_projects.csv",
+      "rows": 48,
+      "sha256": "D1195CA98E224AFF030C5D2BE96C380B160B2BDEABBFFF8F924449384F1076D0"
+    },
+    "gate_summary.csv": {
+      "bytes": 512,
+      "columns": [
+        "domain",
+        "detector",
+        "projects",
+        "units",
+        "severe_prevalence",
+        "auroc",
+        "auprc",
+        "support_pass_projects",
+        "pass_minus_fail_median",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/gate_summary.csv",
+      "rows": 3,
+      "sha256": "8E7056D94CCF991150438D6F8853309264B9F6F8B4710BBE93DC4592E6C59A26"
+    },
+    "near_duplicate_audit.json": {
+      "bytes": 303,
+      "path": "outputs/extension-v2/evidence-v2-rerun2/near_duplicate_audit.json",
+      "sha256": "ABC60CA9A90057EC38B93A306F9E73E5A29FD7DA66345179D4B308D68796C0B8"
+    },
+    "near_duplicate_summary.csv": {
+      "bytes": 1386,
+      "columns": [
+        "cohort",
+        "detector",
+        "method",
+        "projects",
+        "median_max_relative_violation",
+        "median_singleton_coverage",
+        "both_budget_attainment_projects"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/near_duplicate_summary.csv",
+      "rows": 12,
+      "sha256": "161FB79010A711C734F70EADB2BC8C34F6F2B3AE0BE01FE8AA7AACD241DF59FD"
+    },
+    "primary_method_summary.csv": {
+      "bytes": 11266,
+      "columns": [
+        "detector",
+        "method",
+        "projects",
+        "overall_attainment_projects",
+        "overall_median_vulnerable_miscoverage",
+        "overall_median_safe_miscoverage",
+        "overall_median_vulnerable_violation",
+        "overall_median_safe_violation",
+        "overall_median_max_relative_violation",
+        "overall_median_singleton_coverage",
+        "overall_median_review_load",
+        "support_recorded",
+        "support_pass_projects",
+        "supported_attainment_projects",
+        "supported_median_vulnerable_miscoverage",
+        "supported_median_safe_miscoverage",
+        "supported_median_vulnerable_violation",
+        "supported_median_safe_violation",
+        "supported_median_max_relative_violation",
+        "supported_median_singleton_coverage",
+        "supported_median_review_load"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/primary_method_summary.csv",
+      "rows": 50,
+      "sha256": "945F45AF97429EEC62E39C5D70DBEFF9C4A12548E6D5957E7234C79906534585"
+    },
+    "primary_weighting_comparisons.csv": {
+      "bytes": 2579,
+      "columns": [
+        "detector",
+        "alpha_vulnerable",
+        "alpha_safe",
+        "baseline",
+        "method",
+        "outcome",
+        "projects",
+        "nonzero_projects",
+        "median_paired_difference",
+        "hodges_lehmann_paired_shift",
+        "bootstrap_median_ci_lower",
+        "bootstrap_median_ci_upper",
+        "wins",
+        "ties",
+        "losses",
+        "exact_sign_p",
+        "wilcoxon_exact_p",
+        "holm_adjusted_wilcoxon_p"
+      ],
+      "path": "outputs/extension-v2/evidence-v2-rerun2/primary_weighting_comparisons.csv",
+      "rows": 10,
+      "sha256": "8D102C8AB972885378726F7EDA67D41F6AE3A8930DA484FFA1240D41DB7AE91C"
+    },
+    "study_dimensions.json": {
+      "bytes": 886,
+      "path": "outputs/extension-v2/evidence-v2-rerun2/study_dimensions.json",
+      "sha256": "3C45ECFA823885932E5ACF1045C20333595A705227BFD937A6214FE2CFD89520"
+    }
+  },
+  "protocol_version": "vultriage-extension-v2",
+  "status": "complete",
+  "target_vulnerability_labels_accessed": false
+}

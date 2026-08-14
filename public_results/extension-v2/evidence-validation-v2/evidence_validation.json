@@ -1,0 +1,11 @@
+{
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "csv_outputs": 9,
+  "evidence_manifest_sha256": "019BA0888AA1C309B21E3E4F9174752AA99631597BD47A54A87B1701EA42FE0D",
+  "main_metric_rows": 54000,
+  "projects": 24,
+  "status": "PASS",
+  "target_vulnerability_labels_accessed": false,
+  "validated_at_utc": "2026-08-14T16:25:48.954094+00:00",
+  "validator_sha256": "0F2AC0197CB7385C59F553227769B3F25464F5504CBB270DDF1BF3F50ADB945D"
+}

@@ -1,0 +1,18 @@
+{
+  "created_at_utc": "2026-08-14T04:42:42.748523+00:00",
+  "dataset_order": [
+    "primevul",
+    "diversevul"
+  ],
+  "labels_used": false,
+  "manifest_sha256": "3727411D10C659F079B50F170CD466E9A6B5D12ED76BEE8457194CAB36353761",
+  "protocol_version": "vultriage-extension-v2",
+  "rows": 305937,
+  "source_metadata": "outputs\\extension-v2\\source-v2\\source_metadata.csv.gz",
+  "source_metadata_sha256": "6149AE81A72DC3B0CFA4A515E079564FEB22E1DC400AC89C3E2D931F256ADF3B",
+  "source_rows": 226582,
+  "target_labels_serialized": false,
+  "target_metadata": "outputs\\extension-v2\\source-v2\\target_metadata.csv.gz",
+  "target_metadata_sha256": "0377CE5A21E56155F101BDBBD8C9D12EA2297D67F1389D52D5639F8A82AC4841",
+  "target_rows": 79355
+}

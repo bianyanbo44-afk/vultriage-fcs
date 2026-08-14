@@ -1,0 +1,4411 @@
+{
+  "config_sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2",
+  "created_at_utc": "2026-08-13T18:30:39.459246+00:00",
+  "diversevul_deduplication": {
+    "cross_dataset_exact_overlaps_removed": 171234,
+    "missing_or_invalid_rows": 1,
+    "raw_physical_rows": 330492,
+    "raw_valid_rows": 330491,
+    "retained_rows": 158863,
+    "within_dataset_conflicting_keys_quarantined": 144,
+    "within_dataset_same_label_duplicates_removed": 106
+  },
+  "diversevul_sha256": "7937C26003C4C24A396747432487E8ABDD1C4622B5547AE93855BEE15266BD57",
+  "index_backend": "sqlite",
+  "index_contains_function_text": false,
+  "label_vault_sha256": "918B2D8FC677F7C7678B6EC39A3B9B94FBD871588111C297AF8635D1313BF067",
+  "manifest_contains_target_labels": false,
+  "manifest_sha256": "0377CE5A21E56155F101BDBBD8C9D12EA2297D67F1389D52D5639F8A82AC4841",
+  "primevul_input_sha256": {
+    "primevul_test.jsonl": "7F0DB8408BDD614F7EB8B4DF145D7BC7DBFDA0243F7A29C7CAA6F89B9A756245",
+    "primevul_train.jsonl": "9FEA452F1B7C7FFAFB28D6131789F722AD820C1032D3BCD90B7FC17DA3D9B117",
+    "primevul_valid.jsonl": "56B91474FB7D75B313013766E0F5D1D8150C98E70961CF2B26DF93875E87FB27"
+  },
+  "primevul_text_key_audit": {
+    "duplicate_text_key": 9186,
+    "unique_text_keys": 226582,
+    "valid_rows": 235768
+  },
+  "project_groups": [
+    {
+      "eligible": true,
+      "project_group": "linux",
+      "safe": 29898,
+      "selected": true,
+      "selection_rank": 1,
+      "total": 32930,
+      "vulnerable": 3032
+    },
+    {
+      "eligible": true,
+      "project_group": "openssl",
+      "safe": 3787,
+      "selected": true,
+      "selection_rank": 2,
+      "total": 4352,
+      "vulnerable": 565
+    },
+    {
+      "eligible": true,
+      "project_group": "tensorflow",
+      "safe": 2239,
+      "selected": true,
+      "selection_rank": 3,
+      "total": 2677,
+      "vulnerable": 438
+    },
+    {
+      "eligible": true,
+      "project_group": "php",
+      "safe": 3239,
+      "selected": true,
+      "selection_rank": 4,
+      "total": 3592,
+      "vulnerable": 353
+    },
+    {
+      "eligible": true,
+      "project_group": "qemu",
+      "safe": 2296,
+      "selected": true,
+      "selection_rank": 5,
+      "total": 2634,
+      "vulnerable": 338
+    },
+    {
+      "eligible": true,
+      "project_group": "imagemagick",
+      "safe": 483,
+      "selected": true,
+      "selection_rank": 6,
+      "total": 783,
+      "vulnerable": 300
+    },
+    {
+      "eligible": true,
+      "project_group": "qpdf",
+      "safe": 1514,
+      "selected": true,
+      "selection_rank": 7,
+      "total": 1786,
+      "vulnerable": 272
+    },
+    {
+      "eligible": true,
+      "project_group": "envoy",
+      "safe": 4998,
+      "selected": true,
+      "selection_rank": 8,
+      "total": 5252,
+      "vulnerable": 254
+    },
+    {
+      "eligible": true,
+      "project_group": "tcpdump",
+      "safe": 219,
+      "selected": true,
+      "selection_rank": 9,
+      "total": 428,
+      "vulnerable": 209
+    },
+    {
+      "eligible": true,
+      "project_group": "jasper",
+      "safe": 405,
+      "selected": true,
+      "selection_rank": 10,
+      "total": 608,
+      "vulnerable": 203
+    },
+    {
+      "eligible": true,
+      "project_group": "radare2",
+      "safe": 1442,
+      "selected": true,
+      "selection_rank": 11,
+      "total": 1610,
+      "vulnerable": 168
+    },
+    {
+      "eligible": true,
+      "project_group": "postgres",
+      "safe": 2451,
+      "selected": true,
+      "selection_rank": 12,
+      "total": 2605,
+      "vulnerable": 154
+    },
+    {
+      "eligible": true,
+      "project_group": "mysql-server",
+      "safe": 3696,
+      "selected": true,
+      "selection_rank": 13,
+      "total": 3838,
+      "vulnerable": 142
+    },
+    {
+      "eligible": true,
+      "project_group": "FreeRDP",
+      "safe": 839,
+      "selected": true,
+      "selection_rank": 14,
+      "total": 980,
+      "vulnerable": 141
+    },
+    {
+      "eligible": true,
+      "project_group": "libxml2",
+      "safe": 1924,
+      "selected": true,
+      "selection_rank": 15,
+      "total": 2060,
+      "vulnerable": 136
+    },
+    {
+      "eligible": true,
+      "project_group": "krb5",
+      "safe": 373,
+      "selected": true,
+      "selection_rank": 16,
+      "total": 491,
+      "vulnerable": 118
+    },
+    {
+      "eligible": true,
+      "project_group": "samba",
+      "safe": 1844,
+      "selected": true,
+      "selection_rank": 17,
+      "total": 1961,
+      "vulnerable": 117
+    },
+    {
+      "eligible": true,
+      "project_group": "vim",
+      "safe": 2940,
+      "selected": true,
+      "selection_rank": 18,
+      "total": 3056,
+      "vulnerable": 116
+    },
+    {
+      "eligible": true,
+      "project_group": "net",
+      "safe": 1694,
+      "selected": true,
+      "selection_rank": 19,
+      "total": 1810,
+      "vulnerable": 116
+    },
+    {
+      "eligible": true,
+      "project_group": "ffmpeg",
+      "safe": 868,
+      "selected": true,
+      "selection_rank": 20,
+      "total": 983,
+      "vulnerable": 115
+    },
+    {
+      "eligible": true,
+      "project_group": "mongo",
+      "safe": 2515,
+      "selected": true,
+      "selection_rank": 21,
+      "total": 2627,
+      "vulnerable": 112
+    },
+    {
+      "eligible": true,
+      "project_group": "ghostpdl",
+      "safe": 1023,
+      "selected": true,
+      "selection_rank": 22,
+      "total": 1132,
+      "vulnerable": 109
+    },
+    {
+      "eligible": true,
+      "project_group": "libtpms",
+      "safe": 381,
+      "selected": true,
+      "selection_rank": 23,
+      "total": 490,
+      "vulnerable": 109
+    },
+    {
+      "eligible": true,
+      "project_group": "librsvg",
+      "safe": 575,
+      "selected": true,
+      "selection_rank": 24,
+      "total": 670,
+      "vulnerable": 95
+    },
+    {
+      "eligible": true,
+      "project_group": "libtiff",
+      "safe": 455,
+      "selected": false,
+      "selection_rank": 25,
+      "total": 535,
+      "vulnerable": 80
+    },
+    {
+      "eligible": true,
+      "project_group": "gpac",
+      "safe": 1553,
+      "selected": false,
+      "selection_rank": 26,
+      "total": 1631,
+      "vulnerable": 78
+    },
+    {
+      "eligible": true,
+      "project_group": "Little-CMS",
+      "safe": 369,
+      "selected": false,
+      "selection_rank": 27,
+      "total": 446,
+      "vulnerable": 77
+    },
+    {
+      "eligible": true,
+      "project_group": "server",
+      "safe": 4190,
+      "selected": false,
+      "selection_rank": 28,
+      "total": 4263,
+      "vulnerable": 73
+    },
+    {
+      "eligible": true,
+      "project_group": "redis",
+      "safe": 1054,
+      "selected": false,
+      "selection_rank": 29,
+      "total": 1127,
+      "vulnerable": 73
+    },
+    {
+      "eligible": true,
+      "project_group": "unbound",
+      "safe": 494,
+      "selected": false,
+      "selection_rank": 30,
+      "total": 559,
+      "vulnerable": 65
+    },
+    {
+      "eligible": true,
+      "project_group": "curl",
+      "safe": 712,
+      "selected": false,
+      "selection_rank": 31,
+      "total": 776,
+      "vulnerable": 64
+    },
+    {
+      "eligible": true,
+      "project_group": "gnupg",
+      "safe": 1050,
+      "selected": false,
+      "selection_rank": 32,
+      "total": 1110,
+      "vulnerable": 60
+    },
+    {
+      "eligible": true,
+      "project_group": "openjpeg",
+      "safe": 363,
+      "selected": false,
+      "selection_rank": 33,
+      "total": 423,
+      "vulnerable": 60
+    },
+    {
+      "eligible": true,
+      "project_group": "wireshark",
+      "safe": 884,
+      "selected": false,
+      "selection_rank": 34,
+      "total": 940,
+      "vulnerable": 56
+    },
+    {
+      "eligible": true,
+      "project_group": "LibRaw",
+      "safe": 792,
+      "selected": false,
+      "selection_rank": 35,
+      "total": 848,
+      "vulnerable": 56
+    },
+    {
+      "eligible": true,
+      "project_group": "systemd",
+      "safe": 845,
+      "selected": false,
+      "selection_rank": 36,
+      "total": 900,
+      "vulnerable": 55
+    },
+    {
+      "eligible": true,
+      "project_group": "electron",
+      "safe": 673,
+      "selected": false,
+      "selection_rank": 37,
+      "total": 728,
+      "vulnerable": 55
+    },
+    {
+      "eligible": true,
+      "project_group": "ceph",
+      "safe": 1991,
+      "selected": false,
+      "selection_rank": 38,
+      "total": 2044,
+      "vulnerable": 53
+    },
+    {
+      "eligible": true,
+      "project_group": "firejail",
+      "safe": 304,
+      "selected": false,
+      "selection_rank": 39,
+      "total": 357,
+      "vulnerable": 53
+    },
+    {
+      "eligible": true,
+      "project_group": "OpenSC",
+      "safe": 492,
+      "selected": false,
+      "selection_rank": 40,
+      "total": 544,
+      "vulnerable": 52
+    },
+    {
+      "eligible": true,
+      "project_group": "mod_h2",
+      "safe": 345,
+      "selected": false,
+      "selection_rank": 41,
+      "total": 396,
+      "vulnerable": 51
+    },
+    {
+      "eligible": true,
+      "project_group": "kvm",
+      "safe": 629,
+      "selected": false,
+      "selection_rank": 42,
+      "total": 679,
+      "vulnerable": 50
+    },
+    {
+      "eligible": true,
+      "project_group": "cpython",
+      "safe": 229,
+      "selected": false,
+      "selection_rank": 43,
+      "total": 279,
+      "vulnerable": 50
+    },
+    {
+      "eligible": true,
+      "project_group": "git",
+      "safe": 834,
+      "selected": false,
+      "selection_rank": 44,
+      "total": 883,
+      "vulnerable": 49
+    },
+    {
+      "eligible": true,
+      "project_group": "bash",
+      "safe": 915,
+      "selected": false,
+      "selection_rank": 45,
+      "total": 963,
+      "vulnerable": 48
+    },
+    {
+      "eligible": true,
+      "project_group": "node",
+      "safe": 979,
+      "selected": false,
+      "selection_rank": 46,
+      "total": 1025,
+      "vulnerable": 46
+    },
+    {
+      "eligible": true,
+      "project_group": "ntp",
+      "safe": 368,
+      "selected": false,
+      "selection_rank": 47,
+      "total": 414,
+      "vulnerable": 46
+    },
+    {
+      "eligible": true,
+      "project_group": "gdk-pixbuf",
+      "safe": 214,
+      "selected": false,
+      "selection_rank": 48,
+      "total": 260,
+      "vulnerable": 46
+    },
+    {
+      "eligible": true,
+      "project_group": "bdwgc",
+      "safe": 376,
+      "selected": false,
+      "selection_rank": 49,
+      "total": 420,
+      "vulnerable": 44
+    },
+    {
+      "eligible": true,
+      "project_group": "libreport",
+      "safe": 247,
+      "selected": false,
+      "selection_rank": 50,
+      "total": 291,
+      "vulnerable": 44
+    },
+    {
+      "eligible": true,
+      "project_group": "libvncserver",
+      "safe": 217,
+      "selected": false,
+      "selection_rank": 51,
+      "total": 261,
+      "vulnerable": 44
+    },
+    {
+      "eligible": true,
+      "project_group": "irssi",
+      "safe": 482,
+      "selected": false,
+      "selection_rank": 52,
+      "total": 525,
+      "vulnerable": 43
+    },
+    {
+      "eligible": true,
+      "project_group": "openexr",
+      "safe": 369,
+      "selected": false,
+      "selection_rank": 53,
+      "total": 412,
+      "vulnerable": 43
+    },
+    {
+      "eligible": true,
+      "project_group": "pjproject",
+      "safe": 461,
+      "selected": false,
+      "selection_rank": 54,
+      "total": 503,
+      "vulnerable": 42
+    },
+    {
+      "eligible": true,
+      "project_group": "psutil",
+      "safe": 161,
+      "selected": false,
+      "selection_rank": 55,
+      "total": 201,
+      "vulnerable": 40
+    },
+    {
+      "eligible": true,
+      "project_group": "keepalived",
+      "safe": 514,
+      "selected": false,
+      "selection_rank": 56,
+      "total": 553,
+      "vulnerable": 39
+    },
+    {
+      "eligible": true,
+      "project_group": "jerryscript",
+      "safe": 362,
+      "selected": false,
+      "selection_rank": 57,
+      "total": 401,
+      "vulnerable": 39
+    },
+    {
+      "eligible": true,
+      "project_group": "libyang",
+      "safe": 298,
+      "selected": false,
+      "selection_rank": 58,
+      "total": 337,
+      "vulnerable": 39
+    },
+    {
+      "eligible": true,
+      "project_group": "upx",
+      "safe": 209,
+      "selected": false,
+      "selection_rank": 59,
+      "total": 245,
+      "vulnerable": 36
+    },
+    {
+      "eligible": true,
+      "project_group": "util-linux",
+      "safe": 354,
+      "selected": false,
+      "selection_rank": 60,
+      "total": 388,
+      "vulnerable": 34
+    },
+    {
+      "eligible": true,
+      "project_group": "suricata",
+      "safe": 266,
+      "selected": false,
+      "selection_rank": 61,
+      "total": 300,
+      "vulnerable": 34
+    },
+    {
+      "eligible": true,
+      "project_group": "gnutls",
+      "safe": 265,
+      "selected": false,
+      "selection_rank": 62,
+      "total": 299,
+      "vulnerable": 34
+    },
+    {
+      "eligible": true,
+      "project_group": "edk2",
+      "safe": 233,
+      "selected": false,
+      "selection_rank": 63,
+      "total": 267,
+      "vulnerable": 34
+    },
+    {
+      "eligible": true,
+      "project_group": "ruby",
+      "safe": 439,
+      "selected": false,
+      "selection_rank": 64,
+      "total": 472,
+      "vulnerable": 33
+    },
+    {
+      "eligible": true,
+      "project_group": "bluez",
+      "safe": 729,
+      "selected": false,
+      "selection_rank": 65,
+      "total": 761,
+      "vulnerable": 32
+    },
+    {
+      "eligible": true,
+      "project_group": "evolution-ews",
+      "safe": 690,
+      "selected": false,
+      "selection_rank": 66,
+      "total": 722,
+      "vulnerable": 32
+    },
+    {
+      "eligible": true,
+      "project_group": "mujs",
+      "safe": 188,
+      "selected": false,
+      "selection_rank": 67,
+      "total": 220,
+      "vulnerable": 32
+    },
+    {
+      "eligible": true,
+      "project_group": "libssh2",
+      "safe": 169,
+      "selected": false,
+      "selection_rank": 68,
+      "total": 200,
+      "vulnerable": 31
+    },
+    {
+      "eligible": true,
+      "project_group": "nautilus",
+      "safe": 1208,
+      "selected": false,
+      "selection_rank": 69,
+      "total": 1238,
+      "vulnerable": 30
+    },
+    {
+      "eligible": true,
+      "project_group": "gdm",
+      "safe": 469,
+      "selected": false,
+      "selection_rank": 70,
+      "total": 499,
+      "vulnerable": 30
+    },
+    {
+      "eligible": true,
+      "project_group": "stunnel",
+      "safe": 260,
+      "selected": false,
+      "selection_rank": 71,
+      "total": 290,
+      "vulnerable": 30
+    },
+    {
+      "eligible": true,
+      "project_group": "sqlite",
+      "safe": 268,
+      "selected": false,
+      "selection_rank": 72,
+      "total": 297,
+      "vulnerable": 29
+    },
+    {
+      "eligible": true,
+      "project_group": "rsync",
+      "safe": 287,
+      "selected": false,
+      "selection_rank": 73,
+      "total": 315,
+      "vulnerable": 28
+    },
+    {
+      "eligible": true,
+      "project_group": "neomutt",
+      "safe": 232,
+      "selected": false,
+      "selection_rank": 74,
+      "total": 260,
+      "vulnerable": 28
+    },
+    {
+      "eligible": true,
+      "project_group": "squid",
+      "safe": 539,
+      "selected": false,
+      "selection_rank": 75,
+      "total": 566,
+      "vulnerable": 27
+    },
+    {
+      "eligible": true,
+      "project_group": "chrony",
+      "safe": 374,
+      "selected": false,
+      "selection_rank": 76,
+      "total": 401,
+      "vulnerable": 27
+    },
+    {
+      "eligible": true,
+      "project_group": "frr",
+      "safe": 250,
+      "selected": false,
+      "selection_rank": 77,
+      "total": 277,
+      "vulnerable": 27
+    },
+    {
+      "eligible": true,
+      "project_group": "tor",
+      "safe": 764,
+      "selected": false,
+      "selection_rank": 78,
+      "total": 790,
+      "vulnerable": 26
+    },
+    {
+      "eligible": true,
+      "project_group": "clamav-devel",
+      "safe": 224,
+      "selected": false,
+      "selection_rank": 79,
+      "total": 249,
+      "vulnerable": 25
+    },
+    {
+      "eligible": true,
+      "project_group": "njs",
+      "safe": 246,
+      "selected": false,
+      "selection_rank": 80,
+      "total": 270,
+      "vulnerable": 24
+    },
+    {
+      "eligible": true,
+      "project_group": "cyrus-imapd",
+      "safe": 541,
+      "selected": false,
+      "selection_rank": 81,
+      "total": 564,
+      "vulnerable": 23
+    },
+    {
+      "eligible": true,
+      "project_group": "lxc",
+      "safe": 300,
+      "selected": false,
+      "selection_rank": 82,
+      "total": 323,
+      "vulnerable": 23
+    },
+    {
+      "eligible": true,
+      "project_group": "network-manager-applet",
+      "safe": 332,
+      "selected": false,
+      "selection_rank": 83,
+      "total": 354,
+      "vulnerable": 22
+    },
+    {
+      "eligible": true,
+      "project_group": "libvpx",
+      "safe": 466,
+      "selected": false,
+      "selection_rank": 84,
+      "total": 486,
+      "vulnerable": 20
+    },
+    {
+      "eligible": true,
+      "project_group": "core",
+      "safe": 319,
+      "selected": false,
+      "selection_rank": 85,
+      "total": 339,
+      "vulnerable": 20
+    },
+    {
+      "eligible": true,
+      "project_group": "gnome-screensaver",
+      "safe": 246,
+      "selected": false,
+      "selection_rank": 86,
+      "total": 266,
+      "vulnerable": 20
+    },
+    {
+      "eligible": false,
+      "project_group": "123elf",
+      "safe": 10,
+      "total": 10,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "389-ds-base",
+      "safe": 269,
+      "total": 275,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "3proxy",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "abcm2ps",
+      "safe": 29,
+      "total": 31,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "abrt",
+      "safe": 72,
+      "total": 101,
+      "vulnerable": 29
+    },
+    {
+      "eligible": false,
+      "project_group": "accel-ppp",
+      "safe": 32,
+      "total": 39,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "acpica",
+      "safe": 1,
+      "total": 3,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "acrn-hypervisor",
+      "safe": 81,
+      "total": 112,
+      "vulnerable": 31
+    },
+    {
+      "eligible": false,
+      "project_group": "AESCrypt",
+      "safe": 13,
+      "total": 21,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "agoo",
+      "safe": 177,
+      "total": 186,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "aide",
+      "safe": 18,
+      "total": 21,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "aircrack-ng",
+      "safe": 6,
+      "total": 8,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "akashi",
+      "safe": 30,
+      "total": 32,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "amanda",
+      "safe": 158,
+      "total": 187,
+      "vulnerable": 29
+    },
+    {
+      "eligible": false,
+      "project_group": "android_security",
+      "safe": 2,
+      "total": 2,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "arangodb",
+      "safe": 66,
+      "total": 72,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "aria2",
+      "safe": 13,
+      "total": 15,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "aspell",
+      "safe": 80,
+      "total": 86,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "astc-encoder",
+      "safe": 34,
+      "total": 40,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "at-spi2-atk",
+      "safe": 39,
+      "total": 43,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "at91bootstrap",
+      "safe": 3,
+      "total": 6,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "atheme",
+      "safe": 66,
+      "total": 78,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "aubio",
+      "safe": 30,
+      "total": 32,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "audiofile",
+      "safe": 32,
+      "total": 45,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "augeas",
+      "safe": 99,
+      "total": 112,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "avahi",
+      "safe": 90,
+      "total": 100,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "axtls-8266",
+      "safe": 8,
+      "total": 11,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "bind9",
+      "safe": 182,
+      "total": 198,
+      "vulnerable": 16
+    },
+    {
+      "eligible": false,
+      "project_group": "binutils-gdb",
+      "safe": 25,
+      "total": 28,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "bird",
+      "safe": 126,
+      "total": 129,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "bison",
+      "safe": 90,
+      "total": 97,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "bitcoin",
+      "safe": 70,
+      "total": 72,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "bitlbee",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "bluetooth-next",
+      "safe": 5,
+      "total": 10,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "botan",
+      "safe": 133,
+      "total": 143,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "bpf",
+      "safe": 93,
+      "total": 105,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "bro",
+      "safe": 18,
+      "total": 21,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "brotli",
+      "safe": 188,
+      "total": 205,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "bubblewrap",
+      "safe": 5,
+      "total": 7,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "busybox",
+      "safe": 149,
+      "total": 168,
+      "vulnerable": 19
+    },
+    {
+      "eligible": false,
+      "project_group": "bzrtp",
+      "safe": 24,
+      "total": 27,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "c-ares",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "c-shquote",
+      "safe": 35,
+      "total": 39,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "cairo",
+      "safe": 24,
+      "total": 31,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "cantata",
+      "safe": 0,
+      "total": 40,
+      "vulnerable": 40
+    },
+    {
+      "eligible": false,
+      "project_group": "capnproto",
+      "safe": 28,
+      "total": 28,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "capstone",
+      "safe": 2,
+      "total": 2,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "ceph-client",
+      "safe": 9,
+      "total": 9,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "cgal",
+      "safe": 234,
+      "total": 252,
+      "vulnerable": 18
+    },
+    {
+      "eligible": false,
+      "project_group": "cgit",
+      "safe": 31,
+      "total": 33,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "cgminer",
+      "safe": 7,
+      "total": 11,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "char-misc",
+      "safe": 3,
+      "total": 6,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "charybdis",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "cifs-utils",
+      "safe": 20,
+      "total": 24,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "cimg",
+      "safe": 2280,
+      "total": 2282,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "cJSON",
+      "safe": 36,
+      "total": 38,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "cluster-glue",
+      "safe": 26,
+      "total": 28,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "cmark-gfm",
+      "safe": 33,
+      "total": 36,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "cockpit",
+      "safe": 144,
+      "total": 150,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "collectd",
+      "safe": 1,
+      "total": 4,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "connman",
+      "safe": 63,
+      "total": 72,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "contiki-ng",
+      "safe": 22,
+      "total": 26,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "coreboot",
+      "safe": 45,
+      "total": 48,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "corosync",
+      "safe": 27,
+      "total": 32,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "cpio",
+      "safe": 22,
+      "total": 32,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "cpp-peglib",
+      "safe": 0,
+      "total": 25,
+      "vulnerable": 25
+    },
+    {
+      "eligible": false,
+      "project_group": "crawl",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "cronie",
+      "safe": 57,
+      "total": 62,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "Crow",
+      "safe": 90,
+      "total": 100,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "cryptsetup",
+      "safe": 351,
+      "total": 365,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "cups",
+      "safe": 343,
+      "total": 359,
+      "vulnerable": 16
+    },
+    {
+      "eligible": false,
+      "project_group": "cxxtools",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "cyrus-sasl",
+      "safe": 5,
+      "total": 9,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "das_watchdog",
+      "safe": 6,
+      "total": 7,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "dash",
+      "safe": 32,
+      "total": 34,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "date",
+      "safe": 0,
+      "total": 22,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "davs2",
+      "safe": 21,
+      "total": 23,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "DBD-mysql",
+      "safe": 25,
+      "total": 27,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "dbus",
+      "safe": 11,
+      "total": 13,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "dcmtk",
+      "safe": 134,
+      "total": 141,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "deepin-clone",
+      "safe": 0,
+      "total": 3,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "doas",
+      "safe": 8,
+      "total": 10,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "docker-credential-helpers",
+      "safe": 14,
+      "total": 16,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "domoticz",
+      "safe": 54,
+      "total": 55,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "dosfstools",
+      "safe": 3,
+      "total": 6,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "dpdk",
+      "safe": 95,
+      "total": 131,
+      "vulnerable": 36
+    },
+    {
+      "eligible": false,
+      "project_group": "dpdk-stable",
+      "safe": 116,
+      "total": 123,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "e2fsprogs",
+      "safe": 122,
+      "total": 134,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "ecdsautils",
+      "safe": 7,
+      "total": 9,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "engine",
+      "safe": 4,
+      "total": 7,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "enlightenment",
+      "safe": 12,
+      "total": 15,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "eog",
+      "safe": 9,
+      "total": 11,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "epiphany",
+      "safe": 32,
+      "total": 34,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "Espruino",
+      "safe": 194,
+      "total": 204,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "ettercap",
+      "safe": 14,
+      "total": 20,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "eucalyptus",
+      "safe": 62,
+      "total": 71,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "evince",
+      "safe": 91,
+      "total": 101,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "evolution",
+      "safe": 74,
+      "total": 85,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "evolution-data-server",
+      "safe": 211,
+      "total": 215,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "exim",
+      "safe": 152,
+      "total": 173,
+      "vulnerable": 21
+    },
+    {
+      "eligible": false,
+      "project_group": "exiv2",
+      "safe": 163,
+      "total": 170,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "ext-http",
+      "safe": 37,
+      "total": 40,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "faad2",
+      "safe": 12,
+      "total": 13,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "Fast-DDS",
+      "safe": 327,
+      "total": 346,
+      "vulnerable": 19
+    },
+    {
+      "eligible": false,
+      "project_group": "fastd",
+      "safe": 11,
+      "total": 13,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "fastecdsa",
+      "safe": 11,
+      "total": 14,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "fbthrift",
+      "safe": 254,
+      "total": 259,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "fdkaac",
+      "safe": 21,
+      "total": 23,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "feh",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "file",
+      "safe": 79,
+      "total": 135,
+      "vulnerable": 56
+    },
+    {
+      "eligible": false,
+      "project_group": "file-roller",
+      "safe": 241,
+      "total": 245,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "firebird",
+      "safe": 10,
+      "total": 14,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "fizz",
+      "safe": 44,
+      "total": 48,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "flac",
+      "safe": 90,
+      "total": 94,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "flatpak",
+      "safe": 785,
+      "total": 799,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "folly",
+      "safe": 393,
+      "total": 403,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "fontforge",
+      "safe": 442,
+      "total": 448,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "freeipa",
+      "safe": 30,
+      "total": 43,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "freeradius-server",
+      "safe": 56,
+      "total": 65,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "FreeRTOS-Kernel",
+      "safe": 19,
+      "total": 23,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "freetype2-demos",
+      "safe": 91,
+      "total": 97,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "fribidi",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "GameNetworkingSockets",
+      "safe": 35,
+      "total": 38,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "gcab",
+      "safe": 36,
+      "total": 38,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gegl",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gerbv",
+      "safe": 18,
+      "total": 27,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "gifsicle",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "GIMP",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gimp",
+      "safe": 95,
+      "total": 117,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "glewlwyd",
+      "safe": 10,
+      "total": 12,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "glib",
+      "safe": 28,
+      "total": 39,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "glib-networking",
+      "safe": 153,
+      "total": 155,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "glibc",
+      "safe": 147,
+      "total": 158,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "gnash",
+      "safe": 15,
+      "total": 17,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gnome-autoar",
+      "safe": 60,
+      "total": 64,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "gnome-font-viewer",
+      "safe": 10,
+      "total": 12,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gnome-online-accounts",
+      "safe": 148,
+      "total": 173,
+      "vulnerable": 25
+    },
+    {
+      "eligible": false,
+      "project_group": "gnome-session",
+      "safe": 15,
+      "total": 21,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "gnulib",
+      "safe": 9,
+      "total": 13,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "godot",
+      "safe": 6,
+      "total": 9,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "gpmf-parser",
+      "safe": 19,
+      "total": 28,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "graphite",
+      "safe": 53,
+      "total": 58,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "graphviz",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "grep",
+      "safe": 78,
+      "total": 120,
+      "vulnerable": 42
+    },
+    {
+      "eligible": false,
+      "project_group": "grub",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "gst-plugins-ugly",
+      "safe": 49,
+      "total": 53,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "gstreamer",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "gtk-vnc",
+      "safe": 37,
+      "total": 40,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "gvfs",
+      "safe": 180,
+      "total": 190,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "h2o",
+      "safe": 49,
+      "total": 52,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "haproxy",
+      "safe": 15,
+      "total": 25,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "harfbuzz",
+      "safe": 44,
+      "total": 52,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "heimdal",
+      "safe": 19,
+      "total": 24,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "hermes",
+      "safe": 160,
+      "total": 166,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "hexchat",
+      "safe": 8,
+      "total": 9,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "hhvm",
+      "safe": 77,
+      "total": 80,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "hiredis",
+      "safe": 13,
+      "total": 13,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "history",
+      "safe": 32,
+      "total": 36,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "hivex",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "htmldoc",
+      "safe": 14,
+      "total": 16,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "http-parser",
+      "safe": 18,
+      "total": 20,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "httpd",
+      "safe": 130,
+      "total": 147,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "ibus",
+      "safe": 10,
+      "total": 14,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "icecast-server",
+      "safe": 13,
+      "total": 18,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "icu",
+      "safe": 85,
+      "total": 91,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "iipsrv",
+      "safe": 44,
+      "total": 52,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "imagick",
+      "safe": 15,
+      "total": 17,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "incubator-doris",
+      "safe": 154,
+      "total": 161,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "iniparser",
+      "safe": 17,
+      "total": 17,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "inspircd",
+      "safe": 73,
+      "total": 79,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "iodine",
+      "safe": 53,
+      "total": 62,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "ioq3",
+      "safe": 340,
+      "total": 354,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "iperf",
+      "safe": 36,
+      "total": 90,
+      "vulnerable": 54
+    },
+    {
+      "eligible": false,
+      "project_group": "ipmitool",
+      "safe": 102,
+      "total": 110,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "ippusbxd",
+      "safe": 12,
+      "total": 15,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "irssi-proxy",
+      "safe": 45,
+      "total": 51,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "isolated-vm",
+      "safe": 44,
+      "total": 54,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "jabberd2",
+      "safe": 57,
+      "total": 61,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "jansson",
+      "safe": 147,
+      "total": 169,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "jdk17u",
+      "safe": 12,
+      "total": 12,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "jdk8u",
+      "safe": 98,
+      "total": 101,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "jhead",
+      "safe": 19,
+      "total": 26,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "jpeg-quantsmooth",
+      "safe": 11,
+      "total": 13,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "jq",
+      "safe": 9,
+      "total": 11,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "js-compute-runtime",
+      "safe": 181,
+      "total": 183,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "json",
+      "safe": 66,
+      "total": 72,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "json-c",
+      "safe": 39,
+      "total": 41,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "kamailio",
+      "safe": 3,
+      "total": 5,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "kde-cli-tools",
+      "safe": 3,
+      "total": 5,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "kdeconnect-kde",
+      "safe": 2,
+      "total": 2,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "keepkey-firmware",
+      "safe": 49,
+      "total": 62,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "kernel",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "knc",
+      "safe": 3,
+      "total": 5,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "krecipes",
+      "safe": 91,
+      "total": 94,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "kvm-guest-drivers-windows",
+      "safe": 197,
+      "total": 211,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "lasso",
+      "safe": 32,
+      "total": 35,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "ldns",
+      "safe": 216,
+      "total": 224,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "lepton",
+      "safe": 70,
+      "total": 74,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "leptonica",
+      "safe": 41,
+      "total": 55,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "lftp",
+      "safe": 55,
+      "total": 57,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libarchive",
+      "safe": 120,
+      "total": 173,
+      "vulnerable": 53
+    },
+    {
+      "eligible": false,
+      "project_group": "libass",
+      "safe": 19,
+      "total": 21,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libav",
+      "safe": 7,
+      "total": 10,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libbson",
+      "safe": 0,
+      "total": 4,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libcomps",
+      "safe": 103,
+      "total": 107,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libcroco",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libde265",
+      "safe": 45,
+      "total": 50,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "libdwarf-code",
+      "safe": 0,
+      "total": 6,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "libdxfrw",
+      "safe": 83,
+      "total": 106,
+      "vulnerable": 23
+    },
+    {
+      "eligible": false,
+      "project_group": "libetpan",
+      "safe": 35,
+      "total": 36,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libevent",
+      "safe": 12,
+      "total": 40,
+      "vulnerable": 28
+    },
+    {
+      "eligible": false,
+      "project_group": "libexif",
+      "safe": 57,
+      "total": 69,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "libexpat",
+      "safe": 133,
+      "total": 140,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "libfep",
+      "safe": 24,
+      "total": 26,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libgadu",
+      "safe": 0,
+      "total": 4,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libgcrypt",
+      "safe": 72,
+      "total": 81,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libgd",
+      "safe": 117,
+      "total": 152,
+      "vulnerable": 35
+    },
+    {
+      "eligible": false,
+      "project_group": "libgit2",
+      "safe": 16,
+      "total": 33,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "libgsf",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libgxps",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libheif",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libidn",
+      "safe": 42,
+      "total": 50,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "libidn2",
+      "safe": 11,
+      "total": 17,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "libimobiledevice",
+      "safe": 4,
+      "total": 5,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libinfinity",
+      "safe": 3,
+      "total": 4,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libinput",
+      "safe": 223,
+      "total": 233,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "libjpeg",
+      "safe": 82,
+      "total": 87,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "libjpeg-turbo",
+      "safe": 99,
+      "total": 135,
+      "vulnerable": 36
+    },
+    {
+      "eligible": false,
+      "project_group": "liblouis",
+      "safe": 20,
+      "total": 25,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "libmaxminddb",
+      "safe": 58,
+      "total": 65,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "libmicrohttpd",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libming",
+      "safe": 0,
+      "total": 3,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libmobi",
+      "safe": 87,
+      "total": 91,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libmodbus",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libmspack",
+      "safe": 24,
+      "total": 32,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "libmysofa",
+      "safe": 1,
+      "total": 3,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libnbd",
+      "safe": 122,
+      "total": 142,
+      "vulnerable": 20
+    },
+    {
+      "eligible": false,
+      "project_group": "libndp",
+      "safe": 96,
+      "total": 100,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libpcap",
+      "safe": 19,
+      "total": 22,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libplist",
+      "safe": 8,
+      "total": 12,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libpng",
+      "safe": 118,
+      "total": 127,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libpod",
+      "safe": 16,
+      "total": 19,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libqb",
+      "safe": 103,
+      "total": 111,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "LibRaw-demosaic-pack-GPL2",
+      "safe": 3,
+      "total": 5,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libredwg",
+      "safe": 305,
+      "total": 314,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libreswan",
+      "safe": 7,
+      "total": 13,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "libsass",
+      "safe": 0,
+      "total": 4,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libseccomp",
+      "safe": 74,
+      "total": 87,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "libsixel",
+      "safe": 15,
+      "total": 18,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libslirp",
+      "safe": 58,
+      "total": 71,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "libsndfile",
+      "safe": 70,
+      "total": 109,
+      "vulnerable": 39
+    },
+    {
+      "eligible": false,
+      "project_group": "libsoup",
+      "safe": 0,
+      "total": 3,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "libsrtp",
+      "safe": 53,
+      "total": 62,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libssh",
+      "safe": 71,
+      "total": 100,
+      "vulnerable": 29
+    },
+    {
+      "eligible": false,
+      "project_group": "libtasn1",
+      "safe": 12,
+      "total": 20,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "libtomcrypt",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libtorrent",
+      "safe": 0,
+      "total": 13,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "libu2f-host",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libusbmuxd",
+      "safe": 6,
+      "total": 8,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libuv",
+      "safe": 1,
+      "total": 5,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libvips",
+      "safe": 17,
+      "total": 21,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "libvirt",
+      "safe": 734,
+      "total": 753,
+      "vulnerable": 19
+    },
+    {
+      "eligible": false,
+      "project_group": "libwebm",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "libx11",
+      "safe": 77,
+      "total": 101,
+      "vulnerable": 24
+    },
+    {
+      "eligible": false,
+      "project_group": "libxkbcommon",
+      "safe": 8,
+      "total": 17,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libxmljs",
+      "safe": 17,
+      "total": 19,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libxslt",
+      "safe": 149,
+      "total": 162,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "libxsmm",
+      "safe": 12,
+      "total": 21,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "libzip",
+      "safe": 4,
+      "total": 6,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "libzmq",
+      "safe": 27,
+      "total": 40,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "LIEF",
+      "safe": 198,
+      "total": 205,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "lighttpd1.4",
+      "safe": 3,
+      "total": 6,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "linux-next",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "linux-stable",
+      "safe": 38,
+      "total": 47,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "linux-stable-rt",
+      "safe": 85,
+      "total": 91,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "lldpd",
+      "safe": 60,
+      "total": 68,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "llhttp",
+      "safe": 5,
+      "total": 7,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "logrotate",
+      "safe": 63,
+      "total": 68,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "LoRaMac-node",
+      "safe": 131,
+      "total": 134,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "lrzip",
+      "safe": 19,
+      "total": 23,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "lua",
+      "safe": 79,
+      "total": 95,
+      "vulnerable": 16
+    },
+    {
+      "eligible": false,
+      "project_group": "lua-nginx-module",
+      "safe": 14,
+      "total": 17,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "LuaJIT",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "lwip",
+      "safe": 22,
+      "total": 32,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "lynx-snapshots",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "lz4",
+      "safe": 104,
+      "total": 111,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "m4",
+      "safe": 69,
+      "total": 72,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "mapserver",
+      "safe": 82,
+      "total": 85,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "mariadb-connector-c",
+      "safe": 33,
+      "total": 37,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "matio",
+      "safe": 1,
+      "total": 3,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "mbed-os",
+      "safe": 24,
+      "total": 28,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "mbedtls",
+      "safe": 60,
+      "total": 77,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "mcrouter",
+      "safe": 37,
+      "total": 39,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "media-tree",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "media_tree",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "memcached",
+      "safe": 306,
+      "total": 319,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "menu-cache",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "miniupnp",
+      "safe": 23,
+      "total": 32,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "mod_auth_mellon",
+      "safe": 125,
+      "total": 141,
+      "vulnerable": 16
+    },
+    {
+      "eligible": false,
+      "project_group": "mod_auth_openidc",
+      "safe": 219,
+      "total": 237,
+      "vulnerable": 18
+    },
+    {
+      "eligible": false,
+      "project_group": "mod_md",
+      "safe": 77,
+      "total": 81,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "moddable",
+      "safe": 150,
+      "total": 152,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "ModSecurity",
+      "safe": 88,
+      "total": 93,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "MonetDB",
+      "safe": 5,
+      "total": 7,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "mongo-c-driver",
+      "safe": 6,
+      "total": 8,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "mongo-c-driver-legacy",
+      "safe": 0,
+      "total": 39,
+      "vulnerable": 39
+    },
+    {
+      "eligible": false,
+      "project_group": "mongoose",
+      "safe": 27,
+      "total": 29,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "mongoose-os",
+      "safe": 37,
+      "total": 41,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "monkey",
+      "safe": 34,
+      "total": 39,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "mono",
+      "safe": 167,
+      "total": 176,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "mosquitto",
+      "safe": 3,
+      "total": 4,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "mruby",
+      "safe": 143,
+      "total": 157,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "mumble",
+      "safe": 118,
+      "total": 123,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "mupdf",
+      "safe": 180,
+      "total": 191,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "mutt",
+      "safe": 243,
+      "total": 257,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "nagioscore",
+      "safe": 1,
+      "total": 4,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "nbd",
+      "safe": 13,
+      "total": 15,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "nbdkit",
+      "safe": 222,
+      "total": 241,
+      "vulnerable": 19
+    },
+    {
+      "eligible": false,
+      "project_group": "ncurses",
+      "safe": 0,
+      "total": 61,
+      "vulnerable": 61
+    },
+    {
+      "eligible": false,
+      "project_group": "ndjbdns",
+      "safe": 92,
+      "total": 102,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "nDPI",
+      "safe": 0,
+      "total": 4,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "nefarious2",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "net-next",
+      "safe": 198,
+      "total": 207,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "net-snmp",
+      "safe": 243,
+      "total": 256,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "netdata",
+      "safe": 7,
+      "total": 8,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "NetHack",
+      "safe": 74,
+      "total": 76,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "netmask",
+      "safe": 32,
+      "total": 37,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "nettle",
+      "safe": 52,
+      "total": 84,
+      "vulnerable": 32
+    },
+    {
+      "eligible": false,
+      "project_group": "nf",
+      "safe": 7,
+      "total": 8,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "nf-next",
+      "safe": 167,
+      "total": 170,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "nfdump",
+      "safe": 48,
+      "total": 73,
+      "vulnerable": 25
+    },
+    {
+      "eligible": false,
+      "project_group": "nghttp2",
+      "safe": 622,
+      "total": 640,
+      "vulnerable": 18
+    },
+    {
+      "eligible": false,
+      "project_group": "nginx",
+      "safe": 31,
+      "total": 34,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "nmap",
+      "safe": 12,
+      "total": 12,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "nokogiri",
+      "safe": 12,
+      "total": 18,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "nspluginwrapper",
+      "safe": 263,
+      "total": 268,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "ntfs-3g",
+      "safe": 17,
+      "total": 19,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "ntopng",
+      "safe": 150,
+      "total": 152,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "ocaml",
+      "safe": 71,
+      "total": 76,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "ok-file-formats",
+      "safe": 1,
+      "total": 5,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "olm",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "Onigmo",
+      "safe": 27,
+      "total": 33,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "oniguruma",
+      "safe": 423,
+      "total": 439,
+      "vulnerable": 16
+    },
+    {
+      "eligible": false,
+      "project_group": "opa-fm",
+      "safe": 71,
+      "total": 76,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "open-vm-tools",
+      "safe": 81,
+      "total": 91,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "open5gs",
+      "safe": 0,
+      "total": 5,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "open62541",
+      "safe": 98,
+      "total": 103,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "opencv",
+      "safe": 92,
+      "total": 109,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "OpenDoas",
+      "safe": 13,
+      "total": 16,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "openenclave",
+      "safe": 152,
+      "total": 182,
+      "vulnerable": 30
+    },
+    {
+      "eligible": false,
+      "project_group": "openldap",
+      "safe": 58,
+      "total": 67,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "openmpt",
+      "safe": 10,
+      "total": 14,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "openrazer",
+      "safe": 84,
+      "total": 87,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "openssh-portable",
+      "safe": 39,
+      "total": 44,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "Openswan",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "openthread",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "openvpn",
+      "safe": 6,
+      "total": 8,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "optee_os",
+      "safe": 123,
+      "total": 145,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "opus",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "osquery",
+      "safe": 73,
+      "total": 78,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "ovs",
+      "safe": 789,
+      "total": 806,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "p11-kit",
+      "safe": 261,
+      "total": 273,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "pacemaker",
+      "safe": 152,
+      "total": 173,
+      "vulnerable": 21
+    },
+    {
+      "eligible": false,
+      "project_group": "PackageKit",
+      "safe": 64,
+      "total": 68,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "pam-u2f",
+      "safe": 5,
+      "total": 9,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "pam_pkcs11",
+      "safe": 67,
+      "total": 76,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "pango",
+      "safe": 84,
+      "total": 106,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "passenger",
+      "safe": 156,
+      "total": 173,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "patch",
+      "safe": 31,
+      "total": 41,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "pcre2",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "pdfresurrect",
+      "safe": 9,
+      "total": 20,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "pdns",
+      "safe": 62,
+      "total": 66,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "percona-xtradb-cluster",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "perl5",
+      "safe": 121,
+      "total": 127,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "pgbouncer",
+      "safe": 5,
+      "total": 8,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "php-radius",
+      "safe": 66,
+      "total": 68,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "picocom",
+      "safe": 33,
+      "total": 35,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "pigz",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "Pillow",
+      "safe": 16,
+      "total": 27,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "pngquant",
+      "safe": 4,
+      "total": 4,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "poco",
+      "safe": 0,
+      "total": 17,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "polarssl",
+      "safe": 128,
+      "total": 164,
+      "vulnerable": 36
+    },
+    {
+      "eligible": false,
+      "project_group": "polipo",
+      "safe": 64,
+      "total": 70,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "polkit",
+      "safe": 17,
+      "total": 19,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "poppler",
+      "safe": 461,
+      "total": 469,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "portable",
+      "safe": 7,
+      "total": 10,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "pound",
+      "safe": 24,
+      "total": 27,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "ppp",
+      "safe": 38,
+      "total": 41,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "profanity",
+      "safe": 67,
+      "total": 71,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "proftpd",
+      "safe": 12,
+      "total": 14,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "protobuf",
+      "safe": 195,
+      "total": 198,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "proxychains-ng",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "proxygen",
+      "safe": 180,
+      "total": 186,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "pupnp-code",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "pure-ftpd",
+      "safe": 7,
+      "total": 9,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "pyfribidi",
+      "safe": 3,
+      "total": 8,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "pykerberos",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "qBittorrent",
+      "safe": 62,
+      "total": 68,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "qpid-proton",
+      "safe": 146,
+      "total": 151,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "qtbase",
+      "safe": 2,
+      "total": 2,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "quagga",
+      "safe": 77,
+      "total": 108,
+      "vulnerable": 31
+    },
+    {
+      "eligible": false,
+      "project_group": "quagga-RE",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "quassel",
+      "safe": 269,
+      "total": 282,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "quazip",
+      "safe": 34,
+      "total": 37,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "radvd",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "rawstudio",
+      "safe": 17,
+      "total": 19,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "rdesktop",
+      "safe": 30,
+      "total": 63,
+      "vulnerable": 33
+    },
+    {
+      "eligible": false,
+      "project_group": "re2c",
+      "safe": 84,
+      "total": 140,
+      "vulnerable": 56
+    },
+    {
+      "eligible": false,
+      "project_group": "redcarpet",
+      "safe": 4,
+      "total": 4,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "relic",
+      "safe": 5,
+      "total": 8,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "rhonabwy",
+      "safe": 100,
+      "total": 102,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "rizin",
+      "safe": 388,
+      "total": 402,
+      "vulnerable": 14
+    },
+    {
+      "eligible": false,
+      "project_group": "rpm",
+      "safe": 49,
+      "total": 61,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "rsyslog",
+      "safe": 151,
+      "total": 157,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "runc",
+      "safe": 10,
+      "total": 10,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "screen",
+      "safe": 229,
+      "total": 233,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "SDL",
+      "safe": 28,
+      "total": 30,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "SDL_ttf",
+      "safe": 75,
+      "total": 78,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "selinux",
+      "safe": 299,
+      "total": 304,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "sfntly",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "sgminer",
+      "safe": 1,
+      "total": 4,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "shadowsocks-libev",
+      "safe": 6,
+      "total": 8,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "shotcut",
+      "safe": 209,
+      "total": 211,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "sleuthkit",
+      "safe": 51,
+      "total": 51,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "slurm",
+      "safe": 223,
+      "total": 238,
+      "vulnerable": 15
+    },
+    {
+      "eligible": false,
+      "project_group": "smb4k",
+      "safe": 72,
+      "total": 77,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "snapd",
+      "safe": 29,
+      "total": 31,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "sound",
+      "safe": 122,
+      "total": 130,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "soundtouch",
+      "safe": 0,
+      "total": 4,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "spice",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "spice-vd_agent",
+      "safe": 49,
+      "total": 53,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "squashfs-tools",
+      "safe": 11,
+      "total": 17,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "src",
+      "safe": 323,
+      "total": 336,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "ssdp-responder",
+      "safe": 3,
+      "total": 4,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "ssh2",
+      "safe": 59,
+      "total": 59,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "sssd",
+      "safe": 25,
+      "total": 33,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "subconverter",
+      "safe": 59,
+      "total": 68,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "sudo",
+      "safe": 40,
+      "total": 43,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "suhosin",
+      "safe": 3,
+      "total": 5,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "swaylock",
+      "safe": 36,
+      "total": 40,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "swoole-src",
+      "safe": 34,
+      "total": 39,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "swtpm",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "sysstat",
+      "safe": 2,
+      "total": 9,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "t1utils",
+      "safe": 73,
+      "total": 82,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "tang",
+      "safe": 20,
+      "total": 22,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "tar",
+      "safe": 2,
+      "total": 6,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "target-pending",
+      "safe": 2,
+      "total": 4,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "tcmu-runner",
+      "safe": 105,
+      "total": 116,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "tcpreplay",
+      "safe": 51,
+      "total": 59,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "texlive-source",
+      "safe": 19,
+      "total": 21,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "tflite-micro",
+      "safe": 22,
+      "total": 25,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "thrift",
+      "safe": 0,
+      "total": 6,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "tigervnc",
+      "safe": 59,
+      "total": 76,
+      "vulnerable": 17
+    },
+    {
+      "eligible": false,
+      "project_group": "tinc",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "tinygltf",
+      "safe": 242,
+      "total": 249,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "tip",
+      "safe": 80,
+      "total": 122,
+      "vulnerable": 42
+    },
+    {
+      "eligible": false,
+      "project_group": "tk",
+      "safe": 228,
+      "total": 237,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "tmux",
+      "safe": 8,
+      "total": 8,
+      "vulnerable": 0
+    },
+    {
+      "eligible": false,
+      "project_group": "tntnet",
+      "safe": 11,
+      "total": 13,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "torque",
+      "safe": 0,
+      "total": 2,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "totd",
+      "safe": 18,
+      "total": 21,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "tpm2.0-tools",
+      "safe": 8,
+      "total": 10,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "trafficserver",
+      "safe": 154,
+      "total": 158,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "transmission",
+      "safe": 77,
+      "total": 79,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "tsMuxer",
+      "safe": 63,
+      "total": 69,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "tty",
+      "safe": 15,
+      "total": 24,
+      "vulnerable": 9
+    },
+    {
+      "eligible": false,
+      "project_group": "turbovnc",
+      "safe": 65,
+      "total": 67,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "u-boot",
+      "safe": 70,
+      "total": 81,
+      "vulnerable": 11
+    },
+    {
+      "eligible": false,
+      "project_group": "ubridge",
+      "safe": 14,
+      "total": 15,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "uclibc-ng",
+      "safe": 72,
+      "total": 74,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "udev",
+      "safe": 10,
+      "total": 15,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "unicorn",
+      "safe": 0,
+      "total": 5,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "unixODBC",
+      "safe": 0,
+      "total": 8,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "unrar",
+      "safe": 5,
+      "total": 7,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "unzip",
+      "safe": 21,
+      "total": 28,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "uriparser",
+      "safe": 195,
+      "total": 200,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "user-namespace",
+      "safe": 14,
+      "total": 19,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "uWebSockets",
+      "safe": 0,
+      "total": 1,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "uwsgi",
+      "safe": 108,
+      "total": 109,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "Varnish-Cache",
+      "safe": 75,
+      "total": 81,
+      "vulnerable": 6
+    },
+    {
+      "eligible": false,
+      "project_group": "varnish-cache",
+      "safe": 67,
+      "total": 74,
+      "vulnerable": 7
+    },
+    {
+      "eligible": false,
+      "project_group": "VeraCrypt",
+      "safe": 14,
+      "total": 15,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "virglrenderer",
+      "safe": 437,
+      "total": 445,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "vorbis",
+      "safe": 10,
+      "total": 13,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "vte",
+      "safe": 28,
+      "total": 30,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "w3m",
+      "safe": 330,
+      "total": 340,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "WavPack",
+      "safe": 32,
+      "total": 42,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "wayland",
+      "safe": 24,
+      "total": 27,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "webcc",
+      "safe": 93,
+      "total": 106,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "webserver",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "weechat",
+      "safe": 81,
+      "total": 86,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "wget",
+      "safe": 171,
+      "total": 183,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "wildmidi",
+      "safe": 10,
+      "total": 12,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "winscp",
+      "safe": 210,
+      "total": 213,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "winsparkle",
+      "safe": 12,
+      "total": 14,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "wolfssh",
+      "safe": 70,
+      "total": 80,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "wolfssl",
+      "safe": 697,
+      "total": 705,
+      "vulnerable": 8
+    },
+    {
+      "eligible": false,
+      "project_group": "xorg-xserver",
+      "safe": 9,
+      "total": 13,
+      "vulnerable": 4
+    },
+    {
+      "eligible": false,
+      "project_group": "xrdp",
+      "safe": 190,
+      "total": 202,
+      "vulnerable": 12
+    },
+    {
+      "eligible": false,
+      "project_group": "xserver",
+      "safe": 31,
+      "total": 41,
+      "vulnerable": 10
+    },
+    {
+      "eligible": false,
+      "project_group": "yara",
+      "safe": 137,
+      "total": 159,
+      "vulnerable": 22
+    },
+    {
+      "eligible": false,
+      "project_group": "yodl",
+      "safe": 1,
+      "total": 2,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "yubico-pam",
+      "safe": 2,
+      "total": 3,
+      "vulnerable": 1
+    },
+    {
+      "eligible": false,
+      "project_group": "zcash",
+      "safe": 17,
+      "total": 20,
+      "vulnerable": 3
+    },
+    {
+      "eligible": false,
+      "project_group": "zephyr",
+      "safe": 35,
+      "total": 37,
+      "vulnerable": 2
+    },
+    {
+      "eligible": false,
+      "project_group": "zfs",
+      "safe": 94,
+      "total": 99,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "zlib",
+      "safe": 50,
+      "total": 63,
+      "vulnerable": 13
+    },
+    {
+      "eligible": false,
+      "project_group": "znc",
+      "safe": 699,
+      "total": 714,
+      "vulnerable": 15
+    },
+    {
+      "eligible": false,
+      "project_group": "ZRTPCPP",
+      "safe": 0,
+      "total": 5,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "zstd",
+      "safe": 179,
+      "total": 184,
+      "vulnerable": 5
+    },
+    {
+      "eligible": false,
+      "project_group": "zziplib",
+      "safe": 55,
+      "total": 86,
+      "vulnerable": 31
+    }
+  ],
+  "protocol_version": "vultriage-extension-v2",
+  "selected_project_groups": [
+    "linux",
+    "openssl",
+    "tensorflow",
+    "php",
+    "qemu",
+    "imagemagick",
+    "qpdf",
+    "envoy",
+    "tcpdump",
+    "jasper",
+    "radare2",
+    "postgres",
+    "mysql-server",
+    "FreeRDP",
+    "libxml2",
+    "krb5",
+    "samba",
+    "vim",
+    "net",
+    "ffmpeg",
+    "mongo",
+    "ghostpdl",
+    "libtpms",
+    "librsvg"
+  ],
+  "selected_rows": 79355,
+  "selection_used_model_outputs": false
+}

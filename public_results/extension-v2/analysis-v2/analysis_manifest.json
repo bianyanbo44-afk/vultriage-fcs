@@ -1,0 +1,16 @@
+{
+  "analysis_script_sha256": "578E5D3490718D45C26A39854EBA92112BA5A4475E2C59C3F43E982BA4036846",
+  "analyzed_at_utc": "2026-08-14T09:49:17.057314+00:00",
+  "bootstrap_replicates": 10000,
+  "comparison_rows": 450,
+  "detector_performance_rows": 48,
+  "detector_project_performance_sha256": "E173653B26C82E0C97865FC8373439D14DD23E9DE0FE69225C19437EB9F80180",
+  "gate_discrimination_sha256": "F2543FFF37DFC9A1D473676B66D3DFA978CF1771F5C87A84CEF81EC58F584B5F",
+  "gate_rows": 2,
+  "independent_unit": "target_project_group",
+  "metrics_sha256": "AB48DFC01263DED8E63A64ACF12E31DBB942C21200E5F4B940A2BA545B3AB491",
+  "paired_project_comparisons_sha256": "01E735AE9270C3C5FC27F594B5A59421EDC68B89DD7DD4936B72604C62AC1E20",
+  "project_rows": 10800,
+  "project_seed_averages_sha256": "8F0EF0EFCE0EFC9572306FCC9B38D89287DF7DC45FC3306C67E5DC422A46E971",
+  "seed_handling": "five seeds averaged within project before inference"
+}

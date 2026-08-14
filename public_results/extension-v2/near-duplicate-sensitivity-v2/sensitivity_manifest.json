@@ -1,0 +1,29 @@
+{
+  "analysis_scope": "exclude target rows with exact lexical-token-set Jaccard >= 0.90 to any PrimeVul row",
+  "cohort_sha256": "8702992C3CA53F273BDCFB189D2D455ACD4456BF6DE277C2B07BC6ECEE59EEF4",
+  "created_at_utc": "2026-08-14T09:55:43.903577+00:00",
+  "detectors": [
+    "hashing",
+    "codebert"
+  ],
+  "evaluation_manifest_sha256": "D3C87FC6F5975E3DEB5E0F283E12CE9DDBD5F1F3AB31071F599C23364B34B39D",
+  "excluded_target_rows": 15026,
+  "metric_rows": 6480,
+  "metrics_sha256": "E8A4988FCA5DFD95F3F6F5355DB14110E6AEB88DFB53635C18E7A07E73AFDDFE",
+  "near_duplicate_summary_sha256": "6BA69F9BDBB37B875AB28EB1C336E3EE33CAC3EFDA9E69E06286EE8B1CA72034",
+  "post_prediction_label_bearing_decisions_used": true,
+  "primary_cohort_changed": false,
+  "primary_summary_sha256": "7084B725F3F5BA620A8DFF1F8924B1FEC2498B171A7BAB5B0A3659711C78900A",
+  "project_means_sha256": "21EA6838E3B38C142BA4FB65706F4B438A3EF31A0A713AA277DC2D740B99CE28",
+  "projects": 24,
+  "protocol_version": "vultriage-extension-v2",
+  "retained_target_rows": 64329,
+  "script_sha256": "76D842E71E1B3C98FB2AA7222CEEDEDA4199141F19D1778804088829D8B8C55C",
+  "seeds": [
+    13,
+    37,
+    73,
+    101,
+    137
+  ]
+}
