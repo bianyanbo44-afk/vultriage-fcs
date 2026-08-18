@@ -1,0 +1,343 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+\biboptions{numbers,sort&compress}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs}
+\usepackage{microtype}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\pdfstringdefDisableCommands{%
+  \def\corref#1{}%
+  \def\cortext[#1]#2{}%
+  \def\cormark[#1]{}%
+  \def\ead#1{}%
+  \def\address[#1]#2{}%
+}
+\emergencystretch=2em
+
+\journal{Information and Software Technology}
+\graphicspath{{figures/}}
+\newcommand{\method}{VulTriage\xspace}
+\newcommand{\av}{\alpha_{\mathrm{v}}}
+\newcommand{\as}{\alpha_{\mathrm{s}}}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{VulTriage: Auditing Deploy-or-Review Policies for Cross-Project Vulnerability Detection}
+
+\author[inst1]{Yanbo Bian\corref{cor1}}
+\ead{24722081@bjtu.edu.cn}
+\author[inst2]{Zhihai Wang}
+\ead{zhhwang@bjtu.edu.cn}
+\cortext[cor1]{Corresponding author: Yanbo Bian.}
+\address[inst1]{Computer Science and Technology Program, Weihai International College, Beijing Jiaotong University, Weihai 264401, China}
+\address[inst2]{School of Computer Science and Technology, Beijing Jiaotong University, Beijing 100044, China}
+
+\begin{abstract}
+\textbf{Context:} Cross-project vulnerability detectors are usually evaluated as classifiers, but deployment requires a policy for automatic release or review under asymmetric security costs. \textbf{Objectives:} We present \method, a post-hoc layer combining class-asymmetric weighted conformal sets with a label-free support gate, and test its refusal boundary under project shift. \textbf{Methods:} In a frozen, prediction-sealed evaluation, PrimeVul provides retrospective gate development and 24 DiverseVul projects provide external evaluation. We compare hashing-SGD with a frozen CodeBERT encoder; labels are released only when effective-sample-size, test-point-mass, domain-shift, and clipping diagnostics pass, otherwise the project cell is routed to review. \textbf{Results:} At $(\av,\as)=(0.10,0.20)$, weighting without the gate lowers hashing-SGD's project-paired maximum relative budget violation by 0.816 (95\% interval [0.318, 1.722]; 24/24 projects) but lowers singleton coverage by 15.9 percentage points. It gives no overall risk improvement for CodeBERT. The frozen support gate has AUROC 0.86 on external hashing, 0.43 on external CodeBERT, and 0.35 in development. \textbf{Conclusion:} Sensitivity analyses preserve the detector contrast. The evidence supports auditable partial automation, not a target-risk guarantee.
+\end{abstract}
+
+\begin{keyword}
+ vulnerability detection \sep software engineering \sep conformal prediction \sep selective automation \sep software security
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+
+A vulnerability detector deployed on an unseen software project must answer two different questions. The first is predictive: which functions look vulnerable? The second is operational: which of those decisions can be released automatically and which should be sent to review under an asymmetric error budget? A missed vulnerable function and an unnecessary alert consume different security resources. A high confidence score by itself does not reveal whether calibration evidence remains relevant to a new project, nor whether a requested risk budget is supported by enough effective observations. For a software engineering team, this deploy-or-review policy is part of the tool's behavior rather than a post-processing detail.
+
+Public vulnerability benchmarks have made the first question more realistic. PrimeVul reports the effects of duplicate functions, label quality, imbalance, and evaluation design on code-language-model results \cite{ding2025primevul}, while DiverseVul broadens project and weakness coverage for deep vulnerability detection \cite{chen2023diversevul}. Cross-project methods address representation and distribution mismatch with transfer learning, domain adaptation, graph representations, and zero-shot mechanisms \cite{lin2018transfer,liu2022cdvuld,zhang2023cpvd,nguyen2024dam2p,cai2024csvdtf,haque2026zsvuld}. These methods improve or adapt a detector, but a deployment still needs an explicit policy for returning a label, deferring to review, and reporting the cost of that refusal.
+
+Calibration and selective prediction provide useful ingredients. CodeBERT is a standard pretrained representation for source code \cite{feng2020codebert}, and LineVul and data-flow-aware models show how detector architecture can be improved \cite{fu2022linevul,steenhoek2024deepdfa}. Temperature scaling is a canonical calibration baseline \cite{guo2017calibration}, while selective prediction formalizes the risk--coverage trade-off \cite{geifman2019selectivenet}. Code-model calibration can degrade under shift \cite{zhou2024calibration}, and Prom provides a deployment-time conformal assessment for code-analysis tasks \cite{wang2025prom}. Recent work also frames code prediction as an answer-or-defer decision \cite{rathnasuriya2026defer}. These lines of work leave open a software-engineering question: how should a project-level tool expose uncertainty, refusal, and review cost when vulnerable and safe errors have different consequences?
+
+We study \method, a post-hoc decision layer that can wrap a fitted detector while being evaluated separately for each detector. It constructs class-conditional prediction sets using estimated source-to-target relevance weights, then applies a frozen support gate based only on unlabeled target code and source calibration diagnostics. A singleton set is an automatic label; a doubleton is review. The gate is not treated as a risk certificate. Instead, we test whether its label-free pass signal predicts severe raw violation after labels are released, separately for each detector. This framing makes the project, rather than an individual function or random row, the unit of deployment and inference.
+
+The study asks:
+
+\begin{itemize}
+  \item \textbf{RQ1:} Can support qualification provide auditable deploy-or-review decisions on unseen projects, and what automation cost does refusal impose?
+  \item \textbf{RQ2:} Does estimated target weighting reduce class-asymmetric risk exceedance relative to unweighted sets, and does that effect replicate across detector types?
+  \item \textbf{RQ3:} How do calibration size, duplicate control, and computation affect the operational validity of the decision layer?
+\end{itemize}
+
+The contributions are fourfold:
+
+\begin{enumerate}
+  \item a frozen, prediction-sealed external-evaluation protocol combining a PrimeVul retrospective development domain, a DiverseVul external domain, two detectors, five seed addresses, a $3 \times 3$ asymmetric risk grid, and 25 recorded methods;
+  \item a detector-conditional risk-alignment result: on hashing-SGD, target weighting decreases the worst relative budget violation on all 24 projects at the primary operating point, with a quantified 15.9 percentage-point singleton-coverage cost;
+  \item an external validity analysis showing that the support gate discriminates severe raw violation for hashing-SGD but not for CodeBERT, while retaining the negative PrimeVul development AUROC of 0.35; and
+  \item a deployment-oriented reporting protocol that separates support, singleton coverage, and label-revealed attainment, together with released summaries, sensitivity analyses, figure source data, validation manifests, and a public builder that excludes raw code, labels, embeddings, private indexes, and per-function decision archives.
+\end{enumerate}
+
+\section{Related work}
+
+\subsection{Cross-project vulnerability detection in software engineering}
+
+Representation transfer for vulnerable-function discovery predates current code-language models \cite{lin2018transfer}. CD-VulD combines deep domain adaptation with cross-domain vulnerability discovery \cite{liu2022cdvuld}. CPVD uses graph attention and domain adaptation \cite{zhang2023cpvd}, DAM2P introduces a max-margin domain-adaptation objective for imbalanced data \cite{nguyen2024dam2p}, and CSVD-TF uses TrAdaBoost to fuse expert and semantic metrics \cite{cai2024csvdtf}. ZSVulD studies a zero-shot setting with pretrained representations and collaborative classifiers \cite{haque2026zsvuld}. These systems change the detector or its training objective. \method is complementary: it takes a fitted detector and exposes a decision layer that can refuse unsupported automation.
+
+Recent *Information and Software Technology* studies also emphasize the operational side of vulnerability prediction. A systematic mapping study organizes the evidence base and its evaluation practices \cite{kalouptsoglou2023mapping}; comparative work shows that vulnerability predictors can behave differently across models and projects \cite{theisen2020better}; and a practical framework separates prediction, categorization, and localization rather than treating a single classifier score as the complete workflow \cite{liu2024practical}. These studies motivate a project-level audit of refusal cost and class-asymmetric risk, which is the specific gap addressed here. \method does not claim to replace those detectors or to provide a new vulnerability representation.
+
+Modern code detectors provide important external-validity baselines. CodeBERT supplies a pretrained code representation \cite{feng2020codebert}, LineVul adapts transformers to line-level vulnerability prediction \cite{fu2022linevul}, and DeepDFA injects data-flow structure for efficient detection \cite{steenhoek2024deepdfa}. Our CodeBERT track is deliberately a frozen encoder plus a source-train-only standardized logistic head, not a claim of fine-tuned state of the art. The contrast with hashing-SGD therefore tests whether support-aware weighting behaves consistently across a low-cost lexical detector and a semantic representation. These studies primarily optimize or compare detectors; \method addresses the complementary software-engineering task of deciding when detector output is ready for automatic release and when it must remain in a review queue.
+
+\subsection{Selective automation and conformal risk}
+
+Temperature scaling changes probability calibration but not the binary ranking \cite{guo2017calibration}. Selective prediction makes retained coverage an explicit companion to risk \cite{geifman2019selectivenet}, and code-model studies show that calibration remedies can behave differently under project or temporal shift \cite{zhou2024calibration,li2021shift}. Prom uses local conformal experts, including LAC, TopK, APS, and RAPS, to identify deployment-time errors in code analysis \cite{wang2025prom}. We use a pre-specified binary, deterministic PROM-derived adapter as a strong comparison, while distinguishing it from the official implementation. The answer-or-defer perspective for code prediction is also established \cite{rathnasuriya2026defer}; our focus is the security-specific separation of vulnerable and safe budgets and the validity of an unlabeled support signal.
+
+Weighted conformal prediction can recover target marginal coverage under covariate shift when the likelihood ratio is known and conditional labels are invariant \cite{tibshirani2019weightedcp}. Conformal risk control generalizes the controlled loss \cite{angelopoulos2024crc}, and nonexchangeable or high-probability variants make the shift assumptions explicit \cite{farinhas2024necrc,almeida2025hpcrc}. Our density ratios are learned from a finite domain classifier and project shift may include concept shift. We therefore report empirical violation, support diagnostics, and refusal cost rather than claiming a distribution-free deployment guarantee.
+
+\section{The VulTriage decision layer}
+
+\subsection{Three-way action interface}
+
+Let $Y\in\{0,1\}$ denote safe and vulnerable, respectively, and let a fitted detector output class probabilities $\widehat p_y(x)$. For calibration example $(x_i,y_i)$, the label-conditional nonconformity score is
+
+\begin{equation}
+ S_i=1-\widehat p_{y_i}(x_i).
+\end{equation}
+
+The output $\Gamma(x)\subseteq\{0,1\}$ has three operational interpretations. $\{0\}$ and $\{1\}$ are singleton automatic decisions; $\{0,1\}$ is a review decision. Empty sets, which can arise in comparison methods, are also routed to review and are recorded separately. For class $y$, the empirical miscoverage is
+
+\begin{equation}
+ R_y=\Pr\{y\notin\Gamma(X)\mid Y=y\}.
+\end{equation}
+
+The user supplies $\alpha_1=\av$ and $\alpha_0=\as$. Singleton coverage is $\Pr(|\Gamma(X)|=1)$ and review load is its complement.
+
+\subsection{Asymmetric weighted sets}
+
+For class $y$, let $\mathcal I_y$ be its calibration indices and let $w_i$ be estimated target relevance weights. For a target point with weight $w(x)$, the implemented threshold is
+
+\begin{equation}
+q_y(x)=\inf\left\{t:\sum_{i\in\mathcal I_y} w_i\mathbf 1(S_i\leq t)\geq(1-\alpha_y)\left(\sum_{i\in\mathcal I_y}w_i+w(x)\right)\right\}.
+\label{eq:weighted}
+\end{equation}
+
+If the calibration mass cannot reach the right-hand side, $q_y(x)=\infty$. The set contains class $y$ when $1-\widehat p_y(x)\leq q_y(x)$. Unit weights recover unweighted Mondrian conformal prediction. The weighted construction is an empirical post-processing rule: its exact covariate-shift validity would require a correct likelihood ratio and invariant conditional labels \cite{tibshirani2019weightedcp}.
+
+\subsection{Project-shift weights and support gate}
+
+For each held-out project, a source--target domain classifier is trained with five deterministic cross-fitting folds. Equal source and target sampling makes the cross-fitted target odds
+
+\begin{equation}
+ \widehat w(x)=\frac{\widehat P(D=1\mid x)}{1-\widehat P(D=1\mid x)}
+\end{equation}
+
+an estimated relevance ratio. The primary weights are clipped to $[1/20,20]$; clips 10 and 50 are sensitivity variants. The same label-free weights are shared by detector-head seeds.
+
+The frozen support gate is fitted only on 12 PrimeVul project-disjoint pseudo-targets using leave-one-project-out cross-fitting. Its features are log total and class-specific Kish effective sample sizes (ESS), maximum and 99th-percentile test-point infinity mass, domain-classifier AUROC, and lower and upper clipping fractions. The gate predicts whether the raw weighted policy will have severe relative violation, defined as
+
+\begin{equation}
+ \max\left(\frac{\max(0,R_1-\av)}{\av},\frac{\max(0,R_0-\as)}{\as}\right)>0.5.
+\end{equation}
+
+The final gate passes only when its fixed logistic score (interpreted as an estimated severe-violation probability, without post-hoc target calibration) is below 0.5 and at least one singleton exists. Missing or nonfinite diagnostics fail closed. A failed gate replaces the entire target-project cell with review sets. This is a conservative refusal policy, not evidence that the requested risks have been attained. The development fit contains 12 independent projects and nine correlated budget rows per project; the resulting 108-row AUROC is therefore descriptive rather than an independent-sample estimate.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig1_workflow.pdf}
+  \caption{\method uses labeled source calibration code and unlabeled target-project code to estimate relevance, construct class-asymmetric weighted sets, and apply a frozen support model before automation. A failed support check returns a review set rather than a forced label.}
+  \label{fig:workflow}
+\end{figure*}
+
+\section{Empirical study design}
+
+\subsection{Study protocol and analysis unit}
+
+The study follows a frozen, prediction-sealed external-evaluation protocol organized around the software-project unit of deployment. PrimeVul is used for retrospective development and gate fitting, whereas DiverseVul supplies the external project groups. Target labels are withheld until detector predictions and support diagnostics are sealed. The primary comparison is estimated weighting versus unweighted Mondrian sets at $(\av,\as)=(0.10,0.20)$ within each detector; the remaining budget cells, calibration fractions, duplicate audit, and efficiency measurements are sensitivity or descriptive analyses. Five seeds are technical replicates nested within a project, so inference is performed on the 24 external projects rather than on individual functions or seed--project rows.
+
+\subsection{Datasets and project splits}
+
+The development domain is the original public PrimeVul release \cite{ding2025primevul}. After deterministic canonicalization and exact deduplication, the source package contains 226,582 functions from 235,768 valid rows; 9,186 same-label duplicates are removed and no conflicting label keys are retained. For each external target, source rows are partitioned by salted commit-hash buckets into 70\% detector training, 10\% model validation, and 20\% calibration. Project aliases are frozen before model output.
+
+The external evaluation domain is the official public DiverseVul release \cite{chen2023diversevul}. We select 24 eligible project groups without inspecting model outcomes, require at least 200 total, 20 vulnerable, and 20 safe functions, and then exact-deduplicate across datasets. Eligibility uses target label counts only to exclude one-class or very small projects; it is a cohort-design criterion rather than an outcome-based selection, but it limits prevalence generalization. The resulting target cohort contains 79,355 functions. Labels remain in a separate vault until both detector prediction seals are verified. The primary cohort is unchanged by the near-duplicate sensitivity analysis.
+
+\begin{table*}[t]
+\centering
+\caption{DiverseVul external project groups. Target rows are exact-deduplicated functions; vulnerability prevalence is reported only descriptively after label release.}
+\label{tab:projects}
+\small
+\setlength{\tabcolsep}{3pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrr@{\qquad}lrrr}
+\toprule
+Project & Total & Vulnerable & Prev. (\%) & Project & Total & Vulnerable & Prev. (\%)\\
+\midrule
+linux & 32,930 & 3,032 & 9.21 & openssl & 4,352 & 565 & 12.98\\
+tensorflow & 2,677 & 438 & 16.36 & php & 3,592 & 353 & 9.83\\
+qemu & 2,634 & 338 & 12.83 & imagemagick & 783 & 300 & 38.31\\
+qpdf & 1,786 & 272 & 15.23 & envoy & 5,252 & 254 & 4.84\\
+tcpdump & 428 & 209 & 48.83 & jasper & 608 & 203 & 33.39\\
+radare2 & 1,610 & 168 & 10.43 & postgres & 2,605 & 154 & 5.91\\
+mysql-server & 3,838 & 142 & 3.70 & FreeRDP & 980 & 141 & 14.39\\
+libxml2 & 2,060 & 136 & 6.60 & krb5 & 491 & 118 & 24.03\\
+samba & 1,961 & 117 & 5.97 & vim & 3,056 & 116 & 3.80\\
+net & 1,810 & 116 & 6.41 & ffmpeg & 983 & 115 & 11.70\\
+mongo & 2,627 & 112 & 4.26 & ghostpdl & 1,132 & 109 & 9.63\\
+libtpms & 490 & 109 & 22.24 & librsvg & 670 & 95 & 14.18\\
+\bottomrule
+\end{tabular}
+}%
+\end{table*}
+
+\subsection{Detectors and comparison methods}
+
+The lightweight detector hashes case-sensitive word unigrams and bigrams into $2^{18}$ dimensions, applies $\ell_2$ normalization, and fits a class-balanced averaged-SGD logistic head for three epochs. Regularization is selected by source-validation PR-AUC. Seeds 13, 37, 73, 101, and 137 are five independently fitted technical seeds per project.
+
+The semantic track uses \texttt{microsoft/codebert-base} at immutable revision \texttt{3b0952feddeffad0063f274080e3c23d75e7eb39}. Final hidden states are attention-mask mean pooled after removing special tokens. A source-train-only StandardScaler feeds a class-weighted L2 liblinear logistic head; $C\in\{0.01,0.1,1,10\}$ is selected on source validation. CodeBERT is fitted once at seed 13 per project and the deterministic head is copied to the other four frozen seed addresses. This is a reproducibility address scheme, not five independent CodeBERT fits.
+
+The evaluation records forced argmax, matched maximum-softmax and entropy, temperature-matched confidence, pooled and unweighted conformal sets, a binary PROM-derived adapter (LAC, TopK, APS, RAPS, and their union), estimated weighting with clips 10/20/50, ESS-only and infinity-mass-only gates, the full frozen gate, and matched full-gate derivatives. The PROM comparison is explicitly a deterministic binary adapter, not an official PROM reproduction \cite{wang2025prom}.
+
+\subsection{Outcomes, sealing, and statistics}
+
+We evaluate nine pre-specified budget pairs: $\av\in\{0.01,0.05,0.10\}$ and $\as\in\{0.05,0.10,0.20\}$. Primary outcomes are vulnerable and safe miscoverage, positive class-specific violation, maximum relative violation, singleton coverage, and review load. Detector performance includes PR-AUC, F1, Matthews correlation coefficient (MCC), Brier score, expected calibration error, area under the risk--coverage curve, and error-detection AUROC. The latter ranks forced 0.5-threshold mistakes by $1-\max_y\widehat p_y$; it is not a vulnerable-classification ROC-AUC.
+
+Prediction files are hashed and sealed before target labels are joined. The final evaluation contains 54,000 fold--seed metric rows, 10,800 project--seed averages, 450 paired comparisons, 14,400 calibration-size rows, and 6,480 near-duplicate sensitivity rows. Five seeds are averaged within each project before inference; the independent unit is the 24-project target group. Project-bootstrap intervals use 10,000 resamples. Exact Wilcoxon tests are emitted only when at least ten nonzero paired differences remain, with Holm adjustment within each detector, budget, and outcome family.
+
+\section{Results}
+
+\subsection{Base detectors are comparable, not interchangeable}
+
+Table~\ref{tab:detector} summarizes the two detector tracks at the primary operating point. CodeBERT has a modestly higher median PR-AUC, F1, and MCC, but project-bootstrap intervals for PR-AUC, F1, and MCC overlap the hashing track. Its error-detection AUROC is higher, whereas its Brier score is also higher (worse). The decision-layer results below should therefore be interpreted as detector-conditional rather than as a model-superiority claim.
+
+\begin{table}[t]
+\centering
+\caption{Base detector performance across 24 external projects. Values are project medians with the interquartile range in parentheses; confidence intervals are 10,000-project bootstrap intervals. Error-detection AUROC is not vulnerable-class ROC-AUC.}
+\label{tab:detector}
+\small
+\begin{tabular}{lcc}
+\toprule
+Metric & Hashing-SGD & CodeBERT\\
+\midrule
+PR-AUC & 0.188 (0.149--0.295) & 0.193 (0.141--0.278)\\
+F1 & 0.268 (0.197--0.343) & 0.271 (0.186--0.366)\\
+MCC & 0.162 (0.113--0.198) & 0.183 (0.143--0.233)\\
+Brier (lower) & 0.194 (0.151--0.240) & 0.203 (0.173--0.236)\\
+Error-detection AUROC & 0.677 (0.625--0.733) & 0.718 (0.654--0.762)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Support is detector-conditional}
+
+Figure~\ref{fig:gate} combines the negative development result with the external evaluation. The frozen gate has PrimeVul leave-one-project-out AUROC 0.35 and AUPRC 0.2452 over 108 development cells. On DiverseVul, it has AUROC 0.8601 and AUPRC 0.8173 for hashing-SGD; pass projects have a median raw maximum-relative-violation difference of $-0.5473$ versus fail projects (95\% interval $[-1.0057,-0.2244]$). For CodeBERT the AUROC is 0.4286. Its AUPRC 0.8733 is close to the severe-event prevalence of 0.875, and the pass--fail interval $[-2.4498,0.7270]$ crosses zero. The gate therefore has external discrimination for hashing-SGD, not a detector-general support signal.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig2_gate_validity.pdf}
+  \caption{Detector-conditional validity of the frozen support gate. (a) Severe-violation AUROC includes the negative PrimeVul development result and the two DiverseVul external detector tracks; the dashed line is chance. (b,c) Raw maximum-relative violation by all-five-seed gate status at the primary operating point. Points are projects; black marks show the interquartile range and median; the red dotted line is the severe-violation threshold. Pass--fail differences are descriptive associations, not causal effects.}
+  \label{fig:gate}
+\end{figure*}
+
+\subsection{Weighting improves risk alignment for hashing-SGD}
+
+At $(\av,\as)=(0.10,0.20)$, estimated weighting with clip 20 reduces hashing-SGD maximum relative violation by a median 0.8161 compared with unweighted Mondrian sets (95\% project-bootstrap interval for the signed difference $[-1.7219,-0.3174]$; 24/24 project directions improve; Holm-adjusted exact Wilcoxon $p=5.96\times10^{-7}$). Vulnerable-class violation decreases by 0.0853 (23 wins, one tie; adjusted $p=1.19\times10^{-6}$). Safe-class violation has no stable change (median difference 0.0000; adjusted $p=0.9748$). The corresponding 0.1587 reduction in singleton coverage occurs in all 24 projects (adjusted $p=5.96\times10^{-7}$), so the risk alignment is not free automation.
+
+The detector contrast is decisive. CodeBERT's maximum-relative-violation difference is $-0.0052$ with interval $[-0.2837,0.5505]$ and 12 wins versus 12 losses (adjusted $p=1$). Vulnerable violation is directionally worse by 0.0298, while safe violation improves by 0.0075; singleton-coverage change is $-0.0235$ with an interval crossing zero. Across all nine budget cells, the weighted hashing policy improves, ties, or worsens 202, 6, or 8 of 216 project--budget cells; CodeBERT gives 97, 32, or 87. These cell counts are descriptive because the nine cells within a project are correlated.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig4_risk_alignment.pdf}
+  \caption{Directional risk alignment over the 24 projects and nine frozen budget pairs. Each point compares raw estimated-weight sets with unweighted Mondrian sets; points below the diagonal improve maximum relative violation. Colors encode the vulnerable-class budget. The improved/tied/worsened counts are descriptive cell counts, not independent sample sizes.}
+  \label{fig:alignment}
+\end{figure*}
+
+\subsection{Automation is measurable, but gate failure can create mechanical attainment}
+
+At the primary operating point, the full gate supports 13/24 hashing projects and 22/24 CodeBERT projects. Among supported hashing projects, median singleton coverage is 0.509 and maximum relative violation is 0.122; only 2/13 supported projects attain both class budgets after labels are released. For CodeBERT, supported median coverage is 0.749, maximum relative violation is 1.244, and supported attainment is 0/22. The apparent overall full-gate attainment of 13/24 for hashing and 2/24 for CodeBERT is therefore dominated by gate-fail projects that are sent entirely to review and consequently have zero automatic violation. We do not count those mechanical zeros as evidence of predictive risk control.
+
+Figure~\ref{fig:automation} shows the corresponding supported-project coverage. The hashing median is 50.9\% and the CodeBERT median is 74.9\%. The difference is operationally important: a system that refuses more often can look safer while increasing analyst workload. PROM-derived APS and RAPS provide another reminder of this trade-off, with about 24--26\% coverage and higher descriptive attainment; TopK and the PROM union reject every function. These baselines are retained as controls, not presented as practical dominance.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig3_primary_automation.pdf}
+  \caption{Singleton coverage at $(\av,\as)=(0.10,0.20)$. Each point is a supported project; gray rows are gate-fail projects routed entirely to review. The dashed line is the median coverage among supported projects. Coverage is not target-risk attainment.}
+  \label{fig:automation}
+\end{figure*}
+
+\subsection{Sensitivity and resource observations}
+
+The calibration-size sensitivity preserves the central detector contrast (Fig.~\ref{fig:calibration}). For hashing-SGD, weighted versus unweighted median maximum relative violation is 0.099 versus 1.271 at 25\% calibration, and 0.483 versus 1.242 at 100\%; weighted coverage rises from 35.5\% to 52.4\% while remaining below unweighted coverage of 69.4\% to 69.7\%. Full-gate pass rates rise from 0 at 25\% to 0.542 at 100\%, but the 25\% full-gate zero attainment is entirely review-only. CodeBERT has no consistent weighting advantage: its weighted maximum relative violation is 1.290, 1.296, 1.295, and 1.244 across the four fractions, versus 1.270, 1.224, 1.219, and 1.238 unweighted.
+
+The near-duplicate audit generated 866,094 approximate-LSH candidates and exactly verified every candidate. It flagged 24,606 pairs at lexical-token Jaccard at least 0.90, affecting 15,026 of 79,355 target rows (18.94\%) and retaining 64,329 rows. Recomputing sealed decisions on the clean sensitivity cohort preserves the hashing direction: weighted maximum relative violation changes from 0.483 to 0.434 and coverage from 0.524 to 0.528, whereas CodeBERT changes from 1.244 to 1.799 and from 0.749 to 0.769. This is a sensitivity re-evaluation, not a refit.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig5_calibration_sensitivity.pdf}
+  \caption{Calibration-size sensitivity at the primary budget. Lines show project medians and ribbons show the interquartile range across 24 projects. Weighted hashing retains lower maximum relative violation at every fraction but lower singleton coverage; CodeBERT has no consistent risk-alignment advantage.}
+  \label{fig:calibration}
+\end{figure*}
+
+The efficiency audit is observational. Hashing executes 120 independent head fits with a median 1.83 s fit duration, whereas CodeBERT executes 24 actual deterministic head fits with a median 1,584 s duration after 1,522 s of embedding extraction. CodeBERT runs in four concurrent parts; hashing is recorded as a sequential pipeline. Because hardware, batching, and parallelization differ, these numbers do not support a speedup, energy, or architecture-efficiency claim. They do support reporting the resource cost of the semantic track and the seed-reuse policy.
+
+\section{Discussion}
+
+\subsection{Answers to the research questions}
+
+For RQ1, support qualification produces partial, auditable automation but does not guarantee that the requested budgets are attained. At the primary operating point, the full gate supports 13 of 24 hashing projects and 22 of 24 CodeBERT projects. Only 2 of the 13 supported hashing projects attain both class budgets after labels are released, and none of the 22 supported CodeBERT projects does so. The gate therefore creates a review boundary that can be audited before labels are available; it should not be reported as a success merely because gate-fail projects produce zero automatic violations.
+
+For RQ2, estimated weighting reduces risk exceedance for hashing-SGD and not for CodeBERT. The primary hashing comparison improves on all 24 external projects, whereas the CodeBERT comparison has 12 wins and 12 losses with an interval that crosses zero. The answer is therefore detector-conditional: the same post-hoc policy cannot be assumed to transfer across detector families.
+
+For RQ3, the operational trade-offs are visible in the sensitivity and efficiency analyses. More calibration data increases gate pass rates, duplicate removal changes the semantic track more than the hashing track, and the semantic representation incurs substantially higher measured resource cost under the recorded execution regime. These observations define deployment conditions and costs rather than universal performance claims.
+
+\subsection{Interpretation of the detector-conditional result}
+
+The strongest conclusion is a decision-layer result for a lightweight detector. When relevance weighting is applied without the gate, the hashing track reduces class-asymmetric risk exceedance across projects and budget cells. The effect survives a smaller calibration cohort and a restrictive near-duplicate sensitivity cohort. A deployer can therefore use the method as an auditable risk--coverage surface: choose budgets, inspect label-free support, and decide how much review capacity is acceptable.
+
+This result is deliberately narrower than model superiority. CodeBERT has similar base detection metrics and higher error-detection AUROC, yet the same weighting rule does not improve overall risk alignment. A support model trained on PrimeVul also performs poorly in leave-one-project-out development evaluation. The external hashing result is encouraging because it is obtained on a separate dataset, but the detector contrast means that support is a property of the detector--shift pair, not a universal certificate.
+
+\subsection{Why deployment metrics must be separated}
+
+Support qualification is a pre-label diagnostic. Singleton coverage measures how much automation remains after the policy. Attainment measures whether the observed target violations satisfy both budgets after labels are released. These quantities can move in opposite directions. In particular, a failed gate sends all functions to review, producing zero automatic violation and zero coverage. Reporting only overall attainment would reward refusal and conceal the operational cost. Our tables and evidence package report the supported cohort separately and keep the negative development gate result visible.
+
+\subsection{Implications for software engineering practice}
+
+The practical output of \method is a traceable decision record rather than a replacement vulnerability detector. For each project, a deployment can store the requested class budgets, the label-free support diagnostics, the gate decision, the number of singleton and review outputs, and the later label-revealed violations. This record lets a security team audit why a project was automated or deferred and compare review demand across projects. It also makes refusal an explicit resource decision: a stricter gate can reduce automatic exposure while increasing analyst workload.
+
+The study suggests two implementation safeguards. First, support qualification should be calibrated and monitored separately for each detector--shift pair; a gate trained with one detector must not be silently reused for another. Second, dashboards should show support, coverage, and attainment as separate quantities. The public artifact provides the corresponding aggregates and validation manifests, but a production adoption would still require local calibration, independent detector fits, and a human productivity assessment.
+
+\subsection{Threats to validity}
+
+\textbf{Construct validity.} Singleton coverage is a proxy for automation volume, not analyst time saved. We conduct no human productivity study. A safe singleton is not a security certification, and empirical budget attainment is not a finite-sample guarantee.
+
+\textbf{Internal validity.} Prediction seals prevent target-label access during model output, and exact deduplication plus alias maps are frozen. Public benchmark labels can still be incomplete or noisy. CodeBERT seed addresses are deterministic copies of one head per project, so they do not quantify independent encoder or optimization variation. The gate pass--fail comparison is associational, not causal.
+
+\textbf{Statistical conclusion validity.} The independent sample is 24 projects, not 120 seed--project cells or 216 independent budget cells. The support-gate development fit has 12 independent PrimeVul projects but 108 project--budget rows, so its AUROC is descriptive and not a 108-sample generalization estimate. Bootstrap intervals quantify project heterogeneity. Holm correction is restricted to the frozen comparator family within each detector, budget, and outcome. Sensitivity fractions and near-duplicate rows are descriptive re-evaluations.
+
+\textbf{External validity.} The study covers public C/C++ functions and two detector tracks. It does not establish behavior for fine-tuned CodeBERT, LineVul, data-flow models, other languages, private repositories, or concept shifts with changing vulnerability mechanisms. The hashing result requires replication with independently fitted semantic detectors and additional external projects.
+
+\subsection{Responsible-use boundary}
+
+The study uses public source-code records and vulnerability labels for defensive classification. It does not generate exploits or access live systems, and it does not involve human participants. The method is evaluated as a decision-support layer for vulnerability triage, not as a security certification or an autonomous remediation system.
+
+\section{Conclusion}
+
+\method turns cross-project vulnerability uncertainty into an explicit deploy-or-review interface. Under a frozen, prediction-sealed two-dataset evaluation, estimated weighting improves worst-class budget alignment across all 24 DiverseVul projects for hashing-SGD at the primary operating point, with a clear 15.9 percentage-point automation cost. The result survives calibration-size and near-duplicate sensitivity, while the support gate shows external discrimination only for the hashing detector and not for CodeBERT. The evidence supports auditable partial automation for a lightweight detector, not universal target-risk guarantees or detector-general support validity.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+\section*{Data availability}
+PrimeVul and DiverseVul are public defensive-use datasets released by their respective authors \cite{ding2025primevul,chen2023diversevul}. The public repository at \url{https://github.com/bianyanbo44-afk/vultriage-fcs} contains the frozen protocol, label-free source and target metadata, evaluation and analysis code, summary tables, figure source data, efficiency summaries, and evidence and validation manifests. It excludes raw source datasets, target-label vaults, private SQLite indexes, CodeBERT embeddings, feature caches, and per-function prediction or decision archives. The submission-specific IST source and PDF are supplied in the submission package; the GitHub link is the reproducibility artifact rather than a second authoritative copy of the manuscript. The extension-v2 configuration SHA-256 is \texttt{8AA39B09\allowbreak{}20D8CD2C\allowbreak{}FEFBF8C2\allowbreak{}8109754F\allowbreak{}1B2DFA60\allowbreak{}49E17565\allowbreak{}122C6968\allowbreak{}E199AAD2}; independent artifact and evidence-validation reports are stored with the public snapshot.
+
+\section*{Ethics statement}
+The study uses public source-code records and vulnerability labels for defensive classification. It does not generate exploits, access live systems, or involve human participants; institutional ethics review is not applicable subject to institutional policy.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this manuscript, the authors used OpenAI Codex, a generative-AI tool, to assist with research-question exploration, methodological planning, code drafting and debugging, analysis interpretation, and manuscript drafting. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the published article. No generative AI was used to fabricate data, results, or figures.
+
+\section*{CRediT authorship contribution statement}
+Yanbo Bian: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Project administration, Software, Validation, Visualization, Writing--original draft, Writing--review and editing. Zhihai Wang: Conceptualization, Formal analysis, Methodology, Supervision, Validation, Writing--review and editing.
+
+\bibliographystyle{elsarticle-num-names}
+\bibliography{references}
+
+\end{document}

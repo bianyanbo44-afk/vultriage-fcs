@@ -1,4 +1,10 @@
-# Frontiers of Computer Science: submission requirements (v2)
+# Historical Frontiers of Computer Science submission note (v2)
+
+> This file is retained for provenance from the original project target. The
+> current manuscript is prepared for *Information and Software Technology*;
+> this note is **not** an IST submission instruction. Use
+> `paper/ist_submission/README_IST_SUBMISSION.md` and the current IST portal
+> requirements for submission.
 
 **Checked:** 2026-08-14 (China Standard Time)  
 **Scope:** venue fit and manuscript-package requirements for the VulTriage

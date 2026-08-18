@@ -1,0 +1,206 @@
+{
+  "assets": {
+    "fig1_workflow.pdf": {
+      "bytes": 21866,
+      "sha256": "D6D4FBD9B12AE40FC12AA1729DF2FDE4DA312E7A32B151730614D697499EC32D"
+    },
+    "fig1_workflow.png": {
+      "bytes": 329967,
+      "sha256": "39E95E0086AE53E2B984D2DBEE79903A44A4DB5622402D5DD785385EB4E4F60C"
+    },
+    "fig1_workflow.svg": {
+      "bytes": 11692,
+      "sha256": "D229E03CE63E50AABD14574760E21BBCB8FF63E8080AEB1B9AF0A4A6EA61FF47"
+    },
+    "fig1_workflow.tiff": {
+      "bytes": 616006,
+      "sha256": "5560E307F822ADC293AD6BBF5332BAF64F881BA1DA724723D5FFB9D6B6169E92"
+    },
+    "fig2_gate_validity.pdf": {
+      "bytes": 28626,
+      "sha256": "6289310A5D13A41C5914F689720915D52E12E42DC81A51EE8B3AA78A65F96442"
+    },
+    "fig2_gate_validity.png": {
+      "bytes": 323476,
+      "sha256": "FE344CC56B6E5AD0096FF7729ADC751D793707CD4955FA212D1C6D488002A5AD"
+    },
+    "fig2_gate_validity.svg": {
+      "bytes": 34182,
+      "sha256": "956FAECB46DA67C71C873D8CAA790FC143C443B4FC3641BFA646EC8C27DA9F03"
+    },
+    "fig2_gate_validity.tiff": {
+      "bytes": 621670,
+      "sha256": "C04442C3B3E50B8ED956ED273D30450B3E4AA285114776529D4B7FE296EB9DF5"
+    },
+    "fig3_primary_automation.pdf": {
+      "bytes": 35695,
+      "sha256": "03AB618649D46610F9B89A60461EAD87748F74377B357F1BBB6698BE1229955E"
+    },
+    "fig3_primary_automation.png": {
+      "bytes": 513112,
+      "sha256": "B4684775B748023A142E408BCE57C0595EDB17157EA66F3317115978E1BE583E"
+    },
+    "fig3_primary_automation.svg": {
+      "bytes": 43115,
+      "sha256": "BFBD485D83449BDA0A765F3CDA98BB4169FADA2A36BE201908EC649DFD2D7B0E"
+    },
+    "fig3_primary_automation.tiff": {
+      "bytes": 931604,
+      "sha256": "4118F4907846C0C887435CC9D4F16A69FAC16AF0203DEF75BC48EC374F3DD5F4"
+    },
+    "fig4_risk_alignment.pdf": {
+      "bytes": 25850,
+      "sha256": "CD745C35B13F2A7DF08F1F6A91B1034340B45E3200793010F23BCD233E244887"
+    },
+    "fig4_risk_alignment.png": {
+      "bytes": 389783,
+      "sha256": "4BF30A8AEBAC8DC18AAD6B1A66A7DD3A4C847BEDE6BA3C3595AF17C836284AB1"
+    },
+    "fig4_risk_alignment.svg": {
+      "bytes": 120193,
+      "sha256": "7A1BFDC8A816FDBF56006CB5DC909F0D9BCFF4809E06B93992CC0DBE8E820F6C"
+    },
+    "fig4_risk_alignment.tiff": {
+      "bytes": 686802,
+      "sha256": "518503A7A410C7E2508D0F82145988E5F61041F3DF4705430932A152F99B1862"
+    },
+    "fig5_calibration_sensitivity.pdf": {
+      "bytes": 26209,
+      "sha256": "3D15757310C4A411F3594A63EF37B89515595CFA1A71E4F9EC9E5838E5161490"
+    },
+    "fig5_calibration_sensitivity.png": {
+      "bytes": 368459,
+      "sha256": "6C6BBA1614A326C4FC58CA57B45224AA38E10362371BFE568059AFE0D92D255C"
+    },
+    "fig5_calibration_sensitivity.svg": {
+      "bytes": 38560,
+      "sha256": "A3D6753ACFDFA556A06D4263B35C166E918E48BC54BA676DDDBEE8DE67119146"
+    },
+    "fig5_calibration_sensitivity.tiff": {
+      "bytes": 1117734,
+      "sha256": "12AE0E6FFBD7F03D8DE725A96A9B628721B9C0268E4AA3A34E808629BE6675E2"
+    }
+  },
+  "data_assets": {
+    "fig2_gate_external_projects.csv": {
+      "bytes": 4277,
+      "sha256": "A1C590B948961E6A1BCD1D90EBF866400A047D60C504F6128936C326140AC34D"
+    },
+    "fig2_gate_summary.csv": {
+      "bytes": 521,
+      "sha256": "61AFAA95F0C51D85BF3A0DFFA02DD374E5D07CA91614C242E262AF273DC3BF77"
+    },
+    "fig3_primary_automation.csv": {
+      "bytes": 2438,
+      "sha256": "0C1482A79E5E1727D540EE8003F4AAE5E1C782C4B96457C7295116A6679EA8BA"
+    },
+    "fig4_risk_alignment.csv": {
+      "bytes": 118590,
+      "sha256": "587987F2F62F0B72C2C9AF6B230336268591E3D0C1FF252E81DA9FCBCF92160B"
+    },
+    "fig5_calibration_sensitivity.csv": {
+      "bytes": 2715,
+      "sha256": "DBDAE3C52065BF643DD6B6CF577B6B42BF86118EA477A6809042E0618DA9A970"
+    }
+  },
+  "figures": [
+    "fig1_workflow",
+    "fig2_gate_validity",
+    "fig3_primary_automation",
+    "fig4_risk_alignment",
+    "fig5_calibration_sensitivity"
+  ],
+  "metrics": "outputs\\extension-v2\\evaluation-v2\\fold_seed_metrics.csv",
+  "project_means": "outputs\\extension-v2\\analysis-v2\\project_seed_averages.csv",
+  "raster_export_dpi": 600,
+  "rows_calibration_project_summary": 576,
+  "rows_gate_discrimination": 2,
+  "rows_metrics": 54000,
+  "rows_project_means": 10800,
+  "source_inputs": {
+    "calibration_project_summary": {
+      "bytes": 116063,
+      "path": "outputs\\extension-v2\\calibration-size-v2\\calibration_size_project_summary.csv",
+      "sha256": "38B1B7913E2A1ABE00FD98849962417BACE7ABFCD9A944905B5FD7BA35224A71"
+    },
+    "gate_discrimination": {
+      "bytes": 641,
+      "path": "outputs\\extension-v2\\analysis-v2\\gate_discrimination.csv",
+      "sha256": "F2543FFF37DFC9A1D473676B66D3DFA978CF1771F5C87A84CEF81EC58F584B5F"
+    },
+    "gate_seal": {
+      "bytes": 2157,
+      "path": "outputs\\extension-v2\\gate-v1\\gate_seal.json",
+      "sha256": "5FD8146133584188FA30888057E69F648134590D5D3B33C3B55F41838293FE20"
+    },
+    "metrics": {
+      "bytes": 41978307,
+      "path": "outputs\\extension-v2\\evaluation-v2\\fold_seed_metrics.csv",
+      "sha256": "AB48DFC01263DED8E63A64ACF12E31DBB942C21200E5F4B940A2BA545B3AB491"
+    },
+    "project_means": {
+      "bytes": 1296151,
+      "path": "outputs\\extension-v2\\analysis-v2\\project_seed_averages.csv",
+      "sha256": "8F0EF0EFCE0EFC9572306FCC9B38D89287DF7DC45FC3306C67E5DC422A46E971"
+    }
+  },
+  "tiff_compression": "lzw",
+  "figure_table_trace": [
+    {
+      "artifact_id": "fig1_workflow",
+      "source_data": [
+        {"path": "configs/preregistered_extension_v2.json", "sha256": "8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2"},
+        {"path": "src/make_extension_v2_figures.py", "sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"}
+      ],
+      "transformation": {"script": "src/make_extension_v2_figures.py::figure_workflow", "script_sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"},
+      "caption_claim": "The workflow separates labeled source calibration from unlabeled target code, estimates relevance, constructs class-asymmetric weighted sets, and routes failed support checks to review.",
+      "supported_manuscript_claims": [{"claim_id": "C1", "locator": "main.tex:129", "claim_text": "VulTriage exposes an explicit deploy-or-review interface under the evaluated protocol."}],
+      "limitations": ["The workflow diagram is a protocol schematic and does not establish a target-risk guarantee."]
+    },
+    {
+      "artifact_id": "fig2_gate_validity",
+      "source_data": [
+        {"path": "outputs/extension-v2/evidence-v2/gate_summary.csv", "sha256": "8E7056D94CCF991150438D6F8853309264B9F6F8B4710BBE93DC4592E6C59A26"},
+        {"path": "outputs/extension-v2/evidence-v2/gate_external_projects.csv", "sha256": "D1195CA98E224AFF030C5D2BE96C380B160B2BDEABBFFF8F924449384F1076D0"},
+        {"path": "outputs/extension-v2/gate-v1/gate_seal.json", "sha256": "5FD8146133584188FA30888057E69F648134590D5D3B33C3B55F41838293FE20"}
+      ],
+      "transformation": {"script": "src/make_extension_v2_figures.py::figure_gate_validity", "script_sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"},
+      "caption_claim": "The frozen support gate is detector-conditional: development AUROC is 0.35, external hashing AUROC is 0.86, and external CodeBERT AUROC is 0.43; pass-fail differences are descriptive associations.",
+      "supported_manuscript_claims": [{"claim_id": "C6", "locator": "main.tex:206-211", "claim_text": "The gate discriminates severe raw violation for hashing-SGD on the external cohort but not for CodeBERT."}],
+      "limitations": ["AUROC and pass-fail differences are descriptive and not causal.", "The external result is limited to the 24-project DiverseVul cohort and the two evaluated detector tracks.", "The gate is not a detector-general support certificate or target-risk guarantee."]
+    },
+    {
+      "artifact_id": "fig3_primary_automation",
+      "source_data": [
+        {"path": "outputs/extension-v2/evidence-v2/primary_method_summary.csv", "sha256": "945F45AF97429EEC62E39C5D70DBEFF9C4A12548E6D5957E7234C79906534585"},
+        {"path": "outputs/extension-v2/evidence-v2/gate_external_projects.csv", "sha256": "D1195CA98E224AFF030C5D2BE96C380B160B2BDEABBFFF8F924449384F1076D0"}
+      ],
+      "transformation": {"script": "src/make_extension_v2_figures.py::figure_automation", "script_sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"},
+      "caption_claim": "At the primary budget, singleton coverage is reported only for supported projects, while gate-fail projects are routed entirely to review; coverage is not target-risk attainment.",
+      "supported_manuscript_claims": [{"claim_id": "C7", "locator": "main.tex:230-237", "claim_text": "Support qualification, singleton coverage, and label-revealed budget attainment are distinct quantities."}],
+      "limitations": ["Singleton coverage is a proxy for automation volume, not analyst productivity.", "Review-only gate failures create mechanical zero violations and are not predictive successes."]
+    },
+    {
+      "artifact_id": "fig4_risk_alignment",
+      "source_data": [
+        {"path": "outputs/extension-v2/figures-v2/data/fig4_risk_alignment.csv", "sha256": "587987F2F62F0B72C2C9AF6B230336268591E3D0C1FF252E81DA9FCBCF92160B"},
+        {"path": "outputs/extension-v2/analysis-v2/project_seed_averages.csv", "sha256": "8F0EF0EFCE0EFC9572306FCC9B38D89287DF7DC45FC3306C67E5DC422A46E971"}
+      ],
+      "transformation": {"script": "src/make_extension_v2_figures.py::figure_alignment", "script_sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"},
+      "caption_claim": "Estimated weighting improves, ties, or worsens raw maximum-relative violation across the 24 projects and nine frozen budget pairs, with cell counts treated as descriptive because cells within a project are correlated.",
+      "supported_manuscript_claims": [{"claim_id": "C3", "locator": "main.tex:217-224", "claim_text": "At the primary operating point, estimated weighting improves hashing-SGD project-level maximum relative violation on all 24 projects and has no overall CodeBERT improvement."}],
+      "limitations": ["The nine budget cells within each project are correlated and are not independent samples.", "The plot reports empirical raw violation, not a finite-sample target-risk guarantee."]
+    },
+    {
+      "artifact_id": "fig5_calibration_sensitivity",
+      "source_data": [
+        {"path": "outputs/extension-v2/evidence-v2/calibration_summary.csv", "sha256": "BC4CCDEBB903C52D9E964B5ECF200E65E5808857BED19106AADB07157E00DF11"},
+        {"path": "outputs/extension-v2/figures-v2/data/fig5_calibration_sensitivity.csv", "sha256": "DBDAE3C52065BF643DD6B6CF577B6B42BF86118EA477A6809042E0618DA9A970"}
+      ],
+      "transformation": {"script": "src/make_extension_v2_figures.py::figure_calibration_sensitivity", "script_sha256": "4D9C17C2AC04F4C8AB836439A0EBC19BAB2A8302A3612353BD6B8333EC1D9149"},
+      "caption_claim": "Across the four frozen calibration fractions, weighted hashing retains lower maximum relative violation with lower singleton coverage, while CodeBERT shows no consistent risk-alignment advantage.",
+      "supported_manuscript_claims": [{"claim_id": "C8", "locator": "main.tex:243-250", "claim_text": "Calibration-size sensitivity preserves the detector-conditional hashing-positive and CodeBERT-negative contrast."}],
+      "limitations": ["The sensitivity analysis is nested and is not an independent replication.", "The result is not extrapolated outside the tested calibration fractions."]
+    }
+  ]
+}

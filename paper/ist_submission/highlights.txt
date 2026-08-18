@@ -1,0 +1,4 @@
+VulTriage audits deploy-or-review policies for cross-project detection.
+Without the gate, weighting improves hashing-SGD risk alignment across 24 projects.
+The gain costs 15.9 percentage points of singleton coverage.
+Support diagnostics are detector-conditional, not universal risk certificates.

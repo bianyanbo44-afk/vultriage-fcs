@@ -379,6 +379,10 @@ try {
             Copy-RequiredFile -Source $source -Destination (Join-Path $paperDestination $optionalPaperFile)
         }
     }
+    $paperReadmeSource = Join-Path $templateRoot "paper\README.md"
+    if (Test-Path -LiteralPath $paperReadmeSource -PathType Leaf) {
+        Copy-RequiredFile -Source $paperReadmeSource -Destination (Join-Path $paperDestination "README.md")
+    }
     # Figures are sourced from the finalized extension-v2 result root so the
     # public paper cannot silently retain a stale legacy figure directory.
     $paperFigureSource = Join-Path $resultsRoot "figures-v2"
@@ -398,6 +402,56 @@ try {
         -Destination (Join-Path $paperFigureDestination "data") `
         -Extensions @(".csv")
 
+    # Keep the current IST submission package alongside the historical FCS
+    # scaffold. The submission package is copied explicitly so temporary
+    # LaTeX build directories and staging archives can never enter the public
+    # snapshot by accident. Source projects use paper_rewriting_output, while
+    # an already-public checkout keeps the same package under paper/.
+    $istPackageSource = $null
+    foreach ($candidate in @(
+        (Join-Path $sourceRoot "paper_rewriting_output\ist_submission_package"),
+        (Join-Path $sourceRoot "paper\ist_submission")
+    )) {
+        if (Test-Path -LiteralPath $candidate -PathType Container) {
+            $istPackageSource = $candidate
+            break
+        }
+    }
+    if ($null -ne $istPackageSource -and (Test-Path -LiteralPath $istPackageSource -PathType Container)) {
+        $istPackageDestination = Join-Path $paperDestination "ist_submission"
+        foreach ($istFile in @(
+            "main.tex",
+            "references.bib",
+            "main.pdf",
+            "VulTriage_IST_manuscript.pdf",
+            "elsarticle.cls",
+            "elsarticle-num-names.bst",
+            "README_IST_SUBMISSION.md",
+            "cover_letter.en.md",
+            "highlights.txt",
+            "submission_checklist.md"
+        )) {
+            Copy-RequiredFile `
+                -Source (Join-Path $istPackageSource $istFile) `
+                -Destination (Join-Path $istPackageDestination $istFile)
+        }
+        Copy-FilteredTree `
+            -Source (Join-Path $istPackageSource "figures") `
+            -Destination (Join-Path $istPackageDestination "figures") `
+            -Extensions @(".pdf", ".png", ".svg", ".tiff")
+        Copy-FilteredTree `
+            -Source (Join-Path $istPackageSource "figures\data") `
+            -Destination (Join-Path $istPackageDestination "figures\data") `
+            -Extensions @(".csv")
+        Copy-RequiredFile `
+            -Source (Join-Path $istPackageSource "figures\figure_manifest.json") `
+            -Destination (Join-Path $istPackageDestination "figures\figure_manifest.json")
+    }
+
+    $protocolSourceRoot = Join-Path $sourceRoot "research"
+    if (-not (Test-Path -LiteralPath $protocolSourceRoot -PathType Container)) {
+        $protocolSourceRoot = Join-Path $sourceRoot "protocol"
+    }
     $protocolDestination = Join-Path $stagingPath "protocol"
     foreach ($protocolName in @(
         "extension_preregistration_v2.md",
@@ -407,11 +461,15 @@ try {
         "frontiers_submission_requirements_v2.md"
     )) {
         Copy-RequiredFile `
-            -Source (Join-Path $sourceRoot "research\$protocolName") `
+            -Source (Join-Path $protocolSourceRoot $protocolName) `
             -Destination (Join-Path $protocolDestination $protocolName)
     }
 
     $publicResultsDestination = Join-Path $stagingPath "public_results"
+    $v1ResultsSource = Join-Path $templateRoot "public_results\v1"
+    if (-not (Test-Path -LiteralPath $v1ResultsSource -PathType Container)) {
+        $v1ResultsSource = Join-Path $templateRoot "public_results"
+    }
     foreach ($v1ResultName in @(
         "analysis_manifest.json",
         "evaluation_manifest.json",
@@ -420,7 +478,7 @@ try {
         "support_summary.csv"
     )) {
         Copy-RequiredFile `
-            -Source (Join-Path $templateRoot "public_results\$v1ResultName") `
+            -Source (Join-Path $v1ResultsSource $v1ResultName) `
             -Destination (Join-Path $publicResultsDestination "v1\$v1ResultName")
     }
 
