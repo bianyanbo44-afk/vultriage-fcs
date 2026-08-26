@@ -1,0 +1,1206 @@
+[
+  {
+    "key": "ding2025primevul",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Vulnerability Detection with Code Language Models: How Far are We?",
+        "year": 2025,
+        "identifier": "10.1109/icse55347.2025.00038",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1109/icse55347.2025.00038",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Vulnerability Detection with Code Language Models: How Far are We?",
+        "year": 2025,
+        "identifier": "10.1109/icse55347.2025.00038",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4411552541",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109%2FICSE55347.2025.00038?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "chen2023diversevul",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection",
+        "year": 2023,
+        "identifier": "10.1145/3607199.3607242",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3607199.3607242",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "DiverseVul: A New Vulnerable Source Code Dataset for Deep Learning Based Vulnerability Detection",
+        "year": 2023,
+        "identifier": "10.1145/3607199.3607242",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4387298393",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145%2F3607199.3607242?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "feng2020codebert",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "CodeBERT: A Pre-Trained Model for Programming and Natural Languages",
+        "year": 2020,
+        "identifier": "10.18653/v1/2020.findings-emnlp.139",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.18653/v1/2020.findings-emnlp.139",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "CodeBERT: A Pre-Trained Model for Programming and Natural Languages",
+        "year": 2020,
+        "identifier": "10.18653/v1/2020.findings-emnlp.139",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W3098605233",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.18653%2Fv1%2F2020.findings-emnlp.139?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "fu2022linevul",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "LineVul",
+        "year": 2022,
+        "identifier": "10.1145/3524842.3528452",
+        "title_similarity": 0.2,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3524842.3528452",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "LineVul",
+        "year": 2022,
+        "identifier": "10.1145/3524842.3528452",
+        "title_similarity": 0.2,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4312436517",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145%2F3524842.3528452?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "steenhoek2024deepdfa",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Dataflow Analysis-Inspired Deep Learning for Efficient Vulnerability Detection",
+        "year": 2024,
+        "identifier": "10.1145/3597503.3623345",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3597503.3623345",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Dataflow Analysis-Inspired Deep Learning for Efficient Vulnerability Detection",
+        "year": 2024,
+        "identifier": "10.1145/3597503.3623345",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4391558363",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Dataflow Analysis-Inspired Deep Learning for Efficient Vulnerability Detection",
+        "year": 2022,
+        "identifier": "10.1145/3597503.3623345",
+        "title_similarity": 1.0,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/beb637ae4caf3d5168ddc9ebbd35d5fbc1d829fd",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "zhang2023cpvd",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "CPVD: Cross Project Vulnerability Detection Based on Graph Attention Network and Domain Adaptation",
+        "year": 2023,
+        "identifier": "10.1109/tse.2023.3285910",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1109/tse.2023.3285910",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "CPVD: Cross Project Vulnerability Detection Based on Graph Attention Network and Domain Adaptation",
+        "year": 2023,
+        "identifier": "10.1109/tse.2023.3285910",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4380520352",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109%2FTSE.2023.3285910?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "nguyen2024dam2p",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Deep Domain Adaptation With Max-Margin Principle for Cross-Project Imbalanced Software Vulnerability Detection",
+        "year": 2024,
+        "identifier": "10.1145/3664602",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3664602",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Deep Domain Adaptation With Max-Margin Principle for Cross-Project Imbalanced Software Vulnerability Detection",
+        "year": 2024,
+        "identifier": "10.1145/3664602",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4396773564",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Deep Domain Adaptation With Max-Margin Principle for Cross-Project Imbalanced Software Vulnerability Detection",
+        "year": 2024,
+        "identifier": "10.1145/3664602",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/a87661a85398513c9ca04a7fa7ed9faf8ac7e7ee",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "haque2026zsvuld",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "A zero-shot framework for cross-project vulnerability detection in source code",
+        "year": 2026,
+        "identifier": "10.1007/s10664-025-10749-4",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1007/s10664-025-10749-4",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "A zero-shot framework for cross-project vulnerability detection in source code",
+        "year": 2025,
+        "identifier": "10.1007/s10664-025-10749-4",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4415647391",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "A zero-shot framework for cross-project vulnerability detection in source code",
+        "year": 2025,
+        "identifier": "10.1007/s10664-025-10749-4",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/b6b8328598b073c9941928789d1cc15ea9119c34",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "cai2024csvdtf",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "CSVD-TF: Cross-project software vulnerability detection with TrAdaBoost by fusing expert metrics and semantic metrics",
+        "year": 2024,
+        "identifier": "10.1016/j.jss.2024.112038",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.jss.2024.112038",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "CSVD-TF: Cross-project software vulnerability detection with TrAdaBoost by fusing expert metrics and semantic metrics",
+        "year": 2024,
+        "identifier": "10.1016/j.jss.2024.112038",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4393166720",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "CSVD-TF: Cross-project software vulnerability detection with TrAdaBoost by fusing expert metrics and semantic metrics",
+        "year": 2024,
+        "identifier": "10.1016/j.jss.2024.112038",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/e1bc2d2204fc4bd712be610492191abf72d26e9d",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "liu2022cdvuld",
+    "status": "verified",
+    "summary": "Crossref/IEEE DOI 10.1109/TDSC.2020.2984505 matches the title, authors, journal, volume, issue, pages, and publication record.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "CD-VulD: Cross-Domain Vulnerability Discovery Based on Deep Domain Adaptation",
+        "year": 2022,
+        "identifier": "10.1109/tdsc.2020.2984505",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1109/tdsc.2020.2984505",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "CD-VulD: Cross-Domain Vulnerability Discovery Based on Deep Domain Adaptation",
+        "year": 2020,
+        "identifier": "10.1109/tdsc.2020.2984505",
+        "title_similarity": 1.0,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://openalex.org/W3014780393",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109%2FTDSC.2020.2984505?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "lin2018transfer",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Cross-Project Transfer Representation Learning for Vulnerable Function Discovery",
+        "year": 2018,
+        "identifier": "10.1109/tii.2018.2821768",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1109/tii.2018.2821768",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Cross-Project Transfer Representation Learning for Vulnerable Function Discovery",
+        "year": 2018,
+        "identifier": "10.1109/tii.2018.2821768",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2796200341",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Cross-Project Transfer Representation Learning for Vulnerable Function Discovery",
+        "year": 2018,
+        "identifier": "10.1109/TII.2018.2821768",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/92a097a8d1ed76138e09eccf5ee6d64fd34a420a",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "zhou2024calibration",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "On Calibration of Pre-trained Code Models",
+        "year": 2024,
+        "identifier": "10.1145/3597503.3639126",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3597503.3639126",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "On Calibration of Pre-trained Code Models",
+        "year": 2024,
+        "identifier": "10.1145/3597503.3639126",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4394745206",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "On Calibration of Pretrained Code Models",
+        "year": 2024,
+        "identifier": "10.1145/3597503.3639126",
+        "title_similarity": 0.9876543209876543,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/de4f491af221aed7fe93c9885ade99fc402a239a",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "wang2025prom",
+    "status": "verified",
+    "summary": "The ACM DOI 10.1145/3696443.3708959 and the primary CGO 2025 paper match the title, authors, venue, year, and pages 31–46.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Enhancing Deployment-Time Predictive Model Robustness for Code Analysis and Optimization",
+        "year": 2025,
+        "identifier": "10.1145/3696443.3708959",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3696443.3708959",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Enhancing Deployment-Time Predictive Model Robustness for Code Analysis and Optimization",
+        "year": 2025,
+        "identifier": "10.1145/3696443.3708959",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4407857394",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145%2F3696443.3708959?fields=title,year,externalIds,url",
+        "note": "not found"
+      }
+    ]
+  },
+  {
+    "key": "li2021shift",
+    "status": "verified",
+    "summary": "The arXiv primary record 2107.10989 and Semantic Scholar record match the title, authors, and 2021 date.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "JAWS: Auditing Predictive Uncertainty Under Covariate Shift",
+        "year": 2022,
+        "identifier": "10.52202/068431-2602",
+        "title_similarity": 0.6976744186046512,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.52202/068431-2602",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences",
+        "year": 2013,
+        "identifier": "10.1038/nbt.2676",
+        "title_similarity": 0.3780487804878049,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2110300022",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:2107.10989?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "rathnasuriya2026defer",
+    "status": "verified",
+    "summary": "The arXiv primary record 2605.19369 and ACM DOI 10.1145/3786582.3786845 match the ICSE-NIER 2026 paper.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "When to Answer and When to Defer: A Decision Framework for Reliable Code Predictions",
+        "year": 2026,
+        "identifier": "10.1145/3786582.3786845",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1145/3786582.3786845",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Metacognitive Experiences in Consumer Judgment and Decision Making",
+        "year": 2004,
+        "identifier": "10.1207/s15327663jcp1404_2",
+        "title_similarity": 0.348993288590604,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2059052306",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "When to Answer and When to Defer: A Decision Framework for Reliable Code Predictions",
+        "year": 2026,
+        "identifier": "10.1145/3786582.3786845",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": false,
+        "url": "https://www.semanticscholar.org/paper/8b6c9347dd54e568d4feeb12d35590e7cfc687cf",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "guo2017calibration",
+    "status": "verified",
+    "summary": "The PMLR 70 publisher page matches the title, authors, venue, year, and pages 1321–1330.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Newton–Puiseux analysis for interpretability and calibration of complex-valued neural networks",
+        "year": 2026,
+        "identifier": "10.1016/j.neunet.2025.108172",
+        "title_similarity": 0.5413533834586466,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.neunet.2025.108172",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "On Calibration of Modern Neural Networks",
+        "year": 2017,
+        "identifier": "10.48550/arxiv.1706.04599",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2626967530",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "On Calibration of Modern Neural Networks",
+        "year": 2017,
+        "identifier": "1706.04599",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/d65ce2b8300541414bfe51d03906fca72e93523c",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "geifman2019selectivenet",
+    "status": "verified",
+    "summary": "The PMLR 97 publisher page matches the title, authors, venue, year, and pages 2151–2159.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Reject-Option Ensemble Learning for Neural Network-Based Channel Equalization",
+        "year": 2026,
+        "identifier": "10.1109/cai68641.2026.11536589",
+        "title_similarity": 0.5138888888888888,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1109/cai68641.2026.11536589",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "SelectiveNet: A Deep Neural Network with an Integrated Reject Option",
+        "year": 2019,
+        "identifier": "10.48550/arxiv.1901.09192",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2914735679",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=SelectiveNet%3A+A+Deep+Neural+Network+with+an+Integrated+Reject+Option&limit=1&fields=title%2Cyear%2CexternalIds%2Curl",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "tibshirani2019weightedcp",
+    "status": "verified",
+    "summary": "The NeurIPS 2019 proceedings page matches the title, authors, venue, and year.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Conformal Prediction Sets for Tabular Regression Under Covariate Shift",
+        "year": 2026,
+        "identifier": "10.21203/rs.3.rs-9822449/v1",
+        "title_similarity": 0.75,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://doi.org/10.21203/rs.3.rs-9822449/v1",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Conformal Prediction Under Covariate Shift",
+        "year": 2019,
+        "identifier": "10.48550/arxiv.1904.06019",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2936788460",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Conformal+Prediction+under+Covariate+Shift&limit=1&fields=title%2Cyear%2CexternalIds%2Curl",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "angelopoulos2024crc",
+    "status": "verified",
+    "summary": "The ICLR 2024 proceedings paper and arXiv 2208.02814 are the same work; title and authors match.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Taming Tail Risk in Financial Markets: Conformal Risk Control for Nonstationary Portfolio VaR",
+        "year": 2026,
+        "identifier": "10.2139/ssrn.6172999",
+        "title_similarity": 0.38596491228070173,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://doi.org/10.2139/ssrn.6172999",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Conformal Risk Control",
+        "year": 2022,
+        "identifier": "10.48550/arxiv.2208.02814",
+        "title_similarity": 1.0,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4290055968",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Conformal Risk Control",
+        "year": 2022,
+        "identifier": "10.48550/arXiv.2208.02814",
+        "title_similarity": 1.0,
+        "year_match": false,
+        "identifier_match": false,
+        "url": "https://www.semanticscholar.org/paper/af2fba1911f0d0977c731e3918c51428e08741da",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "farinhas2024necrc",
+    "status": "verified",
+    "summary": "The ICLR 2024 proceedings page matches the title, authors, venue, and year.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Finite-Sample Conformal Risk Bounds for Joint Value-at-Risk and Expected-Shortfall Forecasting Under Non-Exchangeable Financial Time Series",
+        "year": 2026,
+        "identifier": "10.3390/math14152847",
+        "title_similarity": 0.29213483146067415,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://doi.org/10.3390/math14152847",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Non-Exchangeable Conformal Risk Control",
+        "year": 2023,
+        "identifier": "10.48550/arxiv.2310.01262",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4387322853",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=Non-Exchangeable+Conformal+Risk+Control&limit=1&fields=title%2Cyear%2CexternalIds%2Curl",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "almeida2025hpcrc",
+    "status": "verified",
+    "summary": "PMLR 266 publisher page checked manually: title, authors, venue, year, and pages 133–152 match.",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Bayesian Target-Domain SHAP under Covariate Shift: Posterior Propagation, Overlap, and Selective Action Risk",
+        "year": 2026,
+        "identifier": "10.21203/rs.3.rs-10566829/v1",
+        "title_similarity": 0.358974358974359,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.21203/rs.3.rs-10566829/v1",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990–2015: a systematic analysis for the Global Burden of Disease Study 2015",
+        "year": 2016,
+        "identifier": "10.1016/s0140-6736(16)31679-8",
+        "title_similarity": 0.029411764705882353,
+        "year_match": false,
+        "identifier_match": true,
+        "url": "https://openalex.org/W1617145133",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=High+Probability+Risk+Control+Under+Covariate+Shift&limit=1&fields=title%2Cyear%2CexternalIds%2Curl",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "kalouptsoglou2023mapping",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Software vulnerability prediction: A systematic mapping study",
+        "year": 2023,
+        "identifier": "10.1016/j.infsof.2023.107303",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.infsof.2023.107303",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Software vulnerability prediction: A systematic mapping study",
+        "year": 2023,
+        "identifier": "10.1016/j.infsof.2023.107303",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4385337511",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.infsof.2023.107303?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "theisen2020better",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Better together: Comparing vulnerability prediction models",
+        "year": 2020,
+        "identifier": "10.1016/j.infsof.2019.106204",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.infsof.2019.106204",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Better together: Comparing vulnerability prediction models",
+        "year": 2019,
+        "identifier": "10.1016/j.infsof.2019.106204",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W2984772254",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Better together: Comparing vulnerability prediction models",
+        "year": 2020,
+        "identifier": "10.1016/j.infsof.2019.106204",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/27f86b3a43948be164fd9ac7d865b2ef0c22fd52",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "liu2024practical",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Making vulnerability prediction more practical: Prediction, categorization, and localization",
+        "year": 2024,
+        "identifier": "10.1016/j.infsof.2024.107458",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.infsof.2024.107458",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Making vulnerability prediction more practical: Prediction, categorization, and localization",
+        "year": 2024,
+        "identifier": "10.1016/j.infsof.2024.107458",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4393256647",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Making vulnerability prediction more practical: Prediction, categorization, and localization",
+        "year": 2024,
+        "identifier": "10.1016/j.infsof.2024.107458",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/7bbdd12631c3f08172217dda75a332234bf58735",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "yumlembam2026kbs",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Enhancing decision-making in windows PE malware classification during dataset shifts with uncertainty estimation",
+        "year": 2026,
+        "identifier": "10.1016/j.knosys.2025.114723",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.knosys.2025.114723",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Enhancing decision-making in windows PE malware classification during dataset shifts with uncertainty estimation",
+        "year": 2025,
+        "identifier": "10.1016/j.knosys.2025.114723",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4415653781",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Enhancing decision-making in windows PE malware classification during dataset shifts with uncertainty estimation",
+        "year": 2025,
+        "identifier": "10.1016/j.knosys.2025.114723",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/e2ba002d2146a92c5e8fea2689e715f3cbf910d5",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "key": "wijekoon2023discern",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "A user-centred evaluation of DisCERN: Discovering counterfactuals for code vulnerability detection and correction",
+        "year": 2023,
+        "identifier": "10.1016/j.knosys.2023.110830",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.knosys.2023.110830",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "A user-centred evaluation of DisCERN: Discovering counterfactuals for code vulnerability detection and correction",
+        "year": 2023,
+        "identifier": "10.1016/j.knosys.2023.110830",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4385283068",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.knosys.2023.110830?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "zhao2023vuldeff",
+    "status": "verified",
+    "summary": "2/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "VULDEFF: Vulnerability detection method based on function fingerprints and code differences",
+        "year": 2023,
+        "identifier": "10.1016/j.knosys.2022.110139",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.knosys.2022.110139",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "VULDEFF: Vulnerability detection method based on function fingerprints and code differences",
+        "year": 2022,
+        "identifier": "10.1016/j.knosys.2022.110139",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4309477403",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": false,
+        "title": "",
+        "year": null,
+        "identifier": "",
+        "title_similarity": null,
+        "year_match": null,
+        "identifier_match": null,
+        "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016%2Fj.knosys.2022.110139?fields=title,year,externalIds,url",
+        "note": "HTTP 429"
+      }
+    ]
+  },
+  {
+    "key": "mirtaheri2025vulscore",
+    "status": "verified",
+    "summary": "3/3 registries strongly match",
+    "registries": [
+      {
+        "registry": "Crossref",
+        "found": true,
+        "title": "Automated vulnerability score prediction through lightweight generative AI",
+        "year": 2025,
+        "identifier": "10.1016/j.knosys.2025.114406",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://doi.org/10.1016/j.knosys.2025.114406",
+        "note": ""
+      },
+      {
+        "registry": "OpenAlex",
+        "found": true,
+        "title": "Automated vulnerability score prediction through lightweight generative AI",
+        "year": 2025,
+        "identifier": "10.1016/j.knosys.2025.114406",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://openalex.org/W4413982315",
+        "note": ""
+      },
+      {
+        "registry": "Semantic Scholar",
+        "found": true,
+        "title": "Automated vulnerability score prediction through lightweight generative AI",
+        "year": 2025,
+        "identifier": "10.1016/j.knosys.2025.114406",
+        "title_similarity": 1.0,
+        "year_match": true,
+        "identifier_match": true,
+        "url": "https://www.semanticscholar.org/paper/cd2ec8d01250ce94b45ec56cbacd8e780f3cb5eb",
+        "note": ""
+      }
+    ]
+  }
+]

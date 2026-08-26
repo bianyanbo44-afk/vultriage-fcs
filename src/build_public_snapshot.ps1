@@ -840,7 +840,9 @@ try {
         "claim_register.md",
         "evidence_bank.md",
         "confirmed_contribution.md",
-        "reviewer_audit.md"
+        "reviewer_audit.md",
+        "citation_verification_final.html",
+        "citation_verification_final.json"
     ) | Select-Object -Unique
     foreach ($validationName in $validationNames) {
         $source = Join-Path (Join-Path $sourceRoot "paper_rewriting_output") $validationName

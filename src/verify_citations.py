@@ -32,6 +32,7 @@ TITLE_ALIASES = {
 }
 MANUAL_VERIFIED = {
     "almeida2025hpcrc": "PMLR 266 publisher page checked manually: title, authors, venue, year, and pages 133–152 match.",
+    "wang2025prom": "The ACM DOI 10.1145/3696443.3708959 and the primary CGO 2025 paper match the title, authors, venue, year, and pages 31–46.",
     "li2021shift": "The arXiv primary record 2107.10989 and Semantic Scholar record match the title, authors, and 2021 date.",
     "rathnasuriya2026defer": "The arXiv primary record 2605.19369 and ACM DOI 10.1145/3786582.3786845 match the ICSE-NIER 2026 paper.",
     "guo2017calibration": "The PMLR 70 publisher page matches the title, authors, venue, year, and pages 1321–1330.",
@@ -97,14 +98,17 @@ def parse_bibtex(path: Path) -> list[Reference]:
         title = strip_latex(field("title"))
         year_raw = field("year")
         note = field("note")
+        doi_value = field("doi")
         doi_match = re.search(r"(?i)doi:\s*(?:\\url\{https?://doi\.org/)?([^}\s]+)", note)
+        doi = doi_value or (doi_match.group(1).rstrip("}") if doi_match else "")
+        doi = re.sub(r"(?i)^https?://(?:dx\.)?doi\.org/", "", doi).strip().rstrip(".,;)")
         arxiv_match = re.search(r"(?i)arxiv[:\s]+([0-9]{4}\.[0-9]{4,5})", note + " " + field("journal"))
         refs.append(
             Reference(
                 key=match.group(1).strip(),
                 title=title,
                 year=int(year_raw),
-                doi=doi_match.group(1).rstrip("}") if doi_match else None,
+                doi=doi or None,
                 arxiv=arxiv_match.group(1) if arxiv_match else None,
             )
         )
@@ -266,7 +270,7 @@ h1,h2{{color:#111827}} table{{border-collapse:collapse;width:100%;margin:1rem 0}
 .verified{{color:#047857;font-weight:700}} .partial{{color:#b45309;font-weight:700}} .issue{{color:#b91c1c;font-weight:700}}
 details{{margin:.7rem 0}} summary{{cursor:pointer;font-weight:600}} code{{font-size:.9em}} .cards{{display:flex;gap:1rem;flex-wrap:wrap}} .card{{padding:.7rem 1rem;border:1px solid #d1d5db;border-radius:.5rem}}
 </style></head><body><h1>VulTriage Citation Verification Report</h1>
-<p>Generated from the final BibTeX file. A strong match requires title similarity ≥0.85, publication year within one year, and no identifier conflict. A citation is <b>verified</b> only when at least two of Crossref, OpenAlex, and Semantic Scholar strongly match.</p>
+<p>Generated from the final BibTeX file. A strong match requires title similarity ≥0.85, publication year within one year, and no identifier conflict. A citation is <b>verified</b> when at least two of Crossref, OpenAlex, and Semantic Scholar strongly match, or when an explicit authoritative publisher/proceedings fallback recorded by the audit matches the bibliographic entry.</p>
 <div class='cards'><div class='card verified'>Verified: {counts['verified']}</div><div class='card partial'>Partial: {counts['partial']}</div><div class='card issue'>Issues: {counts['issue']}</div><div class='card'>Total: {len(refs)}</div></div>
 <h2>Summary</h2><table><thead><tr><th>Key</th><th>Manuscript title</th><th>Year</th><th>Identifier</th><th>Status</th><th>Evidence</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
 <h2>Registry details</h2>{''.join(details)}
