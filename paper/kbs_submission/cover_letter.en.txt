@@ -1,0 +1,23 @@
+26 August 2026
+
+Dear Editor,
+
+Please consider our manuscript, "Knowledge-Guided Selective Conformal Decision Support for Cross-Project Vulnerability Detection under Project Shift," for publication in Knowledge-Based Systems.
+
+The manuscript addresses a knowledge-based decision-support problem that is not captured by detector ranking metrics alone: when should a cross-project vulnerability detector release an automatic label, and when should it defer to review under asymmetric security costs? VulTriage separates learned uncertainty evidence from explicit policy knowledge: class-specific risk budgets, evidence-sufficiency constraints, a severe-violation threshold, and fail-closed action semantics. The paper evaluates this selective decision layer as an empirical intelligent system rather than proposing another vulnerability detector.
+
+The study uses a frozen, prediction-sealed external-evaluation protocol with PrimeVul used for retrospective gate development and 24 external DiverseVul projects. At the primary operating point, estimated weighting without the knowledge gate reduces hashing-SGD's project-paired maximum relative budget violation on all 24 external projects, while reducing singleton coverage by 15.9 percentage points. The same weighting does not improve overall risk alignment for CodeBERT, and the support-gate analysis shows the same detector-conditional boundary. We report project-level uncertainty, refusal cost, duplicate sensitivity, calibration-size sensitivity, resource observations, and a public reproducibility artifact. The manuscript therefore offers a bounded, auditable decision-support study with explicit limitations rather than a universal risk guarantee.
+
+The topic fits the journal's interests in machine learning methodology, uncertainty-aware prediction, intelligent decision-support systems, and knowledge-based security applications. Recent KBS work on uncertainty under dataset shift and user-facing vulnerability analysis provides a direct context for the present study. The manuscript is original and, at the time of KBS submission, will not be under consideration by another journal or published elsewhere. The authors received no specific funding and declare no competing interests. The manuscript includes data/code availability, CRediT, ethics, and generative-AI disclosure statements.
+
+Thank you for your consideration.
+
+Sincerely,
+
+Yanbo Bian (corresponding author)
+Computer Science and Technology Program, Weihai International College, Beijing Jiaotong University
+Email: 24722081@bjtu.edu.cn
+
+Zhihai Wang
+School of Computer Science and Technology, Beijing Jiaotong University
+Email: zhhwang@bjtu.edu.cn

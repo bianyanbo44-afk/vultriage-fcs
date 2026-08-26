@@ -27,6 +27,14 @@ paper/*.fls
 paper/*.log
 paper/*.out
 paper/main.pdf
+paper/kbs_submission/*.aux
+paper/kbs_submission/*.bbl
+paper/kbs_submission/*.blg
+paper/kbs_submission/*.fdb_latexmk
+paper/kbs_submission/*.fls
+paper/kbs_submission/*.log
+paper/kbs_submission/*.out
+paper/kbs_submission/*.spl
 *.zip
 *.pt
 *.bin

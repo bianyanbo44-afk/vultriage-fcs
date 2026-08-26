@@ -1,4 +1,8 @@
-# IST submission package
+# Historical IST submission package
+
+This directory is retained for provenance after the manuscript was redirected
+to *Knowledge-Based Systems*. It is not the current submission package. Use
+[`../kbs_submission/`](../kbs_submission/) for the KBS manuscript and source.
 
 Target journal: *Information and Software Technology* (Elsevier).
 

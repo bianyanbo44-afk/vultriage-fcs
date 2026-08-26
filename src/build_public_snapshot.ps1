@@ -402,11 +402,60 @@ try {
         -Destination (Join-Path $paperFigureDestination "data") `
         -Extensions @(".csv")
 
-    # Keep the current IST submission package alongside the historical FCS
-    # scaffold. The submission package is copied explicitly so temporary
+    # Keep the current KBS submission package alongside the historical FCS and
+    # IST scaffolds. Submission packages are copied explicitly so temporary
+    # LaTeX build directories, declarations, and staging archives can never
+    # enter the public snapshot by accident. Source projects use
+    # paper_rewriting_output, while an already-public checkout keeps packages
+    # under paper/.
+    $kbsPackageSource = $null
+    foreach ($candidate in @(
+        (Join-Path $sourceRoot "paper_rewriting_output\kbs_submission_package"),
+        (Join-Path $sourceRoot "paper\kbs_submission")
+    )) {
+        if (Test-Path -LiteralPath $candidate -PathType Container) {
+            $kbsPackageSource = $candidate
+            break
+        }
+    }
+    if ($null -ne $kbsPackageSource -and (Test-Path -LiteralPath $kbsPackageSource -PathType Container)) {
+        $kbsPackageDestination = Join-Path $paperDestination "kbs_submission"
+        foreach ($kbsFile in @(
+            "main.tex",
+            "references.bib",
+            "main.pdf",
+            "VulTriage_KBS_manuscript.pdf",
+            "elsarticle.cls",
+            "elsarticle-num-names.bst",
+            "README_KBS_SUBMISSION.md",
+            "cover_letter.en.md",
+            "cover_letter.en.txt",
+            "highlights.txt",
+            "submission_checklist_kbs.md"
+        )) {
+            $source = Join-Path $kbsPackageSource $kbsFile
+            if (-not (Test-Path -LiteralPath $source -PathType Leaf)) {
+                throw "KBS submission package is missing: $source"
+            }
+            Copy-RequiredFile -Source $source -Destination (Join-Path $kbsPackageDestination $kbsFile)
+        }
+        Copy-FilteredTree `
+            -Source (Join-Path $kbsPackageSource "figures") `
+            -Destination (Join-Path $kbsPackageDestination "figures") `
+            -Extensions @(".pdf", ".png", ".svg", ".tiff")
+        Copy-FilteredTree `
+            -Source (Join-Path $kbsPackageSource "figures\data") `
+            -Destination (Join-Path $kbsPackageDestination "figures\data") `
+            -Extensions @(".csv")
+        Copy-RequiredFile `
+            -Source (Join-Path $kbsPackageSource "figures\figure_manifest.json") `
+            -Destination (Join-Path $kbsPackageDestination "figures\figure_manifest.json")
+    }
+
+    # Keep the historical IST submission package as a separate provenance
+    # directory when it exists. The package is copied explicitly so temporary
     # LaTeX build directories and staging archives can never enter the public
-    # snapshot by accident. Source projects use paper_rewriting_output, while
-    # an already-public checkout keeps the same package under paper/.
+    # snapshot by accident.
     $istPackageSource = $null
     foreach ($candidate in @(
         (Join-Path $sourceRoot "paper_rewriting_output\ist_submission_package"),

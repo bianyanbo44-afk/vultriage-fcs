@@ -1,11 +1,12 @@
 # VulTriage reproducibility artifact
 
 This repository contains the reproducibility artifact for the manuscript
-**VulTriage: Auditing Deploy-or-Review Policies for Cross-Project Vulnerability
-Detection**, prepared for *Information and Software Technology* (Elsevier).
-The repository name and URL are historical project identifiers; the current
-submission target is IST. No private user dataset or pre-existing user
-manuscript is distributed here.
+**Knowledge-Guided Selective Conformal Decision Support for Cross-Project
+Vulnerability Detection under Project Shift**, prepared for *Knowledge-Based
+Systems* (Elsevier). The repository name is a historical project identifier.
+The KBS manuscript source is intentionally published as part of the
+reproducibility artifact; no private user dataset, target-label vault, or
+per-function prediction archive is distributed here.
 
 ## Study
 
@@ -27,19 +28,22 @@ budget, with a measured singleton-coverage cost, while the same weighting does
 not improve CodeBERT overall. The support gate is reported as a descriptive,
 detector-conditional diagnostic rather than a target-risk certificate.
 
-## Current IST manuscript
+## Current KBS manuscript
 
-The complete IST submission source and PDF are in
-[`paper/ist_submission/`](paper/ist_submission/). The package includes the
-Elsevier class, bibliography style, figures, figure source data, highlights,
-and cover-letter text. Build it from that directory with:
+The KBS submission source and compiled PDF are in
+[`paper/kbs_submission/`](paper/kbs_submission/). This package contains the
+editable LaTeX source, bibliography, figures, figure-source data, highlights,
+cover-letter text, and KBS submission checklist. The declaration-of-interest
+DOCX is kept in the local submission package and is not published here. Build
+it from that directory with:
 
 ```powershell
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-The older files in `paper/` that use `fcs.cls` are retained as historical
-project scaffolding for provenance and are not the current submission.
+The earlier IST package in [`paper/ist_submission/`](paper/ist_submission/) is
+retained as historical submission provenance only; it is not the current
+submission version.
 
 ## Reproduction
 
