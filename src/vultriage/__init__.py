@@ -12,6 +12,16 @@ from .prom_adapter import (
     PromUnionResult,
     prom_binary_adapter,
 )
+from .knowledge_contract import (
+    ContractAction,
+    ContractEvidence,
+    DecisionCertificate,
+    DetectorShiftIdentity,
+    QualificationMetrics,
+    execute_contract,
+    qualification_metrics,
+    verify_certificate,
+)
 
 __all__ = [
     "conformal_sets",
@@ -22,4 +32,12 @@ __all__ = [
     "PromExpertResult",
     "PromUnionResult",
     "prom_binary_adapter",
+    "ContractAction",
+    "ContractEvidence",
+    "DecisionCertificate",
+    "DetectorShiftIdentity",
+    "QualificationMetrics",
+    "execute_contract",
+    "qualification_metrics",
+    "verify_certificate",
 ]

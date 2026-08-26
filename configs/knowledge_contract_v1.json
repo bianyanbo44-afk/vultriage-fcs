@@ -1,0 +1,36 @@
+{
+  "policy_version": "vultriage-knowledge-contract-v1",
+  "analysis_status": "exploratory contract extension over the frozen extension-v2 evidence; no detector, project, budget, or gate output is removed",
+  "source_domain": "PrimeVul",
+  "target_domain": "DiverseVul",
+  "primary_operating_point": {
+    "alpha_vulnerable": 0.1,
+    "alpha_safe": 0.2
+  },
+  "registration": {
+    "split_salt": "vultriage-contract-v1",
+    "registration_projects": 12,
+    "confirmation_projects": 12,
+    "qualification_threshold": 0.7,
+    "qualification_score": "min(gate AUROC, mean(severe review rate, non-severe pass rate))"
+  },
+  "partition_stability": {
+    "split_salt_prefix": "vultriage-contract-v1-",
+    "deterministic_partitions": 10000
+  },
+  "execution": {
+    "evidence_logic": "three-valued conjunction over K1-K4",
+    "unknown_or_failed_predicate": "review",
+    "detector_shift_mismatch": "review",
+    "automatic_action_requires": "qualified registry entry, complete evidence, passed gate, and singleton prediction set",
+    "certificate_fields": [
+      "contract identity",
+      "risk budget",
+      "prediction set",
+      "rule truth values",
+      "entitlement",
+      "action",
+      "evidence digest"
+    ]
+  }
+}

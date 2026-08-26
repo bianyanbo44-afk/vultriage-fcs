@@ -1,49 +1,10 @@
-detector,target_group,alpha_vulnerable,alpha_safe,supported,pass_rate,singleton_coverage
-codebert,FreeRDP,0.1,0.2,True,1.0,0.7969387755102041
-codebert,envoy,0.1,0.2,True,1.0,0.6111957349581112
-codebert,ffmpeg,0.1,0.2,True,1.0,0.7100712105798576
-codebert,ghostpdl,0.1,0.2,True,1.0,0.6978798586572438
-codebert,imagemagick,0.1,0.2,False,0.0,0.0
-codebert,jasper,0.1,0.2,True,1.0,0.7680921052631579
-codebert,krb5,0.1,0.2,True,1.0,0.670061099796334
-codebert,librsvg,0.1,0.2,True,1.0,0.7791044776119403
-codebert,libtpms,0.1,0.2,True,1.0,0.436734693877551
-codebert,libxml2,0.1,0.2,True,1.0,0.7009708737864078
-codebert,linux,0.1,0.2,True,1.0,0.713027634375949
-codebert,mongo,0.1,0.2,False,0.0,0.0
-codebert,mysql-server,0.1,0.2,True,1.0,0.8238665971860344
-codebert,net,0.1,0.2,True,1.0,0.6961325966850829
-codebert,openssl,0.1,0.2,True,1.0,0.7309283088235294
-codebert,php,0.1,0.2,True,1.0,0.7706013363028953
-codebert,postgres,0.1,0.2,True,1.0,0.7677543186180422
-codebert,qemu,0.1,0.2,True,1.0,0.8356112376613517
-codebert,qpdf,0.1,0.2,True,1.0,0.8404255319148938
-codebert,radare2,0.1,0.2,True,1.0,0.7763975155279503
-codebert,samba,0.1,0.2,True,1.0,0.7185109637939827
-codebert,tcpdump,0.1,0.2,True,1.0,0.6658878504672897
-codebert,tensorflow,0.1,0.2,True,1.0,0.7736271946208443
-codebert,vim,0.1,0.2,True,1.0,0.7670157068062827
-hashing,FreeRDP,0.1,0.2,True,1.0,0.3910204081632652
-hashing,envoy,0.1,0.2,False,0.0,0.0
-hashing,ffmpeg,0.1,0.2,False,0.0,0.0
-hashing,ghostpdl,0.1,0.2,False,0.0,0.0
-hashing,imagemagick,0.1,0.2,False,0.0,0.0
-hashing,jasper,0.1,0.2,True,1.0,0.5108552631578946
-hashing,krb5,0.1,0.2,False,0.0,0.0
-hashing,librsvg,0.1,0.2,False,0.0,0.0
-hashing,libtpms,0.1,0.2,True,1.0,0.1644897959183673
-hashing,libxml2,0.1,0.2,False,0.0,0.0
-hashing,linux,0.1,0.2,False,0.0,0.0
-hashing,mongo,0.1,0.2,False,0.0,0.0
-hashing,mysql-server,0.1,0.2,True,1.0,0.6953100573215216
-hashing,net,0.1,0.2,True,1.0,0.6203314917127072
-hashing,openssl,0.1,0.2,True,1.0,0.6833639705882353
-hashing,php,0.1,0.2,True,1.0,0.5631403118040089
-hashing,postgres,0.1,0.2,True,1.0,0.6579654510556623
-hashing,qemu,0.1,0.2,False,0.0,0.0
-hashing,qpdf,0.1,0.2,False,0.0,0.0
-hashing,radare2,0.1,0.2,True,1.0,0.4403726708074534
-hashing,samba,0.1,0.2,True,1.0,0.485874553799082
-hashing,tcpdump,0.1,0.2,True,1.0,0.4771028037383177
-hashing,tensorflow,0.1,0.2,True,1.0,0.3991034740381023
-hashing,vim,0.1,0.2,True,1.0,0.5087041884816753
+detector,method,max_relative_violation,singleton_coverage,projects,label,cohort
+codebert,estimated_weight_no_gate_clip_20,1.2442555870317908,0.748972007814906,24,Project-weighted,all projects
+codebert,pooled_split_conformal,0.8806039971931283,0.5974494485294117,24,Pooled conformal,all projects
+codebert,prom_derived_aps,0.0,0.24355450363327297,24,PROM-APS,all projects
+codebert,unweighted_mondrian,1.2383562366934702,0.7680339319368932,24,Unweighted,all projects
+hashing,estimated_weight_no_gate_clip_20,0.4833670226461353,0.5240100070578746,24,Project-weighted,all projects
+hashing,pooled_split_conformal,1.4623697714196857,0.6013107807121576,24,Pooled conformal,all projects
+hashing,prom_derived_aps,0.0,0.26146178173067536,24,PROM-APS,all projects
+hashing,unweighted_mondrian,1.2423861589376228,0.6969124382087816,24,Unweighted,all projects
+hashing,vultriage_full_gate_clip_20,0.1219858156028368,0.5087041884816753,13,Qualified contract (13/24),supported projects

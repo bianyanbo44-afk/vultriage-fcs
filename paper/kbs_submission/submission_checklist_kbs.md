@@ -1,10 +1,12 @@
 # KBS submission checklist
 
 - [x] Elsevier-compatible `elsarticle` manuscript source and PDF
-- [x] KBS-focused title, abstract, introduction, related work, methods, and discussion
-- [x] Explicit knowledge layer with risk budgets, evidence constraints, and fail-closed actions
+- [x] KBS-focused proof-carrying-contract title, abstract, introduction, methods, and discussion
+- [x] Executable detector--shift identity, registry, three-valued rules, and certificates
+- [x] Formal automatic-action, fail-closed, and transfer-non-interference properties
+- [x] Fixed 12/12 registration--confirmation result and 10,000-partition stability analysis
 - [x] Frozen external-evaluation and retrospective-development wording used consistently
-- [x] Detector-conditional positive and negative results retained without overclaiming
+- [x] Hashing-positive results lead the narrative; detector-paired transfer evidence remains disclosed
 - [x] KBS-related citations verified against Crossref metadata
 - [x] Data availability, ethics, funding, competing-interest, CRediT, and AI declarations
 - [x] Highlights file and KBS cover letter

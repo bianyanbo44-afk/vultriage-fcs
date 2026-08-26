@@ -1,4 +1,5 @@
-domain,detector,projects,evaluation_rows,severe_prevalence,auroc,auprc,passed_projects,median_pass_minus_fail,ci_lower,ci_upper
-PrimeVul development LOPO,frozen gate,12,108,0.2777777777777778,0.35,0.2451989716074223,,,,
-DiverseVul external,hashing,24,24,0.4583333333333333,0.8601398601398602,0.8173274957365867,13.0,-0.5473055229798404,-1.005741836511067,-0.2243584402599566
-DiverseVul external,codebert,24,24,0.875,0.4285714285714286,0.8732815591871801,22.0,-1.0099110796348756,-2.449807097083569,0.7270353326546579
+detector,partition,projects,severe_projects,nonsevere_projects,gate_auroc,severe_review_rate,nonsevere_pass_rate,balanced_triage_accuracy,qualification_score,qualification_threshold,qualified
+codebert,registration,12,10,2,0.15,0.0,1.0,0.5,0.15,0.7,False
+codebert,confirmation,12,11,1,0.8181818181818182,0.1818181818181818,1.0,0.5909090909090909,0.5909090909090909,0.7,False
+hashing,registration,12,5,7,0.7714285714285715,0.8,0.7142857142857143,0.7571428571428571,0.7571428571428571,0.7,True
+hashing,confirmation,12,6,6,0.9166666666666669,0.8333333333333334,1.0,0.9166666666666669,0.9166666666666669,0.7,True

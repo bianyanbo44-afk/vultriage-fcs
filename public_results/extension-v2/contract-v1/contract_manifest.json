@@ -1,0 +1,65 @@
+{
+  "analysis_status": "exploratory contract extension over the frozen extension-v2 evidence; no detector, project, budget, or gate output is removed",
+  "config_sha256": "837795719587D25D6EDB0BC636D89AE51385C3643677771B5BD1F186CAD1C946",
+  "confirmation_projects": [
+    "net",
+    "mongo",
+    "qpdf",
+    "envoy",
+    "libtpms",
+    "radare2",
+    "tcpdump",
+    "imagemagick",
+    "php",
+    "samba",
+    "jasper",
+    "qemu"
+  ],
+  "created_at_utc": "2026-08-26T16:41:15.395535+00:00",
+  "metrics_sha256": "AB48DFC01263DED8E63A64ACF12E31DBB942C21200E5F4B940A2BA545B3AB491",
+  "outputs": {
+    "confirmation_contract_decisions.csv": {
+      "rows": 24,
+      "sha256": "88F6F9B904DB5165362FAC5F32D8296452A99A1E936A7474DD07404BFFAA3506"
+    },
+    "fixed_split_projects.csv": {
+      "rows": 24,
+      "sha256": "ADD92DCC3855C1B75D80A4BF62902DC5F9D60C068CA568C7F951963034739FFC"
+    },
+    "partition_stability_scores.csv": {
+      "rows": 20000,
+      "sha256": "334FD8721B60A2B1F318E295D6BF56C919931BECE594E025663811AB32236F93"
+    },
+    "partition_stability_summary.csv": {
+      "rows": 2,
+      "sha256": "84A312625A350385D22B3F7EC3A8F9A55D3697CEF8E25CC3CEDD81C90CE41208"
+    },
+    "qualification_summary.csv": {
+      "rows": 4,
+      "sha256": "2423EE72C4F2CE12FB0541577742A3B0196412FDB61B1CAEF28C16E5F318B87B"
+    }
+  },
+  "partition_stability_runs": 10000,
+  "policy_version": "vultriage-knowledge-contract-v1",
+  "project_means_sha256": "8F0EF0EFCE0EFC9572306FCC9B38D89287DF7DC45FC3306C67E5DC422A46E971",
+  "qualification_threshold": 0.7,
+  "registration_projects": [
+    "tensorflow",
+    "ghostpdl",
+    "ffmpeg",
+    "libxml2",
+    "linux",
+    "vim",
+    "krb5",
+    "postgres",
+    "FreeRDP",
+    "librsvg",
+    "openssl",
+    "mysql-server"
+  ],
+  "registry": {
+    "codebert": false,
+    "hashing": true
+  },
+  "script_sha256": "5AE572EF7B67FB4ABB9F5D109005BBFBE5D9FB8C885973418471C5F2D1922B9B"
+}

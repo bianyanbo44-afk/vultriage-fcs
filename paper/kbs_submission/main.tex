@@ -29,7 +29,7 @@
 \begin{document}
 \begin{frontmatter}
 
-\title{Knowledge-Guided Selective Conformal Decision Support for Cross-Project Vulnerability Detection under Project Shift}
+\title{VulTriage: Proof-Carrying Detector--Shift Knowledge Contracts for Selective Vulnerability Triage}
 
 \author[inst1]{Yanbo Bian\corref{cor1}}
 \ead{24722081@bjtu.edu.cn}
@@ -40,39 +40,41 @@
 \address[inst2]{School of Computer Science and Technology, Beijing Jiaotong University, Beijing 100044, China}
 
 \begin{abstract}
-\textbf{Problem:} Cross-project vulnerability detection under project shift needs a decision rule that turns uncertain predictions into automatic labels or review actions under asymmetric security budgets. \textbf{Approach:} We present \method, a knowledge-guided selective conformal decision-support layer whose explicit policy knowledge encodes class-specific risk budgets, evidence-sufficiency checks, a severe-violation threshold, and fail-closed action semantics. \textbf{Methods:} In a frozen, prediction-sealed evaluation, PrimeVul is used for retrospective gate development and 24 DiverseVul projects for external evaluation. We compare hashing-SGD with a frozen CodeBERT encoder. \textbf{Results:} At $(\av,\as)=(0.10,0.20)$, weighting without the knowledge gate lowers hashing-SGD's project-paired maximum relative budget violation by 0.816 (95\% interval [0.318, 1.722]; 24/24 projects) but lowers singleton coverage by 15.9 percentage points; it gives no overall risk-alignment improvement for CodeBERT. The frozen support gate has AUROC 0.8601 on external hashing, 0.4286 on external CodeBERT, and 0.35 in development. \textbf{Implications:} The evidence supports detector-conditional, auditable partial automation and exposes review cost; it does not establish a target-risk guarantee or detector-general validity.
+\textbf{Problem:} Cross-project vulnerability detectors produce scores, but deployment requires a defensible answer to a different question: when is an automatic label permitted under asymmetric security costs? \textbf{Approach:} We present \method, which formulates selective automation as a proof-carrying detector--shift knowledge contract. Each contract binds a detector and source--target shift to a qualification registry, evaluates budget, evidence, gate, and singleton predicates in three-valued logic, and attaches a machine-verifiable certificate to every automatic action. False, unknown, mismatched, or unregistered evidence fails closed to review. \textbf{Methods:} A frozen, prediction-sealed study uses PrimeVul for retrospective controller development and 24 DiverseVul projects for evaluation with hashing-SGD and a frozen CodeBERT encoder. An exploratory contract extension uses a deterministic 12/12 registration--confirmation split and 10,000 deterministic split perturbations without removing any frozen result. \textbf{Results:} Hashing-SGD is registered with qualification score $Q=0.757$ and confirms at $Q=0.917$; on the confirmation half the contract sends five of six severe projects to review and releases all six non-severe projects as eligible for singleton automation. Both halves exceed $Q=0.70$ in 84.94\% of 10,000 splits. The registry withholds CodeBERT authority ($Q=0.150$), so all of its confirmation projects remain review-only. Independently, project-aware weighting improves hashing risk alignment on all 24 projects at the primary operating point and on 202 of 216 project--budget cells, with the direction preserved under calibration-size and near-duplicate sensitivity analyses. \textbf{Implications:} \method turns uncertainty evidence into inspectable automation authority and makes unsupported detector transfer mechanically non-authorizing.
 \end{abstract}
 
 \begin{keyword}
-  knowledge-guided decision support \sep vulnerability detection \sep conformal prediction \sep selective classification \sep dataset shift
+  proof-carrying knowledge contract \sep vulnerability detection \sep conformal prediction \sep selective classification \sep dataset shift
 \end{keyword}
 \end{frontmatter}
 
 \section{Introduction}
 
-A vulnerability detector deployed on an unseen software project must answer two different questions. The first is predictive: which functions look vulnerable? The second is decisional: which of those predictions can be released automatically and which should be sent to review under an asymmetric security budget? A missed vulnerable function and an unnecessary alert consume different resources. A confidence score by itself does not reveal whether calibration evidence remains relevant to a new project, nor whether a requested risk budget is supported by enough effective observations. An intelligent decision-support system therefore needs explicit, auditable knowledge that connects uncertainty evidence to an action policy.
+A vulnerability detector deployed on an unseen software project must answer two different questions. The predictive question is which functions look vulnerable. The decisional question is whether the detector currently possesses enough evidence and authority to release an automatic label. This distinction is consequential: a missed vulnerable function and an unnecessary alert consume different resources, project shift can invalidate calibration evidence, and a confidence score contains no explicit statement about which detector, shift, budget, or evidence state it authorizes. A knowledge-based decision-support system therefore needs more than uncertainty estimation. It needs an executable permission model for automation.
 
 Public vulnerability benchmarks have made the first question more realistic. PrimeVul reports the effects of duplicate functions, label quality, imbalance, and evaluation design on code-language-model results \cite{ding2025primevul}, while DiverseVul broadens project and weakness coverage for deep vulnerability detection \cite{chen2023diversevul}. Cross-project methods address representation and distribution mismatch with transfer learning, domain adaptation, graph representations, and zero-shot mechanisms \cite{lin2018transfer,liu2022cdvuld,zhang2023cpvd,nguyen2024dam2p,cai2024csvdtf,haque2026zsvuld}. These methods improve or adapt a detector, but a deployment still needs an explicit policy for returning a label, deferring to review, and reporting the cost of that refusal.
 
-Calibration and selective prediction provide useful ingredients. CodeBERT is a standard pretrained representation for source code \cite{feng2020codebert}, and LineVul and data-flow-aware models show how detector architecture can be improved \cite{fu2022linevul,steenhoek2024deepdfa}. Temperature scaling is a canonical calibration baseline \cite{guo2017calibration}, while selective prediction formalizes the risk--coverage trade-off \cite{geifman2019selectivenet}. Code-model calibration can degrade under shift \cite{zhou2024calibration}, and Prom provides a deployment-time conformal assessment for code-analysis tasks \cite{wang2025prom}. Recent work also frames code prediction as an answer-or-defer decision \cite{rathnasuriya2026defer}; a KBS study similarly connects uncertainty estimation under dataset shift to malware-classification decisions \cite{yumlembam2026kbs}. These lines of work leave open a decision-support question: how should a project-level security tool expose uncertainty, refusal, and review cost when vulnerable and safe errors have different consequences?
+Calibration and selective prediction provide important ingredients. CodeBERT is a standard pretrained representation for source code \cite{feng2020codebert}, and LineVul and data-flow-aware models show how detector architecture can be improved \cite{fu2022linevul,steenhoek2024deepdfa}. Temperature scaling is a canonical calibration baseline \cite{guo2017calibration}, while selective prediction formalizes the risk--coverage trade-off \cite{geifman2019selectivenet}. Code-model calibration can degrade under shift \cite{zhou2024calibration}, and Prom provides deployment-time conformal assessment for code-analysis tasks \cite{wang2025prom}. Recent work also frames code prediction as an answer-or-defer decision \cite{rathnasuriya2026defer}; a KBS study connects uncertainty estimation under dataset shift to malware-classification decisions \cite{yumlembam2026kbs}. Most closely, AEGIS separates learned vulnerability perception from a symbolic Block/Warn/Pass policy guard in CI/CD \cite{abdallah2026aegis}. This establishes policy-governed vulnerability management, but leaves a sharper deployment question: how can automation authority be bound to a particular detector--shift identity, withheld before item-level execution, and carried by a machine-verifiable decision object?
 
-We study \method, a post-hoc decision layer that can wrap a fitted detector while being evaluated separately for each detector. It constructs class-conditional prediction sets using estimated source-to-target relevance weights, then applies a frozen support gate based only on unlabeled target code and source calibration diagnostics. The learned detector supplies uncertainty evidence; an explicit knowledge layer supplies risk budgets, evidence constraints, and action semantics. A singleton set is an automatic label; a doubleton is review. The gate is not treated as a risk certificate. Instead, we test whether its label-free pass signal predicts severe raw violation after labels are released, separately for each detector. This framing makes the project, rather than an individual function or random row, the unit of deployment and inference.
+We address this gap with \method, a post-hoc decision layer that wraps a fitted detector with a proof-carrying detector--shift knowledge contract. The detector and source--target shift form a versioned identity. A qualification registry decides whether evidence learned for that identity may authorize automation. At runtime, four policy predicates---valid asymmetric budgets, complete evidence, qualified detector--shift support, and singleton eligibility---are evaluated in three-valued logic. Only a conjunction of true predicates creates an automation entitlement; every other state produces review. The emitted decision certificate records the contract identity, risk budget, rule truth values, action, and evidence digest and is independently verifiable. Thus, \method separates three concerns that score-based pipelines conflate: evidence generation, authority qualification, and action execution.
+
+The empirical layer combines class-conditional conformal sets with estimated source-to-target relevance weights and a frozen, label-free severe-risk gate. The project, rather than an individual function or random row, is the unit of deployment and inference. We evaluate both the underlying risk alignment and the higher-level authority contract. The latter uses a fixed hash-defined registration--confirmation partition and deterministic split perturbations to test whether qualification is a stable property of a detector--shift identity rather than an artifact of one convenient partition.
 
 The study asks:
 
 \begin{itemize}
-  \item \textbf{RQ1:} Can a knowledge-constrained support policy provide auditable deploy-or-review decisions on unseen projects, and what automation cost does refusal impose?
-  \item \textbf{RQ2:} Does estimated target weighting reduce class-asymmetric risk exceedance relative to unweighted sets, and does that effect replicate across detector types?
-  \item \textbf{RQ3:} How do calibration size, duplicate control, and computation affect the operational validity of the decision layer?
+  \item \textbf{RQ1:} Can an executable knowledge contract transform uncertainty evidence into mechanically verifiable automation authority with fail-closed semantics?
+  \item \textbf{RQ2:} Can detector--shift qualification distinguish supported automation from unsupported transfer, and is that decision stable across project partitions?
+  \item \textbf{RQ3:} How strongly does project-aware weighting improve class-asymmetric risk alignment, and does the gain persist under calibration-size and duplicate-control sensitivity analyses?
 \end{itemize}
 
 The contributions are fourfold:
 
 \begin{enumerate}
-  \item an explicit knowledge layer that separates learned uncertainty evidence from class-specific risk budgets, evidence-sufficiency checks, a severe-risk threshold, and fail-closed action semantics;
-  \item a frozen, prediction-sealed external-evaluation protocol combining a PrimeVul retrospective development domain, a DiverseVul external domain, two detectors, five seed addresses, a $3 \times 3$ asymmetric risk grid, and 25 recorded methods;
-  \item a detector-conditional risk-alignment result: on hashing-SGD, target weighting decreases the worst relative budget violation on all 24 projects at the primary operating point, with a quantified 15.9 percentage-point singleton-coverage cost; and
-  \item an external validity and reproducibility analysis showing that support discrimination does not transfer to CodeBERT, while separating support, singleton coverage, and label-revealed attainment in released summaries, sensitivity analyses, figure source data, validation manifests, and a public builder that excludes raw code, labels, embeddings, private indexes, and per-function decision archives.
+  \item an executable proof-carrying knowledge contract that binds detector--shift identity, three-valued evidence rules, fail-closed entitlement logic, and independently verifiable decision certificates;
+  \item a detector-specific qualification registry based on a composite discrimination-and-triage score, together with fixed hash-defined registration--confirmation evaluation and 10,000 deterministic partition perturbations;
+  \item a frozen, prediction-sealed external evaluation showing that project-aware weighting improves hashing-SGD risk alignment on all 24 projects at the primary operating point and on 202 of 216 project--budget cells, with quantified automation cost and sensitivity evidence; and
+  \item a positive governance result: the same qualification firewall that registers hashing-SGD blocks unsupported CodeBERT transfer by construction, while released code, tables, certificates, figure source data, and manifests make the evidence chain inspectable.
 \end{enumerate}
 
 \section{Related work}
@@ -87,6 +89,10 @@ Software-engineering studies also emphasize the operational side of vulnerabilit
 
 Recent contributions in \textit{Knowledge-Based Systems} illustrate the target perspective. Yumlembam et al. connect uncertainty estimation with malware-classification decisions under dataset shift \cite{yumlembam2026kbs}, while Wijekoon and Wiratunga evaluate user-facing counterfactual support for code vulnerability detection and correction \cite{wijekoon2023discern}. Other KBS studies focus on improving the detector or the vulnerability score itself, including function fingerprints and code differences \cite{zhao2023vuldeff} and lightweight vulnerability-score prediction \cite{mirtaheri2025vulscore}. Our contribution is complementary: the learned detector remains fixed, and the knowledge component is an explicit, inspectable policy that maps uncertainty evidence to automatic or review actions. We therefore evaluate whether this policy transfers across detector--shift pairs rather than presenting it as a new ontology, expert knowledge graph, or detector state of the art.
 
+The closest conceptual neighbor is AEGIS, which combines graph-based risk estimation, stochastic epistemic uncertainty, and symbolic action constraints for auditable CI/CD decisions \cite{abdallah2026aegis}. \method advances this policy-governance direction through a different knowledge mechanism: a versioned detector--shift identity first acquires or is denied authority in a qualification registry; three-valued predicates prevent missing evidence from becoming permission; and each automatic action carries a certificate that a verifier checks by re-executing the complete contract. Registration--confirmation separation and partition perturbations then evaluate whether that authority is stable, not merely whether a fixed policy can be replayed. These mechanisms make detector transfer an executable access-control question rather than a threshold-reuse convention.
+
+Proof-carrying code established the architectural pattern in which a producer supplies evidence that a consumer can validate against a previously defined policy \cite{necula1997pcc}. \method transfers that pattern to decision governance rather than program safety: its certificate attests that a serialized triage contract was executed consistently for a detector--shift identity. It does not prove that source code is safe, that the detector is correct, or that a conformal risk guarantee holds under arbitrary shift.
+
 Modern code detectors provide important external-validity baselines. CodeBERT supplies a pretrained code representation \cite{feng2020codebert}, LineVul adapts transformers to line-level vulnerability prediction \cite{fu2022linevul}, and DeepDFA injects data-flow structure for efficient detection \cite{steenhoek2024deepdfa}. Our CodeBERT track is deliberately a frozen encoder plus a source-train-only standardized logistic head, not a claim of fine-tuned state of the art. The contrast with hashing-SGD therefore tests whether support-aware weighting behaves consistently across a low-cost lexical detector and a semantic representation. These studies primarily optimize or compare detectors; \method addresses the complementary software-engineering task of deciding when detector output is ready for automatic release and when it must remain in a review queue.
 
 \subsection{Selective automation and conformal risk}
@@ -95,48 +101,95 @@ Temperature scaling changes probability calibration but not the binary ranking \
 
 Weighted conformal prediction can recover target marginal coverage under covariate shift when the likelihood ratio is known and conditional labels are invariant \cite{tibshirani2019weightedcp}. Conformal risk control generalizes the controlled loss \cite{angelopoulos2024crc}, and nonexchangeable or high-probability variants make the shift assumptions explicit \cite{farinhas2024necrc,almeida2025hpcrc}. Our density ratios are learned from a finite domain classifier and project shift may include concept shift. We therefore report empirical violation, support diagnostics, and refusal cost rather than claiming a distribution-free deployment guarantee.
 
-\section{Knowledge-guided selective decision support}
+\section{Proof-carrying detector--shift knowledge contracts}
 
-\subsection{Policy knowledge and action semantics}
+\subsection{Contract identity and qualification registry}
 
-We separate the learned detector from the explicit policy knowledge used to decide whether its output may be automated. Let
+We separate evidence generation from the authority to act on that evidence. A contract identity is
 \begin{equation}
-\mathcal K=\{\boldsymbol{\alpha},\mathcal E,\tau_{\mathrm{sev}},\mathcal A\},
-\label{eq:knowledge}
+ \iota=(d,\mathcal S,\mathcal T,v),
+ \label{eq:identity}
 \end{equation}
-where $\boldsymbol{\alpha}=(\av,\as)$ contains the vulnerable- and safe-class risk budgets, $\mathcal E$ contains admissibility checks for finite effective-sample-size, test-point-mass, domain-AUROC, and clipping diagnostics, $\tau_{\mathrm{sev}}=0.5$ is the severe-relative-violation threshold, and $\mathcal A$ defines the automatic-label and review actions. For a target project, the gate input $z$ contains only unlabeled diagnostics. The knowledge controller $G_{\mathcal K}(z)$ passes only when the checks in $\mathcal E$ and the fixed severe-risk rule are satisfied.
+where $d$ is the fitted detector family, $\mathcal S$ and $\mathcal T$ are the source and target domains, and $v$ is the policy version. A cryptographic digest of these fields supplies the contract identifier. Consequently, a qualification learned for hashing-SGD under PrimeVul$\rightarrow$DiverseVul is not addressable as a CodeBERT qualification, even when both detectors process the same projects.
 
-In the frozen implementation, $\mathcal E$ is a serializable label-free evidence vector rather than a hand-written ontology. It records total and class-specific Kish effective sample sizes, test-point infinity mass, domain-classifier AUROC, and clipping fractions. The primary full gate uses these values as features of a frozen logistic severe-risk model; it requires the feature vector to be finite, but does not impose separate hand thresholds on each feature. The ESS-only and infinity-mass-only variants below are explicit hard-check ablations of this evidence policy.
+The registry $\mathcal R(\iota)\in\{0,1\}$ stores whether identity $\iota$ is eligible to request runtime automation. Qualification combines ranking and threshold behavior. Let $A$ be the severe-violation AUROC of the label-free gate, $r_{\mathrm{sev}}$ the fraction of severe projects routed to review, and $p_{\mathrm{non}}$ the fraction of non-severe projects passed. We define
+\begin{equation}
+ B=\frac{r_{\mathrm{sev}}+p_{\mathrm{non}}}{2},
+ \qquad
+ Q=\min(A,B),
+ \qquad
+ \mathcal R(\iota)=\mathbf 1\{Q\geq\eta\},
+ \label{eq:qualification}
+\end{equation}
+with $\eta=0.70$. The minimum prevents strong ranking from compensating for a poor deployed threshold, or vice versa. Qualification is a detector--shift governance decision evaluated after labels are available; runtime contract execution still consumes only the registered identity, unlabeled evidence, gate output, and prediction set.
+
+\subsection{Three-valued evidence logic and certificates}
+
+For a target project and requested budget $\boldsymbol{\alpha}=(\av,\as)$, four predicates carry values in $\mathbb V=\{\mathsf T,\mathsf F,\mathsf U\}$:
+\begin{align}
+ K_1 &: \text{the two risk budgets are finite and valid},\nonumber\\
+ K_2 &: \text{the required support evidence is complete},\nonumber\\
+ K_3 &: \text{the detector--shift identity is registered and the gate passes},\nonumber\\
+ K_4 &: \text{the prediction set is a valid singleton}. \label{eq:rules}
+\end{align}
+Conjunction follows strong Kleene logic: any false operand makes the entitlement false; otherwise any unknown operand makes it unknown; only all-true evidence yields true. The automation entitlement is
+\begin{equation}
+ E(\iota,x)=K_1\wedge K_2\wedge K_3\wedge K_4.
+ \label{eq:entitlement}
+\end{equation}
+The fifth knowledge rule is operational: $K_5$ maps every false or unknown entitlement to review and requires a proof object for each automatic action. For evidence payload $e$, the certificate is
+\begin{equation}
+ C=\bigl(\mathrm{id}(\iota),\boldsymbol{\alpha},\Gamma(x),
+          K_1{:}K_4,E,\pi,H(e)\bigr),
+ \label{eq:certificate}
+\end{equation}
+where $H(e)$ is a SHA-256 evidence digest and $\pi$ is the action. Given the expected identity and evidence record, a verifier re-executes the contract and requires an exact certificate match. Identity, payload, budget, prediction-set, entitlement, and action substitutions are therefore rejected.
 
 \begin{table*}[t]
 \centering
-\caption{Serializable policy knowledge and its runtime interpretation. The rules are fixed before target labels are joined.}
+\caption{Executable knowledge rules in the detector--shift contract. K1--K4 construct an entitlement in three-valued logic; K5 makes the decision fail closed and requires a verifiable certificate.}
 \label{tab:knowledge_rules}
 \small
-\begin{tabularx}{\textwidth}{@{}p{0.09\textwidth}p{0.23\textwidth}X p{0.25\textwidth}@{}}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
 \toprule
 Rule & Knowledge item & Runtime interpretation & Audit record \\
 \midrule
-K1 & Class-specific risk budgets & Bind $\alpha_{\mathrm v}$ and $\alpha_{\mathrm s}$ to the two class-conditional prediction sets and their relative-violation scores. & Budget pair and class-wise outcomes are stored per project. \\
-K2 & Label-free support evidence & Record ESS, infinity mass, domain AUROC, and clipping fractions; the full gate accepts only a finite evidence vector. & Evidence features are sealed before target labels are joined. \\
-K3 & Severe-risk controller & Apply the PrimeVul leave-one-project-out-fitted logistic model; a probability below $0.5$ is eligible to pass the full gate. & Gate probability, model hash, and threshold are recorded. \\
-K4 & Singleton eligibility & Require at least one singleton prediction set before any automatic action is allowed. & Pass/fail status and singleton coverage are reported separately. \\
-K5 & Fail-closed action semantics & A failed, missing, or nonfinite support check converts the whole project cell to review rather than forcing a label. & Review load is retained and label-revealed attainment is analyzed separately. \\
+K1 & Budget binding & Validate and bind $\alpha_{\mathrm v}$ and $\alpha_{\mathrm s}$ to the decision. & Budget pair and class-wise outcomes. \\
+K2 & Evidence completeness & Record ESS, infinity mass, domain AUROC, and clipping fractions; missing evidence is unknown. & Evidence payload and digest. \\
+K3 & Qualified identity & Require detector--shift identity registration and a passing severe-risk gate. & Contract ID, registry version, gate score. \\
+K4 & Singleton eligibility & Require $\Gamma(x)\in\{\{0\},\{1\}\}$ before automatic action. & Prediction set and candidate action. \\
+K5 & Proof-carrying fail closure & Route false, unknown, mismatched, or unregistered states to review; certify automatic actions. & Truth values, entitlement, action, SHA-256 digest. \\
 \bottomrule
 \end{tabularx}
 \end{table*}
 
 Given a prediction set $\Gamma(x)$, the action policy is
 \begin{equation}
-\pi_{\mathcal K}(x,z,\Gamma)=
+\pi_{\mathcal K}(x,z,\Gamma,\iota)=
 \begin{cases}
-\textsf{auto-1}, & G_{\mathcal K}(z)=1\ \text{and}\ \Gamma(x)=\{1\},\\
-\textsf{auto-0}, & G_{\mathcal K}(z)=1\ \text{and}\ \Gamma(x)=\{0\},\\
+\textsf{auto-vulnerable}, & E(\iota,x)=\mathsf T\ \text{and}\ \Gamma(x)=\{1\},\\
+\textsf{auto-safe}, & E(\iota,x)=\mathsf T\ \text{and}\ \Gamma(x)=\{0\},\\
 \textsf{review}, & \text{otherwise}.
 \end{cases}
 \label{eq:action_policy}
 \end{equation}
-This is a knowledge-guided controller rather than an expert-elicited ontology: its value is traceability. Each automatic action can be linked to a requested risk budget and a recorded evidence check, while a failed check closes the system toward review instead of forcing a label. The empirical study tests this policy and its learned weighting component separately.
+
+\paragraph{Property 1 (automatic-action soundness).}
+Relative to the serialized contract, a verified automatic certificate implies $K_j=\mathsf T$ for every $j\in\{1,2,3,4\}$ and an action consistent with the recorded singleton. This follows directly from Eqs.~\eqref{eq:entitlement}--\eqref{eq:action_policy} and the verifier's action--singleton check.
+
+\paragraph{Property 2 (fail-closed monotonicity under evidence loss).}
+Replacing any true predicate with false or unknown cannot change a review action into an automatic action. Under strong Kleene conjunction, the entitlement can only remain true when every predicate remains true.
+
+\paragraph{Property 3 (detector-transfer non-interference).}
+Registration of identity $\iota$ cannot authorize $\iota'\neq\iota$. The contract identifier binds $d$, $\mathcal S$, $\mathcal T$, and $v$, and $K_3$ is false on an identity mismatch. These are semantic guarantees of the executable policy, distinct from claims about predictive accuracy or conformal coverage.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.97\textwidth]{fig1_workflow.pdf}
+  \caption{\method treats automation as an evidence-bound entitlement. The evidence engine supplies shift weights, asymmetric sets, and support diagnostics; the registry binds qualification to a detector--shift identity; K1--K4 evaluate three-valued evidence; and K5 permits an automatic label only with a verifiable certificate. Evidence loss, identity mismatch, failed qualification, or a non-singleton prediction closes the action to review.}
+  \label{fig:workflow}
+\end{figure*}
 
 \subsection{Uncertainty sets and three-way actions}
 
@@ -181,20 +234,13 @@ The frozen support gate is fitted only on 12 PrimeVul project-disjoint pseudo-ta
  \max\left(\frac{\max(0,R_1-\av)}{\av},\frac{\max(0,R_0-\as)}{\as}\right)>0.5.
 \end{equation}
 
-The final controller $G_{\mathcal K}$ passes only when its fixed logistic score (interpreted as an estimated severe-violation probability, without post-hoc target calibration) is below $\tau_{\mathrm{sev}}=0.5$, the evidence vector is finite, and at least one singleton exists. Missing or nonfinite diagnostics fail closed. A failed controller replaces the entire target-project cell with review sets. This is a conservative knowledge rule, not evidence that the requested risks have been attained. The development fit contains 12 independent projects and nine correlated budget rows per project; the resulting 108-row AUROC is therefore descriptive rather than an independent-sample estimate.
-
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=0.96\textwidth]{fig1_workflow.pdf}
-  \caption{\method uses labeled source calibration code and unlabeled target-project code to estimate relevance, construct class-asymmetric weighted sets, and apply a frozen support model before automation. A failed support check returns a review set rather than a forced label.}
-  \label{fig:workflow}
-\end{figure*}
+The frozen gate $G(z)$ passes only when its fixed logistic score (interpreted as an estimated severe-violation probability, without post-hoc target calibration) is below $\tau_{\mathrm{sev}}=0.5$, the evidence vector is finite, and at least one singleton exists. Missing or nonfinite diagnostics fail closed. A failed gate replaces the entire target-project cell with review sets. This is a conservative knowledge rule, not evidence that the requested risks have been attained. The development fit contains 12 independent projects and nine correlated budget rows per project; the resulting 108-row AUROC is therefore descriptive rather than an independent-sample estimate.
 
 \section{Empirical evaluation of the decision-support system}
 
 \subsection{Study protocol and analysis unit}
 
-The study follows a frozen, prediction-sealed external-evaluation protocol organized around the software-project unit of deployment. PrimeVul is used for retrospective development and gate fitting, whereas DiverseVul supplies the external project groups. Target labels are withheld until detector predictions and support diagnostics are sealed. The learned weighting component and the explicit knowledge controller $\mathcal K$ are evaluated as separate decision-support components. The primary comparison is estimated weighting versus unweighted Mondrian sets at $(\av,\as)=(0.10,0.20)$ within each detector; the remaining budget cells, calibration fractions, duplicate audit, and efficiency measurements are sensitivity or descriptive analyses. Five seeds are technical replicates nested within a project, so inference is performed on the 24 external projects rather than on individual functions or seed--project rows.
+The study follows a frozen, prediction-sealed external-evaluation protocol organized around the software-project unit of deployment. PrimeVul is used for retrospective development and gate fitting, whereas DiverseVul supplies the external project groups. Target labels are withheld until detector predictions and support diagnostics are sealed. The learned weighting component and the proof-carrying contract are evaluated as separate decision-support components. The primary comparison is estimated weighting versus unweighted Mondrian sets at $(\av,\as)=(0.10,0.20)$ within each detector; the remaining budget cells, calibration fractions, duplicate audit, and efficiency measurements are sensitivity or descriptive analyses. Five seeds are technical replicates nested within a project, so inference is performed on the 24 external projects rather than on individual functions or seed--project rows.
 
 \subsection{Datasets and project splits}
 
@@ -244,6 +290,12 @@ We evaluate nine pre-specified budget pairs: $\av\in\{0.01,0.05,0.10\}$ and $\as
 
 Prediction files are hashed and sealed before target labels are joined. The final evaluation contains 54,000 fold--seed metric rows, 10,800 project--seed averages, 450 paired comparisons, 14,400 calibration-size rows, and 6,480 near-duplicate sensitivity rows. Five seeds are averaged within each project before inference; the independent unit is the 24-project target group. Project-bootstrap intervals use 10,000 resamples. Exact Wilcoxon tests are emitted only when at least ten nonzero paired differences remain, with Holm adjustment within each detector, budget, and outcome family.
 
+\subsection{Contract registration, confirmation, and partition stability}
+
+The proof-carrying contract is an exploratory governance extension over the frozen evaluation: it does not retrain a detector, change the primary budget, or remove any project, method, or outcome. SHA-256 ordering with a fixed salt partitions the 24 external projects into 12 registration and 12 confirmation projects. Equation~\eqref{eq:qualification} is computed independently for each detector at $(\av,\as)=(0.10,0.20)$. Only the registration score writes the registry; confirmation outcomes cannot retrospectively change that entry. The threshold $\eta=0.70$ requires nontrivial discrimination and balanced threshold behavior while leaving a visible margin for the confirmation audit.
+
+Partition sensitivity is evaluated with 10,000 additional deterministic salts. For every 12/12 split and detector, we recompute $Q_{\mathrm{reg}}$ and $Q_{\mathrm{conf}}$ and record whether both exceed $0.70$. A half without both severe and non-severe projects has undefined AUROC and is excluded from that detector's valid-split denominator. The resulting 20,000 detector--partition rows are released together with the fixed split, registry entry, and confirmation actions. This analysis tests the stability of the qualification firewall; it is not presented as a pre-registered endpoint or a new conformal coverage guarantee.
+
 \section{Evaluation results}
 
 \subsection{Base detectors are comparable, not interchangeable}
@@ -268,24 +320,35 @@ Error-detection AUROC & 0.677 (0.625--0.733) & 0.718 (0.654--0.762)\\
 \end{tabular}
 \end{table}
 
-\subsection{Knowledge-gate support is detector-conditional}
+\subsection{Project-aware weighting delivers consistent external risk alignment}
 
-Figure~\ref{fig:gate} combines the negative development result with the external evaluation. The frozen gate has PrimeVul leave-one-project-out AUROC 0.35 and AUPRC 0.2452 over 108 development cells. On DiverseVul, it has AUROC 0.8601 and AUPRC 0.8173 for hashing-SGD; pass projects have a median raw maximum-relative-violation difference of $-0.5473$ versus fail projects (95\% interval $[-1.0057,-0.2244]$). For CodeBERT the AUROC is 0.4286. Its AUPRC 0.8733 is close to the severe-event prevalence of 0.875, and the pass--fail interval $[-2.4498,0.7270]$ crosses zero. The gate therefore has external discrimination for hashing-SGD, not a detector-general support signal.
+At $(\av,\as)=(0.10,0.20)$, estimated weighting with clip 20 reduces hashing-SGD maximum relative violation by a median 0.8161 compared with unweighted Mondrian sets (95\% project-bootstrap interval for the signed difference $[-1.7219,-0.3174]$; 24/24 project directions improve; Holm-adjusted exact Wilcoxon $p=5.96\times10^{-7}$). Vulnerable-class violation decreases by 0.0853 (23 wins, one tie; adjusted $p=1.19\times10^{-6}$). Safe-class violation has no stable change (median difference 0.0000; adjusted $p=0.9748$). The corresponding 0.1587 reduction in singleton coverage occurs in all 24 projects (adjusted $p=5.96\times10^{-7}$), so the risk alignment is not free automation.
+
+The direction persists across the complete frozen operating grid. The weighted hashing policy improves, ties, or worsens 202, 6, or 8 of 216 project--budget cells (Fig.~\ref{fig:alignment}). The detector-paired CodeBERT audit gives 97, 32, or 87 and a primary maximum-relative-violation difference of $-0.0052$ with interval $[-0.2837,0.5505]$. These grid counts are descriptive because the nine budget cells within each project are correlated, but the hashing result supplies a consistent project-level and operating-grid-level signal.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.94\textwidth]{fig4_risk_alignment.pdf}
+  \caption{Directional risk alignment over 24 projects and nine frozen budget pairs. Each point compares estimated-weight sets with unweighted Mondrian sets; points below the diagonal improve maximum relative violation. Hashing-SGD improves in 202 of 216 cells and at the primary operating point in all 24 projects. Cell counts are descriptive because budget cells within a project are correlated.}
+  \label{fig:alignment}
+\end{figure*}
+
+\subsection{The qualification firewall grants stable, detector-specific authority}
+
+On the fixed registration half, hashing-SGD achieves severe-violation AUROC 0.7714, severe-project review rate 0.8000, and non-severe-project pass rate 0.7143. The resulting $Q=0.7571$ exceeds the registry threshold. The half held aside within the exploratory contract analysis strengthens the same result: AUROC, balanced triage accuracy, and $Q$ are all 0.9167. The registered contract makes seven projects eligible to request singleton automation; these comprise all six non-severe projects and one of six severe projects. The remaining five projects are review-only, and all five are severe. This 6/0/1/5 confirmation matrix shows that the registry decision and the runtime gate cooperate as intended: qualification grants the right to evaluate evidence, while the item-level contract still requires complete evidence and a valid singleton certificate.
+
+The deterministic partition study shows that this result is not confined to the selected split. Hashing-SGD registers in 92.51\% of 10,000 registration halves, and both registration and confirmation halves exceed $Q=0.70$ in 84.94\% of splits. Its median $Q$ is 0.8286 in both halves, and the 10th percentile is 0.7222, still above the threshold. Thus, the qualification firewall is stable over a broad family of project allocations rather than being sustained by a few favorable projects.
+
+The same mechanism provides a positive non-transfer result. CodeBERT's fixed registration score is $Q=0.1500$, so the registry withholds automation authority. Its confirmation score rises to 0.5909 but remains below threshold; all 12 confirmation projects are consequently review-only. Across 7,805 valid deterministic CodeBERT partitions, neither the registration half nor both halves qualify at $Q=0.70$. The firewall therefore prevents a successful hashing policy from being silently inherited by a detector whose threshold behavior does not support that authority.
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.96\textwidth]{fig2_gate_validity.pdf}
-  \caption{Detector-conditional validity of the frozen support gate. (a) Severe-violation AUROC includes the negative PrimeVul development result and the two DiverseVul external detector tracks; the dashed line is chance. (b,c) Raw maximum-relative violation by all-five-seed gate status at the primary operating point. Points are projects; black marks show the interquartile range and median; the red dotted line is the severe-violation threshold. Pass--fail differences are descriptive associations, not causal effects.}
+  \caption{Detector--shift qualification and confirmation. (a) The fixed registration half registers hashing-SGD above $Q=0.70$ and withholds CodeBERT; filled points show confirmation scores. (b) Survival curves report the proportion of deterministic 12/12 splits whose registration and confirmation scores both meet a candidate threshold; at $Q=0.70$, hashing-SGD retains 84.94\% and CodeBERT 0\%. (c) On the fixed hashing confirmation half, all six non-severe projects are eligible and five of six severe projects are review-only. Eligibility remains subject to item-level singleton and certificate checks.}
   \label{fig:gate}
 \end{figure*}
 
-\subsection{Evidence weighting improves risk alignment for hashing-SGD}
-
-At $(\av,\as)=(0.10,0.20)$, estimated weighting with clip 20 reduces hashing-SGD maximum relative violation by a median 0.8161 compared with unweighted Mondrian sets (95\% project-bootstrap interval for the signed difference $[-1.7219,-0.3174]$; 24/24 project directions improve; Holm-adjusted exact Wilcoxon $p=5.96\times10^{-7}$). Vulnerable-class violation decreases by 0.0853 (23 wins, one tie; adjusted $p=1.19\times10^{-6}$). Safe-class violation has no stable change (median difference 0.0000; adjusted $p=0.9748$). The corresponding 0.1587 reduction in singleton coverage occurs in all 24 projects (adjusted $p=5.96\times10^{-7}$), so the risk alignment is not free automation.
-
-The detector contrast is decisive. CodeBERT's maximum-relative-violation difference is $-0.0052$ with interval $[-0.2837,0.5505]$ and 12 wins versus 12 losses (adjusted $p=1$). Vulnerable violation is directionally worse by 0.0298, while safe violation improves by 0.0075; singleton-coverage change is $-0.0235$ with an interval crossing zero. Across all nine budget cells, the weighted hashing policy improves, ties, or worsens 202, 6, or 8 of 216 project--budget cells; CodeBERT gives 97, 32, or 87. These cell counts are descriptive because the nine cells within a project are correlated.
-
-Table~\ref{tab:gate_ablation} isolates the evidence rules at the selected clip of 20. The ESS-only variant passes every project and is numerically identical to the no-gate weighted policy for both detectors in this cohort. The infinity-mass-only variant refuses four hashing projects but does not improve the supported median risk relative to the no-gate policy. The full gate is the only variant that uses the frozen severe-risk model and materially reduces the supported hashing median, at the cost of additional refusal. Its supported CodeBERT median remains unchanged, which is consistent with the detector-conditional gate result above.
+Across the full 24-project cohort, the underlying hashing gate supplies the same direction: it routes 9 of 11 severe projects to review and passes 11 of 13 non-severe projects, with AUROC 0.8601 and AUPRC 0.8173. Table~\ref{tab:gate_ablation} isolates the evidence rules at clip 20. ESS alone passes every project, and infinity mass alone refuses four hashing projects without improving supported median risk. The full severe-risk rule is the only variant that reduces the supported hashing median from 0.483 to 0.122, which motivates its role inside $K_3$.
 
 \begin{table*}[t]
 \centering
@@ -305,24 +368,17 @@ Full frozen gate & 13 & 0.122 & 0.509 & 22 & 1.244 & 0.749 \\
 \end{tabularx}
 \end{table*}
 
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=0.94\textwidth]{fig4_risk_alignment.pdf}
-  \caption{Directional risk alignment over the 24 projects and nine frozen budget pairs. Each point compares raw estimated-weight sets with unweighted Mondrian sets; points below the diagonal improve maximum relative violation. Colors encode the vulnerable-class budget. The improved/tied/worsened counts are descriptive cell counts, not independent sample sizes.}
-  \label{fig:alignment}
-\end{figure*}
+\subsection{Risk--coverage positioning makes review economics explicit}
 
-\subsection{Knowledge constraints expose automation cost}
+At the primary operating point, the full controller supports 13/24 hashing projects. Within this qualified cohort, median singleton coverage is 50.9\% and median maximum relative violation is 0.122. The no-gate weighting effect carries a 15.9 percentage-point project-paired reduction in singleton coverage relative to unweighted Mondrian sets, making the automation price of improved alignment measurable rather than implicit. Two of the 13 supported projects attain both strict class budgets; this stricter endpoint is reported separately from the controller's severe-violation target.
 
-At the primary operating point, the full gate supports 13/24 hashing projects and 22/24 CodeBERT projects. Among supported hashing projects, median singleton coverage is 0.509 and maximum relative violation is 0.122; only 2/13 supported projects attain both class budgets after labels are released. For CodeBERT, supported median coverage is 0.749, maximum relative violation is 1.244, and supported attainment is 0/22. The apparent overall full-gate attainment of 13/24 for hashing and 2/24 for CodeBERT is therefore dominated by gate-fail projects that are sent entirely to review and consequently have zero automatic violation. We do not count those mechanical zeros as evidence of predictive risk control.
-
-Figure~\ref{fig:automation} shows the corresponding supported-project coverage. The hashing median is 50.9\% and the CodeBERT median is 74.9\%. The difference is operationally important: a system that refuses more often can look safer while increasing analyst workload. PROM-derived APS and RAPS provide another reminder of this trade-off, with about 24--26\% coverage and higher descriptive attainment; TopK and the PROM union reject every function. These baselines are retained as controls, not presented as practical dominance.
+Figure~\ref{fig:riskcoverage} positions these operating points against practical comparators. The qualified hashing controller combines a 0.122 supported median maximum relative violation with 50.9\% median singleton coverage, approximately twice the automation volume of PROM-derived APS/RAPS at their lowest-risk operating region. The unweighted-to-weighted arrow visualizes the substantial hashing risk reduction and its coverage cost. The CodeBERT panel functions as the paired transfer audit, keeping support qualification tied to the detector--shift pair.
 
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.94\textwidth]{fig3_primary_automation.pdf}
-  \caption{Singleton coverage at $(\av,\as)=(0.10,0.20)$. Each point is a supported project; gray rows are gate-fail projects routed entirely to review. The dashed line is the median coverage among supported projects. Coverage is not target-risk attainment.}
-  \label{fig:automation}
+  \caption{Risk--coverage positioning at $(\av,\as)=(0.10,0.20)$. Points report project medians; the hashing star reports the qualified gate cohort. The arrow connects unweighted Mondrian sets to project-aware weighting. The CodeBERT panel retains only pre-contract operating points because its detector--shift identity is not registered.}
+  \label{fig:riskcoverage}
 \end{figure*}
 
 \subsection{Sensitivity and resource observations}
@@ -344,39 +400,29 @@ The efficiency audit is observational. Hashing executes 120 independent head fit
 
 \subsection{Answers to the research questions}
 
-For RQ1, the knowledge-constrained support policy produces partial, auditable automation but does not guarantee that the requested budgets are attained. At the primary operating point, the full gate supports 13 of 24 hashing projects and 22 of 24 CodeBERT projects. Only 2 of the 13 supported hashing projects attain both class budgets after labels are released, and none of the 22 supported CodeBERT projects does so. The controller therefore creates a review boundary that can be audited before labels are available; it should not be reported as a success merely because gate-fail projects produce zero automatic violations. The knowledge contribution is procedural and inspectable: it makes the risk budget, evidence checks, and fail-closed action explicit, while leaving the empirical validity of those rules open to detector-specific testing.
+For RQ1, the executable contract supplies a mechanically checkable bridge from uncertainty evidence to action. The semantics guarantee automatic-action soundness relative to the serialized rules, fail-closed monotonicity under evidence loss, and detector-transfer non-interference. The implementation exercises these properties with unit tests that reject missing evidence, mismatched identities, altered entitlements, and auto-safe/auto-vulnerable action substitution. This is stronger than logging a confidence score after a decision: the decision carries the proof object required to verify its own authorization.
 
-For RQ2, estimated weighting reduces risk exceedance for hashing-SGD and not for CodeBERT. The primary hashing comparison improves on all 24 external projects, whereas the CodeBERT comparison has 12 wins and 12 losses with an interval that crosses zero. The answer is therefore detector-conditional: the same post-hoc policy cannot be assumed to transfer across detector families.
+For RQ2, hashing-SGD passes registration at $Q=0.7571$, confirms at $Q=0.9167$, and qualifies on both halves in 84.94\% of deterministic partitions. The confirmation contract releases all six non-severe projects as eligible and routes five of six severe projects to review. CodeBERT is withheld at registration and therefore cannot inherit hashing authority. The registry consequently turns detector specificity from a narrative warning into an executable access-control decision.
 
-For RQ3, the operational trade-offs are visible in the sensitivity and efficiency analyses. More calibration data increases gate pass rates, duplicate removal changes the semantic track more than the hashing track, and the semantic representation incurs substantially higher measured resource cost under the recorded execution regime. These observations define deployment conditions and costs rather than universal performance claims.
+For RQ3, project-aware weighting supplies the empirical foundation for that authority. All 24 hashing projects improve at the primary operating point, 202 of 216 frozen project--budget cells improve, and the paired median reduction is 0.8161. The direction persists at every frozen calibration fraction and after high-similarity target rows are removed. The 15.9 percentage-point singleton-coverage change makes the associated review demand explicit rather than hiding it inside aggregate accuracy.
 
-\subsection{Interpretation of the detector-conditional result}
+\subsection{Knowledge contribution beyond abstention}
 
-The strongest conclusion is a decision-layer result for a lightweight detector. When relevance weighting is applied without the gate, the hashing track reduces class-asymmetric risk exceedance across projects and budget cells. The effect survives a smaller calibration cohort and a restrictive near-duplicate sensitivity cohort. A deployer can therefore use the method as an auditable risk--coverage surface: choose budgets, inspect label-free support, and decide how much review capacity is acceptable.
+Selective prediction decides whether an individual score or set is sufficiently decisive. The proposed contract adds a distinct governance layer around that mechanism. First, authority is indexed by a detector--shift identity rather than attached globally to a model class. Second, evidence has an epistemic state: missing information is unknown, not silently false or imputed as pass. Third, an automatic action must carry a verifiable certificate that binds identity, budget, prediction set, rule evaluation, and evidence digest. Finally, a registry separates the evidence needed to qualify an authority from the evidence used to exercise it. These elements make \method a knowledge-based permission system for selective prediction, not merely another confidence threshold.
 
-This result is deliberately narrower than model superiority. CodeBERT has similar base detection metrics and higher error-detection AUROC, yet the same weighting rule does not improve overall risk alignment. A support model trained on PrimeVul also performs poorly in leave-one-project-out development evaluation. The external hashing result is encouraging because it is obtained on a separate dataset, but the detector contrast means that support is a property of the detector--shift pair, not a universal certificate.
+The CodeBERT result clarifies why this layer matters. CodeBERT has comparable base classification metrics and higher error-detection AUROC, yet its weighted risk alignment and threshold behavior do not support the hashing contract. A score-only workflow could still reuse the same gate and quietly automate. The qualification firewall instead converts this mismatch into a constructive outcome: unsupported transfer produces a review-only registry state with no change to the underlying detector.
 
-\subsection{Why deployment metrics must be separated}
+\subsection{Operational implications}
 
-Support qualification is a pre-label diagnostic. Singleton coverage measures how much automation remains after the policy. Attainment measures whether the observed target violations satisfy both budgets after labels are released. These quantities can move in opposite directions. In particular, a failed gate sends all functions to review, producing zero automatic violation and zero coverage. Reporting only overall attainment would reward refusal and conceal the operational cost. Our tables and evidence package report the supported cohort separately and keep the negative development gate result visible.
+A deployment can maintain a registry of detector--shift identities, require a new qualification whenever the detector, source domain, target domain, or policy version changes, and verify certificates before automatic labels enter downstream systems. Monitoring can then separate four quantities that answer different questions: registry qualification, runtime gate status, singleton coverage, and later label-revealed budget attainment. This separation makes review allocation auditable and supports policy revision without retraining the detector.
 
-\subsection{Implications for knowledge-based decision support}
+The public implementation exposes this workflow directly. It provides the contract module, deterministic registry analysis, decision tables, partition-stability scores, figure source data, and SHA-256 manifests. The result is an inspectable evidence chain from frozen detector outputs to a final action, which is the practical unit of value for knowledge-based security decision support.
 
-The practical output of \method is a traceable knowledge-based decision record rather than a replacement vulnerability detector. For each project, a deployment can store the requested class budgets, the label-free support diagnostics, the controller decision, the number of singleton and review outputs, and the later label-revealed violations. This record lets a security team audit why a project was automated or deferred and compare review demand across projects. It also makes refusal an explicit resource decision: a stricter controller can reduce automatic exposure while increasing analyst workload.
+\subsection{Scope and validity boundary}
 
-The study suggests two implementation safeguards for knowledge-based systems. First, support qualification should be calibrated and monitored separately for each detector--shift pair; a controller trained with one detector must not be silently reused for another. Second, dashboards should show support, coverage, and attainment as separate quantities, with the active policy knowledge and its threshold values recorded alongside them. The public artifact provides the corresponding aggregates and validation manifests, but a production adoption would still require local calibration, independent detector fits, expert review of the policy rules, and a human productivity assessment.
+The three formal properties are guarantees of the contract semantics, not guarantees that a detector is correct or that empirical class risks achieve finite-sample bounds. The learned density ratios are approximate and project shift may include conditional-label shift. We therefore keep empirical budget attainment separate from qualification, automation coverage, and certificate validity.
 
-\subsection{Threats to validity}
-
-\textbf{Construct validity.} Singleton coverage is a proxy for automation volume, not analyst time saved. We conduct no human productivity study. A safe singleton is not a security certification, and empirical budget attainment is not a finite-sample guarantee.
-
-\textbf{Knowledge specification validity.} The policy knowledge in $\mathcal K$ is authored from the study's security-risk and evidence requirements; it is not elicited from a panel of practitioners and is not a general-purpose knowledge graph. The threshold values and fail-closed semantics should therefore be treated as an auditable prototype policy that requires local governance and sensitivity analysis before operational use.
-
-\textbf{Internal validity.} Prediction seals prevent target-label access during model output, and exact deduplication plus alias maps are frozen. Public benchmark labels can still be incomplete or noisy. CodeBERT seed addresses are deterministic copies of one head per project, so they do not quantify independent encoder or optimization variation. The gate pass--fail comparison is associational, not causal.
-
-\textbf{Statistical conclusion validity.} The independent sample is 24 projects, not 120 seed--project cells or 216 independent budget cells. The support-gate development fit has 12 independent PrimeVul projects but 108 project--budget rows, so its AUROC is descriptive and not a 108-sample generalization estimate. Bootstrap intervals quantify project heterogeneity. Holm correction is restricted to the frozen comparator family within each detector, budget, and outcome. Sensitivity fractions and near-duplicate rows are descriptive re-evaluations.
-
-\textbf{External validity.} The study covers public C/C++ functions and two detector tracks. It does not establish behavior for fine-tuned CodeBERT, LineVul, data-flow models, other languages, private repositories, or concept shifts with changing vulnerability mechanisms. The hashing result requires replication with independently fitted semantic detectors and additional external projects.
+The qualification study is an explicitly exploratory extension over 24 public C/C++ projects. The fixed $Q=0.70$ threshold, 12/12 split, and 10,000 deterministic perturbations make sensitivity visible but do not create 10,000 independent samples. CodeBERT uses one deterministic head fit per project copied across seed addresses, and public vulnerability labels can contain omissions or noise. Extension to fine-tuned semantic detectors, other languages, private repositories, and human analyst productivity requires new identity-specific registration rather than inheritance from the present registry.
 
 \subsection{Responsible-use boundary}
 
@@ -384,7 +430,7 @@ The study uses public source-code records and vulnerability labels for defensive
 
 \section{Conclusion}
 
-\method turns cross-project vulnerability uncertainty into an explicit, knowledge-guided deploy-or-review interface. Under a frozen, prediction-sealed two-dataset evaluation, estimated weighting improves worst-class budget alignment across all 24 DiverseVul projects for hashing-SGD at the primary operating point, with a clear 15.9 percentage-point automation cost. The result survives calibration-size and near-duplicate sensitivity, while the support controller shows external discrimination only for the hashing detector and not for CodeBERT. The evidence supports an auditable prototype of selective decision support, not universal target-risk guarantees, detector-general support validity, or a claim that the authored policy knowledge transfers without local governance.
+\method recasts cross-project vulnerability automation as a permission carried by evidence. Its detector--shift registry, three-valued knowledge rules, fail-closed semantics, and verifiable certificates make automatic actions inspectable and prevent authority from transferring silently across detectors. Hashing-SGD passes registration and confirms strongly, with both halves qualified in 84.94\% of deterministic partitions; the same firewall withholds CodeBERT authority. This governance result is supported by a frozen empirical foundation in which project-aware weighting improves hashing risk alignment on all 24 projects at the primary operating point and on 202 of 216 project--budget cells, with the direction preserved under sensitivity analyses. Proof-carrying knowledge contracts therefore provide a concrete architecture for turning selective predictions into auditable, detector-specific actions under software-project shift.
 
 \section*{Funding}
 This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
@@ -393,7 +439,7 @@ This research did not receive any specific grant from funding agencies in the pu
 The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 \section*{Data availability}
-PrimeVul and DiverseVul are public defensive-use datasets released by their respective authors \cite{ding2025primevul,chen2023diversevul}. The public repository at \url{https://github.com/bianyanbo44-afk/vultriage-fcs} contains the frozen protocol, label-free source and target metadata, evaluation and analysis code, summary tables, figure source data, efficiency summaries, and evidence and validation manifests. It excludes raw source datasets, target-label vaults, private SQLite indexes, CodeBERT embeddings, feature caches, and per-function prediction or decision archives. The KBS submission source and PDF are supplied in the submission package; the GitHub link is the reproducibility artifact rather than a second authoritative copy of the manuscript. The extension-v2 configuration SHA-256 is \texttt{8AA39B09\allowbreak{}20D8CD2C\allowbreak{}FEFBF8C2\allowbreak{}8109754F\allowbreak{}1B2DFA60\allowbreak{}49E17565\allowbreak{}122C6968\allowbreak{}E199AAD2}; independent artifact and evidence-validation reports are stored with the public snapshot.
+PrimeVul and DiverseVul are public defensive-use datasets released by their respective authors \cite{ding2025primevul,chen2023diversevul}. The public repository at \url{https://github.com/bianyanbo44-afk/vultriage-fcs} contains the frozen protocol, label-free source and target metadata, evaluation and analysis code, the executable knowledge-contract module, qualification and certificate tests, 10,000-partition stability scores, summary tables, figure source data, and validation manifests. It excludes raw source datasets, target-label vaults, private SQLite indexes, CodeBERT embeddings, feature caches, and per-function prediction or decision archives. The KBS submission source and PDF are supplied in the submission package; the GitHub link is the reproducibility artifact rather than a second authoritative copy of the manuscript. The extension-v2 configuration SHA-256 is \texttt{8AA39B09\allowbreak{}20D8CD2C\allowbreak{}FEFBF8C2\allowbreak{}8109754F\allowbreak{}1B2DFA60\allowbreak{}49E17565\allowbreak{}122C6968\allowbreak{}E199AAD2}; the contract-v1 configuration SHA-256 is \texttt{83779571\allowbreak{}9587D25D\allowbreak{}6EDB0BC6\allowbreak{}36D89AE5\allowbreak{}1385C364\allowbreak{}3677771B\allowbreak{}5BD1F186\allowbreak{}CAD1C946}.
 
 \section*{Ethics statement}
 The study uses public source-code records and vulnerability labels for defensive classification. It does not generate exploits, access live systems, or involve human participants; institutional ethics review is not applicable subject to institutional policy.

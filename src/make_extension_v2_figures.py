@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
-from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 
 
 BLUE = "#3572B0"
@@ -74,7 +74,18 @@ def sha256(path: Path) -> str:
     return digest.hexdigest().upper()
 
 
-def rounded_box(ax: plt.Axes, xy: tuple[float, float], width: float, height: float, text: str, color: str) -> None:
+def rounded_box(
+    ax: plt.Axes,
+    xy: tuple[float, float],
+    width: float,
+    height: float,
+    text: str,
+    color: str,
+    *,
+    edgecolor: str = "#4A4A4A",
+    fontsize: float = 7.8,
+    weight: str = "normal",
+) -> None:
     ax.add_patch(
         FancyBboxPatch(
             xy,
@@ -83,10 +94,19 @@ def rounded_box(ax: plt.Axes, xy: tuple[float, float], width: float, height: flo
             boxstyle="round,pad=0.018,rounding_size=0.018",
             linewidth=0.9,
             facecolor=color,
-            edgecolor="#4A4A4A",
+            edgecolor=edgecolor,
         )
     )
-    ax.text(xy[0] + width / 2, xy[1] + height / 2, text, ha="center", va="center", fontsize=7.8, linespacing=1.2)
+    ax.text(
+        xy[0] + width / 2,
+        xy[1] + height / 2,
+        text,
+        ha="center",
+        va="center",
+        fontsize=fontsize,
+        weight=weight,
+        linespacing=1.15,
+    )
 
 
 def arrow(ax: plt.Axes, start: tuple[float, float], end: tuple[float, float]) -> None:
@@ -94,31 +114,161 @@ def arrow(ax: plt.Axes, start: tuple[float, float], end: tuple[float, float]) ->
 
 
 def figure_workflow(stem: Path) -> None:
-    fig, ax = plt.subplots(figsize=(7.2, 3.1))
+    fig, ax = plt.subplots(figsize=(7.2, 3.55))
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
-    rounded_box(ax, (0.02, 0.64), 0.17, 0.17, "Labeled source\ncalibration code", LIGHT_BLUE)
-    rounded_box(ax, (0.02, 0.25), 0.17, 0.17, "Unlabeled target\nproject code", LIGHT_ORANGE)
-    rounded_box(ax, (0.25, 0.45), 0.18, 0.20, "Cross-fitted domain\nclassifier and\nrelevance weights", "#F4F4F4")
-    rounded_box(ax, (0.49, 0.64), 0.18, 0.17, "Class-asymmetric\nweighted quantiles", LIGHT_BLUE)
+    ax.text(
+        0.5,
+        0.965,
+        "Proof-carrying detector-shift knowledge contract",
+        ha="center",
+        weight="bold",
+        fontsize=10.0,
+    )
+    ax.text(
+        0.5,
+        0.905,
+        "Automation is an evidence-bound entitlement, not a raw confidence threshold",
+        ha="center",
+        fontsize=7.2,
+        color="#4A4A4A",
+    )
+
+    stages = [
+        (
+            (0.015, 0.42),
+            0.175,
+            "1  EVIDENCE",
+            "Shift weights\nAsymmetric sets\nSupport diagnostics",
+            LIGHT_BLUE,
+            BLUE,
+        ),
+        (
+            (0.225, 0.42),
+            0.185,
+            "2  REGISTRY",
+            "Detector-shift identity\nQualification registry\n$Q \\geq 0.70$",
+            "#E9F3EF",
+            GREEN,
+        ),
+        (
+            (0.445, 0.42),
+            0.205,
+            "3  POLICY",
+            "K1  budget bound\nK2  evidence complete\nK3  pair qualified\nK4  singleton eligible",
+            "#FFF4D8",
+            ORANGE,
+        ),
+        (
+            (0.685, 0.42),
+            0.145,
+            "4  CERTIFICATE",
+            "Contract ID\nRule truth values\nEvidence digest",
+            "#F1EEF7",
+            "#725A9E",
+        ),
+    ]
+    for (x, y), width, heading, body, fill, edge in stages:
+        ax.add_patch(
+            FancyBboxPatch(
+                (x, y),
+                width,
+                0.37,
+                boxstyle="round,pad=0.012,rounding_size=0.018",
+                linewidth=1.15,
+                facecolor=fill,
+                edgecolor=edge,
+            )
+        )
+        ax.text(
+            x + width / 2,
+            y + 0.315,
+            heading,
+            ha="center",
+            va="center",
+            fontsize=6.8,
+            weight="bold",
+            color="#262626",
+        )
+        ax.text(
+            x + width / 2,
+            y + 0.16,
+            body,
+            ha="center",
+            va="center",
+            fontsize=6.8,
+            linespacing=1.35,
+            color="#333333",
+        )
+
+    for start, end in [
+        ((0.190, 0.605), (0.225, 0.605)),
+        ((0.410, 0.605), (0.445, 0.605)),
+        ((0.650, 0.605), (0.685, 0.605)),
+        ((0.830, 0.605), (0.855, 0.605)),
+    ]:
+        arrow(ax, start, end)
+
+    ax.text(0.922, 0.835, "5  Action", ha="center", fontsize=7.4, weight="bold")
     rounded_box(
         ax,
-        (0.49, 0.25),
-        0.18,
+        (0.855, 0.59),
+        0.135,
         0.17,
-        "Frozen support model\n(label-free diagnostics)",
-        LIGHT_ORANGE,
+        "TRUE + valid\nsingleton\nAUTO LABEL",
+        "#DDF2EA",
+        edgecolor=GREEN,
+        fontsize=6.7,
+        weight="bold",
     )
-    rounded_box(ax, (0.72, 0.45), 0.10, 0.20, "Decision\ngate", "#F4F4F4")
-    rounded_box(ax, (0.85, 0.64), 0.13, 0.17, "Singleton\nautomation", "#DDF2EA")
-    rounded_box(ax, (0.85, 0.25), 0.13, 0.17, "Doubleton\nmanual review", LIGHT_GRAY)
-    for start, end in [((0.19, 0.72), (0.25, 0.57)), ((0.19, 0.34), (0.25, 0.52)), ((0.43, 0.57), (0.49, 0.71)), ((0.43, 0.52), (0.49, 0.34)), ((0.67, 0.71), (0.72, 0.57)), ((0.67, 0.34), (0.72, 0.52)), ((0.82, 0.57), (0.85, 0.71)), ((0.82, 0.52), (0.85, 0.34))]:
-        arrow(ax, start, end)
-    ax.text(0.83, 0.67, "pass", ha="center", va="bottom", fontsize=7.0, color=GREEN)
-    ax.text(0.83, 0.38, "fail", ha="center", va="top", fontsize=7.0, color=GRAY)
-    ax.text(0.5, 0.94, "VulTriage: support is checked before automation", ha="center", weight="bold", fontsize=10.2)
-    ax.text(0.5, 0.08, "A failed support check is an explicit review decision, not a forced label.", ha="center", fontsize=7.4, color="#444444")
+    rounded_box(
+        ax,
+        (0.855, 0.37),
+        0.135,
+        0.15,
+        "FALSE / UNKNOWN\nor mismatch\nREVIEW",
+        LIGHT_GRAY,
+        edgecolor=GRAY,
+        fontsize=6.6,
+        weight="bold",
+    )
+
+    ax.add_patch(
+        FancyBboxPatch(
+            (0.225, 0.105),
+            0.605,
+            0.19,
+            boxstyle="round,pad=0.012,rounding_size=0.014",
+            linewidth=0.8,
+            facecolor="#FAFAFA",
+            edgecolor="#AAAAAA",
+        )
+    )
+    ax.text(0.5275, 0.245, "Fail-closed invariants", ha="center", fontsize=7.2, weight="bold", color="#333333")
+    for xpos, label in [
+        (0.325, "Evidence loss\ncannot create\nauthority"),
+        (0.5275, "Detector transfer\ncannot inherit\nauthority"),
+        (0.730, "Automatic actions\ncarry verifiable\nproof objects"),
+    ]:
+        ax.text(
+            xpos,
+            0.165,
+            label,
+            ha="center",
+            va="center",
+            fontsize=6.2,
+            linespacing=1.18,
+            color="#333333",
+        )
+    ax.text(
+        0.5,
+        0.035,
+        "Learned evidence proposes an action; the versioned contract decides whether that action is permitted.",
+        ha="center",
+        fontsize=7.0,
+        color="#444444",
+    )
     export(fig, stem)
 
 
@@ -181,176 +331,327 @@ def gate_external_projects(metrics: pd.DataFrame, project: pd.DataFrame) -> pd.D
 
 
 def figure_gate_validity(
-    metrics: pd.DataFrame,
-    project: pd.DataFrame,
-    gate_discrimination: pd.DataFrame,
-    gate_seal: dict,
+    qualification: pd.DataFrame,
+    stability: pd.DataFrame,
+    confirmation: pd.DataFrame,
+    threshold: float,
     stem: Path,
     data_dir: Path,
 ) -> None:
-    external = gate_external_projects(metrics, project)
-    external.to_csv(data_dir / "fig2_gate_external_projects.csv", index=False)
-    rows = [
-        {
-            "domain": "PrimeVul development LOPO",
-            "detector": "frozen gate",
-            "projects": int(gate_seal["projects"]),
-            "evaluation_rows": int(gate_seal["development_rows"]),
-            "severe_prevalence": float(gate_seal["severe_rows"])
-            / float(gate_seal["development_rows"]),
-            "auroc": float(gate_seal["crossfit_auroc"]),
-            "auprc": float(gate_seal["crossfit_auprc"]),
-            "passed_projects": np.nan,
-            "median_pass_minus_fail": np.nan,
-            "ci_lower": np.nan,
-            "ci_upper": np.nan,
-        }
-    ]
-    for detector in ("hashing", "codebert"):
-        record = gate_discrimination.loc[
-            gate_discrimination["detector"] == detector
-        ].iloc[0]
-        projects = external[external["detector"] == detector]
-        rows.append(
-            {
-                "domain": "DiverseVul external",
-                "detector": detector,
-                "projects": int(record["projects"]),
-                "evaluation_rows": int(record["projects"]),
-                "severe_prevalence": float(projects["severe_raw_violation"].mean()),
-                "auroc": float(record["gate_auroc_severe_violation"]),
-                "auprc": float(record["gate_auprc_severe_violation"]),
-                "passed_projects": int(record["passed_all_seed"]),
-                "median_pass_minus_fail": float(
-                    record["median_raw_violation_pass_minus_fail"]
-                ),
-                "ci_lower": float(
-                    record[
-                        "median_raw_violation_pass_minus_fail_bootstrap_ci_lower"
-                    ]
-                ),
-                "ci_upper": float(
-                    record[
-                        "median_raw_violation_pass_minus_fail_bootstrap_ci_upper"
-                    ]
-                ),
-            }
-        )
-    summary = pd.DataFrame(rows)
-    summary.to_csv(data_dir / "fig2_gate_summary.csv", index=False)
+    qualification.to_csv(data_dir / "fig2_gate_summary.csv", index=False)
+    confirmation.to_csv(data_dir / "fig2_gate_external_projects.csv", index=False)
+    stability.to_csv(data_dir / "fig2_partition_stability.csv", index=False)
 
     fig = plt.figure(figsize=(7.2, 3.25))
-    grid = fig.add_gridspec(1, 3, width_ratios=[0.88, 1.1, 1.1], wspace=0.38)
-    ax_auc = fig.add_subplot(grid[0, 0])
-    ax_hash = fig.add_subplot(grid[0, 1])
-    ax_code = fig.add_subplot(grid[0, 2], sharey=ax_hash)
+    grid = fig.add_gridspec(1, 3, width_ratios=[1.05, 1.48, 0.97], wspace=0.45)
+    ax_fixed = fig.add_subplot(grid[0, 0])
+    ax_stability = fig.add_subplot(grid[0, 1])
+    ax_matrix = fig.add_subplot(grid[0, 2])
 
-    labels = ["PrimeVul\nLOPO", "DiverseVul\nHashing", "DiverseVul\nCodeBERT"]
-    colors = [GRAY, BLUE, ORANGE]
-    x = np.arange(3)
-    auc_values = summary["auroc"].to_numpy(float)
-    ax_auc.vlines(x, 0, auc_values, color=colors, linewidth=2.2, alpha=0.8)
-    ax_auc.scatter(x, auc_values, color=colors, s=34, zorder=3, edgecolor="white", linewidth=0.5)
-    ax_auc.axhline(0.5, color="#555555", linestyle="--", linewidth=0.8)
-    for xpos, value in zip(x, auc_values):
-        ax_auc.text(xpos, value + 0.045, f"{value:.2f}", ha="center", fontsize=7.2)
-    ax_auc.set_xticks(x, labels)
-    ax_auc.set_ylim(0, 1.0)
-    ax_auc.set_ylabel("Severe-violation AUROC")
-    ax_auc.set_title("a  Gate AUROC", loc="left", weight="bold", fontsize=8.8)
-    ax_auc.grid(axis="y", color="#E0E0E0", linewidth=0.55)
-    ax_auc.set_axisbelow(True)
-    ax_auc.spines[["top", "right"]].set_visible(False)
-
-    ymax = max(1.0, float(external["max_relative_violation"].max()) * 1.08)
-    for ax, detector, title, color in (
-        (ax_hash, "hashing", "b  Hashing-SGD", BLUE),
-        (ax_code, "codebert", "c  CodeBERT", ORANGE),
-    ):
-        sub = external[external["detector"] == detector]
-        for xpos, status in enumerate((False, True)):
-            values = np.sort(
-                sub.loc[sub["supported"] == status, "max_relative_violation"].to_numpy(float)
-            )
-            offsets = np.linspace(-0.13, 0.13, len(values)) if len(values) > 1 else np.asarray([0.0])
-            ax.scatter(
-                xpos + offsets,
-                values,
-                color=color,
-                s=22,
-                alpha=0.78,
-                edgecolor="white",
-                linewidth=0.4,
-                zorder=3,
-            )
-            if len(values):
-                q25, median, q75 = np.quantile(values, [0.25, 0.5, 0.75])
-                ax.vlines(xpos, q25, q75, color="#222222", linewidth=2.2, zorder=4)
-                ax.hlines(median, xpos - 0.18, xpos + 0.18, color="#222222", linewidth=1.1, zorder=4)
-        record = summary[summary["detector"] == detector].iloc[0]
-        ax.axhline(0.5, color=RED, linestyle=":", linewidth=0.8)
-        ax.text(
-            0.02,
-            0.98,
-            f"pass-fail median difference\n{record['median_pass_minus_fail']:.2f} "
-            f"[{record['ci_lower']:.2f}, {record['ci_upper']:.2f}]",
-            transform=ax.transAxes,
-            va="top",
-            fontsize=6.6,
-            color="#333333",
+    detector_order = ["hashing", "codebert"]
+    detector_labels = ["Hashing-SGD", "CodeBERT"]
+    detector_colors = {"hashing": BLUE, "codebert": ORANGE}
+    for xpos, detector in enumerate(detector_order):
+        subset = qualification[qualification["detector"] == detector].set_index(
+            "partition"
         )
-        failed = int((~sub["supported"]).sum())
-        passed = int(sub["supported"].sum())
-        ax.set_xticks([0, 1], [f"Fail\n(n={failed})", f"Pass\n(n={passed})"])
-        ax.set_xlim(-0.42, 1.42)
-        ax.set_ylim(0, ymax)
-        ax.set_title(title, loc="left", weight="bold", fontsize=8.8)
-        ax.grid(axis="y", color="#E0E0E0", linewidth=0.55)
-        ax.set_axisbelow(True)
-        ax.spines[["top", "right"]].set_visible(False)
-    ax_hash.set_ylabel("Raw max relative violation")
-    plt.setp(ax_code.get_yticklabels(), visible=False)
+        values = [
+            float(subset.loc["registration", "qualification_score"]),
+            float(subset.loc["confirmation", "qualification_score"]),
+        ]
+        ax_fixed.plot(
+            [xpos - 0.10, xpos + 0.10],
+            values,
+            color=detector_colors[detector],
+            linewidth=1.5,
+            zorder=2,
+        )
+        ax_fixed.scatter(
+            xpos - 0.10,
+            values[0],
+            s=46,
+            facecolor="white",
+            edgecolor=detector_colors[detector],
+            linewidth=1.5,
+            zorder=3,
+        )
+        ax_fixed.scatter(
+            xpos + 0.10,
+            values[1],
+            s=46,
+            facecolor=detector_colors[detector],
+            edgecolor="white",
+            linewidth=0.6,
+            zorder=3,
+        )
+        for offset, value in zip((-0.10, 0.10), values):
+            ax_fixed.text(
+                xpos + offset,
+                value + 0.045,
+                f"{value:.2f}",
+                ha="center",
+                fontsize=6.8,
+                color="#333333",
+            )
+    ax_fixed.axhline(threshold, color=RED, linestyle="--", linewidth=1.0)
+    ax_fixed.text(
+        0.03,
+        threshold + 0.025,
+        r"registry threshold $Q=0.70$",
+        fontsize=6.5,
+        color=RED,
+    )
+    ax_fixed.set_xticks(range(2), detector_labels)
+    ax_fixed.set_ylim(0, 1.04)
+    ax_fixed.set_ylabel("Qualification score $Q$")
+    ax_fixed.set_title("a  Fixed 12/12 split", loc="left", weight="bold", fontsize=8.8)
+    ax_fixed.grid(axis="y", color="#E5E5E5", linewidth=0.55)
+    ax_fixed.spines[["top", "right"]].set_visible(False)
+    ax_fixed.legend(
+        handles=[
+            Line2D([0], [0], marker="o", color="#555555", markerfacecolor="white", linewidth=0, label="Registration"),
+            Line2D([0], [0], marker="o", color="#555555", markerfacecolor="#555555", linewidth=0, label="Confirmation"),
+        ],
+        loc="lower left",
+        fontsize=6.5,
+        handletextpad=0.25,
+    )
+
+    for detector in detector_order:
+        subset = stability[stability["detector"] == detector].copy()
+        subset = subset[
+            np.isfinite(subset["registration_score"])
+            & np.isfinite(subset["confirmation_score"])
+        ]
+        joint = np.minimum(
+            subset["registration_score"].to_numpy(float),
+            subset["confirmation_score"].to_numpy(float),
+        )
+        x = np.linspace(0.0, 1.0, 401)
+        survival = np.asarray([(joint >= value).mean() for value in x])
+        ax_stability.plot(
+            x,
+            survival * 100,
+            color=detector_colors[detector],
+            linewidth=2.0,
+        )
+        threshold_rate = float((joint >= threshold).mean()) * 100
+        ax_stability.scatter(
+            [threshold],
+            [threshold_rate],
+            color=detector_colors[detector],
+            s=34,
+            edgecolor="white",
+            linewidth=0.5,
+            zorder=4,
+        )
+        y_offset = 5 if detector == "hashing" else 5
+        ax_stability.text(
+            threshold + 0.025,
+            threshold_rate + y_offset,
+            f"{threshold_rate:.2f}%",
+            color=detector_colors[detector],
+            fontsize=7.0,
+            weight="bold",
+        )
+    ax_stability.axvline(threshold, color=RED, linestyle="--", linewidth=1.0)
+    ax_stability.set_xlim(0.0, 1.0)
+    ax_stability.set_ylim(-2, 104)
+    ax_stability.set_xlabel(r"Joint split score $\min(Q_{reg}, Q_{conf})$")
+    ax_stability.set_ylabel("Deterministic splits at or above score (%)")
+    ax_stability.set_title("b  10,000 split stability", loc="left", weight="bold", fontsize=8.8)
+    ax_stability.grid(color="#E5E5E5", linewidth=0.55)
+    ax_stability.spines[["top", "right"]].set_visible(False)
+    ax_stability.text(0.79, 54, "Hashing-SGD", color=BLUE, fontsize=7.0, weight="bold")
+    ax_stability.text(0.12, 68, "CodeBERT", color=ORANGE, fontsize=7.0, weight="bold")
+
+    hashing = confirmation[confirmation["detector"] == "hashing"].copy()
+    eligible = hashing["contract_action"] == "eligible-for-singleton"
+    severe = hashing["severe_raw_violation"].astype(bool)
+    triage = np.asarray(
+        [
+            [int((eligible & ~severe).sum()), int((~eligible & ~severe).sum())],
+            [int((eligible & severe).sum()), int((~eligible & severe).sum())],
+        ]
+    )
+    cell_colors = [["#DDF2EA", "#F1F1F1"], ["#FCE8BD", "#DCEAF7"]]
+    for row in range(2):
+        for column in range(2):
+            ax_matrix.add_patch(
+                Rectangle(
+                    (column, row),
+                    1,
+                    1,
+                    facecolor=cell_colors[row][column],
+                    edgecolor="white",
+                    linewidth=2.0,
+                )
+            )
+            ax_matrix.text(
+                column + 0.5,
+                row + 0.42,
+                str(triage[row, column]),
+                ha="center",
+                va="center",
+                fontsize=17,
+                weight="bold",
+            )
+            ax_matrix.text(
+                column + 0.5,
+                row + 0.72,
+                "projects",
+                ha="center",
+                va="center",
+                fontsize=6.4,
+                color="#555555",
+            )
+    ax_matrix.set_xlim(0, 2)
+    ax_matrix.set_ylim(2, 0)
+    ax_matrix.set_aspect("equal")
+    ax_matrix.set_xticks([0.5, 1.5], ["Eligible", "Review-only"])
+    ax_matrix.set_yticks([0.5, 1.5], ["Non-severe", "Severe > 0.5"])
+    ax_matrix.tick_params(length=0)
+    ax_matrix.spines[:].set_visible(False)
+    ax_matrix.set_title(
+        "c  Hashing confirmation",
+        loc="left",
+        weight="bold",
+        fontsize=8.8,
+    )
+
     fig.suptitle(
-        "The frozen support gate is externally informative only for hashing-SGD",
-        y=1.01,
-        fontsize=10.0,
+        "The qualification firewall grants detector-specific automation authority",
+        y=1.015,
+        fontsize=9.6,
         weight="bold",
     )
     export(fig, stem)
 
 
-def figure_automation(metrics: pd.DataFrame, project: pd.DataFrame, stem: Path, data_dir: Path) -> None:
-    summary = support_summary(metrics, project)
-    selected = summary[(summary["alpha_vulnerable"] == 0.10) & (summary["alpha_safe"] == 0.20)].copy()
-    selected.to_csv(data_dir / "fig3_primary_automation.csv", index=False)
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 4.25), sharey=False, gridspec_kw={"wspace": 0.4})
+def figure_risk_coverage(metrics: pd.DataFrame, project: pd.DataFrame, stem: Path, data_dir: Path) -> None:
+    methods = {
+        "unweighted_mondrian": "Unweighted",
+        "estimated_weight_no_gate_clip_20": "Project-weighted",
+        "pooled_split_conformal": "Pooled conformal",
+        "prom_derived_aps": "PROM-APS",
+    }
+    selected = project[
+        (project["alpha_vulnerable"] == 0.10)
+        & (project["alpha_safe"] == 0.20)
+        & (project["method"].isin(methods))
+    ].copy()
+    summary = (
+        selected.groupby(["detector", "method"], as_index=False)
+        .agg(
+            max_relative_violation=("max_relative_violation", "median"),
+            singleton_coverage=("singleton_coverage", "median"),
+            projects=("target_group", "nunique"),
+        )
+    )
+    summary["label"] = summary["method"].map(methods)
+    summary["cohort"] = "all projects"
+
+    external = gate_external_projects(metrics, project)
+    controller_rows = []
+    for detector in ("hashing",):
+        supported = external[(external["detector"] == detector) & (external["supported"])]
+        controller_rows.append(
+            {
+                "detector": detector,
+                "method": "vultriage_full_gate_clip_20",
+                "max_relative_violation": float(supported["max_relative_violation"].median()),
+                "singleton_coverage": float(supported["singleton_coverage"].median()),
+                "projects": int(len(supported)),
+                "label": "Qualified contract (13/24)",
+                "cohort": "supported projects",
+            }
+        )
+    summary = pd.concat([summary, pd.DataFrame(controller_rows)], ignore_index=True)
+    summary.to_csv(data_dir / "fig3_primary_automation.csv", index=False)
+
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.45), sharey=True, gridspec_kw={"wspace": 0.25})
+    styles = {
+        "forced_argmax": ("X", "#555555", 54),
+        "unweighted_mondrian": ("o", GRAY, 42),
+        "estimated_weight_no_gate_clip_20": ("o", BLUE, 50),
+        "pooled_split_conformal": ("D", "#7A6F9B", 40),
+        "prom_derived_aps": ("s", GREEN, 42),
+        "vultriage_full_gate_clip_20": ("*", ORANGE, 100),
+    }
+    offsets = {
+        "forced_argmax": (-6, 8),
+        "unweighted_mondrian": (5, 7),
+        "estimated_weight_no_gate_clip_20": (5, 8),
+        "pooled_split_conformal": (5, 7),
+        "prom_derived_aps": (0, 10),
+        "vultriage_full_gate_clip_20": (0, 12),
+    }
+    ymax = max(1.0, float(summary["max_relative_violation"].max()) * 1.12)
     for ax, detector, title in zip(axes, ("hashing", "codebert"), ("a  Hashing-SGD", "b  CodeBERT")):
-        sub = selected[selected["detector"] == detector].sort_values(["supported", "singleton_coverage"], ascending=[True, True]).reset_index(drop=True)
-        y = np.arange(len(sub))
-        for idx, row in sub.iterrows():
-            if row["supported"]:
-                ax.plot(100 * row["singleton_coverage"], idx, "o", color=BLUE, markersize=4.4)
-            else:
-                ax.axhspan(idx - 0.38, idx + 0.38, color=LIGHT_GRAY, zorder=0)
-                ax.text(1.0, idx, "review only", va="center", color=GRAY, style="italic", fontsize=7.0)
-        supported = sub[sub["supported"]]
-        if len(supported):
-            median = float(supported["singleton_coverage"].median() * 100)
-            ax.axvline(median, color=GREEN, linestyle="--", linewidth=1.0, label=f"Median: {median:.1f}%")
-        ax.set_yticks(y, sub["target_group"].astype(str))
-        ax.set_xlim(0, 100)
-        ax.set_xlabel("Singleton coverage (%)")
+        sub = summary[summary["detector"] == detector]
+        for row in sub.itertuples(index=False):
+            marker, color, size = styles[row.method]
+            ax.scatter(
+                100 * row.singleton_coverage,
+                row.max_relative_violation,
+                marker=marker,
+                color=color,
+                s=size,
+                edgecolor="white",
+                linewidth=0.7,
+                zorder=4,
+            )
+            dx, dy = offsets[row.method]
+            horizontal_alignment = "center" if row.method in {"prom_derived_aps", "vultriage_full_gate_clip_20"} else "left"
+            display_label = row.label
+            if detector == "codebert":
+                dx, dy = {
+                    "forced_argmax": (-5, 10),
+                    "unweighted_mondrian": (8, 20),
+                    "estimated_weight_no_gate_clip_20": (8, -5),
+                    "pooled_split_conformal": (-5, 12),
+                    "prom_derived_aps": (0, 10),
+                }[row.method]
+                if row.method in {"forced_argmax", "pooled_split_conformal"}:
+                    horizontal_alignment = "right"
+                if row.method == "prom_derived_aps":
+                    horizontal_alignment = "center"
+            ax.annotate(
+                display_label,
+                (100 * row.singleton_coverage, row.max_relative_violation),
+                xytext=(dx, dy),
+                textcoords="offset points",
+                fontsize=6.5,
+                color="#333333",
+                ha=horizontal_alignment,
+            )
+        unweighted = sub[sub["method"] == "unweighted_mondrian"].iloc[0]
+        weighted = sub[sub["method"] == "estimated_weight_no_gate_clip_20"].iloc[0]
+        if detector == "hashing":
+            ax.annotate(
+                "",
+                xy=(100 * weighted["singleton_coverage"], weighted["max_relative_violation"]),
+                xytext=(100 * unweighted["singleton_coverage"], unweighted["max_relative_violation"]),
+                arrowprops={"arrowstyle": "-|>", "color": BLUE, "linewidth": 1.5, "mutation_scale": 10},
+                zorder=3,
+            )
+        if detector == "hashing":
+            ax.text(0.04, 0.94, "24/24 projects improve", transform=ax.transAxes, va="top", weight="bold", fontsize=7.2, color=BLUE)
+        else:
+            ax.text(0.04, 0.94, "paired transfer audit", transform=ax.transAxes, va="top", weight="bold", fontsize=7.2, color="#555555")
+        ax.axhline(0.5, color=RED, linestyle=":", linewidth=0.8)
+        ax.set_xlim(18, 103)
+        ax.set_ylim(-0.04, ymax)
+        ax.set_xlabel("Median singleton coverage (%)")
         ax.set_title(title, loc="left", weight="bold", fontsize=8.8)
-        ax.grid(axis="x", color="#DDDDDD", linewidth=0.6)
+        ax.grid(color="#E0E0E0", linewidth=0.55)
         ax.set_axisbelow(True)
-        ax.spines[["top", "right", "left"]].set_visible(False)
-        ax.tick_params(axis="y", length=0)
-        if len(supported):
-            ax.legend(frameon=False, loc="lower right")
+        ax.spines[["top", "right"]].set_visible(False)
+    axes[0].set_ylabel("Median max relative violation")
     fig.suptitle(
-        r"Primary operating point: $\alpha_{v}=0.10$, $\alpha_{s}=0.20$",
+        "Risk-coverage positioning favors project-aware weighting for hashing",
         y=1.01,
-        fontsize=10.2,
+        fontsize=9.4,
         weight="bold",
     )
     export(fig, stem)
@@ -370,7 +671,9 @@ def figure_alignment(project: pd.DataFrame, stem: Path, data_dir: Path) -> None:
     for ax, detector, title in zip(axes, ("hashing", "codebert"), ("a  Hashing-SGD", "b  CodeBERT")):
         sub = joined[joined["detector"] == detector]
         colors = sub["alpha_vulnerable"].map(budget_colors).to_numpy()
-        ax.scatter(sub["baseline_worst_violation"], sub["weighted_worst_violation"], c=colors, s=18, alpha=0.72, edgecolor="white", linewidth=0.3)
+        diagonal = np.linspace(0, limit, 200)
+        ax.fill_between(diagonal, 0, diagonal, color="#DDF2EA", alpha=0.45, linewidth=0, zorder=0)
+        ax.scatter(sub["baseline_worst_violation"], sub["weighted_worst_violation"], c=colors, s=19, alpha=0.72, edgecolor="white", linewidth=0.3)
         ax.plot([0, limit], [0, limit], linestyle="--", color=GRAY, linewidth=0.8)
         difference = sub["weighted_worst_violation"] - sub["baseline_worst_violation"]
         ax.text(
@@ -413,7 +716,8 @@ def figure_alignment(project: pd.DataFrame, stem: Path, data_dir: Path) -> None:
         frameon=False,
         fontsize=6.7,
     )
-    fig.suptitle("Directional risk alignment across 24 projects and 9 budget pairs", y=1.02, fontsize=10.2, weight="bold")
+    axes[0].text(0.64, 0.08, "improved", transform=axes[0].transAxes, fontsize=6.8, color="#35735E", weight="bold")
+    fig.suptitle("Hashing improves risk alignment across the frozen operating grid", y=1.02, fontsize=9.5, weight="bold")
     export(fig, stem)
 
 
@@ -508,6 +812,9 @@ def main() -> None:
     parser.add_argument("--gate-discrimination", type=Path, required=True)
     parser.add_argument("--gate-seal", type=Path, required=True)
     parser.add_argument("--calibration-project-summary", type=Path, required=True)
+    parser.add_argument("--qualification-summary", type=Path, required=True)
+    parser.add_argument("--partition-stability", type=Path, required=True)
+    parser.add_argument("--confirmation-decisions", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -519,16 +826,23 @@ def main() -> None:
     gate_discrimination = pd.read_csv(args.gate_discrimination)
     gate_seal = json.loads(args.gate_seal.read_text(encoding="utf-8"))
     calibration = pd.read_csv(args.calibration_project_summary)
+    qualification = pd.read_csv(args.qualification_summary)
+    stability = pd.read_csv(args.partition_stability)
+    confirmation = pd.read_csv(args.confirmation_decisions)
+    thresholds = qualification["qualification_threshold"].dropna().unique()
+    if len(thresholds) != 1:
+        raise ValueError("qualification summary must contain one threshold")
+    qualification_threshold = float(thresholds[0])
     figure_workflow(args.output / "fig1_workflow")
     figure_gate_validity(
-        metrics,
-        project,
-        gate_discrimination,
-        gate_seal,
+        qualification,
+        stability,
+        confirmation,
+        qualification_threshold,
         args.output / "fig2_gate_validity",
         data_dir,
     )
-    figure_automation(metrics, project, args.output / "fig3_primary_automation", data_dir)
+    figure_risk_coverage(metrics, project, args.output / "fig3_primary_automation", data_dir)
     figure_alignment(project, args.output / "fig4_risk_alignment", data_dir)
     figure_calibration_sensitivity(
         calibration,
@@ -563,8 +877,131 @@ def main() -> None:
             "gate_discrimination": args.gate_discrimination,
             "gate_seal": args.gate_seal,
             "calibration_project_summary": args.calibration_project_summary,
+            "qualification_summary": args.qualification_summary,
+            "partition_stability": args.partition_stability,
+            "confirmation_decisions": args.confirmation_decisions,
         }.items()
     }
+    script_path = Path(__file__)
+    script_digest = sha256(script_path)
+    script_label = "src/make_extension_v2_figures.py"
+    figure_table_trace = [
+        {
+            "artifact_id": "fig1_workflow",
+            "source_data": [
+                {"path": script_label, "sha256": script_digest},
+            ],
+            "transformation": {
+                "script": "src/make_extension_v2_figures.py::figure_workflow",
+                "script_sha256": script_digest,
+            },
+            "caption_claim": "Automatic vulnerability labels require a qualified detector-shift identity, complete three-valued rule evidence, and a verifiable decision certificate.",
+            "supported_manuscript_claims": [
+                {
+                    "claim_id": "K1",
+                    "claim_text": "VulTriage represents automation authority as an executable proof-carrying knowledge contract.",
+                }
+            ],
+            "limitations": [
+                "The panel specifies executable contract semantics; empirical qualification is evaluated separately in Figure 2."
+            ],
+        },
+        {
+            "artifact_id": "fig2_gate_validity",
+            "source_data": [
+                {
+                    "path": str(args.qualification_summary),
+                    "sha256": sha256(args.qualification_summary),
+                },
+                {
+                    "path": str(args.partition_stability),
+                    "sha256": sha256(args.partition_stability),
+                },
+                {
+                    "path": str(args.confirmation_decisions),
+                    "sha256": sha256(args.confirmation_decisions),
+                },
+            ],
+            "transformation": {
+                "script": "src/make_extension_v2_figures.py::figure_gate_validity",
+                "script_sha256": script_digest,
+            },
+            "caption_claim": "The qualification firewall registers hashing-SGD, withholds CodeBERT authority, and preserves strong hashing triage on the fixed confirmation half.",
+            "supported_manuscript_claims": [
+                {
+                    "claim_id": "K2",
+                    "claim_text": "Hashing-SGD exceeds the Q=0.70 registration threshold and both halves exceed it in 84.94% of deterministic 12/12 partitions."
+                }
+            ],
+            "limitations": [
+                "The contract analysis is an explicitly exploratory extension over the frozen external evidence."
+            ],
+        },
+        {
+            "artifact_id": "fig3_primary_automation",
+            "source_data": [
+                {"path": str(args.metrics), "sha256": sha256(args.metrics)},
+                {"path": str(args.project_means), "sha256": sha256(args.project_means)},
+            ],
+            "transformation": {
+                "script": "src/make_extension_v2_figures.py::figure_risk_coverage",
+                "script_sha256": script_digest,
+            },
+            "caption_claim": "Project-aware weighting produces the favorable hashing risk-coverage shift, while only the registered hashing identity receives a qualified-controller operating point.",
+            "supported_manuscript_claims": [
+                {
+                    "claim_id": "K3",
+                    "claim_text": "Project-aware weighting improves hashing risk alignment on all 24 projects at the primary operating point."
+                }
+            ],
+            "limitations": [
+                "Points are project medians and the qualified-controller point is conditional on the registered hashing cohort."
+            ],
+        },
+        {
+            "artifact_id": "fig4_risk_alignment",
+            "source_data": [
+                {"path": str(args.project_means), "sha256": sha256(args.project_means)},
+            ],
+            "transformation": {
+                "script": "src/make_extension_v2_figures.py::figure_alignment",
+                "script_sha256": script_digest,
+            },
+            "caption_claim": "The hashing improvement extends across projects and asymmetric budget pairs, whereas CodeBERT does not show the same directional pattern.",
+            "supported_manuscript_claims": [
+                {
+                    "claim_id": "K4",
+                    "claim_text": "Hashing improves, ties, or worsens 202, 6, or 8 of 216 project-budget cells."
+                }
+            ],
+            "limitations": [
+                "The nine budget cells within a project are correlated and are summarized descriptively."
+            ],
+        },
+        {
+            "artifact_id": "fig5_calibration_sensitivity",
+            "source_data": [
+                {
+                    "path": str(args.calibration_project_summary),
+                    "sha256": sha256(args.calibration_project_summary),
+                },
+            ],
+            "transformation": {
+                "script": "src/make_extension_v2_figures.py::figure_calibration_sensitivity",
+                "script_sha256": script_digest,
+            },
+            "caption_claim": "Hashing retains lower maximum relative violation at every calibration fraction, with an explicit singleton-coverage trade-off.",
+            "supported_manuscript_claims": [
+                {
+                    "claim_id": "K5",
+                    "claim_text": "The direction of the hashing risk-alignment result is preserved across calibration-size sensitivity analyses."
+                }
+            ],
+            "limitations": [
+                "Lines summarize project medians and ribbons summarize interquartile ranges across the 24 external projects."
+            ],
+        },
+    ]
     manifest = {
         "metrics": str(args.metrics),
         "project_means": str(args.project_means),
@@ -578,6 +1015,10 @@ def main() -> None:
         "rows_project_means": int(len(project)),
         "rows_gate_discrimination": int(len(gate_discrimination)),
         "rows_calibration_project_summary": int(len(calibration)),
+        "rows_qualification_summary": int(len(qualification)),
+        "rows_partition_stability": int(len(stability)),
+        "rows_confirmation_decisions": int(len(confirmation)),
+        "figure_table_trace": figure_table_trace,
     }
     (args.output / "figure_manifest.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(manifest, sort_keys=True))

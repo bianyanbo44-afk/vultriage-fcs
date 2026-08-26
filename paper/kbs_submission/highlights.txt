@@ -1,4 +1,4 @@
-Knowledge rules connect uncertainty evidence to automatic or review actions.
-Weighted conformal sets improve hashing-SGD risk alignment across 24 projects.
-Risk alignment costs 15.9 percentage points of singleton coverage.
-Support discrimination transfers to hashing, not frozen CodeBERT.
+Proof-carrying contracts turn uncertainty evidence into verifiable actions.
+A detector-shift registry blocks unsupported transfer and fails closed to review.
+Hashing-SGD qualifies on both halves in 84.94% of 10,000 project splits.
+Project weighting improves risk alignment on all 24 external projects.

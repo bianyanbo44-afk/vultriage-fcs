@@ -1,0 +1,5 @@
+detector,partition,projects,severe_projects,nonsevere_projects,gate_auroc,severe_review_rate,nonsevere_pass_rate,balanced_triage_accuracy,qualification_score,qualification_threshold,qualified
+codebert,registration,12,10,2,0.15000000000000002,0.0,1.0,0.5,0.15000000000000002,0.7,False
+codebert,confirmation,12,11,1,0.8181818181818182,0.18181818181818182,1.0,0.5909090909090909,0.5909090909090909,0.7,False
+hashing,registration,12,5,7,0.7714285714285715,0.8,0.7142857142857143,0.7571428571428571,0.7571428571428571,0.7,True
+hashing,confirmation,12,6,6,0.9166666666666667,0.8333333333333334,1.0,0.9166666666666667,0.9166666666666667,0.7,True

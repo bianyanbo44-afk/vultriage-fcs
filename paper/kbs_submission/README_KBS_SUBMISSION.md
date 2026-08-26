@@ -30,18 +30,18 @@ and bibliography completeness.
 
 ## Scope and evidence boundary
 
-The KBS version frames VulTriage as a knowledge-guided selective decision-
-support layer. The explicit knowledge set contains the asymmetric risk
-budgets, evidence-sufficiency constraints, severe-risk threshold, and
-fail-closed action semantics. It is an auditable prototype policy, not an
-expert-elicited ontology or a general-purpose knowledge graph.
+The KBS version presents VulTriage as a proof-carrying detector--shift knowledge
+contract. A qualification registry binds automation authority to a detector,
+source domain, target domain, and policy version. Four three-valued predicates
+govern budget validity, evidence completeness, gate support, and singleton
+eligibility; the fifth rule fails closed and requires a verifiable certificate.
 
-The reported evidence remains detector-conditional. Weighting improves the
-hashing-SGD risk-alignment outcome at the primary operating point, while the
-same overall improvement is not observed for frozen CodeBERT. The support gate
-has external discrimination for hashing and not for CodeBERT. The manuscript
-does not claim universal target-risk guarantees, detector-general validity,
-SOTA detector performance, or a speed/energy advantage.
+Hashing-SGD registers at Q=0.757 and confirms at Q=0.917. Both deterministic
+12-project halves qualify in 84.94% of 10,000 project partitions. On the fixed
+confirmation half, all six non-severe projects are eligible and five of six
+severe projects are review-only. The same registry withholds CodeBERT authority.
+The empirical foundation remains the hashing-SGD risk-alignment gain across all
+24 external projects and 202 of 216 frozen project--budget cells.
 
 ## Mandatory author and submission checks
 

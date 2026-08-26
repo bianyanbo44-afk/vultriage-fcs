@@ -6,6 +6,7 @@ param(
     [string]$AnalysisOutput = "outputs/extension-v2/analysis-v2",
     [string]$CalibrationOutput = "outputs/extension-v2/calibration-size-v2",
     [string]$NearDuplicateOutput = "outputs/extension-v2/near-duplicate-sensitivity-v2",
+    [string]$ContractOutput = "outputs/extension-v2/contract-v1",
     [string]$FigureOutput = "outputs/extension-v2/figures-v2"
 )
 
@@ -116,6 +117,14 @@ Invoke-PythonStep -Name "analyze near-duplicate sensitivity" -Arguments @(
     "--output", $NearDuplicateOutput
 )
 
+Invoke-PythonStep -Name "build detector-shift knowledge contract" -Arguments @(
+    "src/analyze_knowledge_contract.py",
+    "--metrics", (Join-Path $EvaluationOutput "fold_seed_metrics.csv"),
+    "--project-means", (Join-Path $AnalysisOutput "project_seed_averages.csv"),
+    "--config", "configs/knowledge_contract_v1.json",
+    "--output", $ContractOutput
+)
+
 Invoke-PythonStep -Name "generate extension-v2 figures" -Arguments @(
     "src/make_extension_v2_figures.py",
     "--metrics", (Join-Path $EvaluationOutput "fold_seed_metrics.csv"),
@@ -123,6 +132,9 @@ Invoke-PythonStep -Name "generate extension-v2 figures" -Arguments @(
     "--gate-discrimination", (Join-Path $AnalysisOutput "gate_discrimination.csv"),
     "--gate-seal", "outputs/extension-v2/gate-v1/gate_seal.json",
     "--calibration-project-summary", "outputs/extension-v2/calibration-size-v2/calibration_size_project_summary.csv",
+    "--qualification-summary", (Join-Path $ContractOutput "qualification_summary.csv"),
+    "--partition-stability", (Join-Path $ContractOutput "partition_stability_scores.csv"),
+    "--confirmation-decisions", (Join-Path $ContractOutput "confirmation_contract_decisions.csv"),
     "--output", $FigureOutput
 )
 
