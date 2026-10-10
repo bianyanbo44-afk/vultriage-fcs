@@ -1,0 +1,41 @@
+{
+  "analyst_cost_units": "illustrative",
+  "datasets_analysed_separately": true,
+  "independent_model_selected_attempt": "attempt-2/v4.1",
+  "known_previous_outcomes": true,
+  "licences": {
+    "new_software_or_data_licence_assigned": false,
+    "notices": [
+      {
+        "path": "third_party/PROM/LICENSE",
+        "sha256": "9F614DB80A4E62CBB744E6F00D9DA221ADF45C6463556CB32F81AD1F8467F188"
+      },
+      {
+        "path": "third_party/PROM/src/LICENSE.txt",
+        "sha256": "D057B14781F769A05ADFDEE9514DB2C256FE824BBC7075ADB93146FA20556A3F"
+      }
+    ],
+    "separate_repair_and_optimization_diffs": true,
+    "source_bytes": 458014,
+    "source_files": 32,
+    "status": "PASS_ORIGINAL_NOTICES_RETAINED",
+    "upstream_root_notice": "CC-BY-4.0",
+    "upstream_src_notice": "MIT (original text retained)"
+  },
+  "module_manifest_hashes": {
+    "capacity_feedback": "2ECC66776F6228BE8F13E76A67664C98B7F1564D91F7F4A5D499CE8BBC69DD45",
+    "figures": "56582E53297D8FA6A0316F5C388D16AE51BD744ACE4EF5F0FA54F6686797814A",
+    "independent_model": "3DF0AB1B2BA5EAE8C09903DA75FA97E8FC9B62140D6A7101D6604ED2FF86BE37",
+    "prom": "6A07CB04DB575385C5467D3680C9022E73EEB33361D2D3AECD5234AB8654248C",
+    "ratio_diagnostics": "8519AE322A7750C9773772E06CDA3AE6986FF16E6384C9E3E6CDD4B3F88E889E"
+  },
+  "no_new_software_or_data_licence_assigned": true,
+  "pending_modules": [],
+  "published": false,
+  "real_feedback_arrival_measured": false,
+  "schema_version": "trace-v4-public-release-metadata-1",
+  "status": "COMPLETE_LOCAL_NOT_PUBLISHED",
+  "v3_archive_sha256": "366E697441884462C0B67C47E419FC3D8B669C012A7409CD17F91058FDCBC6A2",
+  "v3_member_manifest_sha256": "C835D1DF4C7C731F436C444405CBD6CEA02E3EA9F79564A7833621F9AB9B80FF",
+  "version": "trace-validation-v4-2026-10-11"
+}

@@ -1,0 +1,16 @@
+{
+  "execution_version": "trace-official-prom-pooled-count-execution-v4.2",
+  "created_date": "2026-10-11",
+  "scientific_protocol_changed": false,
+  "original_protocol": "protocol/prom_official_v4.md",
+  "original_config": "configs/prom_official_v4.json",
+  "source_selection_or_target_outcomes_used_to_choose_optimization": false,
+  "rationale": "Literal quadratic globally pooled comparisons on the 19,179-function MegaVul wireshark project; complete global multiset counts can be obtained exactly from a sorted pool.",
+  "method": "Sort the complete duplicated global selected-calibration score pool once; count >= test score with searchsorted side=left, divide by original total pool size.",
+  "nan_infinity_semantics": "Calibration NaNs count as unsuccessful comparisons but remain in denominator; test NaN has zero successes; +/-infinity and an empty pool retain upstream numerical semantics.",
+  "nonfinite_probability_guard": "Reject all NaN and +/-infinity in sealed model probability features before official scoring.",
+  "unchanged": ["source roles and labels", "existing detector fits and sealed probabilities", "target project roster", "whole-project transductive neighborhoods", "duplicate multiplicity and global denominator", "greater-than-or-equal tie convention", "alpha grid", "primary family", "source selection objective and tie order", "actions", "controls", "illustrative costs", "project analysis"],
+  "required_parity": ["native multiclass exact outputs", "repaired binary exact outputs", "random pooled-count cases", "repeated ties and nextafter boundaries", "near-boundary allowed alpha", "NaN/infinity/empty pools", "finite-input rejection", "complete literal source alpha grid", "every preserved literal target archive"],
+  "root_clearance": "tmp/neurocomputing-strengthening/kbs-v4/prom_execution_optimization_clearance.json",
+  "target_outcome_join_allowed_only_after_all_parity_checks": true
+}

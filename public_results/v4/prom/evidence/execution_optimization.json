@@ -1,0 +1,396 @@
+{
+  "schema": "trace-prom-pooled-count-execution-amendment-v4.2",
+  "created_at_utc": "2026-10-10T17:26:47.827416+00:00",
+  "status": "passed",
+  "scientific_protocol_changed": false,
+  "target_labels_accessed": false,
+  "original_official_source_sha256": "E6D63A82DD6B950D81B0A51B44AFE0764760F245ADE249B8DE4B20C635C46F8A",
+  "literal_binary_runtime_path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\literal-binary-runtime\\src\\prom\\prom_classification.py",
+  "literal_binary_runtime_sha256": "0D63166EE0E57B09EC9DCC979F6CEB6A02DD082C4171DB46B5E5B6518C7CF583",
+  "optimized_binary_runtime_path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\binary-runtime\\src\\prom\\prom_classification.py",
+  "optimized_binary_runtime_sha256": "BB061A9A34E376196E9A154F189A599B7F87173B4DD3BF289763A927190118CD",
+  "diff_path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\prom_official_v4_pooled_count_optimization.diff",
+  "diff_sha256": "4D88A1BA89AF1B0AA1FE27F61D0726C34B4628186979AF4B82E8D886AABE19A0",
+  "original_binary_repair_receipt_sha256": "262EA8333AB0793D4984A3F9571C7AC751498C5ED058F45C372E753C08658F96",
+  "original_fidelity_smoke_sha256": "F17E26B5A3A55261699D162CD5ACC599590961C8DFA8DB215BF965442634A753",
+  "preserved_literal_files": [
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/bash-37d2b12d.npz",
+      "sha256": "D20D5F666BBCC5F6827A8392D60CC2F0F59F3524EDA7DB4DBB97CBF16CE8E93C",
+      "bytes": 27698
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/bdwgc-49bee8e8.npz",
+      "sha256": "78CC3F5ED7A27BC3C3B269436313B27529DD7DCE5CCEA404CD4527579CCCA935",
+      "bytes": 16298
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/bluez-52856879.npz",
+      "sha256": "B587B860A48B3B352AAE870056857EF30694250399AF96E0CD2988F94C48B529",
+      "bytes": 24463
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/ceph-bbbd1d8e.npz",
+      "sha256": "FDFB41D7C2CBCA45888E3B87075ADBED397D2A33ACCEA88F2715F400C85C36F6",
+      "bytes": 49564
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/chrony-5fdc7e38.npz",
+      "sha256": "2FC939387000EE6802275EA86AE458B0E9FA6DAAA72F0044EE734465199427B0",
+      "bytes": 16548
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/curl-427e4b79.npz",
+      "sha256": "FEC5A7EB5087817A27C5912008456CE1CF39E8A99EC6905045C2BCD7D4653A1B",
+      "bytes": 22352
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/edk2-5dc654ac.npz",
+      "sha256": "DB13E41117DF14325C2970E45E8668052A93BF8A2CF7BEFF584CD6536798B88A",
+      "bytes": 13321
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/electron-88b1deea.npz",
+      "sha256": "C3CF304E26544113A8FDB47C4F89A54B2C68844BEBAB94F731C5795F1A5B676D",
+      "bytes": 22711
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/evolution-ews-9f7f6ba8.npz",
+      "sha256": "0B448A78A26FEF376E8F999431FA52021583B9CC812CD350DDE0E5624B2D596D",
+      "bytes": 23290
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/firejail-b72549ea.npz",
+      "sha256": "7C33206DCB2E80DA4F8D9979B100A0575EC7B1A29CCD2B5EA54A0FDEA8D9900A",
+      "bytes": 14267
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/gdk-pixbuf-f4c7bd61.npz",
+      "sha256": "0090E19CF410B9CD793088A926987E69779F77DCAF3DD873B84E86E63DD7EA1B",
+      "bytes": 11869
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/gdm-993f5665.npz",
+      "sha256": "D887D1FDBD9D860B09C2481355699A50F4B8C64973B8E535E3591E64A18E929E",
+      "bytes": 15230
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/git-9a881b9b.npz",
+      "sha256": "3904FCEDF7472A17E48C125130380DAFD0903BC13D8FC34C1E4D15ECEDDFE31D",
+      "bytes": 21706
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/gnupg-8162af00.npz",
+      "sha256": "AAF6D6537C2A2EA5BBFECF5C873F1E03399FA816F7288EE14FAEDB4DFFD000E9",
+      "bytes": 31331
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/gpac-bef7e44f.npz",
+      "sha256": "B47EEFF278348068106B21F1FDEDC9C37C81D94F08932B047FF3FFC45D3563B0",
+      "bytes": 32791
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/irssi-51ea6295.npz",
+      "sha256": "9EF77454A2CA107DB2B63FA2266BEF28A04A425275A0FBF09DF67271724260AC",
+      "bytes": 19005
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/jerryscript-df476aa6.npz",
+      "sha256": "9B270B6569DA44B60EC9F29152D73BA0BC9C036B2C96406E2912353EE4345BAA",
+      "bytes": 15439
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/keepalived-4f881a1a.npz",
+      "sha256": "90FE106E772DB7FA09125123051CEB41513B91C09DA5BD47C4F053A445FDB27A",
+      "bytes": 20074
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/kvm-7386dca7.npz",
+      "sha256": "15053E858F22F6575618A7FCA9BD83965FA40674A1F8F6B0D4B8FEB4C3997CD3",
+      "bytes": 16768
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/libreport-fa4a5975.npz",
+      "sha256": "94A1401B05001F1873009A3B25FF9EA24A35984E0EF605F2A9C14E00472A3E3A",
+      "bytes": 13906
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/libvncserver-da707a95.npz",
+      "sha256": "2F4544F3A6B92310F2A7EF635C4A11E7BCC72A57AEAD901939B8E8D10D831C6D",
+      "bytes": 12096
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/lxc-d063b118.npz",
+      "sha256": "7AEC915CFB05C7FAF0362D1F1093E2670DE9E73780DD0F0AF93603837DCD8FA9",
+      "bytes": 13742
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/mod_h2-d7fbd1e5.npz",
+      "sha256": "5CEB97197E126BFA44581D11D0B7DF02F92995102471F9FD88ED0A5587C157E9",
+      "bytes": 16313
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/nautilus-c4a41764.npz",
+      "sha256": "3A3B629F9FD2143E63D47E0C9E47C93B384D77EC81069B8F28AA4AD6CEBEE771",
+      "bytes": 34077
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/network-manager-applet-58c7db06.npz",
+      "sha256": "0B740B34564C969552EE0118DDBD25FA2167DEE4A6FAD9F8F3DEA9961C97B745",
+      "bytes": 15294
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/node-545ea538.npz",
+      "sha256": "86BCB2FC18FB6846C16CE267D66C720468EB06C7714F7677A65315591AB0F1F7",
+      "bytes": 28884
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/ntp-fd6662be.npz",
+      "sha256": "E2FA4973C22A6D28E88B4D42F487D8F7B80540A30F799D1815507DE6C73D5AB9",
+      "bytes": 16286
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/pjproject-599e7208.npz",
+      "sha256": "9484A8651F3CC0D5727D947EFF3771724EA33BCE21EC84E29D2F43A0CE0F5D10",
+      "bytes": 18773
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/psutil-7cbd0f5b.npz",
+      "sha256": "8A4808E7C65FCEADD7C7A7A5F4FFC16D0E5BCAF1530CCDE4B6A10E6C83FB1F7F",
+      "bytes": 11445
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/redis-34fb46c8.npz",
+      "sha256": "77CD8C8B5922CD7D4C0D8A8FD26BCAB02C7B387349662147854932A9600601B3",
+      "bytes": 29491
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/ruby-b9138194.npz",
+      "sha256": "81C91C2B2A71D2F4D6BCB0DB7A7C7D4EF768C058603F7639C76048955D28D695",
+      "bytes": 16606
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/server-b3eacd33.npz",
+      "sha256": "7ADF8FEA499FD97271440E9F799A3A7B9D0D3144F919DDACBCD1DDEA253D2E8A",
+      "bytes": 79605
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/squid-1d48f84a.npz",
+      "sha256": "C93E391ABD9EF456284574FD2AD23B59162312D53E4279A546001E8F109676FE",
+      "bytes": 17932
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/stunnel-1a6d65e1.npz",
+      "sha256": "4A7ABBD4796EDCCF15BD59347CF1C5041DBB66820EBED5C7FBA7E92D96B3F1C8",
+      "bytes": 13927
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/systemd-e0031c18.npz",
+      "sha256": "189524062E41E913BFDA236C2CFE8B784191AC8AA7B4698E4E175A2B4504C21E",
+      "bytes": 24991
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/unbound-0e2a58cb.npz",
+      "sha256": "4BC188575A3D494A45B7C93B0A04D44759658B4AF1FF6676912B52AF608F95B8",
+      "bytes": 20067
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/util-linux-f486d76d.npz",
+      "sha256": "3D540F60C61AD6BBA5888B23B757B1D535006BC792E168E47859EE6560D2424E",
+      "bytes": 14735
+    },
+    {
+      "path": "decisions/diversevul/finetuned_codebert/seed-13/wireshark-28662759.npz",
+      "sha256": "F26A7A7C1FEC5AE727C1EDF3629C197A8D65B72B8A7CD24704308E1F75691AC3",
+      "bytes": 26853
+    },
+    {
+      "path": "decisions/megavul/finetuned_codebert/seed-13/gpac-bef7e44f.npz",
+      "sha256": "92C78127260AF4273D1530CA9575318968336C867D1DA88A112DC0A5A40C21ED",
+      "bytes": 78309
+    },
+    {
+      "path": "decisions/megavul/finetuned_codebert/seed-13/jerryscript-df476aa6.npz",
+      "sha256": "0A83C766F13C42B86CBC86BA71388B83511CA26D2B530DA7C09035A1803F7A14",
+      "bytes": 23262
+    },
+    {
+      "path": "decisions/megavul/finetuned_codebert/seed-13/libtiff-c16449b9.npz",
+      "sha256": "51CEC5C0DE5CC9ED5547120824CB96A58C11D5FC17D835C33E6CBCB9E10075D1",
+      "bytes": 19417
+    },
+    {
+      "path": "decisions/megavul/finetuned_codebert/seed-13/njs-4bb7df9f.npz",
+      "sha256": "73C20D9D5F9457479697DAE56D990D89F3F0201EBA4AB7250D81E57D74FA1488",
+      "bytes": 21712
+    },
+    {
+      "path": "decisions/megavul/finetuned_codebert/seed-13/systemd-e0031c18.npz",
+      "sha256": "4A2BA857F36867BCFAB6DCF59078557098AFD0AB519E0E28DA036FC6642ADD31",
+      "bytes": 19825
+    },
+    {
+      "path": "official_execution.log",
+      "sha256": "8392FDDA79FD2B1DFF1047849F86E6ED0B294E7BD7033C9FBA4B648EFDC235E1",
+      "bytes": 139
+    },
+    {
+      "path": "progress.json",
+      "sha256": "44C1A144ACB61F169BEFEE066E4A0164C05FDEFBEC30447F92B7A6533A9BF461",
+      "bytes": 260
+    },
+    {
+      "path": "prom_official_v4_before_optimization.py",
+      "sha256": "4BB3BCD82480C059E0EBC1515D1FA6D9459C0924E5F73862B201FB35F89C0974",
+      "bytes": 43437
+    },
+    {
+      "path": "prom_official_v4_setup_before_optimization.py",
+      "sha256": "1BB99FC91D33E78D5B3E315A72C8AE0CEDC2B4E4C010F63A6807C34B81FE2AE6",
+      "bytes": 26640
+    },
+    {
+      "path": "source-selection/finetuned_codebert/seed-13.npz",
+      "sha256": "86D55290FB86F5EB3C7F913897575E1B737E2D5842D1414CA9F59CA4F98002C6",
+      "bytes": 88461
+    }
+  ],
+  "preserved_literal_target_cells": 43,
+  "pooled_count_parity_cases": [
+    {
+      "case": "random_11_1_1",
+      "exact_array_equal": true,
+      "original_pool_denominator": 1,
+      "test_rows": 1
+    },
+    {
+      "case": "random_30_7_4",
+      "exact_array_equal": true,
+      "original_pool_denominator": 28,
+      "test_rows": 7
+    },
+    {
+      "case": "random_85_24_8",
+      "exact_array_equal": true,
+      "original_pool_denominator": 192,
+      "test_rows": 24
+    },
+    {
+      "case": "random_200_200_20",
+      "exact_array_equal": true,
+      "original_pool_denominator": 4000,
+      "test_rows": 200
+    },
+    {
+      "case": "repeated_ties_and_nextafter",
+      "exact_array_equal": true,
+      "original_pool_denominator": 42,
+      "test_rows": 6
+    },
+    {
+      "case": "nan_infinity_semantics",
+      "exact_array_equal": true,
+      "original_pool_denominator": 30,
+      "test_rows": 5
+    },
+    {
+      "case": "empty_pool_semantics",
+      "exact_array_equal": true,
+      "original_pool_denominator": 0,
+      "test_rows": 6
+    }
+  ],
+  "native_and_binary_full_parity": {
+    "8": {
+      "allowed_edge_alphas": [
+        0.025,
+        0.1,
+        0.9,
+        0.975
+      ],
+      "exact_parity": {
+        "lac": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "top_k": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "aps": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "raps": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        }
+      }
+    },
+    "2": {
+      "allowed_edge_alphas": [
+        0.02,
+        0.1,
+        0.9,
+        0.98
+      ],
+      "exact_parity": {
+        "lac": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "top_k": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "aps": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        },
+        "raps": {
+          "predicted": true,
+          "sets": true,
+          "pvalues": true,
+          "scores": true,
+          "test_scores": true,
+          "quantiles": true
+        }
+      }
+    }
+  },
+  "nonfinite_probability_rejection": {
+    "nan": true,
+    "positive_infinity": true,
+    "negative_infinity": true
+  },
+  "mathematical_operation": "Complete repeated global pool: (number >= score) / original total pool size; exact sorted rank count with side=left",
+  "remaining_before_outcome_join": "Compare every literal source-grid and target archive against the complete optimized seal; bind exact root execution-clearance hashes"
+}

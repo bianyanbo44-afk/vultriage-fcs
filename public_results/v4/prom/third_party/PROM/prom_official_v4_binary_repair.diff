@@ -1,0 +1,11 @@
+--- official-source/src/prom/prom_classification.py
++++ binary-runtime/src/prom/prom_classification.py
+@@ -679,6 +679,8 @@
+         y_true = label_binarize(
+             y=y, classes=self.classes_
+         )
++        if len(self.classes_) == 2:
++            y_true = np.column_stack((1 - y_true[:, 0], y_true[:, 0]))
+         index_sorted = np.fliplr(np.argsort(y_pred_proba, axis=1))
+         y_pred_proba_sorted = np.take_along_axis(
+             y_pred_proba, index_sorted, axis=1

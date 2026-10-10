@@ -1,0 +1,121 @@
+{
+  "all_projects_retained": true,
+  "capacity_setting": {
+    "fraction": 0.2,
+    "miss_cost": 10,
+    "review_cost": 0.1,
+    "review_error": 0
+  },
+  "feedback_setting": {
+    "delay_batches": 3,
+    "miss_cost": 10,
+    "review_cost": 0.1,
+    "slots_per_batch": 16
+  },
+  "source_cost_feedback_history": [
+    {
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "median_arrived_reviewed_labels": 0.0,
+      "median_batches": 3.0,
+      "median_rolling_updates_after_seed_averaging": 0.0,
+      "projects_roster": 38,
+      "projects_with_any_actual_seed_update": 11
+    },
+    {
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "median_arrived_reviewed_labels": 0.0,
+      "median_batches": 3.0,
+      "median_rolling_updates_after_seed_averaging": 0.0,
+      "projects_roster": 38,
+      "projects_with_any_actual_seed_update": 11
+    },
+    {
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "median_arrived_reviewed_labels": 0.0,
+      "median_batches": 3.0,
+      "median_rolling_updates_after_seed_averaging": 0.0,
+      "projects_roster": 38,
+      "projects_with_any_actual_seed_update": 12
+    },
+    {
+      "dataset": "megavul",
+      "detector": "finetuned_codebert",
+      "median_arrived_reviewed_labels": 48.0,
+      "median_batches": 6.0,
+      "median_rolling_updates_after_seed_averaging": 1.833333333335,
+      "projects_roster": 6,
+      "projects_with_any_actual_seed_update": 5
+    },
+    {
+      "dataset": "megavul",
+      "detector": "frozen_codebert",
+      "median_arrived_reviewed_labels": 48.0,
+      "median_batches": 6.0,
+      "median_rolling_updates_after_seed_averaging": 2.0,
+      "projects_roster": 6,
+      "projects_with_any_actual_seed_update": 5
+    },
+    {
+      "dataset": "megavul",
+      "detector": "hashing_sgd",
+      "median_arrived_reviewed_labels": 48.0,
+      "median_batches": 6.0,
+      "median_rolling_updates_after_seed_averaging": 2.0,
+      "projects_roster": 6,
+      "projects_with_any_actual_seed_update": 4
+    }
+  ],
+  "trace_capacity_feasibility": [
+    {
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "median_required_review_fraction": 0.4421241459819626,
+      "median_unresolved_fraction": 0.243811583754,
+      "projects_feasible_all_actual_seeds": 0,
+      "projects_roster": 38
+    },
+    {
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "median_required_review_fraction": 0.32546747222561573,
+      "median_unresolved_fraction": 0.1265192153205,
+      "projects_feasible_all_actual_seeds": 6,
+      "projects_roster": 38
+    },
+    {
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "median_required_review_fraction": 0.631820952726996,
+      "median_unresolved_fraction": 0.432380707001,
+      "projects_feasible_all_actual_seeds": 0,
+      "projects_roster": 38
+    },
+    {
+      "dataset": "megavul",
+      "detector": "finetuned_codebert",
+      "median_required_review_fraction": 0.5352724892553612,
+      "median_unresolved_fraction": 0.3437221410645,
+      "projects_feasible_all_actual_seeds": 0,
+      "projects_roster": 6
+    },
+    {
+      "dataset": "megavul",
+      "detector": "frozen_codebert",
+      "median_required_review_fraction": 0.5091062787501085,
+      "median_unresolved_fraction": 0.309127134895,
+      "projects_feasible_all_actual_seeds": 0,
+      "projects_roster": 6
+    },
+    {
+      "dataset": "megavul",
+      "detector": "hashing_sgd",
+      "median_required_review_fraction": 0.7548218422821533,
+      "median_unresolved_fraction": 0.5552086894774999,
+      "projects_feasible_all_actual_seeds": 0,
+      "projects_roster": 6
+    }
+  ]
+}

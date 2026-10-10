@@ -1,0 +1,4 @@
+role,before_rows,after_rows,removed_rows,before_commits,after_commits,before_vulnerable,after_vulnerable,before_safe,after_safe,before_prevalence,after_prevalence
+train,15620,15594,26,3031,3013,3124,3106,12496,12488,0.2,0.1991791714762088
+model_validation,6296,6215,81,202,197,192,189,6104,6026,0.030495552731893267,0.030410297666934837
+calibration,4400,4294,106,221,214,204,197,4196,4097,0.046363636363636364,0.045877969259431765

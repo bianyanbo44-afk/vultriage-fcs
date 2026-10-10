@@ -1,0 +1,15 @@
+{
+  "all_actual_seeds_retained": true,
+  "all_selected_projects_retained": true,
+  "batch_cap_assertions": 224532,
+  "capacity_policy_cells": 120736,
+  "created_at_utc": "2026-10-10T17:19:02.816152+00:00",
+  "exact_source_calibration_role_verified": true,
+  "feedback_policy_runs": 33264,
+  "incomplete_full_roster_cost_undefined": true,
+  "mandatory_overflow_preserved": true,
+  "no_future_label_assertions": 224532,
+  "no_unreviewed_feedback_labels": true,
+  "project_seed_cells": 308,
+  "status": "PASS"
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "backend": "python-matplotlib",
+  "figure": {
+    "width_pt": 453.54330708479995,
+    "height_pt": 283.464566928
+  },
+  "panels": [
+    {
+      "id": "workflow",
+      "bbox_pt": [
+        0.0,
+        0.0,
+        453.54330708479995,
+        283.464566928
+      ],
+      "grid_id": "main-grid",
+      "row_start": 0,
+      "row_stop": 1,
+      "col_start": 0,
+      "col_stop": 1
+    }
+  ],
+  "exemptions": [],
+  "row_groups": [],
+  "column_groups": []
+}

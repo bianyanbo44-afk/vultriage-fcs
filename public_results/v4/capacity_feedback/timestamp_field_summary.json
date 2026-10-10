@@ -1,0 +1,37 @@
+{
+  "diversevul_chronology_available": false,
+  "megavul_ordering": "recorded commit-author dates; analyst decisions and feedback arrivals simulated",
+  "megavul_prepared_timestamp_fields": [
+    "commit_date",
+    "date"
+  ],
+  "raw_schema_audit_sha256": "F3891BEEDB4E9318FDFD823965EFAA515425DB5513EB455A7F8BCE41339D3AB3",
+  "raw_schema_audit_status": "PASS",
+  "releases": [
+    {
+      "date_or_time_field_record_counts": {},
+      "records": 184427,
+      "release_file": "primevul_train.jsonl",
+      "sha256": "9FEA452F1B7C7FFAFB28D6131789F722AD820C1032D3BCD90B7FC17DA3D9B117"
+    },
+    {
+      "date_or_time_field_record_counts": {},
+      "records": 25430,
+      "release_file": "primevul_valid.jsonl",
+      "sha256": "56B91474FB7D75B313013766E0F5D1D8150C98E70961CF2B26DF93875E87FB27"
+    },
+    {
+      "date_or_time_field_record_counts": {},
+      "records": 25911,
+      "release_file": "primevul_test.jsonl",
+      "sha256": "7F0DB8408BDD614F7EB8B4DF145D7BC7DBFDA0243F7A29C7CAA6F89B9A756245"
+    },
+    {
+      "date_or_time_field_record_counts": {},
+      "records": 330492,
+      "release_file": "diversevul_20230702.json",
+      "sha256": "7937C26003C4C24A396747432487E8ABDD1C4622B5547AE93855BEE15266BD57"
+    }
+  ],
+  "source_chronology_available": false
+}

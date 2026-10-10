@@ -1,0 +1,448 @@
+{
+  "cost": {
+    "false_alert": 1,
+    "miss": [
+      10,
+      50
+    ],
+    "review": 0.1,
+    "review_accuracy_assumption": "correct review; illustrative units, not measured analyst time or monetary cost"
+  },
+  "dated_local_amendment": "2026-10-11",
+  "detector": "finetuned_codet5_small",
+  "family_exclusion_scope": "Confirmed branches/forks plus explicit conservative shared-product/component exclusions. This is a recorded exclusion list, not proof of the absence of every unrecorded code relationship or pretraining overlap.",
+  "fine_tuned_codet5": {
+    "architecture": "T5EncoderModel only; pretrained decoder unused and excluded",
+    "batching": "seeded training permutation; length-sort within 128-row windows, then shuffle complete micro-batches",
+    "checkpoint_selection": "highest natural source model-validation average precision across the three fixed epochs, with earlier-epoch tie breaking; calibration and target labels never used",
+    "effective_batch_size": 32,
+    "epochs": 3,
+    "expected_encoder_blocks": 6,
+    "feature_dimensions": 512,
+    "gradient_checkpointing": true,
+    "gradient_clip_norm": 1.0,
+    "head": "dropout 0.1 and two-class linear head; normal(0,0.02) weights, zero bias",
+    "learning_rate": 2e-05,
+    "maximum_tokens": 512,
+    "micro_batch_size": 4,
+    "model_id": "Salesforce/codet5-small",
+    "pooling": "masked mean final encoder hidden state excluding tokenizer special tokens",
+    "precision": "bfloat16 autocast with float32 parameters and optimizer state",
+    "revision": "b1ee9570c289f21b5922b9c768a1ce12957bf968",
+    "seeds": [
+      13,
+      37,
+      73
+    ],
+    "update": "all instantiated encoder and head parameters; no frozen layers; no decoder",
+    "warmup_fraction": 0.1,
+    "weight_decay": 0.01
+  },
+  "known_outcomes": "Original/v3 target outcomes and interrupted v4 source-only losses/AP known; no CodeT5 target prediction/evaluation before v4.1 freeze",
+  "opaque_source_project_exclusions": [
+    "savannah",
+    "altlinux",
+    "android",
+    "infradead",
+    "pengutronix",
+    "netfilter"
+  ],
+  "paths": {
+    "diversevul_inputs": "outputs\\kbs-validation-v4\\independent_model\\attempt-2\\inputs\\diversevul",
+    "excluded_attempt_receipt": "outputs\\kbs-validation-v4\\independent_model\\attempt-1\\excluded_source_only_attempt.json",
+    "megavul_dataset_config": "configs/megavul_validation_v3.json",
+    "megavul_inputs": "outputs\\kbs-validation-v4\\independent_model\\attempt-2\\inputs\\megavul",
+    "model_path": "outputs/kbs-validation-v4/independent_model/models/codet5-small-b1ee9570",
+    "output_root": "outputs\\kbs-validation-v4\\independent_model\\attempt-2",
+    "source_rows": "outputs\\kbs-validation-v4\\independent_model\\attempt-2\\inputs\\source_rows.jsonl"
+  },
+  "previous_config_sha256": "BBA870617E8CE83531C0F83933034E77FD71D77CBA3E014D3F090CC7D57C64B0",
+  "protocol_path": "protocol\\independent_model_v4_1.md",
+  "protocol_sha256": "F1972DB41D0C0E1FA2A07B252E615D6378EDEB758344C20678E4DF3F7ED65A80",
+  "protocol_version": "trace-independent-model-v4.1",
+  "qualified_family_exclusions": {
+    "exact": [
+      "github.com/artifexsoftware/mujs"
+    ],
+    "prefixes": [
+      "github.com/abrt/"
+    ]
+  },
+  "repository_family_exclusions": {
+    "core": [
+      "core",
+      "dovecot",
+      "pigeonhole"
+    ],
+    "electron": [
+      "chrome",
+      "chromium",
+      "electron",
+      "node",
+      "nodejs"
+    ],
+    "evolution-ews": [
+      "evolution",
+      "evolution-data-server",
+      "evolution-ews"
+    ],
+    "frr": [
+      "frr",
+      "quagga",
+      "quagga-re"
+    ],
+    "kvm": [
+      "android_kernel_xiaomi_msm8996",
+      "bpf",
+      "char-misc",
+      "drm",
+      "kernel",
+      "kvm",
+      "linux",
+      "linux-2.6",
+      "linux-fbdev",
+      "linux-fs",
+      "linux-stable",
+      "media-tree",
+      "media_tree",
+      "mjg59_linux",
+      "net",
+      "net-next",
+      "nf",
+      "sound",
+      "sparc",
+      "staging",
+      "tip",
+      "tty",
+      "v4l2loopback",
+      "wireless",
+      "wireless-drivers"
+    ],
+    "libraw": [
+      "libraw",
+      "libraw-demosaic-pack-gpl2"
+    ],
+    "libreport": [
+      "abrt",
+      "libreport"
+    ],
+    "lxc": [
+      "lxc",
+      "lxcfs"
+    ],
+    "mod_h2": [
+      "httpd",
+      "mod_h2"
+    ],
+    "neomutt": [
+      "mutt",
+      "neomutt"
+    ],
+    "network-manager-applet": [
+      "network-manager-applet",
+      "networkmanager",
+      "networkmanager-vpnc"
+    ],
+    "node": [
+      "chrome",
+      "chromium",
+      "electron",
+      "node",
+      "nodejs"
+    ],
+    "server": [
+      "dbd-mysql",
+      "edgeless-mariadb",
+      "mariadb",
+      "mariadb-connector-c",
+      "mysql",
+      "mysql-server",
+      "mysql-wsrep",
+      "percona-xtrabackup",
+      "percona-xtradb-cluster",
+      "server"
+    ],
+    "sqlite": [
+      "sqlcipher",
+      "sqlite"
+    ],
+    "systemd": [
+      "systemd",
+      "systemd-stable",
+      "udev"
+    ]
+  },
+  "risk_budgets": {
+    "primary": [
+      0.1,
+      0.2
+    ],
+    "safe": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "vulnerable": [
+      0.01,
+      0.05,
+      0.1
+    ]
+  },
+  "sealing": "Bind all new predictions, full-roster decisions and final failures before evaluation opens original read-only vaults",
+  "selectors": [
+    "unweighted class-conditional sets",
+    "estimated weighted sets",
+    "global argmax confidence at the weighted automation count",
+    "disjoint probability tails at the two weighted automatic-label counts",
+    "source-only isotonic expected-cost selection at the weighted automation count, miss costs 10 and 50",
+    "source-only isotonic free-volume expected-cost policy, miss costs 10 and 50",
+    "forced argmax",
+    "all review"
+  ],
+  "source": {
+    "commit_normalization": "URL-decode, strip query and fragment, extract the sole 40-hex SHA; source rows without a complete unambiguous SHA are excluded and counted",
+    "commit_split_salt": "trace-neural-v3-source-valid",
+    "held_out": "PrimeVul official valid only; exclude any globally shared training SHA and exact/lexical-token duplicate keys; split complete canonical 40-hex SHA identities into model-validation and calibration by a salted 50/50 hash regardless of raw project name",
+    "loss": "unweighted cross entropy on the sampled training cohort; no additional class reweighting",
+    "model_validation_and_calibration": "natural held-out prevalence, with no class sampling",
+    "negative_sampling": "retain every eligible training positive and the first min(number of negatives,4*number of positives) negatives ranked by a fixed salted exact-key hash; the same training rows are used by all seeds",
+    "official_test": "excluded from all source training, model selection and calibration; used only in the conservative cross-dataset clone audit",
+    "post_sampling_correction": "Whole-commit known-family and observed-CVE priority exclusions; no new sampling/rebalancing/reassignment",
+    "sampling_salt": "trace-neural-v3-training-negatives",
+    "training": "PrimeVul official train only, after global exact deduplication, conflict quarantine and candidate-project exclusion"
+  },
+  "source_role_correction": {
+    "calibration_event_commits": [
+      "0206ebe76f748bb39d9de4dd4b3fce777fdfdccf",
+      "3e5959b3457f7f1856d997261e6ac672bba49e8b",
+      "795842f4096501fcefc1a7f535ccc8132feb31d7",
+      "a7401e638bf0c03102039e216ab1081922f140ae",
+      "c3a3a0c424322009fec3ab735fb20ce8f6e19e70",
+      "ce37080c6aea30aabae8b4a9b4eea7808445cc8e",
+      "dc11b6b379a882418093ecc8adf11f6166682e8d"
+    ],
+    "confirmed_alias_namespaces": [
+      "github.com/artifexsoftware/mujs"
+    ],
+    "family_commits": [
+      "17cb66b13997b0159b4253b3f5722db79f476d68",
+      "28ce40d8db91c1926a95f21ef19a980a8af88471",
+      "2f948bdc09aa346616852a421ce1af2e03b39997",
+      "3c1b60cfa62d39e5fff5a53a5bc53dae189e740e",
+      "4f2c1ddd3e3b81d2d5146b883115371f1cada9f9",
+      "5008105780c0b0182ea6eda83ad5598f225be3ee",
+      "50ee8130fb4cd4ef1af7682a2c85dd99cb99424e",
+      "6e811d78e2719988ae291181f5b133af32ce62d8",
+      "7269a2cc88735aee0d1fa62491b9efe73ab5c6e8",
+      "77ab465f1c394bb77f00966cd950650f3f53cb24",
+      "7a47f57975be0d285a2f20758e4572dca6d9cdd3",
+      "9943a77bca37a0829ccd3784d1dfab37f8c24e7b",
+      "9a4100678fea4d60ec93d35f4c5de2e9ad054f3a",
+      "a4794b39efc62c9ba92b38b419de3babbbcd8cfb",
+      "a6cdfd6a16251447264d203e145624a96fa811e3",
+      "d6e2f6f128cef4c21cb80941ae674c9842681aa7",
+      "f3c2a6af3455b2882e28570e8a04f1c2d4500d5b",
+      "fdf93685d4f3fc36fe50d34a11e24662c4cb2d8c"
+    ],
+    "family_namespace_prefixes": [
+      "github.com/abrt/"
+    ],
+    "family_projects": [
+      "abrt"
+    ],
+    "original_role_observed_cve_counts": {
+      "calibration": 129,
+      "model_validation": 101,
+      "train": 1562
+    },
+    "removed_by_stage_role": {
+      "calibration_CVE_present_in_original_train_or_validation": {
+        "calibration": {
+          "commits": 7,
+          "rows": 106,
+          "source_labels": {
+            "0": 99,
+            "1": 7
+          }
+        },
+        "model_validation": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        },
+        "train": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        }
+      },
+      "known_family_complete_commit": {
+        "calibration": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        },
+        "model_validation": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        },
+        "train": {
+          "commits": 18,
+          "rows": 26,
+          "source_labels": {
+            "0": 8,
+            "1": 18
+          }
+        }
+      },
+      "validation_CVE_present_in_original_train": {
+        "calibration": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        },
+        "model_validation": {
+          "commits": 5,
+          "rows": 81,
+          "source_labels": {
+            "0": 78,
+            "1": 3
+          }
+        },
+        "train": {
+          "commits": 0,
+          "rows": 0,
+          "source_labels": {}
+        }
+      }
+    },
+    "rule": "Complete global SHA closure; family first, then validation CVEs in ORIGINAL train, calibration CVEs in ORIGINAL train OR ORIGINAL validation; no role reassignment, class resampling or rebalancing",
+    "unknown_cve_rule": "Unobserved identifiers stay unknown; observed-disjointness is not complete CVE/event independence",
+    "validation_event_commits": [
+      "22e2571c25425f225abdb11a566cc281fca6f366",
+      "418ade7849ce7641c0f7333718caf5091a02fd4c",
+      "8a7d4cf9820ea16fabd25a6379351b4dc291204b",
+      "c6173f5fe66cdbab74f4f869311fe6aae2ba35f4",
+      "f6fde895ef9c77d848061c0517f19d0ec2682f3a"
+    ]
+  },
+  "source_roles": {
+    "calibration": {
+      "canonical_full_rows_sha256": "EB94D2F4B8B7443662B3F1D43361277FB9224CDFB1CF68A1C771E2090B431452",
+      "commits": 214,
+      "labels": {
+        "0": 4097,
+        "1": 197
+      },
+      "rows": 4294
+    },
+    "model_validation": {
+      "canonical_full_rows_sha256": "86DBA3B840A655B6720C3AE26747A1EA3F70B16AE85681044EC2E635E1461944",
+      "commits": 197,
+      "labels": {
+        "0": 6026,
+        "1": 189
+      },
+      "rows": 6215
+    },
+    "train": {
+      "canonical_full_rows_sha256": "EC64C753E7828FE96A462AC676885A4E5B28D2499D1E040BA46454586888DDAC",
+      "commits": 3013,
+      "labels": {
+        "0": 12488,
+        "1": 3106
+      },
+      "rows": 15594
+    }
+  },
+  "source_rows_sha256": "4C7F96A986D83969CF8ED54B7C2D1161F0C6474CDCF3C0589914C5D824B2A62A",
+  "statistics": {
+    "all_projects_seeds_budgets_retained": true,
+    "bootstrap_seed": 20261010,
+    "cluster_reporting": "report distinct positive commits and within-project commit concentration",
+    "interval": "deterministic 10000 project-bootstrap draws, percentile 95% interval; descriptive, pointwise, no population-representative or equivalence claim",
+    "primary_endpoint": "paired median automatic-miss difference, weighted minus allocation-matched tails, at alpha_v=0.10 and alpha_s=0.20",
+    "secondary": "global-confidence miss/false-alert trade-off; fixed-volume and free-volume costs; class-specific miscoverage; automated coverage; detector discrimination and probability calibration; clips 10/50",
+    "unit": "target project, after averaging actual training seeds within project; functions and seeds are not independent sample units"
+  },
+  "status": "Metadata-only whole-commit family/CVE correction; original/v3 outcomes and interrupted source-only attempt AP known; no CodeT5 target outcomes produced",
+  "stopping": "All three actual seeds and both complete rosters once; retain failures and unfavorable results; no target tuning",
+  "strict_temporal_subset": {
+    "complete_source_date_coverage_required": true,
+    "cutoff": "max actual timestamp across every retained source-role commit",
+    "eligibility": {
+      "minimum_safe": 20,
+      "minimum_total": 200,
+      "minimum_vulnerable": 20
+    },
+    "missing_source_dates": "unavailable; no substitute cutoff or temporal claim",
+    "target_rule": "available actual commit timestamp strictly later than source maximum"
+  },
+  "target_rosters": {
+    "diversevul": {
+      "projects": [
+        "bash",
+        "bdwgc",
+        "bluez",
+        "ceph",
+        "chrony",
+        "curl",
+        "edk2",
+        "electron",
+        "evolution-ews",
+        "firejail",
+        "gdk-pixbuf",
+        "gdm",
+        "git",
+        "gnupg",
+        "gpac",
+        "irssi",
+        "jerryscript",
+        "keepalived",
+        "kvm",
+        "libreport",
+        "libvncserver",
+        "lxc",
+        "mod_h2",
+        "nautilus",
+        "network-manager-applet",
+        "node",
+        "ntp",
+        "pjproject",
+        "psutil",
+        "redis",
+        "ruby",
+        "server",
+        "squid",
+        "stunnel",
+        "systemd",
+        "unbound",
+        "util-linux",
+        "wireshark"
+      ],
+      "rows": 26079
+    },
+    "megavul": {
+      "projects": [
+        "gpac",
+        "jerryscript",
+        "libtiff",
+        "njs",
+        "systemd",
+        "wireshark"
+      ],
+      "rows": 25722
+    }
+  },
+  "weighting": {
+    "clips": [
+      10,
+      20,
+      50
+    ],
+    "domain_fit": "five folds grouped by canonical global complete commit SHA regardless of project name, balanced source/target training complements, logistic SGD alpha=1e-4 with 5 epochs",
+    "feature": "detector-specific representation; no target labels",
+    "primary_clip": 20
+  }
+}

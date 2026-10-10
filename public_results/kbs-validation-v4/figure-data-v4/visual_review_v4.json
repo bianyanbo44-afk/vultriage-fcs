@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-10-10T18:29:44.208089+00:00",
+  "source_script_sha256": "1F08C74A4CE1BF3BA5D6037531A6DED79EF84CC47A22C665422D4CDE16182B30",
+  "figures": {
+    "fig_trace_workflow_v4": {
+      "status": "PASS",
+      "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+      "inspection": "The complete diagram and all three branches were visually inspected. Text stays within its intended boxes, arrows and reading order are clear, and no illustrative numerical outcomes are drawn.",
+      "pdf_sha256": "A00CAE6E174C6867838F8572DBF53E156BD0BC2137D36166DD26771782CF180B",
+      "png_sha256": "9DADB4F97143761B418D683549071E48824E4C262E367ACFB1607AAD6593B8A2",
+      "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+    },
+    "fig_capacity_v4": {
+      "status": "PASS",
+      "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+      "inspection": "Both panels and the complete 160-mm figure were visually inspected. All seven fixed capacities, full project denominators, interval ribbons and the zero-cost reference remain visible.",
+      "pdf_sha256": "0A1B5A5C48DDB28899A601FB845AD2F0CBC1AF98CF3BACF87C27C7F10148FE32",
+      "png_sha256": "0DB12FC01267B2543050FB6147F294A8FC61831621C7E5C3EF269CADDBCB30A2",
+      "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+    },
+    "fig_feedback_v4": {
+      "status": "PASS",
+      "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+      "inspection": "Both panels and the complete 160-mm figure were visually inspected. All project outcomes and arrived-history counts remain, horizontal project offsets alter no outcome, and medians and intervals are readable.",
+      "pdf_sha256": "4F57F363A1D5B242691B0730D27CCE0FA55B35DD7047C8A263F81FB2A07386F2",
+      "png_sha256": "130D25E3108464FBE20F3CC2EFC8C138CDBF259CB44678A6C2BAFAF8245C864A",
+      "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+    }
+  },
+  "automatic_checks_replace_visual_review": false,
+  "public_copy_render_preserves_exact_visually_inspected_pixels": true
+}

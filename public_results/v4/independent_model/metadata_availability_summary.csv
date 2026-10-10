@@ -1,0 +1,7 @@
+role_or_dataset,commits,commits_with_unique_actual_date,conflicting_date_commits,maximum_actual_date_utc,minimum_actual_date_utc,rows,rows_with_cve_message_mentions,rows_with_explicit_cve_metadata,rows_with_qualified_repository_metadata,rows_with_unique_actual_date,unique_observed_cves
+calibration,214,122,0,2022-01-01T04:02:58+00:00,2009-06-22T22:29:45+00:00,4294,566,2302,2289,2302,122
+diversevul,267,77,0,2022-09-12T00:54:16+00:00,2009-05-11T07:07:10+00:00,26079,4031,6053,5831,6053,72
+megavul,530,530,0,2024-01-08T02:09:38+00:00,2011-12-05T23:47:28+00:00,25722,402,25722,25428,25722,507
+model_validation,197,96,0,2022-07-28T12:51:37+00:00,2013-05-13T23:40:43+00:00,6215,755,3400,3338,3400,96
+source_all,3424,1834,0,2022-09-16T13:16:59+00:00,1999-06-24T03:38:11+00:00,26103,3570,13779,12768,13779,1773
+train,3013,1616,0,2022-09-16T13:16:59+00:00,1999-06-24T03:38:11+00:00,15594,2249,8077,7141,8077,1555

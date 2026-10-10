@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "backend": "python-matplotlib",
+  "coordinate_origin": "bottom-left",
+  "figure_size_pt": [
+    453.54330708479995,
+    283.464566928
+  ],
+  "texts": [
+    {
+      "text": "Fitted detector scores",
+      "font_size_pt": 11.0,
+      "bbox_pt": [
+        171.69165354239996,
+        253.924993078442,
+        281.85165354239996,
+        264.248235265942
+      ]
+    },
+    {
+      "text": "CodeBERT  |  CodeT5 encoder  |  Frozen CodeBERT  |  Hashing-SGD",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        81.28665354239997,
+        237.11527558958397,
+        372.2566535424,
+        246.47527558958396
+      ]
+    },
+    {
+      "text": "Same target roster and detector outputs within each comparison",
+      "font_size_pt": 10.0,
+      "bbox_pt": [
+        80.25165354239998,
+        198.939773621232,
+        373.29165354239996,
+        208.68227362123199
+      ]
+    },
+    {
+      "text": "DiverseVul: 38 groups     MegaVul: 6 groups     Collections analyzed separately",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        61.14915354239998,
+        184.95779527483202,
+        392.3941535424,
+        194.317795274832
+      ]
+    },
+    {
+      "text": "1  Workload",
+      "font_size_pt": 10.0,
+      "bbox_pt": [
+        50.300078739839996,
+        133.63832584836396,
+        108.44007873984,
+        143.023091473364
+      ]
+    },
+    {
+      "text": "Fix total automation",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        37.97007873984,
+        115.075025759241,
+        120.77007873984,
+        124.169068727991
+      ]
+    },
+    {
+      "text": "Match confidence selection",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        22.13007873984,
+        99.76793914512898,
+        136.61007873984,
+        108.86198211387898
+      ]
+    },
+    {
+      "text": "Selection + label allocation",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        23.21007873984,
+        84.460852531017,
+        135.53007873984,
+        93.55489549976699
+      ]
+    },
+    {
+      "text": "2  Allocation",
+      "font_size_pt": 10.0,
+      "bbox_pt": [
+        195.99727854239998,
+        133.63832584836396,
+        257.5460285424,
+        143.023091473364
+      ]
+    },
+    {
+      "text": "Fix both automatic label counts",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        161.25165354239996,
+        115.075025759241,
+        292.29165354239996,
+        124.169068727991
+      ]
+    },
+    {
+      "text": "Match probability tails",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        181.05165354239998,
+        99.63496062950398,
+        272.49165354239994,
+        108.99496062950398
+      ]
+    },
+    {
+      "text": "Selection within label counts",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        167.37165354239997,
+        84.460852531017,
+        286.17165354239995,
+        93.55489549976699
+      ]
+    },
+    {
+      "text": "3  Operations",
+      "font_size_pt": 10.0,
+      "bbox_pt": [
+        341.05322834495996,
+        133.61057194211398,
+        407.2932283449599,
+        143.05084537961397
+      ]
+    },
+    {
+      "text": "Choose review volume",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        327.01322834495994,
+        115.075025759241,
+        421.33322834495993,
+        124.169068727991
+      ]
+    },
+    {
+      "text": "Impose capacity and delay",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        318.01322834495994,
+        99.63496062950398,
+        430.33322834495993,
+        108.99496062950398
+      ]
+    },
+    {
+      "text": "Cost, backlog and feedback",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        315.8532283449599,
+        84.327874015392,
+        432.49322834495996,
+        93.68787401539198
+      ]
+    },
+    {
+      "text": "Class errors  |  Unresolved workload  |  Cost per function",
+      "font_size_pt": 10.0,
+      "bbox_pt": [
+        87.45165354239998,
+        33.547579816529996,
+        366.09165354239997,
+        42.98785325403
+      ]
+    },
+    {
+      "text": "Paired project comparisons connect the decision changes to their consequences",
+      "font_size_pt": 9.0,
+      "bbox_pt": [
+        58.65165354239998,
+        17.146771653456,
+        394.8916535424,
+        26.506771653456
+      ]
+    }
+  ],
+  "plot_areas": [
+    [
+      0.0,
+      0.0,
+      453.54330708479995,
+      283.46456692799995
+    ]
+  ]
+}

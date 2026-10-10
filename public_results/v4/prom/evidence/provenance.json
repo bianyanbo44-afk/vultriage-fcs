@@ -1,0 +1,681 @@
+{
+  "schema": "trace-prom-official-provenance-v4.1",
+  "retrieved_at_utc": "2026-10-10T17:06:03.308694+00:00",
+  "paper_doi": "10.1145/3696443.3708959",
+  "paper_repository_verified_by": "https://eprints.whiterose.ac.uk/id/eprint/221073/",
+  "repository": "https://github.com/HuantWang/PROM",
+  "commit": "f16b52772123064551b6450f10b308971c4cdd39",
+  "commit_record": "f16b52772123064551b6450f10b308971c4cdd39\n2025-01-31T17:48:28Z\n2025-01-31T17:48:28Z\nupdate",
+  "branch": "development",
+  "release_tags": "none returned by git ls-remote --tags",
+  "retrieval": "depth-one filtered sparse checkout; unrelated benchmark blobs not downloaded",
+  "top_level_license": "CC-BY-4.0",
+  "nested_src_license": "MIT notice with literal YOUR NAME placeholder",
+  "license_files": [
+    {
+      "path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\official-source\\LICENSE",
+      "sha256": "9F614DB80A4E62CBB744E6F00D9DA221ADF45C6463556CB32F81AD1F8467F188"
+    },
+    {
+      "path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\official-source\\src\\LICENSE.txt",
+      "sha256": "D057B14781F769A05ADFDEE9514DB2C256FE824BBC7075ADB93146FA20556A3F"
+    }
+  ],
+  "source_snapshot": [
+    {
+      "path": "AE.md",
+      "sha256": "C57CF53831C6AA1E543516AC3A2D348CA30AD96937DF6EBF0651F70AF545B0ED",
+      "bytes": 12097
+    },
+    {
+      "path": "INSTALL.md",
+      "sha256": "2129FC34644B5FA7AE83574E6A3D943246F55C4380638568D84C81A756E3DFB3",
+      "bytes": 1447
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9F614DB80A4E62CBB744E6F00D9DA221ADF45C6463556CB32F81AD1F8467F188",
+      "bytes": 19043
+    },
+    {
+      "path": "README.md",
+      "sha256": "D7E07501D2D6124ABF888D9208B664F56CE8E9954B69B9E942BB4E913C4CAB82",
+      "bytes": 2176
+    },
+    {
+      "path": "benchmark/Thread/pact-2014-oracles.csv",
+      "sha256": "2823559D6594A26A1B95969581A7CDF520A199DEE3ADF5B0E228A87F45FA959C",
+      "bytes": 1188
+    },
+    {
+      "path": "benchmark/Thread/pact-2014-runtimes.csv",
+      "sha256": "831D866E7E94F095219D1E0E5E4D1D2202871C045D80878F573B984A2A9FAE48",
+      "bytes": 226638
+    },
+    {
+      "path": "docs/source/about.rst",
+      "sha256": "BCEDB65BF037555ED60EC95B432F649CB97F4C743B75165D40FB963A162F807B",
+      "bytes": 1983
+    },
+    {
+      "path": "docs/source/contributing.rst",
+      "sha256": "5654B05162EA6A7DD6E53ADF2B20D4E29AF8ACDFBAE3BB13BDE0416BD6EE9932",
+      "bytes": 3047
+    },
+    {
+      "path": "docs/source/faq.rst",
+      "sha256": "F1EC37F796B2C4CADE895014A070A62069E06E11027551C2588BC3E72A73B23E",
+      "bytes": 3444
+    },
+    {
+      "path": "docs/source/getting_started.rst",
+      "sha256": "0FF3736450FE6A50835C9F9D2C744969CDDBEEC7EF144F7637F0EBC0B2B36732",
+      "bytes": 2799
+    },
+    {
+      "path": "docs/source/index.rst",
+      "sha256": "1ACF5103C4E89FFEB0C9E88E50A24938DE7A2760D74F3E5767017EC5863EF8A5",
+      "bytes": 1891
+    },
+    {
+      "path": "environment.yml",
+      "sha256": "9735F654D068AECDB56905A0D2F981F388FC298E199014F6748D4F44152507AA",
+      "bytes": 4683
+    },
+    {
+      "path": "examples/case_study/BugD/VD_codebert.py",
+      "sha256": "27B83E75D46A9AE7925D1D9843FC3950B18A1ED63B891A8BBA1289EB2BACD3B7",
+      "bytes": 80615
+    },
+    {
+      "path": "examples/case_study/BugD/VD_vulde.py",
+      "sha256": "8CEEAACB876111F4ADA0B1066F1DFE41C417C7C203009A55826EAD975ABD0C2E",
+      "bytes": 86646
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_codebert.py",
+      "sha256": "A6D1AE36846DD6C34CD5532E079F51E8BA0825BF7F651DD68C8A17E7737BCF34",
+      "bytes": 72240
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_codebert_cd.py",
+      "sha256": "BC9E0650D16FD0C52BF02701359B81FF7EE5508647BB969CA4211AC3A52B0ECA",
+      "bytes": 71112
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_codebert_com.py",
+      "sha256": "250DEBDB080C35EDDD91589F51E20BA089D8E4EADE676FC2B4FEE8C04DA3ABF3",
+      "bytes": 71421
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_linevul.py",
+      "sha256": "D9C77025151B57EC2566D4CDCD1FF38121141CFEB88CC5AB397C81BEEFF06892",
+      "bytes": 79725
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_linevul_cd.py",
+      "sha256": "C44A5C42191AA09F4878AA54BEA0FF45818E42203752E882C4B706C8031E7444",
+      "bytes": 79530
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_linevul_com.py",
+      "sha256": "CAAFDED967AE1DBEF4AFB8FD36BBF241674A972AADF9CF349F2AF65FA5FBCB6D",
+      "bytes": 79839
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_vulde.py",
+      "sha256": "204649E41945EE7530E016754AF2D08114B77BD3969154959C25635A0ED722D7",
+      "bytes": 79721
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_vulde_cd.py",
+      "sha256": "8554A1D1B800C1BF68FE33068D883420ED62A3FB1265BE30F9D4D4D7B98EB20F",
+      "bytes": 72249
+    },
+    {
+      "path": "examples/case_study/BugD/ae_VD_vulde_com.py",
+      "sha256": "F73D6698EF2444783DE9303C7072B8F9DE3B29951C22A061325243EC42A73664",
+      "bytes": 72561
+    },
+    {
+      "path": "examples/case_study/BugD/evaluation.py",
+      "sha256": "E2F82D91436BFE447F39EC86346E71F119ACC55EE54D246024F6D4FBA1F46F64",
+      "bytes": 3191
+    },
+    {
+      "path": "examples/case_study/BugD/model.py",
+      "sha256": "DC8EA80CF16647E94E4DAF72306FA96B32A9D40A894741D0B33E238801D7D247",
+      "bytes": 14604
+    },
+    {
+      "path": "examples/case_study/BugD/preprocess.py",
+      "sha256": "9FB04D047E11360BDA13ADF2B652520DC24B4CF5E57C4B8E54B4A74338AF7DF8",
+      "bytes": 6353
+    },
+    {
+      "path": "examples/case_study/Thread/Magni_utils.py",
+      "sha256": "909E70FADA4373A3252024043EA05E4783585B91C9E84382AA60F69524725F9F",
+      "bytes": 51316
+    },
+    {
+      "path": "examples/case_study/Thread/Thread_magni.py",
+      "sha256": "643B7688E006ED893C53919CFA58A1F06A91F70855947953BAEAF3F89BC3B6F5",
+      "bytes": 12947
+    },
+    {
+      "path": "examples/case_study/Thread/ae_thread_magni.py",
+      "sha256": "1EA750863A8696164ACA74C7A3669FE85560150C95280184FF86C86AB18EC873",
+      "bytes": 12190
+    },
+    {
+      "path": "examples/tutorial/ae_tutorial.py",
+      "sha256": "582F840C12BE7019B385F4505BD8218F9C8C464EE8FFDEDCA82F4C0C2C0A587E",
+      "bytes": 10277
+    },
+    {
+      "path": "examples/tutorial/ae_vul.py",
+      "sha256": "B826FB0D8A6514ECD3F4912F19DABEA488BA76A24FE52E4FB64AA96AFCEC5F35",
+      "bytes": 789
+    },
+    {
+      "path": "src/LICENSE.txt",
+      "sha256": "D057B14781F769A05ADFDEE9514DB2C256FE824BBC7075ADB93146FA20556A3F",
+      "bytes": 1079
+    },
+    {
+      "path": "src/prom/__init__.py",
+      "sha256": "77DE5DCC1E90BC4AF52FB90DBF3235271601B00B0C22F522B6BA74DEAF8D14D9",
+      "bytes": 181
+    },
+    {
+      "path": "src/prom/_compatibility.py",
+      "sha256": "27820DB9BA301199A9D77222495D0D3520DD59A3B5F3B4FFC3914E73BBD150C5",
+      "bytes": 1728
+    },
+    {
+      "path": "src/prom/_machine_precision.py",
+      "sha256": "C2F1DA90EC00B15311240D468D694485607A2BFF65D070755B2CFABA7F33769F",
+      "bytes": 83
+    },
+    {
+      "path": "src/prom/_typing.py",
+      "sha256": "CCE0810D41C5F0DE9264456D20194C61953C57AE37834F622B11EE187A8471D0",
+      "bytes": 83
+    },
+    {
+      "path": "src/prom/_version.py",
+      "sha256": "00CD3E301F6D77DF9199E7BFD4044A6356D6630ABEA9B8F0475E430867B4C7AA",
+      "bytes": 23
+    },
+    {
+      "path": "src/prom/aggregation_functions.py",
+      "sha256": "8346A330AE8E4F1B7D61B0251EBD21E92176ADAF9703DE4418683439CC38B609",
+      "bytes": 3192
+    },
+    {
+      "path": "src/prom/calibration.py",
+      "sha256": "DF8CD84FD4544F0E835A06C1A1ADA8A97B635224120C584FA249009DD6B3CC20",
+      "bytes": 19979
+    },
+    {
+      "path": "src/prom/classification.py",
+      "sha256": "AA9968CE6A6FD58AE5E7F6633EE68F58DB64457954CE5B9D0BC60B3E1BCD6326",
+      "bytes": 56462
+    },
+    {
+      "path": "src/prom/conformity_scores/__init__.py",
+      "sha256": "101A2ABBD3E64E2226749BD12CE77EDD3317D96216F4D5E34D1BA8AB54A8D670",
+      "bytes": 380
+    },
+    {
+      "path": "src/prom/conformity_scores/conformity_scores.py",
+      "sha256": "8CC40CFDDA57AEB07CD03DA375977ED5AC0A9F326597D12885A6D6F35D2075B9",
+      "bytes": 14804
+    },
+    {
+      "path": "src/prom/conformity_scores/residual_conformity_scores.py",
+      "sha256": "98F05D79F63D26F675B8A2772F363AF87D517DF89B6C14D37F635A9EDB1CA1B7",
+      "bytes": 15125
+    },
+    {
+      "path": "src/prom/control_risk/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "src/prom/control_risk/crc_rcps.py",
+      "sha256": "1A8EBC035663B6143DE68147D698AED7403554714D7BC0DB37F7111593173EAF",
+      "bytes": 6530
+    },
+    {
+      "path": "src/prom/control_risk/ltt.py",
+      "sha256": "CCE7DAC5260472BA731376361FAFC11D5F1BBC05F8B28E6E61EF85D2B4AE6E64",
+      "bytes": 4365
+    },
+    {
+      "path": "src/prom/control_risk/p_values.py",
+      "sha256": "8668A3D357EA3FC6A1508A13E5982A2E5051411C0074F9FB30DA2817328626D6",
+      "bytes": 3403
+    },
+    {
+      "path": "src/prom/control_risk/risks.py",
+      "sha256": "A0302BF93444069F048255FFAA0D4067CDCE5E02EACCA848CD3186EBF8342CBC",
+      "bytes": 4238
+    },
+    {
+      "path": "src/prom/estimator/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "src/prom/estimator/estimator.py",
+      "sha256": "B2CDF7AC5057CA74B30AB52B1B92BFF59182C5E0629B41DA50FEAB39A92C5110",
+      "bytes": 20551
+    },
+    {
+      "path": "src/prom/estimator/interface.py",
+      "sha256": "4DEDC2E5204B6FA50AA346655A407D5A9AD2744DBAB3F9FAD3607DF1A30D1291",
+      "bytes": 3273
+    },
+    {
+      "path": "src/prom/metrics.py",
+      "sha256": "8788290F40B2836897DC1DBD8706F75D6FBA9355382A0DC11B82AF2A47B0E4C2",
+      "bytes": 51962
+    },
+    {
+      "path": "src/prom/multi_label_classification.py",
+      "sha256": "BB3B86D473CD5690B743B8FF15DE3D1E00FE30553E69D51FB4FAB2EAE4EA1F88",
+      "bytes": 24452
+    },
+    {
+      "path": "src/prom/prom.py",
+      "sha256": "1D6B60F92458089C412490441350BC1BD2159C2725C854970C02ACA78FFBEA97",
+      "bytes": 3787
+    },
+    {
+      "path": "src/prom/prom_classification.py",
+      "sha256": "E6D63A82DD6B950D81B0A51B44AFE0764760F245ADE249B8DE4B20C635C46F8A",
+      "bytes": 64977
+    },
+    {
+      "path": "src/prom/prom_util.py",
+      "sha256": "730AA5EC53056126B6949EE8D5D904A8619598E32CC7994A6BF48A950EB6C56B",
+      "bytes": 34012
+    },
+    {
+      "path": "src/prom/quantile_regression.py",
+      "sha256": "4AD94D4DA36B7CC6540C1B83575DB224F0FE60C966E14DB9D5FB02759ED2DAF8",
+      "bytes": 342
+    },
+    {
+      "path": "src/prom/regression/__init__.py",
+      "sha256": "4D42D63EAA2D4E82A4A4536EB3823A609C46C6135CBD8BEFFEEB55D6FA0BFA8C",
+      "bytes": 263
+    },
+    {
+      "path": "src/prom/regression/quantile_regression.py",
+      "sha256": "BB408435B8575559A1C83D930758CBAF2C9AC995CB0ECB81D45EE93AEEB6AB59",
+      "bytes": 27084
+    },
+    {
+      "path": "src/prom/regression/regression.py",
+      "sha256": "793B962B8413765B0EB69577402DA015DEE4C3A1C2D0A134712977E763D1B59D",
+      "bytes": 31609
+    },
+    {
+      "path": "src/prom/regression/time_series_regression.py",
+      "sha256": "03F4AD6AB92BBF71CD79B3EA1B7007C84AFE2D665DC2FDB7B2AC2AD5C5D84124",
+      "bytes": 16429
+    },
+    {
+      "path": "src/prom/subsample.py",
+      "sha256": "61ACA1F34CB894BBCF4334772200FA08089E7C88A6986B03AEB952BB7CC63C55",
+      "bytes": 8144
+    },
+    {
+      "path": "src/prom/tests/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "src/prom/tests/test_aggregations_functions.py",
+      "sha256": "51ADD16BF06208D30F1DC469B5654EE61AA89F7C0BF0588AF2D27D44D930742A",
+      "bytes": 663
+    },
+    {
+      "path": "src/prom/tests/test_calibration.py",
+      "sha256": "36DD36943347BF0C4C5014CABBA7A234B1ACECA874145B5C79EB699080260741",
+      "bytes": 14961
+    },
+    {
+      "path": "src/prom/tests/test_classification.py",
+      "sha256": "57952F40001E9F63FC9F0B1FA59AA9C4928503A18D52D044FFABA00968C8E94C",
+      "bytes": 62446
+    },
+    {
+      "path": "src/prom/tests/test_common.py",
+      "sha256": "3375973E128BC5A817EF3B11F1744CB60AFD4104414A05F94964E532C68EE280",
+      "bytes": 7329
+    },
+    {
+      "path": "src/prom/tests/test_conformity_scores.py",
+      "sha256": "C2F08E65E42CDF9A750310F8591B497A7659F6279719A552A6BA32F22544582C",
+      "bytes": 13936
+    },
+    {
+      "path": "src/prom/tests/test_control_risk.py",
+      "sha256": "EDD9D465B8285F1534671D082477E13902491F6A9A7CF1AA548078759F81BA6F",
+      "bytes": 6238
+    },
+    {
+      "path": "src/prom/tests/test_metrics.py",
+      "sha256": "C243F596C8E0B84D351FF14B3CE230BC507ABAD56323F2E09A81FB5CD4BD4C73",
+      "bytes": 30078
+    },
+    {
+      "path": "src/prom/tests/test_multi_label_classification.py",
+      "sha256": "7988516789B32494C8F5123D95FBECADCBDE1D7E1DCAB007E4E7EA0B612247A4",
+      "bytes": 24106
+    },
+    {
+      "path": "src/prom/tests/test_quantile_regression.py",
+      "sha256": "53A61774AEB6638D9097DCB79E22686C3059D7A0D22DD2BC8328169CAD8AE704",
+      "bytes": 24831
+    },
+    {
+      "path": "src/prom/tests/test_regression.py",
+      "sha256": "AD5E3D093A7CB4DCFFF58A129820D4C59C942D63894EEFE1E1E7B18478DB1101",
+      "bytes": 26488
+    },
+    {
+      "path": "src/prom/tests/test_subsample.py",
+      "sha256": "E7D11137431731B315058F233386394AAB4771C74805AADC45C74CE4FB6D7B15",
+      "bytes": 3156
+    },
+    {
+      "path": "src/prom/tests/test_time_series_regression.py",
+      "sha256": "53CA4B76C2FC284FCD410486E53EE823BE5EA779C0C20DC0B227263FA67A1C0D",
+      "bytes": 19504
+    },
+    {
+      "path": "src/prom/tests/test_utils.py",
+      "sha256": "0B753491696BCDD3BDE4005D216DE14268904AC86DD954E4E3238F1A3D97B452",
+      "bytes": 16967
+    },
+    {
+      "path": "src/prom/time_series_regression.py",
+      "sha256": "3CFF390F239644A0C3341FB8B3E59AB84ACCAB6834E93F118677C57147EB6562",
+      "bytes": 350
+    },
+    {
+      "path": "src/prom/utils.py",
+      "sha256": "0904BEC86D661BE660F7039139A997C05AFED2BE5D0ADD971C61398D9382213A",
+      "bytes": 40203
+    },
+    {
+      "path": "src/setup.cfg",
+      "sha256": "2E24FAC179A141467D5B520DFC583154A05CB897470E88D53E8372F31A03EDA4",
+      "bytes": 65
+    },
+    {
+      "path": "thirdpackage/mapie/__init__.py",
+      "sha256": "77DE5DCC1E90BC4AF52FB90DBF3235271601B00B0C22F522B6BA74DEAF8D14D9",
+      "bytes": 181
+    },
+    {
+      "path": "thirdpackage/mapie/_compatibility.py",
+      "sha256": "27820DB9BA301199A9D77222495D0D3520DD59A3B5F3B4FFC3914E73BBD150C5",
+      "bytes": 1728
+    },
+    {
+      "path": "thirdpackage/mapie/_machine_precision.py",
+      "sha256": "C2F1DA90EC00B15311240D468D694485607A2BFF65D070755B2CFABA7F33769F",
+      "bytes": 83
+    },
+    {
+      "path": "thirdpackage/mapie/_typing.py",
+      "sha256": "CCE0810D41C5F0DE9264456D20194C61953C57AE37834F622B11EE187A8471D0",
+      "bytes": 83
+    },
+    {
+      "path": "thirdpackage/mapie/_version.py",
+      "sha256": "00CD3E301F6D77DF9199E7BFD4044A6356D6630ABEA9B8F0475E430867B4C7AA",
+      "bytes": 23
+    },
+    {
+      "path": "thirdpackage/mapie/aggregation_functions.py",
+      "sha256": "8346A330AE8E4F1B7D61B0251EBD21E92176ADAF9703DE4418683439CC38B609",
+      "bytes": 3192
+    },
+    {
+      "path": "thirdpackage/mapie/calibration.py",
+      "sha256": "DF8CD84FD4544F0E835A06C1A1ADA8A97B635224120C584FA249009DD6B3CC20",
+      "bytes": 19979
+    },
+    {
+      "path": "thirdpackage/mapie/classification.py",
+      "sha256": "AA9968CE6A6FD58AE5E7F6633EE68F58DB64457954CE5B9D0BC60B3E1BCD6326",
+      "bytes": 56462
+    },
+    {
+      "path": "thirdpackage/mapie/conformity_scores/__init__.py",
+      "sha256": "101A2ABBD3E64E2226749BD12CE77EDD3317D96216F4D5E34D1BA8AB54A8D670",
+      "bytes": 380
+    },
+    {
+      "path": "thirdpackage/mapie/conformity_scores/conformity_scores.py",
+      "sha256": "56FEA20A1F82B22C6249B53325367B2121B422FF6C19F59D92D064D891C15D99",
+      "bytes": 14795
+    },
+    {
+      "path": "thirdpackage/mapie/conformity_scores/residual_conformity_scores.py",
+      "sha256": "1EA77DE5D47375740327CB9774C6ABE1288AB2DD6F84CB02E5BA04509EEFA453",
+      "bytes": 15116
+    },
+    {
+      "path": "thirdpackage/mapie/control_risk/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "thirdpackage/mapie/control_risk/crc_rcps.py",
+      "sha256": "1A8EBC035663B6143DE68147D698AED7403554714D7BC0DB37F7111593173EAF",
+      "bytes": 6530
+    },
+    {
+      "path": "thirdpackage/mapie/control_risk/ltt.py",
+      "sha256": "AA38FC3D97623E0372794F53E4CBB10D99E3E4281147EF3D9673EF1F648F1C04",
+      "bytes": 4366
+    },
+    {
+      "path": "thirdpackage/mapie/control_risk/p_values.py",
+      "sha256": "904A34E14F211E132A0B5BA26787014689BC7A44375CF4A9844615045A3C6124",
+      "bytes": 3405
+    },
+    {
+      "path": "thirdpackage/mapie/control_risk/risks.py",
+      "sha256": "8F87CDD19D8726D935E1E74A1CA027970C08C36B3593478BD266EDBAEB25891A",
+      "bytes": 4239
+    },
+    {
+      "path": "thirdpackage/mapie/estimator/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "thirdpackage/mapie/estimator/estimator.py",
+      "sha256": "686571FA13D3BD8AD692999B87CF2C427D14DF9709EFA4F8EF2C52CDB1091680",
+      "bytes": 20539
+    },
+    {
+      "path": "thirdpackage/mapie/estimator/interface.py",
+      "sha256": "334FF3B85C61BB370CDD61BF3910E44D5763B55E86EC03190FBF1096609CA8A1",
+      "bytes": 3270
+    },
+    {
+      "path": "thirdpackage/mapie/metrics.py",
+      "sha256": "8788290F40B2836897DC1DBD8706F75D6FBA9355382A0DC11B82AF2A47B0E4C2",
+      "bytes": 51962
+    },
+    {
+      "path": "thirdpackage/mapie/multi_label_classification.py",
+      "sha256": "BB3B86D473CD5690B743B8FF15DE3D1E00FE30553E69D51FB4FAB2EAE4EA1F88",
+      "bytes": 24452
+    },
+    {
+      "path": "thirdpackage/mapie/prom_classification.py",
+      "sha256": "DFD122CD3EAB93CF4E7140CE6E449F7F8A91604BFDC89AA054CC11C5AD1ED9AD",
+      "bytes": 64936
+    },
+    {
+      "path": "thirdpackage/mapie/quantile_regression.py",
+      "sha256": "4AD94D4DA36B7CC6540C1B83575DB224F0FE60C966E14DB9D5FB02759ED2DAF8",
+      "bytes": 342
+    },
+    {
+      "path": "thirdpackage/mapie/regression/__init__.py",
+      "sha256": "4D42D63EAA2D4E82A4A4536EB3823A609C46C6135CBD8BEFFEEB55D6FA0BFA8C",
+      "bytes": 263
+    },
+    {
+      "path": "thirdpackage/mapie/regression/quantile_regression.py",
+      "sha256": "02BDE50CC721E4D69914F735475EC407272AB96EE13BB9AD2A113F0370BD7470",
+      "bytes": 27075
+    },
+    {
+      "path": "thirdpackage/mapie/regression/regression.py",
+      "sha256": "9E6C283E53CF1FE7D79FEC8C092E74D43B071CC38F42FBA7C2B833C5A2E0830B",
+      "bytes": 31496
+    },
+    {
+      "path": "thirdpackage/mapie/regression/time_series_regression.py",
+      "sha256": "5585E59E6CE98F42714FE3395A4599485ABD813E2A3183425E518EA36D8EDB76",
+      "bytes": 16433
+    },
+    {
+      "path": "thirdpackage/mapie/subsample.py",
+      "sha256": "61ACA1F34CB894BBCF4334772200FA08089E7C88A6986B03AEB952BB7CC63C55",
+      "bytes": 8144
+    },
+    {
+      "path": "thirdpackage/mapie/tests/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_aggregations_functions.py",
+      "sha256": "04151B531A92F1325059BBB6BA6BE81B7C0BFDA2A7DD1C45DD748FD452DB0417",
+      "bytes": 664
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_calibration.py",
+      "sha256": "335A50AF5A612A2B512DBD7B81463C3C5B3994F6045BC70292F17760FEDE4957",
+      "bytes": 14963
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_classification.py",
+      "sha256": "B97F6331C57CBAC4500D5AD8D2F228357AFEFB0201FA95E4883C7815BF8D5A72",
+      "bytes": 62450
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_common.py",
+      "sha256": "0A7A5BBFC13F7401D36D3EB6AB52C45159950567F6877D7AE1630D1ACAA03218",
+      "bytes": 7331
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_conformity_scores.py",
+      "sha256": "3793B53463BEB64FDCEF0FE3ADF7E99E3720C6C25661A55AAB10C6A3F066E0B2",
+      "bytes": 13939
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_control_risk.py",
+      "sha256": "ED6C88E574F4B829A788B543BB7C4B2C491B1429C8EA1D7EF60994F8B8065D57",
+      "bytes": 6242
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_metrics.py",
+      "sha256": "86E5E019BAE49B05E68DE2F3EDD5316EA7D0EBA75DA199F1EDD9EF13894767AC",
+      "bytes": 30080
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_multi_label_classification.py",
+      "sha256": "7988516789B32494C8F5123D95FBECADCBDE1D7E1DCAB007E4E7EA0B612247A4",
+      "bytes": 24106
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_quantile_regression.py",
+      "sha256": "53A61774AEB6638D9097DCB79E22686C3059D7A0D22DD2BC8328169CAD8AE704",
+      "bytes": 24831
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_regression.py",
+      "sha256": "AD5E3D093A7CB4DCFFF58A129820D4C59C942D63894EEFE1E1E7B18478DB1101",
+      "bytes": 26488
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_subsample.py",
+      "sha256": "E7D11137431731B315058F233386394AAB4771C74805AADC45C74CE4FB6D7B15",
+      "bytes": 3156
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_time_series_regression.py",
+      "sha256": "53CA4B76C2FC284FCD410486E53EE823BE5EA779C0C20DC0B227263FA67A1C0D",
+      "bytes": 19504
+    },
+    {
+      "path": "thirdpackage/mapie/tests/test_utils.py",
+      "sha256": "0B753491696BCDD3BDE4005D216DE14268904AC86DD954E4E3238F1A3D97B452",
+      "bytes": 16967
+    },
+    {
+      "path": "thirdpackage/mapie/time_series_regression.py",
+      "sha256": "3CFF390F239644A0C3341FB8B3E59AB84ACCAB6834E93F118677C57147EB6562",
+      "bytes": 350
+    },
+    {
+      "path": "thirdpackage/mapie/utils.py",
+      "sha256": "894C98D4C6C315B5145883BEFA8C21277B4B2B59844A78D531F99F71E0C09220",
+      "bytes": 39458
+    }
+  ],
+  "fetch_receipts": [
+    {
+      "url": "https://eprints.whiterose.ac.uk/id/eprint/221073/",
+      "final_url": "https://eprints.whiterose.ac.uk/id/eprint/221073/",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "retrieved_at_utc": "2026-10-10T17:05:56.501555+00:00",
+      "path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\provenance\\institutional_record.html",
+      "bytes": 41282,
+      "sha256": "63BD17E38482CD2BAFE5E8EABA693A0888ED8878E5AC3EC247BC092172C37149"
+    },
+    {
+      "url": "https://api.github.com/repos/HuantWang/PROM",
+      "final_url": "https://api.github.com/repos/HuantWang/PROM",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "retrieved_at_utc": "2026-10-10T17:05:57.116599+00:00",
+      "path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\provenance\\github_repository.json",
+      "bytes": 5168,
+      "sha256": "3847E1289E5BAE4E3932E94539329B0A21490ACC5426F6EA74004F2D7935AB04"
+    },
+    {
+      "url": "https://api.github.com/repos/HuantWang/PROM/commits/f16b52772123064551b6450f10b308971c4cdd39",
+      "final_url": "https://api.github.com/repos/HuantWang/PROM/commits/f16b52772123064551b6450f10b308971c4cdd39",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "retrieved_at_utc": "2026-10-10T17:05:59.377842+00:00",
+      "path": "tmp\\neurocomputing-strengthening\\kbs-v4\\prom\\provenance\\github_commit.json",
+      "bytes": 1148,
+      "sha256": "FFA2B2D9F8B1EB2A0831184EBEB5F7045F658F2F637CCA144ADFC151EA8F5E34"
+    }
+  ],
+  "native_vulnerability_taxonomy": "8 CWE classes, not binary vulnerable/safe",
+  "native_vulnerability_precomputed_prediction_archives": [],
+  "native_tutorial_limitations": [
+    "hard-coded Linux paths",
+    "requires TensorFlow, Keras preprocessing, NNI and extra model imports",
+    "documented pretrained tutorial model is not in the pinned repository inventory"
+  ],
+  "target_labels_accessed": false
+}

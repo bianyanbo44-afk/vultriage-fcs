@@ -1,0 +1,11 @@
+{
+  "status": "CLEARED",
+  "created_at_utc": "2026-10-10T17:27:56.393326+00:00",
+  "module": "official_prom_pooled_count_execution_equivalence",
+  "root_review": "Preserve exact complete duplicated pool, original denominator and >= tie/nonfinite semantics; primary science choices unchanged; native/binary exact parity; literal43archives retained and matched before target outcome join; official native source unchanged.",
+  "inputs_sha256": {
+    "protocol/prom_official_v4_execution_amendment.md": "E25BB4AFDEE0F4DB555A36A0748E3F293EB05491F368BA886B776F0EC1134337",
+    "configs/prom_official_v4_execution.json": "93E8D720F6977B65786D5E481BC3C46E6A842D1CD84619ED17661A1C363CA75E",
+    "outputs/kbs-validation-v4/prom/execution_optimization.json": "B26E4EAF7BA575022A0339A03D6D49ECBD8D8906286189285FD4CAC9315C8065"
+  }
+}

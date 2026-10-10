@@ -1,0 +1,17 @@
+{
+  "artifacts_verified": 949,
+  "auditor_script_sha256": "F6A67361EE709032CA9F8AF14BB3593BC09649AD4FB5B4C409A9996398C02E2A",
+  "batch_caps_and_future_label_checks": 224532,
+  "created_at_utc": "2026-10-10T17:21:40.702037+00:00",
+  "crosslinked_policy_archives": 33264,
+  "eligible_rolling_fits_checked": 33385,
+  "known_outcome_amendment": true,
+  "manifest_sha256": "C8D2FE9E97918776570CA3E0C3A554061A742D7950FD0369985299525805611E",
+  "no_new_scientific_comparisons": true,
+  "outcome_policy_rows_checked": 154000,
+  "pending_reviewed_labels_retained": 1217535,
+  "released_labels_verified_as_reviewed_past_items": 2156410,
+  "reviewed_feedback_events_checked": 2156410,
+  "rolling_fits_independently_reconstructed": 33385,
+  "status": "PASS"
+}

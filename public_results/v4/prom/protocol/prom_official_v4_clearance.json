@@ -1,0 +1,11 @@
+{
+  "status": "CLEARED",
+  "created_at_utc": "2026-10-10T17:04:59.039376+00:00",
+  "module": "prom_official_v4",
+  "root_review": "Pinned official implementation, LAC/APS/RAPS primary, TopK secondary, source-only alpha/expert selection, full cohorts, native multiclass parity and recorded binary adaptation. Whole-system mismatch and pooled transductive behavior explicit; no full-system superiority or neural feedback retraining claim.",
+  "inputs_sha256": {
+    "protocol/prom_official_v4.md": "65104A4A88C1A620DC949CCB4AAD1009A553E015E7457CEE352A130DCB1FC595",
+    "configs/prom_official_v4.json": "FD9D79B3D4314589F5FA2AF428090AB2A4780671625F426214894FED6CDAD191"
+  },
+  "gpu": "not allocated; CPU only"
+}

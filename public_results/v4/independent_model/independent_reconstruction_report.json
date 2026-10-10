@@ -1,0 +1,73 @@
+{
+  "all_datasets_match": true,
+  "both_complete_seals_verified_before_vault_access": true,
+  "config_sha256": "BA1CB93DC3A822B5D876FAA24A33B6C4D2F5312845C172CFD87B414C8236883D",
+  "datasets": {
+    "diversevul": {
+      "detector_seed_metrics": {
+        "all_match": true,
+        "maximum_absolute_difference": 1.1102230246251565e-16,
+        "numeric_fields": 6,
+        "rows": 114
+      },
+      "paired_project_summaries": {
+        "all_match": true,
+        "maximum_absolute_difference": 1.4210854715202004e-14,
+        "paired_rows_checked": 4374
+      },
+      "project_commit_denominators": {
+        "all_match": true,
+        "maximum_absolute_difference": 4.440892098500626e-16,
+        "numeric_fields": 10,
+        "rows": 38
+      },
+      "seed_averages": {
+        "all_match": true,
+        "maximum_absolute_difference": 4.547473508864641e-13,
+        "numeric_fields": 32,
+        "rows": 10260
+      },
+      "seed_metrics": {
+        "all_match": true,
+        "maximum_absolute_difference": 1.4210854715202004e-14,
+        "numeric_fields": 31,
+        "rows": 30780
+      }
+    },
+    "megavul": {
+      "detector_seed_metrics": {
+        "all_match": true,
+        "maximum_absolute_difference": 2.220446049250313e-16,
+        "numeric_fields": 6,
+        "rows": 18
+      },
+      "paired_project_summaries": {
+        "all_match": true,
+        "maximum_absolute_difference": 1.4210854715202004e-14,
+        "paired_rows_checked": 4374
+      },
+      "project_commit_denominators": {
+        "all_match": true,
+        "maximum_absolute_difference": 1.7763568394002505e-15,
+        "numeric_fields": 10,
+        "rows": 6
+      },
+      "seed_averages": {
+        "all_match": true,
+        "maximum_absolute_difference": 3.637978807091713e-12,
+        "numeric_fields": 32,
+        "rows": 1620
+      },
+      "seed_metrics": {
+        "all_match": true,
+        "maximum_absolute_difference": 3.552713678800501e-15,
+        "numeric_fields": 31,
+        "rows": 4860
+      }
+    }
+  },
+  "imports_implementation_metric_helpers": false,
+  "joint_dataset_decision_seal_sha256": "9443EF6047238FDDDA4A5D9EF4AECD271A2621364A19F9F9B4FFABBAEC0F9A49",
+  "schema_version": "trace-independent-model-v4.1-independent-reconstruction-1",
+  "script_sha256": "C6DCF1D95A67FB6C12EC717F75C73D334C104CF0DE8423990A66E661F62E4DD8"
+}

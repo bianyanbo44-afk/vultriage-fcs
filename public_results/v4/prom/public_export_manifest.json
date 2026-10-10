@@ -1,0 +1,407 @@
+{
+  "schema": "trace-prom-official-public-export-v4.1",
+  "created_at_utc": "2026-10-10T17:50:07.783210+00:00",
+  "included_files": [
+    {
+      "path": "configs/prom_official_v4.json",
+      "sha256": "FD9D79B3D4314589F5FA2AF428090AB2A4780671625F426214894FED6CDAD191",
+      "bytes": 4801
+    },
+    {
+      "path": "configs/prom_official_v4_execution.json",
+      "sha256": "93E8D720F6977B65786D5E481BC3C46E6A842D1CD84619ED17661A1C363CA75E",
+      "bytes": 1927
+    },
+    {
+      "path": "evidence/action_equivalence.csv",
+      "sha256": "57236DD63F8CF203CE3F1EB507D56A3B3CDD8767BE3F8C159BDBCBD7FF3FFF09",
+      "bytes": 20537
+    },
+    {
+      "path": "evidence/aggregate_recomputation_receipt.json",
+      "sha256": "DAA5F7B7835E7F89E30874FD3CFB967C178CC4C0764DD47D22E9632E118067BE",
+      "bytes": 1350
+    },
+    {
+      "path": "evidence/binary_repair.json",
+      "sha256": "262EA8333AB0793D4984A3F9571C7AC751498C5ED058F45C372E753C08658F96",
+      "bytes": 869
+    },
+    {
+      "path": "evidence/computation_receipts.csv",
+      "sha256": "B033923C391E5EEBBAF6653F0B2AB10F5DA7A0CAF0A87B0F82D41D8F2D51DCBB",
+      "bytes": 446
+    },
+    {
+      "path": "evidence/decision_seal.json",
+      "sha256": "CF16DCBCE7A057501894EC972091D2D09124E64977F9214FB67FE38D8378E1EC",
+      "bytes": 629097
+    },
+    {
+      "path": "evidence/decision_seal.sha256",
+      "sha256": "F3DFE76A6AFB0E18677C756C870CB28D80F878768AED9CA61E631B2F3C720E1A",
+      "bytes": 66
+    },
+    {
+      "path": "evidence/evaluation_manifest.json",
+      "sha256": "97444A612D70139691707657173D3EA2926C96907D616C54F75D5A6CFB6F0758",
+      "bytes": 3683
+    },
+    {
+      "path": "evidence/execution_optimization.json",
+      "sha256": "B26E4EAF7BA575022A0339A03D6D49ECBD8D8906286189285FD4CAC9315C8065",
+      "bytes": 14638
+    },
+    {
+      "path": "evidence/fidelity_smoke.json",
+      "sha256": "F17E26B5A3A55261699D162CD5ACC599590961C8DFA8DB215BF965442634A753",
+      "bytes": 3652
+    },
+    {
+      "path": "evidence/fixed_native_union_absolute_summary.csv",
+      "sha256": "8A9D2055B00D8DA1E3C95CA5B72E3A180C582AE99D21C0B6E34179FC277416F5",
+      "bytes": 1305
+    },
+    {
+      "path": "evidence/implementation_history.json",
+      "sha256": "5BA4C06117B2A561AF8BA264D8807856C09449C40506C3F8473E03234418B7FF",
+      "bytes": 2237
+    },
+    {
+      "path": "evidence/label_free_action_counts.csv",
+      "sha256": "9653C48F05B877DD30958D3FFFBA100753C37E2EBE1EE64223B223A8CA520D1B",
+      "bytes": 400108
+    },
+    {
+      "path": "evidence/literal_equivalence.json",
+      "sha256": "01DCCD81B531C804C077D2D4B8C1B57239FF42CDDBE6A1A01323FDC3907D32E7",
+      "bytes": 16712
+    },
+    {
+      "path": "evidence/paired_project_summary.csv",
+      "sha256": "F29867A9861E7109BD6F9396F81BF549B5F39DC46255546D833E2D05E9CADE63",
+      "bytes": 83507
+    },
+    {
+      "path": "evidence/policy_project_summary.csv",
+      "sha256": "9DA5A1CFAB43A35C1D4B2A8DD88AA6D408C18288370A6A0615287649482C97AA",
+      "bytes": 31510
+    },
+    {
+      "path": "evidence/portable_patch_roundtrip.json",
+      "sha256": "D3F28C476180D4EC9AD5DB268367BC4F8C557EEAB8C3289C690AA76B269DA1D7",
+      "bytes": 1991
+    },
+    {
+      "path": "evidence/primary_matched_paired_endpoints.csv",
+      "sha256": "29048B14AD815C891FD787268FF889763A1EA3624EB343A99E700CA4E85909C8",
+      "bytes": 13403
+    },
+    {
+      "path": "evidence/primary_source_selected_summary.csv",
+      "sha256": "52621E6452741CF795B0F3DA7741BB9ECD316DED5BDF6F6C05D184FC06D1C90B",
+      "bytes": 1488
+    },
+    {
+      "path": "evidence/primary_summary_manifest.json",
+      "sha256": "2ADF9CE8D48418477BF06DA14FC1AAF4D012D9CAD3ACA74B4BBAB5E47BFAF1B4",
+      "bytes": 1569
+    },
+    {
+      "path": "evidence/project_seed_averages.csv",
+      "sha256": "CCBCD0DA40A08E4E3DD6C19FA30222E076C3E78B5AE3C19DBB3B5F44EA15FB19",
+      "bytes": 691728
+    },
+    {
+      "path": "evidence/project_seed_metrics.csv",
+      "sha256": "6A085724C73DFE2FE5C102672B742637108CDE88874C9AE9F4802399E48AA6D4",
+      "bytes": 1299156
+    },
+    {
+      "path": "evidence/prom_official_v4_maintext_tables.md",
+      "sha256": "125ED24569C93E1BFBAA01CA2198726C1CFCF4355C44A6C213324BB63A06C619",
+      "bytes": 2881
+    },
+    {
+      "path": "evidence/prom_official_v4_report.md",
+      "sha256": "F04FF1B19CF0471804D6D0344B3D9D4423F03F7E0990F24CB374FC0B51521E07",
+      "bytes": 8313
+    },
+    {
+      "path": "evidence/provenance.json",
+      "sha256": "DB5FCDAD1146B53E2B5FBB9F1D729E16BEA506D1F6C3F7D06C58B59B02D919B4",
+      "bytes": 24873
+    },
+    {
+      "path": "evidence/public_copy_recomputation_receipt.json",
+      "sha256": "954BC448B2B438E2C1C69E33D8C1CF051D5A2F4C269D4956071564A2D7CC0CA8",
+      "bytes": 1349
+    },
+    {
+      "path": "evidence/source_selection.csv",
+      "sha256": "B0FD1D614CFB0EA923EE3433A9759F5020BA0BE0FFFA2B489F756A39C22CF000",
+      "bytes": 32893
+    },
+    {
+      "path": "evidence/source_selection_manifest.json",
+      "sha256": "B002F7A4F4C452635ACF23C4284187A6F41EF819109EF256EED5395F89FCC1B2",
+      "bytes": 7998
+    },
+    {
+      "path": "protocol/prom_official_v4.md",
+      "sha256": "65104A4A88C1A620DC949CCB4AAD1009A553E015E7457CEE352A130DCB1FC595",
+      "bytes": 6131
+    },
+    {
+      "path": "protocol/prom_official_v4_clearance.json",
+      "sha256": "88BA4D01D94A51AE352904991080F04FAB2864FDDDA6B92415D8B29EAC7B6D04",
+      "bytes": 721
+    },
+    {
+      "path": "protocol/prom_official_v4_execution_amendment.md",
+      "sha256": "E25BB4AFDEE0F4DB555A36A0748E3F293EB05491F368BA886B776F0EC1134337",
+      "bytes": 2431
+    },
+    {
+      "path": "protocol/prom_official_v4_execution_clearance.json",
+      "sha256": "A750FD65753672F960EB7CCF37CCA4ACA8B1C3F197756058DF86D81FF64C9729",
+      "bytes": 833
+    },
+    {
+      "path": "README.md",
+      "sha256": "C16020F31AA5F197ABE201BD5B32938F1F1946697E16E3C65CA143C92FF0C237",
+      "bytes": 3053
+    },
+    {
+      "path": "requirements-prom-official-v4.txt",
+      "sha256": "6D2A0F22CB0336D545C443EA2668023C7A4E536517659005B82D46542E973D9D",
+      "bytes": 99
+    },
+    {
+      "path": "scripts/prom_official_v4.py",
+      "sha256": "492B6EB39E600B912A4EA380F2B6DAD2BAAF7A3AAA6811B9C898D97BC576B90A",
+      "bytes": 49184
+    },
+    {
+      "path": "scripts/prom_official_v4_export.py",
+      "sha256": "EA436BFB404A1FD7C5B3FD8AF97308544B7FFFDEC092413ACFCA31E9A01811C9",
+      "bytes": 9963
+    },
+    {
+      "path": "scripts/prom_official_v4_portable_patches.py",
+      "sha256": "4A1E26D8D4D9144AEE1B08A496DB796B0C9A5275FF9B5C91C0988FC079EA5D0E",
+      "bytes": 4747
+    },
+    {
+      "path": "scripts/prom_official_v4_recompute.py",
+      "sha256": "D12871D074243E44B27DB78BBBA31BE36FC5076A4B616B8EA556F73C48633C27",
+      "bytes": 3644
+    },
+    {
+      "path": "scripts/prom_official_v4_setup.py",
+      "sha256": "1BB99FC91D33E78D5B3E315A72C8AE0CEDC2B4E4C010F63A6807C34B81FE2AE6",
+      "bytes": 26640
+    },
+    {
+      "path": "scripts/prom_official_v4_summary.py",
+      "sha256": "53229B51705A7619B3BC3580D5E59C75104C87BAE53CBA4025E9436440331655",
+      "bytes": 7817
+    },
+    {
+      "path": "third_party/PROM/LICENSE",
+      "sha256": "9F614DB80A4E62CBB744E6F00D9DA221ADF45C6463556CB32F81AD1F8467F188",
+      "bytes": 19043
+    },
+    {
+      "path": "third_party/PROM/prom_official_v4_binary_repair.diff",
+      "sha256": "32C093EA0FE0D6E5A8898FBB3E6E8E6AF030176D07AC16B24A54813AD1653155",
+      "bytes": 503
+    },
+    {
+      "path": "third_party/PROM/prom_official_v4_binary_repair_portable.diff",
+      "sha256": "214F853289ADD2B6752CA94698F520199BF0808C3828BA9E27E104D277DE2DF4",
+      "bytes": 457
+    },
+    {
+      "path": "third_party/PROM/prom_official_v4_pooled_count_optimization.diff",
+      "sha256": "4D88A1BA89AF1B0AA1FE27F61D0726C34B4628186979AF4B82E8D886AABE19A0",
+      "bytes": 1350
+    },
+    {
+      "path": "third_party/PROM/prom_official_v4_pooled_count_optimization_portable.diff",
+      "sha256": "F27818B3EA5DA579457771389F9319F63695DAAA5B2D00362B454FDD0773B13C",
+      "bytes": 1255
+    },
+    {
+      "path": "third_party/PROM/src/LICENSE.txt",
+      "sha256": "D057B14781F769A05ADFDEE9514DB2C256FE824BBC7075ADB93146FA20556A3F",
+      "bytes": 1079
+    },
+    {
+      "path": "third_party/PROM/src/prom/__init__.py",
+      "sha256": "77DE5DCC1E90BC4AF52FB90DBF3235271601B00B0C22F522B6BA74DEAF8D14D9",
+      "bytes": 181
+    },
+    {
+      "path": "third_party/PROM/src/prom/_compatibility.py",
+      "sha256": "27820DB9BA301199A9D77222495D0D3520DD59A3B5F3B4FFC3914E73BBD150C5",
+      "bytes": 1728
+    },
+    {
+      "path": "third_party/PROM/src/prom/_machine_precision.py",
+      "sha256": "C2F1DA90EC00B15311240D468D694485607A2BFF65D070755B2CFABA7F33769F",
+      "bytes": 83
+    },
+    {
+      "path": "third_party/PROM/src/prom/_typing.py",
+      "sha256": "CCE0810D41C5F0DE9264456D20194C61953C57AE37834F622B11EE187A8471D0",
+      "bytes": 83
+    },
+    {
+      "path": "third_party/PROM/src/prom/_version.py",
+      "sha256": "00CD3E301F6D77DF9199E7BFD4044A6356D6630ABEA9B8F0475E430867B4C7AA",
+      "bytes": 23
+    },
+    {
+      "path": "third_party/PROM/src/prom/aggregation_functions.py",
+      "sha256": "8346A330AE8E4F1B7D61B0251EBD21E92176ADAF9703DE4418683439CC38B609",
+      "bytes": 3192
+    },
+    {
+      "path": "third_party/PROM/src/prom/calibration.py",
+      "sha256": "DF8CD84FD4544F0E835A06C1A1ADA8A97B635224120C584FA249009DD6B3CC20",
+      "bytes": 19979
+    },
+    {
+      "path": "third_party/PROM/src/prom/classification.py",
+      "sha256": "AA9968CE6A6FD58AE5E7F6633EE68F58DB64457954CE5B9D0BC60B3E1BCD6326",
+      "bytes": 56462
+    },
+    {
+      "path": "third_party/PROM/src/prom/conformity_scores/__init__.py",
+      "sha256": "101A2ABBD3E64E2226749BD12CE77EDD3317D96216F4D5E34D1BA8AB54A8D670",
+      "bytes": 380
+    },
+    {
+      "path": "third_party/PROM/src/prom/conformity_scores/conformity_scores.py",
+      "sha256": "8CC40CFDDA57AEB07CD03DA375977ED5AC0A9F326597D12885A6D6F35D2075B9",
+      "bytes": 14804
+    },
+    {
+      "path": "third_party/PROM/src/prom/conformity_scores/residual_conformity_scores.py",
+      "sha256": "98F05D79F63D26F675B8A2772F363AF87D517DF89B6C14D37F635A9EDB1CA1B7",
+      "bytes": 15125
+    },
+    {
+      "path": "third_party/PROM/src/prom/control_risk/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "third_party/PROM/src/prom/control_risk/crc_rcps.py",
+      "sha256": "1A8EBC035663B6143DE68147D698AED7403554714D7BC0DB37F7111593173EAF",
+      "bytes": 6530
+    },
+    {
+      "path": "third_party/PROM/src/prom/control_risk/ltt.py",
+      "sha256": "CCE7DAC5260472BA731376361FAFC11D5F1BBC05F8B28E6E61EF85D2B4AE6E64",
+      "bytes": 4365
+    },
+    {
+      "path": "third_party/PROM/src/prom/control_risk/p_values.py",
+      "sha256": "8668A3D357EA3FC6A1508A13E5982A2E5051411C0074F9FB30DA2817328626D6",
+      "bytes": 3403
+    },
+    {
+      "path": "third_party/PROM/src/prom/control_risk/risks.py",
+      "sha256": "A0302BF93444069F048255FFAA0D4067CDCE5E02EACCA848CD3186EBF8342CBC",
+      "bytes": 4238
+    },
+    {
+      "path": "third_party/PROM/src/prom/estimator/__init__.py",
+      "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "bytes": 0
+    },
+    {
+      "path": "third_party/PROM/src/prom/estimator/estimator.py",
+      "sha256": "B2CDF7AC5057CA74B30AB52B1B92BFF59182C5E0629B41DA50FEAB39A92C5110",
+      "bytes": 20551
+    },
+    {
+      "path": "third_party/PROM/src/prom/estimator/interface.py",
+      "sha256": "4DEDC2E5204B6FA50AA346655A407D5A9AD2744DBAB3F9FAD3607DF1A30D1291",
+      "bytes": 3273
+    },
+    {
+      "path": "third_party/PROM/src/prom/metrics.py",
+      "sha256": "8788290F40B2836897DC1DBD8706F75D6FBA9355382A0DC11B82AF2A47B0E4C2",
+      "bytes": 51962
+    },
+    {
+      "path": "third_party/PROM/src/prom/multi_label_classification.py",
+      "sha256": "BB3B86D473CD5690B743B8FF15DE3D1E00FE30553E69D51FB4FAB2EAE4EA1F88",
+      "bytes": 24452
+    },
+    {
+      "path": "third_party/PROM/src/prom/prom.py",
+      "sha256": "1D6B60F92458089C412490441350BC1BD2159C2725C854970C02ACA78FFBEA97",
+      "bytes": 3787
+    },
+    {
+      "path": "third_party/PROM/src/prom/prom_classification.py",
+      "sha256": "E6D63A82DD6B950D81B0A51B44AFE0764760F245ADE249B8DE4B20C635C46F8A",
+      "bytes": 64977
+    },
+    {
+      "path": "third_party/PROM/src/prom/prom_util.py",
+      "sha256": "730AA5EC53056126B6949EE8D5D904A8619598E32CC7994A6BF48A950EB6C56B",
+      "bytes": 34012
+    },
+    {
+      "path": "third_party/PROM/src/prom/quantile_regression.py",
+      "sha256": "4AD94D4DA36B7CC6540C1B83575DB224F0FE60C966E14DB9D5FB02759ED2DAF8",
+      "bytes": 342
+    },
+    {
+      "path": "third_party/PROM/src/prom/regression/__init__.py",
+      "sha256": "4D42D63EAA2D4E82A4A4536EB3823A609C46C6135CBD8BEFFEEB55D6FA0BFA8C",
+      "bytes": 263
+    },
+    {
+      "path": "third_party/PROM/src/prom/regression/quantile_regression.py",
+      "sha256": "BB408435B8575559A1C83D930758CBAF2C9AC995CB0ECB81D45EE93AEEB6AB59",
+      "bytes": 27084
+    },
+    {
+      "path": "third_party/PROM/src/prom/regression/regression.py",
+      "sha256": "793B962B8413765B0EB69577402DA015DEE4C3A1C2D0A134712977E763D1B59D",
+      "bytes": 31609
+    },
+    {
+      "path": "third_party/PROM/src/prom/regression/time_series_regression.py",
+      "sha256": "03F4AD6AB92BBF71CD79B3EA1B7007C84AFE2D665DC2FDB7B2AC2AD5C5D84124",
+      "bytes": 16429
+    },
+    {
+      "path": "third_party/PROM/src/prom/subsample.py",
+      "sha256": "61ACA1F34CB894BBCF4334772200FA08089E7C88A6986B03AEB952BB7CC63C55",
+      "bytes": 8144
+    },
+    {
+      "path": "third_party/PROM/src/prom/time_series_regression.py",
+      "sha256": "3CFF390F239644A0C3341FB8B3E59AB84ACCAB6834E93F118677C57147EB6562",
+      "bytes": 350
+    },
+    {
+      "path": "third_party/PROM/src/prom/utils.py",
+      "sha256": "0904BEC86D661BE660F7039139A997C05AFED2BE5D0ADD971C61398D9382213A",
+      "bytes": 40203
+    }
+  ],
+  "included_file_count": 79,
+  "included_bytes": 3901051,
+  "evaluation_manifest_sha256": "97444A612D70139691707657173D3EA2926C96907D616C54F75D5A6CFB6F0758",
+  "raw_row_data_exported": false,
+  "full_official_repository_exported": false,
+  "scope": "Actual materialized aggregate/reproduction/source/license subset; hashes listed for every included file except this manifest itself"
+}

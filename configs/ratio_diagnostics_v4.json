@@ -1,0 +1,32 @@
+{
+  "version": "trace-known-ratio-diagnostics-v4",
+  "design_status": "local design fixed before new simulated outcomes; real benchmark outcomes already known",
+  "seed": 20261011,
+  "replications": 100,
+  "source_calibration_n": 800,
+  "target_test_n": 2000,
+  "independent_domain_training_per_domain": 1000,
+  "source_distribution": "Normal(0,1)",
+  "source_conditional_label": "sigmoid(2*x-2)",
+  "fixed_detector_score": "sigmoid(1.3*x-1.5)",
+  "regimes": [
+    {"name": "mild_covariate", "target_distribution": "Normal(0.5,1)", "target_conditional_delta": 0.0},
+    {"name": "large_covariate", "target_distribution": "Normal(1.5,1)", "target_conditional_delta": 0.0},
+    {"name": "nonlinear_ratio", "target_distribution": "0.5*Normal(-2,1)+0.5*Normal(2,1)", "target_conditional_delta": 0.0},
+    {"name": "conditional_label_shift", "target_distribution": "Normal(1.5,1)", "target_conditional_delta": 1.0}
+  ],
+  "density_models": ["linear_logistic", "quadratic_logistic"],
+  "density_logistic_C": 10000.0,
+  "density_max_iterations": 1000,
+  "clips": [10, 20, 50],
+  "primary_clip": 20,
+  "alpha_v": 0.1,
+  "alpha_s": 0.2,
+  "miscoverage_methods": ["unweighted", "exact_ratio", "exact_ratio_clipped", "learned_linear_clipped", "learned_quadratic_clipped"],
+  "integration_domain": [-10, 10],
+  "integration_grid_n": 20001,
+  "ratio_error_measure": "0.5*E_source[abs(normalized_weight-exact_ratio)]",
+  "conditional_error_measure": "E_target[abs(target_eta-source_eta)]",
+  "bounded_loss": "fixed forced-argmax misclassification, bounded by 1",
+  "claim_boundary": "Known-density simulation measures a fixed-loss decomposition and empirical class miscoverage; it provides no new theorem or real-project coverage certificate. Domain learners use independent features and no class labels. Simulation replicates are independent draws, not software projects."
+}

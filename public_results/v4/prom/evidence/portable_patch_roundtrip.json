@@ -1,0 +1,33 @@
+{
+  "schema": "trace-prom-portable-patch-delivery-qa-v4.2",
+  "passed": true,
+  "scope": "Post-evaluation source-diff text rendering only; no executed implementation, selector, seal, or result changed",
+  "sealed_archival_diffs_modified": false,
+  "executed_source_modified": false,
+  "records": [
+    {
+      "stage": "binary_repair",
+      "portable_patch": "tmp/neurocomputing-strengthening/kbs-v4/prom/prom_official_v4_binary_repair_portable.diff",
+      "portable_patch_sha256": "214F853289ADD2B6752CA94698F520199BF0808C3828BA9E27E104D277DE2DF4",
+      "portable_patch_line_endings": "LF",
+      "before_sha256": "E6D63A82DD6B950D81B0A51B44AFE0764760F245ADE249B8DE4B20C635C46F8A",
+      "expected_executed_after_sha256": "0D63166EE0E57B09EC9DCC979F6CEB6A02DD082C4171DB46B5E5B6518C7CF583",
+      "independently_applied_restored_sha256": "0D63166EE0E57B09EC9DCC979F6CEB6A02DD082C4171DB46B5E5B6518C7CF583",
+      "byte_exact_runtime_roundtrip": true,
+      "archival_diff_sha256_preserved": "32C093EA0FE0D6E5A8898FBB3E6E8E6AF030176D07AC16B24A54813AD1653155",
+      "archival_doubled_carriage_returns": 8
+    },
+    {
+      "stage": "pooled_count_optimization",
+      "portable_patch": "tmp/neurocomputing-strengthening/kbs-v4/prom/prom_official_v4_pooled_count_optimization_portable.diff",
+      "portable_patch_sha256": "F27818B3EA5DA579457771389F9319F63695DAAA5B2D00362B454FDD0773B13C",
+      "portable_patch_line_endings": "LF",
+      "before_sha256": "0D63166EE0E57B09EC9DCC979F6CEB6A02DD082C4171DB46B5E5B6518C7CF583",
+      "expected_executed_after_sha256": "BB061A9A34E376196E9A154F189A599B7F87173B4DD3BF289763A927190118CD",
+      "independently_applied_restored_sha256": "BB061A9A34E376196E9A154F189A599B7F87173B4DD3BF289763A927190118CD",
+      "byte_exact_runtime_roundtrip": true,
+      "archival_diff_sha256_preserved": "4D88A1BA89AF1B0AA1FE27F61D0726C34B4628186979AF4B82E8D886AABE19A0",
+      "archival_doubled_carriage_returns": 29
+    }
+  ]
+}

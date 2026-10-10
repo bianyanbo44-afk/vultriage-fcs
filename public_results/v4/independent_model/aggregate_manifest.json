@@ -1,0 +1,242 @@
+{
+  "actual_seeds": [
+    13,
+    37,
+    73
+  ],
+  "analysis": {
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 20261010,
+    "false_alert_cost": 1,
+    "interval": "pointwise descriptive percentile",
+    "miss_costs": [
+      10,
+      50
+    ],
+    "primary_budgets": [
+      0.1,
+      0.2
+    ],
+    "primary_clip": 20,
+    "review_cost": 0.1,
+    "unit": "project after averaging all actual technical fits; datasets separate"
+  },
+  "architecture_superiority_claim": false,
+  "complete_cve_event_independence_claim": false,
+  "config_sha256": "BA1CB93DC3A822B5D876FAA24A33B6C4D2F5312845C172CFD87B414C8236883D",
+  "corrected_amendment_freeze_sha256": "B3688036DD6543AEB6278CBF9468B0B319F87BFA60F4DE04F75109F13E030DC8",
+  "created_at_utc": "2026-10-10T18:33:12.593977+00:00",
+  "datasets": {
+    "diversevul": {
+      "domain_supported_projects": [
+        "bash",
+        "bluez",
+        "ceph",
+        "chrony",
+        "curl",
+        "edk2",
+        "electron",
+        "firejail",
+        "gdk-pixbuf",
+        "gdm",
+        "git",
+        "gnupg",
+        "gpac",
+        "irssi",
+        "keepalived",
+        "kvm",
+        "libreport",
+        "libvncserver",
+        "lxc",
+        "mod_h2",
+        "nautilus",
+        "network-manager-applet",
+        "node",
+        "ntp",
+        "pjproject",
+        "redis",
+        "ruby",
+        "server",
+        "squid",
+        "systemd",
+        "util-linux",
+        "wireshark"
+      ],
+      "domain_unsupported_projects": [
+        "bdwgc",
+        "evolution-ews",
+        "jerryscript",
+        "psutil",
+        "stunnel",
+        "unbound"
+      ],
+      "projects": [
+        "bash",
+        "bdwgc",
+        "bluez",
+        "ceph",
+        "chrony",
+        "curl",
+        "edk2",
+        "electron",
+        "evolution-ews",
+        "firejail",
+        "gdk-pixbuf",
+        "gdm",
+        "git",
+        "gnupg",
+        "gpac",
+        "irssi",
+        "jerryscript",
+        "keepalived",
+        "kvm",
+        "libreport",
+        "libvncserver",
+        "lxc",
+        "mod_h2",
+        "nautilus",
+        "network-manager-applet",
+        "node",
+        "ntp",
+        "pjproject",
+        "psutil",
+        "redis",
+        "ruby",
+        "server",
+        "squid",
+        "stunnel",
+        "systemd",
+        "unbound",
+        "util-linux",
+        "wireshark"
+      ],
+      "target_rows": 26079
+    },
+    "megavul": {
+      "domain_supported_projects": [
+        "gpac",
+        "jerryscript",
+        "libtiff",
+        "njs",
+        "systemd",
+        "wireshark"
+      ],
+      "domain_unsupported_projects": [],
+      "projects": [
+        "gpac",
+        "jerryscript",
+        "libtiff",
+        "njs",
+        "systemd",
+        "wireshark"
+      ],
+      "target_rows": 25722
+    }
+  },
+  "detector": "finetuned_codet5_small",
+  "excluded_attempt_receipt_sha256": "153D464E8FD98E40542C5BE6DB910840952F405B8F61A88BD26001E5D243BFE3",
+  "excluded_private_content": [
+    "function text",
+    "individual predictions/actions/events",
+    "model weights",
+    "tokens",
+    "label vaults",
+    "attempt-1 outputs"
+  ],
+  "export_script_sha256": "9A20AC6C9A3E20F2FEA0FBD6826E56E5C49178EE2EEA90318CC50A4DDD888C6D",
+  "independent_actual_fit_audit_sha256": "D224214CB5F1320D6DAF298DC2AA18CAEF88E345D251C0D316D0FAE6EF012A81",
+  "independent_reconstruction_sha256": "A44A4D2BD3844DDEADF7E5DB0A589D731AEA8A40835B6BF361DC14E2B258491D",
+  "joint_dataset_decision_seal_sha256": "9443EF6047238FDDDA4A5D9EF4AECD271A2621364A19F9F9B4FFABBAEC0F9A49",
+  "known_original_and_v3_outcomes": true,
+  "members": {
+    "README.md": "ED4DEB5E12D88BD6ACA71157139DC9C642458DF3A0E97DD063D1A7B00DE6A313",
+    "detector_summary.csv": "B9183F65F769DE31EEDB9C2C6466E9F62A3D69E2401A0224973F5B805A8C3E67",
+    "diversevul/dataset_receipt.json": "F4EE727D24421F8F3D84CBAAD37D91C60C0584DF242B7E8C19F27BB6D08AC3FB",
+    "diversevul/detector_project_seed_averages.csv": "DD37EF70C0440A3CFFA5D50E61AD773A53847641A47B7614D34ABFE0A349D3E5",
+    "diversevul/detector_project_seed_metrics.csv": "921C2B37D164050C1CCB87EFDF78B15326493D01C65BE758126FB1B7309EBA66",
+    "diversevul/domain_fit_availability.csv": "E82C72E51703C683EFB3940269D3BC652793F8E3C4FC88B10F8C1F2E470D591F",
+    "diversevul/domain_supported_paired_summaries.csv": "EF9FF147BE57D84E7179CC36DC26D066566EFC3607A35EC36793284D86B4F62C",
+    "diversevul/paired_project_summaries.csv": "AF997DDEBCE93E2EA86B9456A2E2EAA48B025EBB28627931FCA71F60F83153D7",
+    "diversevul/primary_paired_summary.csv": "422D059AF478279938595D99401D7B1458298B54ACD35D75F0EAF371172094C5",
+    "diversevul/project_counts_positive_commits.csv": "90FB90A6608BD5421475F13CE9D76C93AC283250620F4E15D17D06BEB3444C58",
+    "diversevul/project_medians.csv": "771B8C1046DB1A154DBA18100A8BF5DD5031F41985F485EDC46C8256461848BF",
+    "diversevul/project_seed_averages.csv": "9EA22EDFD6ACE4B45E996C317E93BE340D8A64B10BF1365B44B4C1714E5A0F91",
+    "diversevul/project_seed_metrics.csv": "BD5880A7D6E5EC98B875627F030E912429B961871CC3433BCA509EA38499F2CA",
+    "independent_actual_fit_audit.json": "D224214CB5F1320D6DAF298DC2AA18CAEF88E345D251C0D316D0FAE6EF012A81",
+    "independent_reconstruction_report.json": "75A753FF08EF86E578BCBA2F3DE270F94AAA82DA8102962DDB601A9E2344FF41",
+    "megavul/dataset_receipt.json": "D3FBEEF2A7549764727C560507F0C484AEB99D2B3BD9D846AD9103B7FE7893E1",
+    "megavul/detector_project_seed_averages.csv": "DCED8978E9345D09AD92FF19FC62F378768E0EE754FE7FBC5207C26058B9BD99",
+    "megavul/detector_project_seed_metrics.csv": "5426AE2D90BFDE533DF3E451B7AD2D41E4804281C56D2E8ADC6AE66B943E993C",
+    "megavul/domain_fit_availability.csv": "C421873175716C3A688E40ADAB405F82E83A62AD7A9D24120902116706FA9054",
+    "megavul/domain_supported_paired_summaries.csv": "53D73640A54D022C8F1DF4B3B35EADEA4FD75F600C9917AF1BE7870C8AC81928",
+    "megavul/paired_project_summaries.csv": "4C698F06577ADD05EEDF21C8E58147745AD593CC9F07A5F79E9D82A17B51BCC8",
+    "megavul/primary_paired_summary.csv": "FFCA759984DE837FCCC8EF60DBBD274257E8A9F82CECEC6A2E85AB397F21D214",
+    "megavul/project_counts_positive_commits.csv": "5AC169D73C3C0DA20C9157F9A0471847E3CB071664261014E75CFEC9ED24A573",
+    "megavul/project_medians.csv": "9960F83B543CD7D90E3A296639EAD51B747E17138C1B57AF4D678BD012D53DEE",
+    "megavul/project_seed_averages.csv": "76C7DF1201D5873925656EADAD8A7D9DF7E8E766DEA693BBD4D846B93F90D763",
+    "megavul/project_seed_metrics.csv": "A5BF6019313845A9973A6C80B335F181C6ACA32651C55D21515577536DD81E4C",
+    "metadata_availability_summary.csv": "3E53A251BB720B0644F7ED0693BE4162C7EB2B414B9EE1AFE99947EAF144147F",
+    "primary_paired_comparators.csv": "1631B08829A171CD45C56412C0FD5F3968400F2047A5DA363C548AFF93FA9599",
+    "primary_policy_medians.csv": "3DE6FB83AE9382EA2537DF09794263CCE07BDEE417D05E293EB95944F1DBF8AE",
+    "project_actions_primary.csv": "2414B97293C978420EE9EAC2F03ACD3448A4C47C1C29CD5EB1632708C112BD1C",
+    "source_cohort_change.csv": "1A834ECDEC008AB349F0B85EE538AFD689902DC18D4638848BB92B0A4C93F5A4",
+    "source_role_counts.csv": "86CDF2D91F75C2BB3BCE163639A0456D7190519E805B076AD4B03FC7A8E8E7D7",
+    "training_fit_summary.csv": "65F7A293C4E6EE2BE82B967B7DEDBA44CA88A668F4DB44F53646144FAB15D9A5"
+  },
+  "metadata_audit_sha256": "08D2E75E26B2FFB011803F5C356043C1A5E2AA4AB38183DB7550111F25995AA4",
+  "model_id": "Salesforce/codet5-small",
+  "model_revision": "b1ee9570c289f21b5922b9c768a1ce12957bf968",
+  "protocol_sha256": "F1972DB41D0C0E1FA2A07B252E615D6378EDEB758344C20678E4DF3F7ED65A80",
+  "protocol_version": "trace-independent-model-v4.1",
+  "required_code_whitelist": {
+    "configs/independent_model_v4_1.json": "BA1CB93DC3A822B5D876FAA24A33B6C4D2F5312845C172CFD87B414C8236883D",
+    "protocol/independent_model_v4_1.md": "F1972DB41D0C0E1FA2A07B252E615D6378EDEB758344C20678E4DF3F7ED65A80",
+    "src/audit_fits_independent_model_v4_1.py": "903F770FA53258151F588C34B12FBD3BF5EF5FA8B3D044DEF70B3B6FAF4FE1C9",
+    "src/audit_independent_model_v4.py": "603F1A33A911048731A7AFDFEDFAB89ECD254180D3FBA01C8B336B2BE1D7D1CB",
+    "src/encode_independent_model_v4_1.py": "6B57C94A9ADBF814505666C23C92A9EAB734C8206A13EE757D60CB003F906C88",
+    "src/evaluate_independent_model_v4_1.py": "3EA2ABD3360C5B3A7E0B22C64708CB1F744946F52F318F1FC62A076FBC9CEE59",
+    "src/export_independent_model_v4_1.py": "9A20AC6C9A3E20F2FEA0FBD6826E56E5C49178EE2EEA90318CC50A4DDD888C6D",
+    "src/independent_model_v4_1.py": "33D0D23433F8EEBDBAF0FC992BDFF0BE870C1862FDA35F11B8DE33B2463E0132",
+    "src/predict_independent_model_v4_1.py": "63BE51CA3DAF3CE78FA7E3525FA68230F33D8D30DFFBAE4E714579D900F5C004",
+    "src/prepare_independent_model_v4.py": "E0BD47C6133F63D12687A6A075B0D0EFD7A00B6A4EF9A9C8F969E69E0239AAED",
+    "src/prepare_independent_model_v4_1.py": "341814B8F8ADB12A745C6B857F99DA161BC4BBB9639DA85B84DC5E900059064C",
+    "src/reconstruct_independent_model_v4_1.py": "C6DCF1D95A67FB6C12EC717F75C73D334C104CF0DE8423990A66E661F62E4DD8",
+    "src/seal_joint_independent_model_v4_1.py": "5DEA963468814258BBCEC3F63E3C29DBAC7D8D16E2020E03DA96704E1C58ADC6",
+    "src/train_independent_model_v4_1.py": "24F1BF602B0F71BC4AAAE5BF43C22F3555EDC690923C2B5335B1939A92283CC6",
+    "tests/test_independent_model_v4_1.py": "608172172141D755BD6347ED76C8FF3FA94F198D485705D842F5E4AAD2AA5C84",
+    "tests/test_reconstruct_independent_model_v4_1.py": "49963FB29F509FA2BA96B6A2C685D561377F74B55AAC5710E67B3728E7A29A3A"
+  },
+  "schema_version": "trace-independent-model-v4.1-public-aggregates-1",
+  "source_exclusion_ledger_sha256": "F42C9C60098974A9A6DE22EB110FF1EAC9613EC227305F81138D2DF97CBC6E7C",
+  "source_roles": {
+    "calibration": {
+      "canonical_full_rows_sha256": "EB94D2F4B8B7443662B3F1D43361277FB9224CDFB1CF68A1C771E2090B431452",
+      "commits": 214,
+      "labels": {
+        "0": 4097,
+        "1": 197
+      },
+      "rows": 4294
+    },
+    "model_validation": {
+      "canonical_full_rows_sha256": "86DBA3B840A655B6720C3AE26747A1EA3F70B16AE85681044EC2E635E1461944",
+      "commits": 197,
+      "labels": {
+        "0": 6026,
+        "1": 189
+      },
+      "rows": 6215
+    },
+    "train": {
+      "canonical_full_rows_sha256": "EC64C753E7828FE96A462AC676885A4E5B28D2499D1E040BA46454586888DDAC",
+      "commits": 3013,
+      "labels": {
+        "0": 12488,
+        "1": 3106
+      },
+      "rows": 15594
+    }
+  },
+  "source_rows_sha256": "4C7F96A986D83969CF8ED54B7C2D1161F0C6474CDCF3C0589914C5D824B2A62A",
+  "strict_temporal_available": false
+}

@@ -1,0 +1,2 @@
+outcome,baseline,candidate,projects,median_difference,ci_lower,ci_upper,reductions,increases,ties,defined_projects,status,bootstrap_draws,bootstrap_seed,eligible_projects,all_projects,domain_supported_projects,review_fallback_projects,dataset,detector,alpha_v,alpha_s,clip,cohort,primary
+auto_fn_rate,class_matched_weighted,estimated_weight_no_gate,6,0.007464238190286095,-0.006172839506172839,0.018746359497402616,1,4,1,6,ok,10000,20261010,6,6,6,0,megavul,finetuned_codet5_small,0.1,0.2,20.0,all_projects_deployment,True

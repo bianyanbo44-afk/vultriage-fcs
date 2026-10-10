@@ -1,0 +1,3 @@
+dataset,detector,scenario,miss_cost,false_alert_cost,review_cost,review_fn_probability,review_fp_probability,slots_per_batch,delay_batches,ordering,candidate,baseline,endpoint,projects_roster,projects_defined,projects_undefined,status,median_paired_difference,ci_lower,ci_upper,wins,losses,ties,bootstrap_draws
+diversevul,finetuned_codebert,m10_r0p1_fn0_fp0,10,1,0.1,0,0,16,3,synthetic_salted_commit_hash,source_iso_rolling,source_iso_static,cost_complete_per_function,38,38,0,full_roster_descriptive,0.0,0.0,0.0,3,8,27,10000
+megavul,finetuned_codebert,m10_r0p1_fn0_fp0,10,1,0.1,0,0,16,3,recorded_commit_author_date,source_iso_rolling,source_iso_static,cost_complete_per_function,6,6,0,full_roster_descriptive,0.000520020800832,-0.00858837434121,0.0307626478547,2,3,1,10000

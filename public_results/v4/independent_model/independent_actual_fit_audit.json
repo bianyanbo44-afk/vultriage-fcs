@@ -1,0 +1,78 @@
+{
+  "all_three_actual_fits_verified": true,
+  "amendment_freeze_sha256": "B3688036DD6543AEB6278CBF9468B0B319F87BFA60F4DE04F75109F13E030DC8",
+  "checkpoint_and_initial_random_head_hashes_distinct": true,
+  "config_sha256": "BA1CB93DC3A822B5D876FAA24A33B6C4D2F5312845C172CFD87B414C8236883D",
+  "created_at_utc": "2026-10-10T18:14:26.090282+00:00",
+  "fits": [
+    {
+      "actual_checkpoint_sha256": "CE05761E57CF6EB5BBFF04169724E1690CB3351A410C66E6D55D56003030729C",
+      "actual_instantiated_parameters": 35317506,
+      "actual_query_relative_updates": {
+        "encoder.block.0.layer.0.SelfAttention.q.weight": 0.009935631416738033,
+        "encoder.block.1.layer.0.SelfAttention.q.weight": 0.01151173748075962,
+        "encoder.block.2.layer.0.SelfAttention.q.weight": 0.011430220678448677,
+        "encoder.block.3.layer.0.SelfAttention.q.weight": 0.015656353905797005,
+        "encoder.block.4.layer.0.SelfAttention.q.weight": 0.015497194603085518,
+        "encoder.block.5.layer.0.SelfAttention.q.weight": 0.019367141649127007
+      },
+      "actual_saved_final_encoder_head_tensors_match_manifest": true,
+      "all_initial_encoder_tensors_match_pinned_public_base": true,
+      "changed_actual_encoder_tensors": 52,
+      "executed_script_snapshots_verified": 8,
+      "seed": 13,
+      "seeded_initial_head_tensors_independently_recreated": true,
+      "selected_epoch": 3,
+      "source_validation_ap": 0.14469465255664188,
+      "unused_decoder_absent": true
+    },
+    {
+      "actual_checkpoint_sha256": "2257D1CD2080437901478229EE3123E30E8E19C8595E2802DF7A7DC945472B1B",
+      "actual_instantiated_parameters": 35317506,
+      "actual_query_relative_updates": {
+        "encoder.block.0.layer.0.SelfAttention.q.weight": 0.01055796630680561,
+        "encoder.block.1.layer.0.SelfAttention.q.weight": 0.012258891947567463,
+        "encoder.block.2.layer.0.SelfAttention.q.weight": 0.01295774057507515,
+        "encoder.block.3.layer.0.SelfAttention.q.weight": 0.01571214571595192,
+        "encoder.block.4.layer.0.SelfAttention.q.weight": 0.014240509830415249,
+        "encoder.block.5.layer.0.SelfAttention.q.weight": 0.01703682355582714
+      },
+      "actual_saved_final_encoder_head_tensors_match_manifest": true,
+      "all_initial_encoder_tensors_match_pinned_public_base": true,
+      "changed_actual_encoder_tensors": 52,
+      "executed_script_snapshots_verified": 8,
+      "seed": 37,
+      "seeded_initial_head_tensors_independently_recreated": true,
+      "selected_epoch": 3,
+      "source_validation_ap": 0.14699136299026552,
+      "unused_decoder_absent": true
+    },
+    {
+      "actual_checkpoint_sha256": "6B6478FA5E0B9934198E9949A5FD1D859D017A3494E4E2F14E824F54007AC939",
+      "actual_instantiated_parameters": 35317506,
+      "actual_query_relative_updates": {
+        "encoder.block.0.layer.0.SelfAttention.q.weight": 0.01011668611317873,
+        "encoder.block.1.layer.0.SelfAttention.q.weight": 0.011512475088238716,
+        "encoder.block.2.layer.0.SelfAttention.q.weight": 0.011477474123239517,
+        "encoder.block.3.layer.0.SelfAttention.q.weight": 0.014435138553380966,
+        "encoder.block.4.layer.0.SelfAttention.q.weight": 0.013767632655799389,
+        "encoder.block.5.layer.0.SelfAttention.q.weight": 0.01679261587560177
+      },
+      "actual_saved_final_encoder_head_tensors_match_manifest": true,
+      "all_initial_encoder_tensors_match_pinned_public_base": true,
+      "changed_actual_encoder_tensors": 52,
+      "executed_script_snapshots_verified": 8,
+      "seed": 73,
+      "seeded_initial_head_tensors_independently_recreated": true,
+      "selected_epoch": 3,
+      "source_validation_ap": 0.13484055663592567,
+      "unused_decoder_absent": true
+    }
+  ],
+  "gpu_used": false,
+  "model_manifest_sha256": "84B2F4A5E9A7C2ABF9CB9A2D135D1F1CD9A451BC29C3430BDE73FDE5DB563F5F",
+  "schema_version": "trace-independent-model-v4.1-independent-actual-fit-audit-1",
+  "script_sha256": "903F770FA53258151F588C34B12FBD3BF5EF5FA8B3D044DEF70B3B6FAF4FE1C9",
+  "source_only": true,
+  "target_inputs_or_vaults_opened": false
+}

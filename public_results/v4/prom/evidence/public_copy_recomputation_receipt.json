@@ -1,0 +1,29 @@
+{
+  "schema": "trace-prom-official-aggregate-recomputation-v4.1",
+  "numpy_version": "2.2.6",
+  "scope": "Project/fit aggregates only; no raw labels/predictions or official-model inference",
+  "implementation_sha256": "492B6EB39E600B912A4EA380F2B6DAD2BAAF7A3AAA6811B9C898D97BC576B90A",
+  "input_sha256": "6A085724C73DFE2FE5C102672B742637108CDE88874C9AE9F4802399E48AA6D4",
+  "config_sha256": "FD9D79B3D4314589F5FA2AF428090AB2A4780671625F426214894FED6CDAD191",
+  "checks": {
+    "project_seed_averages.csv": {
+      "row_count": 2112,
+      "sha256": "CCBCD0DA40A08E4E3DD6C19FA30222E076C3E78B5AE3C19DBB3B5F44EA15FB19",
+      "expected_sha256": "CCBCD0DA40A08E4E3DD6C19FA30222E076C3E78B5AE3C19DBB3B5F44EA15FB19",
+      "exact_byte_match": true
+    },
+    "policy_project_summary.csv": {
+      "row_count": 96,
+      "sha256": "9DA5A1CFAB43A35C1D4B2A8DD88AA6D408C18288370A6A0615287649482C97AA",
+      "expected_sha256": "9DA5A1CFAB43A35C1D4B2A8DD88AA6D408C18288370A6A0615287649482C97AA",
+      "exact_byte_match": true
+    },
+    "paired_project_summary.csv": {
+      "row_count": 480,
+      "sha256": "F29867A9861E7109BD6F9396F81BF549B5F39DC46255546D833E2D05E9CADE63",
+      "expected_sha256": "F29867A9861E7109BD6F9396F81BF549B5F39DC46255546D833E2D05E9CADE63",
+      "exact_byte_match": true
+    }
+  },
+  "passed": true
+}

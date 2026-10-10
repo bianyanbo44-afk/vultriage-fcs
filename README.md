@@ -1,157 +1,44 @@
-# VulTriage reproducibility artifact
+# TRACE research reproducibility artifact
 
-## TRACE additional neural validation
+This versioned release contains current and frozen source code, original
+and additional project aggregates, seven selected-fit receipts, figure
+exports and source data, and compact post-review displays for TRACE.
+Repository: https://github.com/bianyanbo44-afk/vultriage-fcs
+Version: trace-validation-v3-2026-10-10
+Record: https://github.com/bianyanbo44-afk/vultriage-fcs/releases/tag/trace-validation-v3-2026-10-10
 
-**TRACE: Revealing allocation effects in neural vulnerability triage under project shift**
+The current TRACE manuscript, cover letter, author declarations and mock
+reviews are excluded from this archive, as are raw benchmark functions,
+weights, per-function predictions and decisions, and label vaults. The
+repository separately retains its historical KBS manuscript sources.
+REPOSITORY_METADATA.json describes the authors, source relations and
+access route. No new open licence or DOI is assigned by this update.
 
-TRACE means Triage Risk, Allocation and Cost Evaluation. The versioned
-artifact adds three full CodeBERT fits, three hashing fits and a frozen
-reference on common PrimeVul source roles, with 38 DiverseVul and six
-MegaVul groups reported separately. Four group names overlap; the seven
-source-fitted objects are reused, so the collections are not pooled.
+Use Python 3.12 and install requirements-audit.txt for aggregate reconstruction.
+Run from this archive root:
 
-Use the [trace-validation-v3-2026-10-10](https://github.com/bianyanbo44-afk/vultriage-fcs/releases/tag/trace-validation-v3-2026-10-10) release for the manifest-bound ZIP,
-metadata and aggregate reproduction instructions. The complete original
-18-member and additional 48-member releases, selected-fit receipts and
-figure data are also available in this checkout under
-`paper/neurocomputing_revision/analysis/`, with current and frozen code.
-[TRACE_REPRODUCIBILITY.md](TRACE_REPRODUCIBILITY.md) lists the three
-aggregate commands, and [DATA_DICTIONARY.md](DATA_DICTIONARY.md) defines
-endpoints, aggregation, missing values and inference limits.
+    python scripts/check_neurocomputing_revision.py --aggregate-only --analysis-only --report legacy_reconstruction.json
+    python scripts/check_neural_aggregate_evidence.py --analysis paper/neurocomputing_revision/analysis/neural_validation_v3 --output neural_reconstruction.json --check-table-bytes
+    python scripts/build_neural_display_additions.py --check
 
-At the primary setting, weighted neural policies reduce misses while
-increasing false alerts against equal-volume confidence selection.
-Matching both assigned-label counts does not establish a consistent
-miss advantage. Free review-volume cost comparisons are scoped to the
-stated prices, with stricter-budget exceptions retained. The local
-extension follows known original outcomes; it is not public preregistration.
+The first command deliberately skips excluded editable manuscript and PDF
+checks as well as raw replay. The neural command independently reconstructs
+the complete released paired and bootstrap evidence. No training is needed.
+The historical 18-member release and additional 48-member release have separate
+public manifests. The compact display additions have a third manifest.
 
-Exact-path .gitattributes rules preserve the released byte hashes across
-Windows and Unix checkouts.
+requirements-validation-v3-lock.txt records direct numerical-library versions
+collected after execution from the dedicated validation environment, with its
+limits in reproducibility/validation_runtime_v3.json. Original analysis-library
+versions remain in their unchanged historical manifest. Full detector replay
+requires independently acquired hash-matched benchmark/model inputs and the
+historical screening artifacts described by the protocols. Do not substitute
+new splits while claiming exact raw replay. Original neural copied seed
+addresses are not repetitions; additional CodeBERT and hashing each have three
+actual fits, and the frozen reference has one head. The same selected objects
+are shared across the two external collections, which must not be pooled.
 
-This update does not publish the current TRACE manuscript, cover letter,
-author Word files or mock reviews. Raw functions, weights, predictions,
-decisions and vaults remain excluded. No additional licence is assigned.
-
-
-This repository contains the reproducibility artifact for the manuscript
-**VulTriage: Proof-Carrying Detector--Shift Knowledge Contracts for Selective
-Vulnerability Triage**, prepared for *Knowledge-Based Systems* (Elsevier). The
-repository name is a historical project identifier.
-The KBS manuscript source is intentionally published as part of the
-reproducibility artifact; no private user dataset, target-label vault, or
-per-function prediction archive is distributed here.
-
-## Study
-
-VulTriage wraps a binary vulnerability detector with a proof-carrying
-detector--shift knowledge contract. A versioned registry binds automation
-authority to the detector, source domain, target domain, and policy version;
-three-valued rules then map class-asymmetric conformal evidence to automatic
-safe, automatic vulnerable, or manual-review actions. Automatic actions carry
-decision certificates that are verified by complete contract re-execution.
-The certificate attests consistent policy execution, not source-code safety or
-prediction correctness.
-
-The frozen extension-v2 study uses PrimeVul for retrospective gate development
-and the official DiverseVul release for external evaluation. It evaluates a
-hashing-SGD detector and a frozen CodeBERT encoder with a deterministic
-liblinear head, five technical seed addresses, a 3 x 3 asymmetric risk grid,
-and 25 recorded method labels. The independent unit is the target project.
-The principal result is detector-conditional: hashing-SGD passes fixed
-registration and confirmation and qualifies on both halves in 84.94% of 10,000
-deterministic project partitions, while the same registry withholds CodeBERT
-automation authority. Independently, estimated weighting improves hashing-SGD
-risk alignment on the 24-project external cohort at the primary budget and on
-202 of 216 project--budget cells, with a measured singleton-coverage cost.
-
-## Current KBS manuscript
-
-The KBS submission source and compiled PDF are in
-[`paper/kbs_submission/`](paper/kbs_submission/). This package contains the
-editable LaTeX source, bibliography, figures, figure-source data, highlights,
-cover-letter text, and KBS submission checklist. The declaration-of-interest
-DOCX is kept in the local submission package and is not published here. Build
-it from that directory with:
-
-```powershell
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-```
-
-The earlier IST package in [`paper/ist_submission/`](paper/ist_submission/) is
-retained as historical submission provenance only; it is not the current
-submission version.
-
-## Reproduction
-
-Acquire PrimeVul and DiverseVul separately from their official releases. Do
-not commit either dataset, target-label vaults, embeddings, feature caches, or
-per-function predictions to this repository. Install `requirements.txt` and
-use `PYTHONPATH=src` for the commands below.
-
-Preparation and analysis entry points:
-
-```powershell
-python src/audit_primevul.py --help
-python src/prepare_splits.py --help
-python src/prepare_feature_cache.py --help
-python src/prepare_extension_manifest.py --help
-python src/audit_near_duplicates_v2.py --help
-python src/prepare_extension_inputs.py --help
-python src/prepare_extension_hashing_cache.py --help
-python src/prepare_extension_codebert_manifest.py --help
-python src/fit_support_gate_v2.py --help
-python src/run_extension_predict.py --help
-python src/evaluate_extension_v2.py --help
-python src/analyze_extension_v2.py --help
-python src/analyze_calibration_sensitivity.py --help
-python src/analyze_near_duplicate_sensitivity_v2.py --help
-python src/analyze_knowledge_contract.py --help
-python src/make_extension_v2_figures.py --help
-```
-
-Prediction generation does not receive the target-label vault. The evaluator
-verifies prediction seals before joining target labels. Public results contain
-project-level and aggregate summaries, not the excluded row-level archives.
-Run the tests with:
-
-```powershell
-$env:PYTHONPATH='src'
-pytest -q
-```
-
-The immutable protocol is recorded in
-`configs/preregistered_extension_v2.json`. The configuration SHA-256 is
-`8AA39B0920D8CD2CFEFBF8C28109754F1B2DFA6049E17565122C6968E199AAD2`.
-The exploratory governance contract is recorded separately in
-`configs/knowledge_contract_v1.json`; its SHA-256 is
-`837795719587D25D6EDB0BC636D89AE51385C3643677771B5BD1F186CAD1C946`.
-
-## Public snapshot boundary
-
-The snapshot includes executable code, frozen configurations, tests, figure
-source data, aggregate evaluation tables, evidence and efficiency summaries,
-validation reports, and metadata-only cohort manifests. It excludes:
-
-- raw PrimeVul and DiverseVul records;
-- target-label vaults and label packages;
-- CodeBERT weights, embeddings, and feature caches;
-- private SQLite indexes; and
-- per-function prediction or decision archives.
-
-The generated `public_snapshot_manifest.json` inventories every staged public
-file except the manifest itself. Validation manifests record the prediction
-seals, row counts, hashes, and the no-target-label-access boundary. The public
-artifact is intended to make the protocol auditable; reproducing the results
-still requires obtaining the public datasets and rerunning the compute-heavy
-stages locally.
-
-## Integrity and claims boundary
-
-The artifact does not claim state-of-the-art detector performance, a universal
-support gate, a distribution-free target-risk guarantee for estimated weights,
-a hardware-independent speedup, or an independent five-fit CodeBERT variance
-estimate. Review-only gate failures are reported separately from supported
-projects so mechanical zero violations are not counted as predictive success.
-
-Public repository: <https://github.com/bianyanbo44-afk/vultriage-fcs>
+ARCHIVE_MANIFEST.json records every payload file and SHA-256. DATA_DICTIONARY.md
+defines principal endpoints, units, missing values, aggregation and provenance.
+Repository publication provides access to the checked evidence. It does not
+attest journal submission, acceptance or externally immutable experiment timing.

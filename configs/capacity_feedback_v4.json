@@ -1,0 +1,90 @@
+{
+  "protocol_version": "trace-capacity-feedback-v4-20261011",
+  "study_date": "2026-10-11",
+  "status": "author-authorized, known-outcome, retrospective benchmark amendment; not preregistration",
+  "known_outcomes": "All original v1/v2 and neural v3.1 target evaluation outcomes are already known. This plan is frozen before calculating these new capacity and feedback comparisons, not before access to the benchmark outcomes.",
+  "protocol_path": "protocol/capacity_feedback_v4.md",
+  "lineage_path": "outputs/neural-validation-v3/joint_prediction_lineage_postseal.json",
+  "source_rows_path": "outputs/neural-validation-v3/inputs/source_rows.jsonl",
+  "datasets": {
+    "diversevul": {
+      "decision_seal_path": "outputs/neural-validation-v3/decisions/diversevul/decision_seal.json",
+      "input_dir": "outputs/neural-validation-v3/inputs",
+      "ordering": "synthetic_salted_commit_hash",
+      "expected_projects": 38,
+      "expected_rows": 26079
+    },
+    "megavul": {
+      "decision_seal_path": "outputs/neural-validation-v3/decisions/megavul/decision_seal.json",
+      "input_dir": "outputs/neural-validation-v3/inputs/megavul",
+      "ordering": "recorded_commit_author_date",
+      "expected_projects": 6,
+      "expected_rows": 25722
+    }
+  },
+  "risk_budget": {"alpha_v": 0.1, "alpha_s": 0.2, "weight_clip": 20},
+  "capacity": {
+    "fractions": [0.0, 0.05, 0.1, 0.2, 0.4, 0.6, 1.0],
+    "integer_rule": "floor(fraction * full project function count)",
+    "primary_fraction": 0.2,
+    "methods": ["trace_mandatory", "allocation_matched_tails_mandatory", "weighted_volume_msp_mandatory", "source_iso_cap", "msp_cap", "forced_argmax", "all_review_mandatory"],
+    "review_priority": "largest source-calibrated expected net saving; stable original sealed position tie break",
+    "mandatory_overflow": "unresolved backlog; policy infeasible for completing the full roster at that capacity",
+    "economic_review_rule": "source_iso_cap reviews only strictly positive expected net savings, up to the cap; never fills economically needless slots"
+  },
+  "cost": {
+    "miss": [10.0, 50.0],
+    "false_alert": 1.0,
+    "review_costs": [0.01, 0.1, 1.0],
+    "primary_review_cost": 0.1,
+    "review_error_sensitivity": {"review_cost": 0.1, "false_negative_probability": 0.05, "false_positive_probability": 0.05},
+    "primary_review_false_negative_probability": 0.0,
+    "primary_review_false_positive_probability": 0.0,
+    "unresolved_deadline_penalty": "illustrative missed-vulnerability cost on unresolved vulnerable functions at the observation deadline; no false-alert cost on unresolved safe functions",
+    "units": "illustrative scenario units; one reviewed function consumes one analyst slot; neither measured analyst time nor measured monetary/team cost"
+  },
+  "feedback": {
+    "nominal_batch_rows": 128,
+    "batch_rule": "greedy consecutive whole commit blocks; recorded-date ties merged before batching; oversized commit/date blocks kept whole",
+    "synthetic_order_salt": "trace-capacity-feedback-v4-order-20261011",
+    "slots_per_batch": [8, 16, 32],
+    "primary_slots_per_batch": 16,
+    "delays_in_batches": [1, 3, 5],
+    "primary_delay_in_batches": 3,
+    "methods": ["source_iso_static", "source_iso_rolling", "trace_static", "trace_rolling", "msp_static", "forced_argmax_static"],
+    "label_access": "only a previously reviewed row may release its benchmark label at the start of service_batch + delay; unreviewed and backlog labels never enter updates",
+    "feedback_cost": "review already charged one scenario cost and one slot per reviewed function; no additional free labels or full-label feedback",
+    "source_initializer": "existing sealed isotonic knots fitted on the exact 4400 PrimeVul calibration rows only",
+    "rolling_update": {
+      "algorithm": "increasing sklearn isotonic regression on sealed source calibration plus the most recent 512 arrived reviewed target rows",
+      "minimum_arrived_rows": 30,
+      "minimum_arrived_per_class": 5,
+      "maximum_arrived_window": 512,
+      "source_total_anchor_weight": 100.0,
+      "target_per_row_weight": 1.0,
+      "update_frequency": "start of a batch only after new reviewed labels arrived and eligibility is met",
+      "insufficient_feedback": "retain the sealed source initializer until eligible; after an eligible fit retain the last fit if a later rolling window is ineligible"
+    },
+    "trace_membership": "preserve original sealed weighted singleton/review membership at alpha_v=0.10, alpha_s=0.20, clip20; rolling update affects review-queue priority only, not singleton membership or detector weights",
+    "trace_backlog": "pool unresolved earlier mandatory review with current mandatory review; service at most the fixed slots per batch by expected-risk priority; no post-run free drain",
+    "source_iso_policy": "choose lower calibrated expected-cost automatic label; review only strictly positive expected savings up to fixed slots in current batch; no backlog needed",
+    "temporal_cost_scenarios": "miss10/50, falsealert1, review0.1, perfect review",
+    "arrival_probability_calibration_metric": "Brier score using the probability produced when each function first enters its batch, before any label from that batch",
+    "source_chronology": "unavailable in prepared and raw PrimeVul lineage; no dated source-before-target claim",
+    "arrival_chronology": "analyst review/decision/feedback arrival is simulated even for MegaVul; recorded commit-author dates are ordering evidence only",
+    "transductive_trace_limitation": "inherited sealed density-ratio fits use the full unlabeled target project; feedback audit forbids future labels but does not establish an online domain-fitting pipeline",
+    "selection_bias": "feedback is conditioned on review selection; rolling calibration is heuristic, potentially biased, and has no claimed target calibration or conformal guarantee"
+  },
+  "statistics": {
+    "unit": "target project after averaging genuine detector seeds within each project; datasets separate; no seed/function pseudoreplication",
+    "primary_capacity_comparison": "source_iso_cap minus msp_cap at capacity0.2, miss10, review0.1, perfect review, completed full-roster cost/function",
+    "primary_feedback_comparison": "source_iso_rolling minus source_iso_static at slots16, delay3 batches, miss10, review0.1, perfect review, full-roster cost/function",
+    "reporting": "all fixed settings, full rosters, seed-level and seed-averaged project-level outcomes, paired project differences, feasibility/backlog, original class denominators, automatic-label allocations",
+    "interval": "descriptive pointwise 95 percent project bootstrap percentile interval of median paired difference, 10000 draws; no confirmatory p-values, population-representative claim, or equivalence claim",
+    "bootstrap_seed": 20261011,
+    "bootstrap_draws": 10000,
+    "no_outcome_based_exclusion": true
+  },
+  "stopping": "Run all inherited actual detector seeds and all selected projects once under this grid; preserve unsupported-domain fallback, unfavorable comparisons, zero updates, missing-history limitations and infeasible mandatory-review scenarios. Do not choose settings or projects from new target outcomes.",
+  "output_dir": "outputs/kbs-validation-v4/capacity_feedback"
+}

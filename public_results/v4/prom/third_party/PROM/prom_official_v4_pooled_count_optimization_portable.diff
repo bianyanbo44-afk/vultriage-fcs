@@ -1,0 +1,32 @@
+--- a/src/prom/prom_classification.py
++++ b/src/prom/prom_classification.py
+@@ -1450,19 +1450,17 @@
+         return nearest_neighbor_idxs
+ 
+     def _compute_p_values(self, y_pred_proba, conformity_scores_, selected_cal):
+-        #  calibration set  conformal scores
++        # Execution-equivalent count of the COMPLETE duplicated global pool.
+         cal_conformity_scores = conformity_scores_[selected_cal]
+-
+-
+-        #  p-value 
+-        p_values = []
+-
+-        for i in y_pred_proba[:]:
+-            score = i[0]
+-            #  conformal score  calibration set conformal scores 
+-            p_value = np.mean(cal_conformity_scores >= score)
+-            p_values.append(p_value)
+-        return p_values
++        pool = np.asarray(cal_conformity_scores).reshape(-1)
++        scores = np.asarray(y_pred_proba)[:, 0]
++        if pool.size == 0:
++            return np.full(scores.shape, np.nan).tolist()
++        # NaNs fail >= comparisons but retain their original denominator.
++        sorted_pool = np.sort(pool[~np.isnan(pool)])
++        counts = len(sorted_pool) - np.searchsorted(sorted_pool, scores, side="left")
++        counts[np.isnan(scores)] = 0
++        return (counts.astype(np.float64) / pool.size).tolist()
+ 
+ 
+     def predict(

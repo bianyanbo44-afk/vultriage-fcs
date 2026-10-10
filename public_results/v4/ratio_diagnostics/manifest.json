@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-10-10T16:59:12.144700+00:00",
+  "config": "configs\\ratio_diagnostics_v4.json",
+  "config_sha256": "FE82F048739D4F765B9FAD6AEBC950A4E322F81D5C1B6CFA7A38115915888233",
+  "script_sha256": "F7B1E767FF9714991A2B62EE581319A32CCD8C97D7D9FB283B7E4609EB76B6A9",
+  "replications_per_regime": 100,
+  "regimes": 4,
+  "complete_cells": 4400,
+  "primary_cells": 2000,
+  "bound_checks": 4400,
+  "new_real_dataset_outcomes_used": false,
+  "domain_fit_uses_class_labels": false,
+  "complete_clip_family_retained": [
+    10,
+    20,
+    50
+  ],
+  "independence": "Fresh independent domain-training and calibration/test samples in each simulation",
+  "claim_boundary": "Known-density simulation measures a fixed-loss decomposition and empirical class miscoverage; it provides no new theorem or real-project coverage certificate. Domain learners use independent features and no class labels. Simulation replicates are independent draws, not software projects.",
+  "files_sha256": {
+    "design_receipt.json": "17F63696705E65A696A8030FE55537687366DED5385155CD5DDF3343305E2A3B",
+    "primary_summary.csv": "2990B831876F7A35463F94352C5BADD3FF0BF6319690B9E953D587C4BB086D40",
+    "replicate_metrics.csv": "3B6F15F87DB2FE0C0BF47D46F205C5E0B4785300B7AF8E4FBC4FBA9B50BEF61B"
+  }
+}

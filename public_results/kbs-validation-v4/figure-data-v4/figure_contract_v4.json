@@ -1,0 +1,41 @@
+{
+  "backend": "Python/matplotlib, inherited from the established manuscript workflow",
+  "journal": "Neurocomputing",
+  "width_mm": 160,
+  "minimum_glyph_pt": 5,
+  "new_figures": {
+    "fig_trace_workflow_v4": {
+      "question": "Which decision changes does TRACE distinguish?",
+      "claim": "Workload, released-label allocation, and review service answer separate evaluation questions for the same detector outputs.",
+      "archetype": "conceptual evidence architecture",
+      "unit": "paired project-level decision-policy comparison",
+      "basis": "The fixed TRACE comparator definitions and unchanged external rosters; this is a workflow diagram without simulated quantitative values.",
+      "exclusions": "Training counts, source-boundary audit logs and seals are reported in Methods/SI rather than occupying the main conceptual diagram."
+    },
+    "fig_capacity_v4": {
+      "question": "How does finite analyst capacity change completion and policy ranking?",
+      "claim": "Required review can exceed available capacity, while capped cost-versus-confidence rankings differ between collections.",
+      "archetype": "quantitative grid",
+      "panels": {
+        "a": "Boundary: fraction of fine-tuned CodeBERT project rosters completed by the original mandatory-review weighted policy across all predefined capacities.",
+        "b": "Decision comparison: full-roster paired source-cost-minus-confidence cost differences and precomputed project intervals at the same hard capacities."
+      },
+      "unit": "project after averaging three actual fine-tuned CodeBERT fits",
+      "exclusions": "Main plot uses the primary neural detector and primary price scenario; both complete collections and all seven capacities retained. Reference detectors and every other fixed price scenario remain in SI/public aggregates."
+    },
+    "fig_feedback_v4": {
+      "question": "Does delayed reviewed feedback change cost, and is enough history available to update?",
+      "claim": "Primary rolling source calibration gives heterogeneous cost changes alongside limited arrived-label history.",
+      "archetype": "quantitative grid",
+      "panels": {
+        "a": "Decision comparison: every project paired rolling-minus-static source-calibrated cost at the primary slots/delay setting, with paired median intervals.",
+        "b": "Support for adaptation: all project counts of actually arrived reviewed labels at the same setting, with project medians."
+      },
+      "unit": "project after averaging actual fitted seeds",
+      "ordering": "MegaVul recorded commit-author ordering; DiverseVul synthetic commit-hash ordering. Analyst service and feedback arrival are simulated in both.",
+      "exclusions": "Primary fine-tuned CodeBERT,16 slots per whole-commit batch,3-batch delay,miss10/review0.1. Complete38/6 project rosters retained; all other fixed settings remain in SI/public aggregates."
+    }
+  },
+  "export": ["PDF with editable text", "SVG with editable text", "PNG300dpi", "TIFF600dpi", "source CSV", "physical geometry/alignment/glyph/collision checks"],
+  "style_reuse": "Only typography, palette and physical-export/QA helpers are inherited from make_neural_validation_figures.py; new geometry and data mapping follow these contracts."
+}

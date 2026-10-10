@@ -1,0 +1,42 @@
+{
+  "schema": "trace-prom-complete-primary-summary-v4.2",
+  "created_at_utc": "2026-10-10T17:41:11.863070+00:00",
+  "all_six_detector_collection_cells_present": true,
+  "new_expert_alpha_model_or_subset_selected": false,
+  "target_vault_opened": false,
+  "prior_outcomes_known": true,
+  "action_equality_check_uses_target_labels": false,
+  "project_fit_cells": 308,
+  "msp_exact_equal_cells": 308,
+  "allocation_exact_equal_cells": 308,
+  "paired_endpoint_rows": 96,
+  "decision_seal_sha256": "CF16DCBCE7A057501894EC972091D2D09124E64977F9214FB67FE38D8378E1EC",
+  "evaluation_manifest_sha256": "97444A612D70139691707657173D3EA2926C96907D616C54F75D5A6CFB6F0758",
+  "artifacts": [
+    {
+      "path": "action_equivalence.csv",
+      "sha256": "57236DD63F8CF203CE3F1EB507D56A3B3CDD8767BE3F8C159BDBCBD7FF3FFF09",
+      "bytes": 20537
+    },
+    {
+      "path": "primary_source_selected_summary.csv",
+      "sha256": "52621E6452741CF795B0F3DA7741BB9ECD316DED5BDF6F6C05D184FC06D1C90B",
+      "bytes": 1488
+    },
+    {
+      "path": "fixed_native_union_absolute_summary.csv",
+      "sha256": "8A9D2055B00D8DA1E3C95CA5B72E3A180C582AE99D21C0B6E34179FC277416F5",
+      "bytes": 1305
+    },
+    {
+      "path": "primary_matched_paired_endpoints.csv",
+      "sha256": "29048B14AD815C891FD787268FF889763A1EA3624EB343A99E700CA4E85909C8",
+      "bytes": 13403
+    },
+    {
+      "path": "prom_official_v4_maintext_tables.md",
+      "sha256": "125ED24569C93E1BFBAA01CA2198726C1CFCF4355C44A6C213324BB63A06C619",
+      "bytes": 2881
+    }
+  ]
+}

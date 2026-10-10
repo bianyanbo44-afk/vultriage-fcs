@@ -1,0 +1,118 @@
+{
+  "schema": "trace-prom-official-component-evaluation-v4.1",
+  "created_at_utc": "2026-10-10T17:35:42.083506+00:00",
+  "status": "completed",
+  "official_commit": "f16b52772123064551b6450f10b308971c4cdd39",
+  "scope": "Actual pinned official conformal code with recorded binary/feature/source-selection adaptation; full official system not reproduced",
+  "all_previous_TRACE_outcomes_known": true,
+  "execution_version": "trace-official-prom-pooled-count-execution-v4.2",
+  "literal_real_array_parity_passed_before_labels": true,
+  "new_decision_seal_sha256": "CF16DCBCE7A057501894EC972091D2D09124E64977F9214FB67FE38D8378E1EC",
+  "verified_before_target_label_access": true,
+  "target_labels_used_for_selection": false,
+  "project_seed_cells": 308,
+  "metric_rows": 4928,
+  "source_roles": {
+    "calibration": 4400,
+    "selection": 6296
+  },
+  "actual_fits": {
+    "finetuned_codebert": [
+      13,
+      37,
+      73
+    ],
+    "frozen_codebert": [
+      13
+    ],
+    "hashing_sgd": [
+      13,
+      37,
+      73
+    ]
+  },
+  "cohorts": {
+    "diversevul": {
+      "projects": 38,
+      "functions": 26079
+    },
+    "megavul": {
+      "projects": 6,
+      "functions": 25722
+    }
+  },
+  "target_vaults": [
+    {
+      "path": "outputs/neural-validation-v3/inputs/target_label_vault.npz",
+      "role": "existing target-label vault",
+      "sha256": "1070E3ACBD720264B7D303C946849E1B2A14202778D9332E6AF7F544E4949542",
+      "bytes": 507486
+    },
+    {
+      "path": "outputs/neural-validation-v3/inputs/megavul/target_label_vault.npz",
+      "role": "existing target-label vault",
+      "sha256": "DDF1FDA76A47392AFFB9A8DF17FE6C97F686039474D7189963AF67E401346CB4",
+      "bytes": 501550
+    }
+  ],
+  "primary_experts": [
+    "lac",
+    "aps",
+    "raps"
+  ],
+  "secondary_experts": [
+    "top_k"
+  ],
+  "statistics": {
+    "unit": "project after averaging actual fitted detector seeds",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 20261011,
+    "primary_endpoints": [
+      "automatic missed-vulnerability rate",
+      "automatic false-alert rate",
+      "review fraction",
+      "illustrative cost 10",
+      "illustrative cost 50"
+    ],
+    "intervals": "descriptive pointwise project bootstrap percentile intervals; no equivalence or general-superiority interpretation"
+  },
+  "cost": {
+    "miss": [
+      10,
+      50
+    ],
+    "false_alert": 1,
+    "review": 0.1,
+    "review_accuracy_assumption": "correct review; illustrative relative units, not measured analyst cost"
+  },
+  "whole_system_not_reproduced": [
+    "original 8-way CWE case-study neural models and taxonomy",
+    "unchanged target-label-dependent best-F1 reporting",
+    "target-feedback acquisition and incremental neural-model retraining",
+    "full official Ubuntu/Python 3.7-3.9 Docker environment"
+  ],
+  "full_neural_feedback_retraining_executed": false,
+  "wall_seconds": 8.930311399999482,
+  "aggregate_files": [
+    {
+      "path": "project_seed_metrics.csv",
+      "sha256": "6A085724C73DFE2FE5C102672B742637108CDE88874C9AE9F4802399E48AA6D4",
+      "bytes": 1299156
+    },
+    {
+      "path": "project_seed_averages.csv",
+      "sha256": "CCBCD0DA40A08E4E3DD6C19FA30222E076C3E78B5AE3C19DBB3B5F44EA15FB19",
+      "bytes": 691728
+    },
+    {
+      "path": "policy_project_summary.csv",
+      "sha256": "9DA5A1CFAB43A35C1D4B2A8DD88AA6D408C18288370A6A0615287649482C97AA",
+      "bytes": 31510
+    },
+    {
+      "path": "paired_project_summary.csv",
+      "sha256": "F29867A9861E7109BD6F9396F81BF549B5F39DC46255546D833E2D05E9CADE63",
+      "bytes": 83507
+    }
+  ]
+}

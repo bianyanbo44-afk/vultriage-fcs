@@ -1,0 +1,35 @@
+{
+  "schema": "trace-prom-official-implementation-history-v4.1",
+  "recorded_at_utc": "2026-10-10T17:29:01.072987+00:00",
+  "target_outcomes_joined_at_recording": false,
+  "events": [
+    {
+      "stage": "acquisition",
+      "observation": "Unfiltered shallow clone was interrupted after repository metadata showed about 2 GB; a new pinned filtered sparse checkout succeeded. Unrelated benchmark blobs were not needed."
+    },
+    {
+      "stage": "imports",
+      "observation": "Direct prom imports failed with ModuleNotFoundError for src.prom, then a mixed-namespace circular import. Alias bootstrap maps prom/src.prom to the same untouched package and avoids eager irrelevant regression imports."
+    },
+    {
+      "stage": "native smoke initial runtime",
+      "observation": "Actual official RAPS reached metrics.check_array and failed because sklearn 1.9.1 removed force_all_finite. The failure log is retained; private --target numerical dependencies were pinned without modifying the existing environment."
+    },
+    {
+      "stage": "native binary",
+      "observation": "Untouched native binary APS/RAPS fail because sklearn label_binarize has one column. The sole two-line one-hot repair is copied separately and recorded as a diff; no padding or p-value correction was applied."
+    },
+    {
+      "stage": "fidelity smoke corrected runtime",
+      "observation": "All four native multiclass outputs match the repaired runtime exactly, repaired binary execution succeeds, and independent binary APS mathematical parity passes."
+    },
+    {
+      "stage": "pooled-count execution amendment before outcomes",
+      "observation": "Root authorized complete duplicated-pool sorted counting after literal source grid and 43 complete target cells; direct files preserved. Native/binary exact outputs, random/tied/NaN/infinity/empty-pool count cases and nonfinite-probability rejection all pass. No alpha/family/source/grid/statistic changed."
+    }
+  ],
+  "retained_failure_logs": [
+    "smoke_failure_20261010T170606Z.log"
+  ],
+  "algorithm_changes_before_outcomes": "Only recorded binary one-hot repair; source-only selection and feature/batch adaptation are fixed by cleared protocol."
+}

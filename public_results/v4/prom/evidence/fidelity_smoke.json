@@ -1,0 +1,117 @@
+{
+  "schema": "trace-prom-official-fidelity-smoke-v4.1",
+  "completed_at_utc": "2026-10-10T17:08:23.792928+00:00",
+  "status": "passed",
+  "wall_seconds": 1.2082355999955325,
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "1.26.4",
+    "scipy": "1.12.0",
+    "sklearn": "1.4.2",
+    "official_module_version": "0.8.3"
+  },
+  "native_multiclass_exact_parity": {
+    "lac": {
+      "predicted": true,
+      "sets": true,
+      "pvalues": true,
+      "scores": true,
+      "test_scores": true,
+      "quantiles": true
+    },
+    "top_k": {
+      "predicted": true,
+      "sets": true,
+      "pvalues": true,
+      "scores": true,
+      "test_scores": true,
+      "quantiles": true
+    },
+    "aps": {
+      "predicted": true,
+      "sets": true,
+      "pvalues": true,
+      "scores": true,
+      "test_scores": true,
+      "quantiles": true
+    },
+    "raps": {
+      "predicted": true,
+      "sets": true,
+      "pvalues": true,
+      "scores": true,
+      "test_scores": true,
+      "quantiles": true
+    }
+  },
+  "native_binary_path": {
+    "lac": {
+      "status": "passed_without_repair"
+    },
+    "top_k": {
+      "status": "passed_without_repair"
+    },
+    "aps": {
+      "status": "failed_without_repair",
+      "exception": "IndexError",
+      "message": "index 1 is out of bounds for axis 1 with size 1"
+    },
+    "raps": {
+      "status": "failed_without_repair",
+      "exception": "IndexError",
+      "message": "index 1 is out of bounds for axis 1 with size 1"
+    }
+  },
+  "repaired_binary_all_four_experts_executed": [
+    "lac",
+    "top_k",
+    "aps",
+    "raps"
+  ],
+  "binary_aps_independent_mathematical_parity": true,
+  "native_api_demonstrator": {
+    "data": "seeded synthetic eight-class data, not native benchmark data",
+    "trained_model": "GaussianNB",
+    "official_task": "bug",
+    "official_helper_executed": [
+      "conformal_prediction",
+      "evaluate_conformal_prediction",
+      "incremental_learning"
+    ],
+    "feedback_acquired": 6,
+    "model_refit_executed": true,
+    "disjoint_remaining_holdout": 72,
+    "holdout_predictions_changed": 4,
+    "claim_scope": "Native official supported API software smoke; not unchanged ae_tutorial.py or original benchmark reproduction"
+  },
+  "documented_full_tutorial_executed": false,
+  "documented_full_tutorial_blockers": [
+    "native Magni_utils.py imports unavailable TensorFlow/Keras/NNI at module level",
+    "Linux absolute paths and missing documented pretrained tutorial checkpoint"
+  ],
+  "current_TRACE_neural_incremental_retraining_executed": false,
+  "target_labels_accessed": false,
+  "artifacts": [
+    {
+      "path": "outputs\\kbs-validation-v4\\prom\\smoke\\execution.log",
+      "sha256": "3602E2C87CFF78340CE51B1C20CDF421F713EDB474D0E61B231C2978DB0ACB6D",
+      "bytes": 1513
+    },
+    {
+      "path": "outputs\\kbs-validation-v4\\prom\\smoke\\native_helper_outputs.npz",
+      "sha256": "850208497A3AE944D6018F2F240047E590FA1A7BED1C2B8DDF7E4B0D83E2EB98",
+      "bytes": 3856
+    },
+    {
+      "path": "outputs\\kbs-validation-v4\\prom\\smoke\\native_multiclass_outputs.npz",
+      "sha256": "C8FF73BAB07443E14BEAB4E812637A964735E4914B3EBDD3E75F98E7150AFB62",
+      "bytes": 20357
+    },
+    {
+      "path": "outputs\\kbs-validation-v4\\prom\\smoke\\repaired_binary_outputs.npz",
+      "sha256": "A75CE6DA91291CF9C27DEE9CE64FDEC3CFD317776DEF8987D3CCB79CC64CABA3",
+      "bytes": 16043
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "created_at_utc": "2026-10-10T18:27:01.849069+00:00",
+  "schema_version": "trace-v4-capacity-feedback-figures-1",
+  "source_script_sha256": "1F08C74A4CE1BF3BA5D6037531A6DED79EF84CC47A22C665422D4CDE16182B30",
+  "helper_script_sha256": "A157A3AC7BDE5B9F7E5B0980BF8E8CB77A31E413B4B685B821739309C0CA3488",
+  "capacity_analysis_manifest_sha256": "C8D2FE9E97918776570CA3E0C3A554061A742D7950FD0369985299525805611E",
+  "capacity_public_aggregate_manifest_sha256": "2ECC66776F6228BE8F13E76A67664C98B7F1564D91F7F4A5D499CE8BBC69DD45",
+  "contract_sha256": "DC60DE1A9AED49990EB7A83E5B8FA09132802A5CAA620231CDFAB2E6ED8292BA",
+  "figures": {
+    "fig_trace_workflow_v4": {
+      "contract": {
+        "question": "Which decision changes does TRACE distinguish?",
+        "claim": "Workload, released-label allocation, and review service answer separate evaluation questions for the same detector outputs.",
+        "archetype": "conceptual evidence architecture",
+        "unit": "paired project-level decision-policy comparison",
+        "basis": "The fixed TRACE comparator definitions and unchanged external rosters; this is a workflow diagram without simulated quantitative values.",
+        "exclusions": "Training counts, source-boundary audit logs and seals are reported in Methods/SI rather than occupying the main conceptual diagram."
+      },
+      "width_mm": 160.0,
+      "height_mm": 99.9999999996,
+      "alignment_verdict": "NOT APPLICABLE",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 18,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "source_preflight": "PASS; explicit 160-mm width reviewed",
+        "collision": "PASS (strict)"
+      },
+      "source_script_sha256": "1F08C74A4CE1BF3BA5D6037531A6DED79EF84CC47A22C665422D4CDE16182B30",
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+        "inspection": "The complete diagram and all three branches were visually inspected. Text stays within its intended boxes, arrows and reading order are clear, and no illustrative numerical outcomes are drawn.",
+        "pdf_sha256": "A00CAE6E174C6867838F8572DBF53E156BD0BC2137D36166DD26771782CF180B",
+        "png_sha256": "9DADB4F97143761B418D683549071E48824E4C262E367ACFB1607AAD6593B8A2",
+        "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+      },
+      "files_sha256": {
+        "fig_trace_workflow_v4.alignment-layout.json": "13BC6224FEDB548A7C90557C4D478669438A676222B88A981F67B1577D82536E",
+        "fig_trace_workflow_v4.alignment.json": "D726078AC31AC056F27F8E287ED1E2FB3290F6693B9F87733ABE1816F3B5A0A2",
+        "fig_trace_workflow_v4.alignment.svg": "48C0690C573C68E29347D8654E3B506500CB86C4EC449EF608AA65CDFAEC5361",
+        "fig_trace_workflow_v4.geometry.json": "06D47F810D512999B41E0B2BD6ED7ED3C0C8176E175CEEF348EAC66A2B52BE31",
+        "fig_trace_workflow_v4.source-preflight.json": "D30396B2F5E814E32AE75B79F986BF4D2BC92924C5EF6D9C6C004B50888F7956",
+        "fig_trace_workflow_v4.pdf": "A00CAE6E174C6867838F8572DBF53E156BD0BC2137D36166DD26771782CF180B",
+        "fig_trace_workflow_v4.svg": "F8ABF777DA44C36F5FDBD66C4DCF8F71F354876DAA100FF2A8D667537745F433",
+        "fig_trace_workflow_v4.png": "9DADB4F97143761B418D683549071E48824E4C262E367ACFB1607AAD6593B8A2",
+        "fig_trace_workflow_v4.tiff": "4AA32545B599F3CFC5FA3BAD337CC869BF3647EC68F2E2196E25AEC5B80CDB0C",
+        "fig_trace_workflow_v4.pdf-geometry.json": "6FA03049C29797E95D4B07FA013C4E1B04DABEE8817E34C4A5B4858248D5CD90",
+        "fig_trace_workflow_v4.glyph-audit.json": "96D50AC4348FAAF83F5F5F96276B2E0F8A705A6F58E85054383E6E8D04EA1710",
+        "fig_trace_workflow_v4.collision-audit.json": "2ADCDF0E5E4F23112D9627CFB82A8B22E1E7504BB4682461237128F2FFAF52B8",
+        "fig_trace_workflow_v4.collision-audit.pdf": "F398D1973D9951FA1CA3DE7BC1462815C6A04A1B0B0A338E35BD966363746B76"
+      },
+      "source_csv_sha256": {}
+    },
+    "fig_capacity_v4": {
+      "contract": {
+        "question": "How does finite analyst capacity change completion and policy ranking?",
+        "claim": "Required review can exceed available capacity, while capped cost-versus-confidence rankings differ between collections.",
+        "archetype": "quantitative grid",
+        "panels": {
+          "a": "Boundary: fraction of fine-tuned CodeBERT project rosters completed by the original mandatory-review weighted policy across all predefined capacities.",
+          "b": "Decision comparison: full-roster paired source-cost-minus-confidence cost differences and precomputed project intervals at the same hard capacities."
+        },
+        "unit": "project after averaging three actual fine-tuned CodeBERT fits",
+        "exclusions": "Main plot uses the primary neural detector and primary price scenario; both complete collections and all seven capacities retained. Reference detectors and every other fixed price scenario remain in SI/public aggregates."
+      },
+      "width_mm": 160.0,
+      "height_mm": 91.0,
+      "alignment_verdict": "PASS",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 34,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "source_preflight": "PASS; explicit 160-mm width reviewed",
+        "collision": "PASS (strict)"
+      },
+      "source_script_sha256": "1F08C74A4CE1BF3BA5D6037531A6DED79EF84CC47A22C665422D4CDE16182B30",
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+        "inspection": "Both panels and the complete 160-mm figure were visually inspected. All seven fixed capacities, full project denominators, interval ribbons and the zero-cost reference remain visible.",
+        "pdf_sha256": "0A1B5A5C48DDB28899A601FB845AD2F0CBC1AF98CF3BACF87C27C7F10148FE32",
+        "png_sha256": "0DB12FC01267B2543050FB6147F294A8FC61831621C7E5C3EF269CADDBCB30A2",
+        "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+      },
+      "files_sha256": {
+        "fig_capacity_v4.alignment-layout.json": "DC63C68BAF2E0B5E2C22BC749880ADE95D2E17D193BB095657947D5E061F0ABB",
+        "fig_capacity_v4.alignment.json": "05FDD7ACAB0E594D0972E3AC79DB97917AF0A66B498738FF73AABA22655EFD14",
+        "fig_capacity_v4.alignment.svg": "E0B615848DFC9E0C56B0BD18FF2C841905A60010D334E2B11432776A008E4DB3",
+        "fig_capacity_v4.geometry.json": "6BBC3673E7FAC20D0E7C064E65ACFE141CCB5A4B50F750101C69F592DA947D2C",
+        "fig_capacity_v4.source-preflight.json": "D30396B2F5E814E32AE75B79F986BF4D2BC92924C5EF6D9C6C004B50888F7956",
+        "fig_capacity_v4.pdf": "0A1B5A5C48DDB28899A601FB845AD2F0CBC1AF98CF3BACF87C27C7F10148FE32",
+        "fig_capacity_v4.svg": "35B27E594E3B9CCB4287863832290FDE01AA1558890642D9038D77DD2158EB51",
+        "fig_capacity_v4.png": "0DB12FC01267B2543050FB6147F294A8FC61831621C7E5C3EF269CADDBCB30A2",
+        "fig_capacity_v4.tiff": "67F22BA9F798673941304A39DCC98CC22105BD591A476DE1B17B185BE0623308",
+        "fig_capacity_v4.pdf-geometry.json": "76BCF07DF0795E7FAB7032C4C223AF3BDC4E6497B4FC0FCE8D7A3B688C97346C",
+        "fig_capacity_v4.glyph-audit.json": "246B622DF4C6458D446D3E4070DDA82190A400A39FA5F789870BCAF08E91FE69",
+        "fig_capacity_v4.collision-audit.json": "1F030B044C29EAA39EBB8A65D8160C7235B907E620B7677D6570ABC27B2FDEBB",
+        "fig_capacity_v4.collision-audit.pdf": "DCC5CFA6445421AE2A4498F3CA1288B1D872A168990873ECFB197E19B701438F"
+      },
+      "source_csv_sha256": {
+        "fig_capacity_v4_completion.csv": "ED54D276DA8B1913397BDEAD2E116043586E169DA76E592C820B61DC6B092645",
+        "fig_capacity_v4_cost_pairs.csv": "31462D8F4B23BD999D24559D68D1096A79BEE3ADD3BCB67FEAB47807141E38B2"
+      }
+    },
+    "fig_feedback_v4": {
+      "contract": {
+        "question": "Does delayed reviewed feedback change cost, and is enough history available to update?",
+        "claim": "Primary rolling source calibration gives heterogeneous cost changes alongside limited arrived-label history.",
+        "archetype": "quantitative grid",
+        "panels": {
+          "a": "Decision comparison: every project paired rolling-minus-static source-calibrated cost at the primary slots/delay setting, with paired median intervals.",
+          "b": "Support for adaptation: all project counts of actually arrived reviewed labels at the same setting, with project medians."
+        },
+        "unit": "project after averaging actual fitted seeds",
+        "ordering": "MegaVul recorded commit-author ordering; DiverseVul synthetic commit-hash ordering. Analyst service and feedback arrival are simulated in both.",
+        "exclusions": "Primary fine-tuned CodeBERT,16 slots per whole-commit batch,3-batch delay,miss10/review0.1. Complete38/6 project rosters retained; all other fixed settings remain in SI/public aggregates."
+      },
+      "width_mm": 160.0,
+      "height_mm": 91.0,
+      "alignment_verdict": "PASS",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 26,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "source_preflight": "PASS; explicit 160-mm width reviewed",
+        "collision": "PASS (strict)"
+      },
+      "source_script_sha256": "1F08C74A4CE1BF3BA5D6037531A6DED79EF84CC47A22C665422D4CDE16182B30",
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Original-resolution image and final physical-size geometry/glyph/alignment/strict-collision gates",
+        "inspection": "Both panels and the complete 160-mm figure were visually inspected. All project outcomes and arrived-history counts remain, horizontal project offsets alter no outcome, and medians and intervals are readable.",
+        "pdf_sha256": "4F57F363A1D5B242691B0730D27CCE0FA55B35DD7047C8A263F81FB2A07386F2",
+        "png_sha256": "130D25E3108464FBE20F3CC2EFC8C138CDBF259CB44678A6C2BAFAF8245C864A",
+        "public_copy_reexport": "Final PNG bytes are identical to the original-resolution image actually inspected; the new PDF passed all geometry/glyph/alignment/strict-collision gates again."
+      },
+      "files_sha256": {
+        "fig_feedback_v4.alignment-layout.json": "DC63C68BAF2E0B5E2C22BC749880ADE95D2E17D193BB095657947D5E061F0ABB",
+        "fig_feedback_v4.alignment.json": "05FDD7ACAB0E594D0972E3AC79DB97917AF0A66B498738FF73AABA22655EFD14",
+        "fig_feedback_v4.alignment.svg": "E0B615848DFC9E0C56B0BD18FF2C841905A60010D334E2B11432776A008E4DB3",
+        "fig_feedback_v4.geometry.json": "F1DF633F4839A05BEB6E149EC683EDAA004DBD425C273E41A0D7F95267456550",
+        "fig_feedback_v4.source-preflight.json": "D30396B2F5E814E32AE75B79F986BF4D2BC92924C5EF6D9C6C004B50888F7956",
+        "fig_feedback_v4.pdf": "4F57F363A1D5B242691B0730D27CCE0FA55B35DD7047C8A263F81FB2A07386F2",
+        "fig_feedback_v4.svg": "57106CCD7FD7253A87AA078ECAD70EA4BC70D2008A8CC21F89F6C86FE677C97B",
+        "fig_feedback_v4.png": "130D25E3108464FBE20F3CC2EFC8C138CDBF259CB44678A6C2BAFAF8245C864A",
+        "fig_feedback_v4.tiff": "90CB23F55779A21DCFB818F8FC301F94F84B3387F7ECB9183ED3786B0906BF32",
+        "fig_feedback_v4.pdf-geometry.json": "EDF79F4D3D9855EC5FA6C3B197C47EDC579738ECD546D50D466B53AAFEAB10D0",
+        "fig_feedback_v4.glyph-audit.json": "553CB4FC353142594AF0908AA00D05CFFCDEDA42DCCA47E419BC6F1BEE074CA4",
+        "fig_feedback_v4.collision-audit.json": "A40A4922B0B9CC69A49C75408C0A6555FE02BDE6BBFEE0E142C18BDB83759CD3",
+        "fig_feedback_v4.collision-audit.pdf": "2C6C6C0E5B9C12772E4400D68AB2BDCF8D72E2AB7A957EEA3F82C15C9AD1466E"
+      },
+      "source_csv_sha256": {
+        "fig_feedback_v4_pairs.csv": "8D5A70ECB79E0AF6020AE933E63CB137EA1E6A899433DBFC64E2B0629BDBE4FA",
+        "fig_feedback_v4_projects.csv": "FDA8C8F0A732C99A008C6A3DF29A9BD1A7CE3F3C6C542A167CD61DBE23A4B205"
+      }
+    }
+  },
+  "visual_inspection": {
+    "status": "PASS",
+    "report": "visual_review_v4.json",
+    "sha256": "8E55BF2353020B5744AB63343A5175F1DD1844F77841121532AF1A4AAE629F60"
+  }
+}

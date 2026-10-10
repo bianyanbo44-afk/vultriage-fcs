@@ -1,0 +1,39 @@
+{
+  "actual_seeds": [
+    13,
+    37,
+    73
+  ],
+  "all_projects_retained": true,
+  "dataset": "megavul",
+  "decision_seal_sha256": "3E00A0D24207084786681C6192BDF6D10123343E04E59E210AEBAA14BBAE2642",
+  "domain_failure_cells": 0,
+  "domain_supported_projects": [
+    "gpac",
+    "jerryscript",
+    "libtiff",
+    "njs",
+    "systemd",
+    "wireshark"
+  ],
+  "domain_unsupported_projects": [],
+  "evaluation_manifest_sha256": "82D48F7EF2CD676B6C83BFDB611567833C85AC7523092FA3DCF754EAC4C728E8",
+  "final_training_failures": [],
+  "known_original_and_v3_outcomes": true,
+  "mirror_note": "Fixed third-party MegaVul mirror; full official byte equivalence unknown",
+  "n_vulnerable": 1020,
+  "no_fresh_unseen_outcome_claim": true,
+  "pointwise_intervals": "descriptive project bootstrap; no equivalence/population guarantee",
+  "projects": [
+    "gpac",
+    "jerryscript",
+    "libtiff",
+    "njs",
+    "systemd",
+    "wireshark"
+  ],
+  "schema_version": "trace-independent-model-v4.1-public-dataset-receipt-1",
+  "target_label_vault_sha256": "DDF1FDA76A47392AFFB9A8DF17FE6C97F686039474D7189963AF67E401346CB4",
+  "target_roster_byte_sha256": "408099EB83C7044C1EE9D0010AB7A9CF4B82B4CA94F7B3461ECE59CBC904D483",
+  "target_rows": 25722
+}
