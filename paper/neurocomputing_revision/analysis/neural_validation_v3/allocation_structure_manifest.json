@@ -1,0 +1,18 @@
+{
+  "created_at_utc": "2026-10-09T22:52:55.428093+00:00",
+  "target_labels_accessed": false,
+  "selector_or_hyperparameter_modified": false,
+  "source_labels_used": "calibration class labels only",
+  "scope": "Descriptive label-free interpretation at the already-frozen primary budgets/clip; no new subset or policy.",
+  "code_sha256": "0CBA75B44055EB882EA6664381D00EEB9211C3DDBF238A9854F619B9D0F8EE54",
+  "decision_seals": {
+    "diversevul": "5E50C0FE8F0E7ED40CD01B83F98BCD63C95F515B3B8B8EC3A3817B311F25ADDB",
+    "megavul": "06281C8EB92466314F9AEE1ADBEA507C2835D779A7A3706D7B6AB8AF28402EE1"
+  },
+  "reports_sha256": {
+    "allocation_structure_summary.csv": "A8EC0CE2B5B461D6B3C6DC88068A1F208BD36A4514F959DD48D9E9DFA930E943",
+    "project_allocation_structure.csv": "C94090F46776140E93D525A315E2A15922B52E1D6AC6E9009DEEF94E065470A5",
+    "project_seed_allocation_structure.csv": "8A274CC551FF1D1259E566AA831D39F3B82AD9C93DAE8B637D7DBFAC32128015"
+  },
+  "interpretation": "No automatic-safe release forces zero automatic misses for any target labels. Exact action equality forces equal automatic errors, automation, review and cost outcomes, but does not imply identical empty/doubleton sets or equal set miscoverage. Infinity fraction checks the stated positive test-point-mass condition, without target labels."
+}

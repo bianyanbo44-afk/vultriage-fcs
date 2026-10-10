@@ -1,0 +1,49 @@
+{
+  "access": "public",
+  "creators": [
+    {
+      "affiliation": "Computer Science and Technology Program, Weihai International College, Beijing Jiaotong University, China",
+      "name": "Bian, Yanbo",
+      "orcid": null
+    },
+    {
+      "affiliation": "School of Computer Science and Technology, Beijing Jiaotong University, China",
+      "name": "Wang, Zhihai",
+      "orcid": null
+    }
+  ],
+  "data_licence": null,
+  "description": "Source code, frozen execution snapshots, original and additional project-level aggregate evidence, actual-fit receipts and figure source data for the TRACE evaluation framework. Three full CodeBERT fits, a frozen-encoder reference and three hashing fits share PrimeVul source roles. Additional DiverseVul and MegaVul cohorts are reported separately. The artifact supports aggregate reconstruction without redistributing raw datasets, model weights, row-level predictions or label vaults. It does not include manuscript prose, author declarations or mock reviews.",
+  "identifier_type": "Versioned GitHub release URL; no DOI assigned",
+  "language": "eng",
+  "licence_note": "No new data or software licence is assigned by this update; third-party terms are unchanged.",
+  "persistent_identifier": "https://github.com/bianyanbo44-afk/vultriage-fcs/releases/tag/trace-validation-v3-2026-10-10",
+  "prepared_on": "2026-10-10",
+  "proposed_repository": "GitHub",
+  "public_record_url": "https://github.com/bianyanbo44-afk/vultriage-fcs/releases/tag/trace-validation-v3-2026-10-10",
+  "related_resources": [
+    {
+      "relation": "Original and additional reproducibility artifacts",
+      "url": "https://github.com/bianyanbo44-afk/vultriage-fcs"
+    },
+    {
+      "doi": "10.1145/3643991.3644886",
+      "relation": "MegaVul source publication; actual input is the separately recorded pinned mirror"
+    }
+  ],
+  "repository_url": "https://github.com/bianyanbo44-afk/vultriage-fcs",
+  "required_author_fields": [],
+  "resource_type": "Dataset with supporting software",
+  "software_licence": null,
+  "status": "VERSIONED_PUBLIC_RELEASE_METADATA",
+  "subjects": [
+    "selective prediction",
+    "vulnerability detection",
+    "conformal prediction",
+    "distribution shift",
+    "cost-sensitive evaluation"
+  ],
+  "third_party_terms": "Original benchmark and model terms remain with their owners. Their raw data and weights are excluded.",
+  "title": "TRACE reproducibility artifact for allocation effects in neural vulnerability triage under project shift",
+  "version": "trace-validation-v3-2026-10-10"
+}

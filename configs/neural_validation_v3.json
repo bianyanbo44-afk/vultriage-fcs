@@ -1,0 +1,228 @@
+{
+  "protocol_version": "trace-prospective-neural-validation-v3.1",
+  "status": "outcome-blind input-boundary correction after independent audit; not public preregistration",
+  "known_outcomes": "Original study outcomes and preliminary source-only training losses/AP are known. A hashing prediction receipt exists for the interrupted v3 attempt. No new target-label evaluation has been performed; that attempt is archived and excluded from v3.1.",
+  "amendment_reason": "Real commit ids with query suffixes and cross-project names were split across source roles. Known forks/components also escaped name-only exclusion. Correct the identities before target evaluation, preserving the original neural hyperparameters and all candidate projects.",
+  "previous_config_sha256": "F193B446B183E4AFF2A66CE81910E46C00DDB05AE876635DDB2501E10091D10E",
+  "repository_family_exclusions": {
+    "kvm": [
+      "android_kernel_xiaomi_msm8996",
+      "bpf",
+      "char-misc",
+      "drm",
+      "kernel",
+      "kvm",
+      "linux",
+      "linux-2.6",
+      "linux-fbdev",
+      "linux-fs",
+      "linux-stable",
+      "media-tree",
+      "media_tree",
+      "mjg59_linux",
+      "net",
+      "net-next",
+      "nf",
+      "sound",
+      "sparc",
+      "staging",
+      "tip",
+      "tty",
+      "v4l2loopback",
+      "wireless",
+      "wireless-drivers"
+    ],
+    "systemd": [
+      "systemd",
+      "systemd-stable",
+      "udev"
+    ],
+    "libraw": [
+      "libraw",
+      "libraw-demosaic-pack-gpl2"
+    ],
+    "server": [
+      "dbd-mysql",
+      "edgeless-mariadb",
+      "mariadb",
+      "mariadb-connector-c",
+      "mysql",
+      "mysql-server",
+      "mysql-wsrep",
+      "percona-xtrabackup",
+      "percona-xtradb-cluster",
+      "server"
+    ],
+    "core": [
+      "core",
+      "dovecot",
+      "pigeonhole"
+    ],
+    "frr": [
+      "frr",
+      "quagga",
+      "quagga-re"
+    ],
+    "neomutt": [
+      "mutt",
+      "neomutt"
+    ],
+    "sqlite": [
+      "sqlcipher",
+      "sqlite"
+    ],
+    "mod_h2": [
+      "httpd",
+      "mod_h2"
+    ],
+    "lxc": [
+      "lxc",
+      "lxcfs"
+    ],
+    "electron": [
+      "chrome",
+      "chromium",
+      "electron",
+      "node",
+      "nodejs"
+    ],
+    "network-manager-applet": [
+      "network-manager-applet",
+      "networkmanager",
+      "networkmanager-vpnc"
+    ],
+    "evolution-ews": [
+      "evolution",
+      "evolution-data-server",
+      "evolution-ews"
+    ],
+    "node": [
+      "chrome",
+      "chromium",
+      "electron",
+      "node",
+      "nodejs"
+    ]
+  },
+  "opaque_source_project_exclusions": [
+    "savannah",
+    "altlinux",
+    "android",
+    "infradead",
+    "pengutronix",
+    "netfilter"
+  ],
+  "family_exclusion_scope": "Confirmed branches/forks plus explicit conservative shared-product/component exclusions. This is a recorded exclusion list, not proof of the absence of every unrecorded code relationship or pretraining overlap.",
+  "cohort": {
+    "dataset": "official DiverseVul 20230702 release",
+    "candidate_rule": "all eligible project groups in the frozen extension-v2 manifest that were not among the original 24 evaluated DiverseVul groups",
+    "expected_candidates": 62,
+    "source_exclusion": "exclude the complete candidate-project union, repository_family_exclusions and opaque_source_project_exclusions from every PrimeVul role; frozen v1/v2 aliases use case-insensitive matching",
+    "deduplication": "canonical exact keys against all PrimeVul rows; conflicting-label keys quarantined; candidate-generating MinHash/LSH with exact lexical-token-set Jaccard >=0.90 exclusion against all PrimeVul rows",
+    "commit_exclusion": "exclude a target full SHA if it matches any canonical complete or abbreviated historical PrimeVul commit identity, including unused source partitions; strip URL query/fragment and conservatively block every short-prefix match",
+    "post_screen_eligibility": {
+      "minimum_total": 200,
+      "minimum_vulnerable": 20,
+      "minimum_safe": 20
+    },
+    "selection_uses_model_outputs": false,
+    "not_temporal_validation": true
+  },
+  "source": {
+    "training": "PrimeVul official train only, after global exact deduplication, conflict quarantine and candidate-project exclusion",
+    "held_out": "PrimeVul official valid only; exclude any globally shared training SHA and exact/lexical-token duplicate keys; split complete canonical 40-hex SHA identities into model-validation and calibration by a salted 50/50 hash regardless of raw project name",
+    "commit_normalization": "URL-decode, strip query and fragment, extract the sole 40-hex SHA; source rows without a complete unambiguous SHA are excluded and counted",
+    "official_test": "excluded from all source training, model selection and calibration; used only in the conservative cross-dataset clone audit",
+    "commit_split_salt": "trace-neural-v3-source-valid",
+    "negative_sampling": "retain every eligible training positive and the first min(number of negatives,4*number of positives) negatives ranked by a fixed salted exact-key hash; the same training rows are used by all seeds",
+    "sampling_salt": "trace-neural-v3-training-negatives",
+    "loss": "unweighted cross entropy on the sampled training cohort; no additional class reweighting",
+    "model_validation_and_calibration": "natural held-out prevalence, with no class sampling"
+  },
+  "fine_tuned_codebert": {
+    "model_id": "microsoft/codebert-base",
+    "revision": "3b0952feddeffad0063f274080e3c23d75e7eb39",
+    "pooling": "masked mean of final hidden states excluding special tokens",
+    "head": "dropout 0.1 plus a randomly initialized two-class linear head",
+    "update": "all encoder and classifier parameters; no frozen encoder layers",
+    "maximum_tokens": 512,
+    "micro_batch_size": 4,
+    "effective_batch_size": 32,
+    "epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip_norm": 1.0,
+    "precision": "bfloat16 autocast with float32 parameters and optimizer state",
+    "gradient_checkpointing": true,
+    "batching": "seeded training permutation; length-sort within 128-row windows, then shuffle complete micro-batches",
+    "seeds": [
+      13,
+      37,
+      73
+    ],
+    "checkpoint_selection": "highest natural source model-validation average precision across the three fixed epochs, with earlier-epoch tie breaking; calibration and target labels never used"
+  },
+  "reference_detectors": {
+    "frozen_codebert": "same base revision, pooling, maximum tokens and sampled source training rows; source-train StandardScaler and liblinear logistic head with class_weight=None, C in [0.01,0.1,1,10], selected only on source model-validation average precision; one actual deterministic head, not independent seed repeats",
+    "hashing_sgd": "the frozen case-sensitive 2^18-dimensional word-unigram/bigram representation, same sampled source rows and no extra class weighting; alpha in [1e-6,1e-5,1e-4], chosen on source model-validation average precision; three actual SGD seeds; no validation refit"
+  },
+  "weighting": {
+    "feature": "detector-specific representation; no target labels",
+    "domain_fit": "five folds grouped by canonical global complete commit SHA regardless of project name, balanced source/target training complements, logistic SGD alpha=1e-4 with 5 epochs",
+    "clips": [
+      10,
+      20,
+      50
+    ],
+    "primary_clip": 20
+  },
+  "risk_budgets": {
+    "vulnerable": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "safe": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "primary": [
+      0.1,
+      0.2
+    ]
+  },
+  "selectors": [
+    "unweighted class-conditional sets",
+    "estimated weighted sets",
+    "global argmax confidence at the weighted automation count",
+    "disjoint probability tails at the two weighted automatic-label counts",
+    "source-only isotonic expected-cost selection at the weighted automation count, miss costs 10 and 50",
+    "source-only isotonic free-volume expected-cost policy, miss costs 10 and 50",
+    "forced argmax",
+    "all review"
+  ],
+  "cost": {
+    "miss": [
+      10,
+      50
+    ],
+    "false_alert": 1,
+    "review": 0.1,
+    "review_accuracy_assumption": "correct review; illustrative units, not measured analyst time or monetary cost"
+  },
+  "statistics": {
+    "unit": "target project, after averaging actual training seeds within project; functions and seeds are not independent sample units",
+    "primary_endpoint": "paired median automatic-miss difference, weighted minus allocation-matched tails, at alpha_v=0.10 and alpha_s=0.20",
+    "secondary": "global-confidence miss/false-alert trade-off; fixed-volume and free-volume costs; class-specific miscoverage; automated coverage; detector discrimination and probability calibration; clips 10/50",
+    "interval": "deterministic 10000 project-bootstrap draws, percentile 95% interval; descriptive, pointwise, no population-representative or equivalence claim",
+    "bootstrap_seed": 20261010,
+    "all_projects_seeds_budgets_retained": true,
+    "cluster_reporting": "report distinct positive commits and within-project commit concentration"
+  },
+  "stopping": "Complete the frozen candidates, three genuine encoder fits and fixed analysis once. Retain unfavorable results and training failures. Do not tune from target outcomes or add favorable subsets.",
+  "sealing": "Label-free target tokens and metadata; separate target-label vault; seal detector predictions and all selector decisions before evaluation joins the target labels.",
+  "additional_dataset": "A second-source dataset may be added only under a separate dated prospective amendment before its target outcomes. Do not reclassify a derivative benchmark as an independent vulnerability source.",
+  "family_exclusion_proposal_sha256": "85AB18CE9A10CE3DBE6C27E86A6B16F7DB7D6965C6D272A10C594AA396401223"
+}

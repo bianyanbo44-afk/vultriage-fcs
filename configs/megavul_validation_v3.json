@@ -1,0 +1,57 @@
+{
+  "protocol_version": "trace-second-source-validation-v3.1",
+  "status": "outcome-blind qualified repository-identity correction before target-label evaluation",
+  "mirror": "tronganhwork/CoVulPecker-Megavul",
+  "mirror_revision": "b76e218ee868b1b5efcd1074c7f2fc71f11a2eb5",
+  "sha256": "eabe8d3325be358d7a93327e3ae4f001725517a0067c4d80198f89904177419f",
+  "bytes": 2668796982,
+  "provenance": "third-party mirror with complete official schema; sample correspondence to upstream commits verified; full-byte correspondence to unavailable official OneDrive not established",
+  "row_mapping": {
+    "is_vul_true": "func_before, label 1",
+    "is_vul_false": "func, label 0"
+  },
+  "projects": "all members of the already-frozen 62-project candidate union, with frozen case-insensitive aliases; slash-qualified repo names are matched by repository basename; no fuzzy matching",
+  "deduplication": "quarantine within-MegaVul conflicting exact-code keys; exclude all exact/identical lexical-token keys and all commit hashes already present in any PrimeVul or DiverseVul raw row; exclude MinHash/LSH candidates verified at exact lexical-token-set Jaccard >=0.90 to any PrimeVul row",
+  "eligibility": {
+    "minimum_total": 200,
+    "minimum_vulnerable": 20,
+    "minimum_safe": 20
+  },
+  "selection_uses_model_outputs": false,
+  "source_model": "reuse the frozen three neural-v3 fits and reference detectors; no additional fitting, model selection or target calibration",
+  "analysis": "same sealed nine-budget, clip and cost comparisons as neural_validation_v3; each dataset reported separately with project analysis units; no pooled doubling of projects",
+  "dates": "report true commit-author dates descriptively; do not claim a new chronological holdout without dated source provenance",
+  "stopping": "all qualifying projects after the fixed screens; if few or none qualify, report the cohort limitation rather than relax eligibility or duplicate screens from observed outcomes",
+  "previous_config_sha256": "5DBC375ED92DFAD9C2DCBF4385C21B6E673552DF941B9056035A768DF106AFFE",
+  "amendment_reason": "The basename core collides between Dovecot, LibreOffice and ONLYOFFICE; known complete repository identities and verified mirrors are matched before eligibility. The prior mixed-basename preparation/predictions are archived, not evaluated.",
+  "repository_identity_allowlist": {
+    "core": [
+      "dovecot/core"
+    ],
+    "server": [
+      "mariadb/server"
+    ],
+    "gpac": [
+      "gpac/gpac"
+    ],
+    "jerryscript": [
+      "jerryscript-project/jerryscript",
+      "zherczeg/jerryscript"
+    ],
+    "libtiff": [
+      "libtiff/libtiff",
+      "vadz/libtiff",
+      "rzkn/libtiff"
+    ],
+    "njs": [
+      "nginx/njs"
+    ],
+    "systemd": [
+      "systemd/systemd"
+    ],
+    "wireshark": [
+      "wireshark/wireshark"
+    ]
+  },
+  "repository_identity_rule": "For allowlisted project groups, normalize complete owner/repository identity from repo_name and git_url; both must belong to that explicit same-family allowlist. Preserve every D62 candidate in the eligibility audit. Never combine unrelated products by basename."
+}

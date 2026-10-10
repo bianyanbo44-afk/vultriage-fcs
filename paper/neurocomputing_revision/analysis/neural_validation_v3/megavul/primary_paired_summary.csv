@@ -1,0 +1,4 @@
+outcome,baseline,candidate,projects,median_difference,ci_lower,ci_upper,reductions,increases,ties,defined_projects,status,bootstrap_draws,bootstrap_seed,eligible_projects,all_projects,domain_supported_projects,review_fallback_projects,dataset,detector,alpha_v,alpha_s,clip,cohort,primary
+auto_fn_rate,class_matched_weighted,estimated_weight_no_gate,6,0.0,-0.021512530494566424,0.0006954102920723182,2,1,3,6,ok,10000,20261010,6,6,6,0,megavul,finetuned_codebert,0.1,0.2,20.0,all_projects_deployment,True
+auto_fn_rate,class_matched_weighted,estimated_weight_no_gate,6,0.0,-0.018518518518518517,0.0029940119760479052,1,1,4,6,ok,10000,20261010,6,6,6,0,megavul,frozen_codebert,0.1,0.2,20.0,all_projects_deployment,True
+auto_fn_rate,class_matched_weighted,estimated_weight_no_gate,6,0.0,-0.057716049382716045,0.012600667927011068,2,2,2,6,ok,10000,20261010,6,6,6,0,megavul,hashing_sgd,0.1,0.2,20.0,all_projects_deployment,True

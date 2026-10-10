@@ -1,0 +1,4 @@
+-r requirements-audit.txt
+# Select the platform-appropriate CUDA wheel; fine-tuning requires CUDA bf16.
+torch==2.6.0
+transformers==4.51.3

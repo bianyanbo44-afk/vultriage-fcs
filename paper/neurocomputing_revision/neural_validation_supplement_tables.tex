@@ -1,0 +1,103 @@
+\begin{longtable}{@{}llrrrr@{}}
+\caption{Complete additional target cohort. Positive commits and their largest share describe benchmark label concentration rather than independent vulnerability events. Groups from different collections are not pooled.}\label{si:newcounts}\\
+\toprule Collection & Group & Functions & Positive & Pos. commits & Largest share\\\midrule\endfirsthead
+\toprule Collection & Group & Functions & Positive & Pos. commits & Largest share\\\midrule\endhead
+\bottomrule\endfoot
+DiverseVul & bash & 901 & 31 & 2 & 0.903\\
+DiverseVul & bdwgc & 389 & 35 & 1 & 1.000\\
+DiverseVul & bluez & 759 & 30 & 6 & 0.433\\
+DiverseVul & ceph & 2,019 & 52 & 8 & 0.481\\
+DiverseVul & chrony & 399 & 25 & 3 & 0.840\\
+DiverseVul & curl & 651 & 52 & 12 & 0.346\\
+DiverseVul & edk2 & 266 & 33 & 9 & 0.212\\
+DiverseVul & electron & 663 & 54 & 5 & 0.704\\
+DiverseVul & evolution-ews & 722 & 32 & 1 & 1.000\\
+DiverseVul & firejail & 328 & 49 & 5 & 0.735\\
+DiverseVul & gdk-pixbuf & 212 & 44 & 7 & 0.386\\
+DiverseVul & gdm & 372 & 30 & 4 & 0.500\\
+DiverseVul & git & 634 & 35 & 10 & 0.400\\
+DiverseVul & gnupg & 1,066 & 59 & 6 & 0.831\\
+DiverseVul & gpac & 1,169 & 42 & 12 & 0.238\\
+DiverseVul & irssi & 521 & 43 & 7 & 0.302\\
+DiverseVul & jerryscript & 354 & 30 & 1 & 1.000\\
+DiverseVul & keepalived & 547 & 35 & 4 & 0.400\\
+DiverseVul & kvm & 421 & 21 & 7 & 0.333\\
+DiverseVul & libreport & 291 & 44 & 4 & 0.659\\
+DiverseVul & libvncserver & 218 & 27 & 9 & 0.333\\
+DiverseVul & lxc & 292 & 20 & 4 & 0.700\\
+DiverseVul & mod\_h2 & 389 & 49 & 5 & 0.449\\
+DiverseVul & nautilus & 1,235 & 29 & 7 & 0.276\\
+DiverseVul & network-manager-applet & 354 & 22 & 3 & 0.591\\
+DiverseVul & node & 969 & 39 & 12 & 0.154\\
+DiverseVul & ntp & 381 & 34 & 7 & 0.294\\
+DiverseVul & pjproject & 490 & 30 & 6 & 0.267\\
+DiverseVul & psutil & 201 & 40 & 1 & 1.000\\
+DiverseVul & redis & 999 & 59 & 13 & 0.322\\
+DiverseVul & ruby & 401 & 32 & 10 & 0.156\\
+DiverseVul & server & 4,062 & 64 & 12 & 0.203\\
+DiverseVul & squid & 454 & 22 & 8 & 0.227\\
+DiverseVul & stunnel & 289 & 30 & 1 & 1.000\\
+DiverseVul & systemd & 872 & 44 & 14 & 0.136\\
+DiverseVul & unbound & 541 & 59 & 2 & 0.644\\
+DiverseVul & util-linux & 340 & 33 & 8 & 0.212\\
+DiverseVul & wireshark & 908 & 44 & 12 & 0.250\\
+MegaVul & gpac & 4,045 & 167 & 88 & 0.132\\
+MegaVul & jerryscript & 724 & 48 & 38 & 0.062\\
+MegaVul & libtiff & 517 & 39 & 21 & 0.179\\
+MegaVul & njs & 641 & 27 & 16 & 0.222\\
+MegaVul & systemd & 616 & 20 & 10 & 0.450\\
+MegaVul & wireshark & 19,179 & 719 & 316 & 0.046\\
+\end{longtable}
+
+\begin{table}[htbp]\centering\small
+\caption{Actual source-selected fits. Three fine-tuned encoders and three SGD detectors are independent fits; the frozen reference has one head. All are reused across target collections. Epoch is shown for fine-tuning; the other rows give selected $C$ or SGD $\alpha$.}
+\label{si:newfits}\begin{tabular}{@{}llrrr@{}}\toprule Detector & Seed & Epoch/parameter & Source AP & Changed tensors\\\midrule
+Fine-tuned & 13 & 2 & 0.1800 & 197\\
+Fine-tuned & 37 & 3 & 0.1780 & 197\\
+Fine-tuned & 73 & 2 & 0.1724 & 197\\
+Frozen & 13 & $C=0.01$ & 0.1232 & 0\\
+Hashing & 13 & $\alpha=10^{-6}$ & 0.2036 & 0\\
+Hashing & 37 & $\alpha=10^{-5}$ & 0.1963 & 0\\
+Hashing & 73 & $\alpha=10^{-5}$ & 0.1947 & 0\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\footnotesize
+\caption{Domain-supported secondary allocation comparisons. The roster was fixed by label-free availability for every actual fit. Differences are weighted minus allocation-matched tails. R/I/T counts project reductions, increases and ties separately for misses and false alerts. Pointwise intervals are descriptive and do not establish equivalence.}
+\label{si:newsupported}\begin{tabular}{@{}llcrcr c@{}}\toprule Collection & Detector & $n$ & $\Delta F_v$ [95\% interval] & R/I/T & $\Delta F_s$ [95\% interval] & R/I/T\\\midrule
+DiverseVul & Fine-tuned & 32 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 7/9/16 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 0/2/30\\[2pt]
+DiverseVul & Frozen & 32 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 5/6/21 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 1/1/30\\[2pt]
+DiverseVul & Hashing & 32 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0196]$\end{tabular} & 10/14/8 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 7/4/21\\[2pt]
+MegaVul & Fine-tuned & 6 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[-0.0215, 0.0007]$\end{tabular} & 2/1/3 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 0/1/5\\[2pt]
+MegaVul & Frozen & 6 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[-0.0185, 0.0030]$\end{tabular} & 1/1/4 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[0.0000, 0.0000]$\end{tabular} & 0/0/6\\[2pt]
+MegaVul & Hashing & 6 & \begin{tabular}[c]{@{}r@{}}$0.0000$\\\scriptsize $[-0.0577, 0.0126]$\end{tabular} & 2/2/2 & \begin{tabular}[c]{@{}r@{}}$0.0002$\\\scriptsize $[-0.0002, 0.0009]$\end{tabular} & 2/3/1\\[2pt]
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[htbp]\centering\small
+\caption{Label-free action structure at the primary budgets and clip. Counts require the condition in every actual fit. Exact equality refers to the three action codes and does not imply identical empty/doubleton sets or equal set miscoverage. Supported/all distinguishes fitted-domain cells from review fallback. The disagreement column is the median seed-averaged fraction of different weighted and tail actions.}
+\label{si:newstructure}\begin{tabular}{@{}llcrcr@{}}\toprule Collection & Detector & Supported/all & Full review & Equal supported/all & Disagreement\\\midrule
+DiverseVul & Fine-tuned & 32/38 & 6 & 1/7 & 0.0160\\
+DiverseVul & Frozen & 32/38 & 6 & 9/15 & 0.0055\\
+DiverseVul & Hashing & 32/38 & 6 & 0/6 & 0.1053\\
+MegaVul & Fine-tuned & 6/6 & 0 & 0/0 & 0.0234\\
+MegaVul & Frozen & 6/6 & 0 & 0/0 & 0.0102\\
+MegaVul & Hashing & 6/6 & 0 & 0/0 & 0.1184\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{longtable}{@{}llrrrrrr@{}}
+\caption{Additional costs with source-selected free automation volume. All projects enter. Marginal median costs and automation fractions are listed alongside the paired weighted-minus-free-volume cost difference; a difference of marginal medians is not the paired estimate. Cost units assume correct review, false-alert cost 1 and review cost 0.1.}\label{si:newcosts}\\
+\toprule Collection & Detector & $c_v$ & $L_W$ & $L_F$ & $A_W$ & $A_F$ & $\Delta L$\\\midrule\endfirsthead
+\toprule Collection & Detector & $c_v$ & $L_W$ & $L_F$ & $A_W$ & $A_F$ & $\Delta L$\\\midrule\endhead
+\bottomrule\endfoot
+DiverseVul & Fine-tuned & 10 & 0.2909 & 0.1275 & 0.5579 & 0.3478 & 0.1613\\
+DiverseVul & Fine-tuned & 50 & 0.6078 & 0.1937 & 0.5579 & 0.1463 & 0.4440\\
+DiverseVul & Frozen & 10 & 0.3013 & 0.1194 & 0.6745 & 0.2834 & 0.1888\\
+DiverseVul & Frozen & 50 & 0.6940 & 0.0993 & 0.6745 & 0.0080 & 0.5952\\
+DiverseVul & Hashing & 10 & 0.2919 & 0.1679 & 0.3682 & 0.3232 & 0.1314\\
+DiverseVul & Hashing & 50 & 0.4299 & 0.1350 & 0.3682 & 0.0543 & 0.3116\\
+MegaVul & Fine-tuned & 10 & 0.2433 & 0.0853 & 0.4647 & 0.3454 & 0.1583\\
+MegaVul & Fine-tuned & 50 & 0.3780 & 0.1003 & 0.4647 & 0.1534 & 0.2712\\
+MegaVul & Frozen & 10 & 0.2226 & 0.0902 & 0.4909 & 0.2825 & 0.1421\\
+MegaVul & Frozen & 50 & 0.3130 & 0.0994 & 0.4909 & 0.0057 & 0.2136\\
+MegaVul & Hashing & 10 & 0.2047 & 0.0953 & 0.2452 & 0.3869 & 0.1128\\
+MegaVul & Hashing & 50 & 0.2301 & 0.1133 & 0.2452 & 0.0621 & 0.1089\\
+\end{longtable}

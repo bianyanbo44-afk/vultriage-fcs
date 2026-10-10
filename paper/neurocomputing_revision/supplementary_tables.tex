@@ -1,0 +1,87 @@
+\begin{longtable}{@{}lrrrr@{}}
+\caption{Complete eligible target cohort. Counts precede seed averaging and are identical across detector tracks and seed addresses. The fixed split is historical registry metadata.}\label{si:cohort}\\
+\toprule Project & Functions & Vulnerable & Safe & Partition\\\midrule
+\endfirsthead
+\caption[]{Complete eligible target cohort (continued).}\\
+\toprule Project & Functions & Vulnerable & Safe & Partition\\\midrule
+\endhead
+FreeRDP & 980 & 141 & 839 & Reg.\\
+envoy & 5252 & 254 & 4998 & Conf.\\
+ffmpeg & 983 & 115 & 868 & Reg.\\
+ghostpdl & 1132 & 109 & 1023 & Reg.\\
+imagemagick & 783 & 300 & 483 & Conf.\\
+jasper & 608 & 203 & 405 & Conf.\\
+krb5 & 491 & 118 & 373 & Reg.\\
+librsvg & 670 & 95 & 575 & Reg.\\
+libtpms & 490 & 109 & 381 & Conf.\\
+libxml2 & 2060 & 136 & 1924 & Reg.\\
+linux & 32930 & 3032 & 29898 & Reg.\\
+mongo & 2627 & 112 & 2515 & Conf.\\
+mysql-server & 3838 & 142 & 3696 & Reg.\\
+net & 1810 & 116 & 1694 & Conf.\\
+openssl & 4352 & 565 & 3787 & Reg.\\
+php & 3592 & 353 & 3239 & Conf.\\
+postgres & 2605 & 154 & 2451 & Reg.\\
+qemu & 2634 & 338 & 2296 & Conf.\\
+qpdf & 1786 & 272 & 1514 & Conf.\\
+radare2 & 1610 & 168 & 1442 & Conf.\\
+samba & 1961 & 117 & 1844 & Conf.\\
+tcpdump & 428 & 209 & 219 & Conf.\\
+tensorflow & 2677 & 438 & 2239 & Reg.\\
+vim & 3056 & 116 & 2940 & Reg.\\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}llrrrrr@{}}
+\caption{Complete policy summaries. Entries are separate project medians, not a pooled confusion matrix. $n_e$ counts projects with defined selective error. Every coverage and class-error entry retains all 24 projects.}\label{si:allactions}\\
+\toprule Track & Policy & Coverage & $F_v$ & $F_s$ & Sel. error & $n_e$\\\midrule
+\endfirsthead
+\caption[]{Complete policy summaries (continued).}\\
+\toprule Track & Policy & Coverage & $F_v$ & $F_s$ & Sel. error & $n_e$\\\midrule
+\endhead
+Hashing & Unweighted sets & 0.697 & 0.213 & 0.188 & 0.307 & 24\\
+  & Weighted sets & 0.524 & 0.110 & 0.217 & 0.379 & 24\\
+  & Weighted + frozen gate & 0.278 & 0.003 & 0.134 & 0.374 & 13\\
+  & MSP, weighted workload & 0.524 & 0.181 & 0.069 & 0.172 & 24\\
+  & MSP, gate workload & 0.278 & 0.094 & 0.011 & 0.171 & 13\\
+  & MSP, unweighted workload & 0.697 & 0.293 & 0.105 & 0.203 & 24\\
+  & Tails, weighted allocation & 0.524 & 0.107 & 0.217 & 0.378 & 24\\
+  & Tails, gate allocation & 0.278 & 0.005 & 0.134 & 0.367 & 13\\
+  & Tails, unweighted allocation & 0.697 & 0.213 & 0.188 & 0.307 & 24\\
+  & Source cost 10, weighted workload & 0.524 & 0.337 & 0.000 & 0.063 & 24\\
+  & Source cost 50, weighted workload & 0.524 & 0.247 & 0.019 & 0.102 & 24\\
+  & Source cost 10, gate workload & 0.278 & 0.153 & 0.000 & 0.054 & 13\\
+  & Source cost 50, gate workload & 0.278 & 0.130 & 0.000 & 0.088 & 13\\
+  & Forced argmax & 1.000 & 0.515 & 0.234 & 0.276 & 24\\
+  & All review & 0.000 & 0.000 & 0.000 & -- & 0\\
+\midrule
+CodeBERT & Unweighted sets & 0.768 & 0.216 & 0.222 & 0.315 & 24\\
+  & Weighted sets & 0.749 & 0.224 & 0.189 & 0.280 & 24\\
+  & Weighted + frozen gate & 0.725 & 0.221 & 0.178 & 0.280 & 22\\
+  & MSP, weighted workload & 0.749 & 0.248 & 0.192 & 0.271 & 24\\
+  & MSP, gate workload & 0.725 & 0.220 & 0.184 & 0.271 & 22\\
+  & MSP, unweighted workload & 0.768 & 0.253 & 0.185 & 0.280 & 24\\
+  & Tails, weighted allocation & 0.749 & 0.223 & 0.189 & 0.280 & 24\\
+  & Tails, gate allocation & 0.725 & 0.221 & 0.178 & 0.280 & 22\\
+  & Tails, unweighted allocation & 0.768 & 0.216 & 0.222 & 0.315 & 24\\
+  & Source cost 10, weighted workload & 0.749 & 0.510 & 0.000 & 0.083 & 24\\
+  & Source cost 50, weighted workload & 0.749 & 0.270 & 0.188 & 0.255 & 24\\
+  & Source cost 10, gate workload & 0.725 & 0.505 & 0.000 & 0.082 & 22\\
+  & Source cost 50, gate workload & 0.725 & 0.253 & 0.174 & 0.248 & 22\\
+  & Forced argmax & 1.000 & 0.368 & 0.323 & 0.329 & 24\\
+  & All review & 0.000 & 0.000 & 0.000 & -- & 0\\
+\bottomrule
+\end{longtable}
+
+\begin{table}[ht]
+\centering\small
+\caption{Raw weighted policy minus its allocation-matched tails. Counts are project directions for lower class-error rates, after seed averaging. Zero medians or zero percentile intervals do not imply identical individual decisions or zero future risk.}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule Track & Endpoint & Median & Lower/upper 95\% & Lower & Higher/tie\\\midrule
+Hashing & $F_v$ & 0.0033 & $[-0.0074,0.0089]$ & 11 & 13/0\\
+Hashing & $F_s$ & 0.0000 & $[0.0000,0.0000]$ & 2 & 5/17\\
+CodeBERT & $F_v$ & 0.0000 & $[0.0000,0.0000]$ & 2 & 1/21\\
+CodeBERT & $F_s$ & 0.0000 & $[0.0000,0.0000]$ & 1 & 0/23\\
+\bottomrule
+\end{tabular}
+\end{table}

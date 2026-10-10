@@ -1,0 +1,41 @@
+{
+  "scope": "Aggregate seed/project metrics, source-fit summaries, and hash receipts; no per-function data",
+  "upstream_manifests_unchanged": true,
+  "excluded_nonaggregate_outputs": {
+    "revision": [
+      "running_examples.json"
+    ],
+    "controls": [
+      "decisions/**"
+    ]
+  },
+  "limitations": [
+    "The aggregate package cannot reconstruct selectors without separately available frozen predictions, source labels and target evaluation labels.",
+    "Hash receipts verify byte identity where the original inputs are present; they do not establish independent confirmation or absence of all historical leakage."
+  ],
+  "files_sha256": {
+    "action_metrics_project.csv": "EBDE1975BEDB82CD492B8FA16E852D7AC7EE5BF7B8BC8DF27B6501F8BF571AE7",
+    "action_metrics_seed.csv": "D439A6D9C9C4447B8C8958616F214CCAB964465DC6433C77824714C7ED715E4F",
+    "action_paired_comparisons.csv": "3797E643D7020FEB771A1F9EE689FD5624DA0A32600814390F3A8A7E192A83B5",
+    "action_summary.csv": "44F9D0E35B6E7119E90B52769CFE045FE7E28C5339602550F285F07761F84F4E",
+    "cost_paired_sensitivity.csv": "285BB7EB5A98DD23E9C88D276538DC939FB7A0AC10106BCDF36F7FA9C2EC212E",
+    "gate_audit.csv": "F2817E9360084450F346CFDC34BDC37B746DC50234F42085E05C12668C6002D9",
+    "gate_project_scores.csv": "E85EEFF7DD1AFF527223BE6445C41922180AB865629AE8DCBD02561E1D57217A",
+    "nominal_cost_summary.csv": "08C3C1209E7B4F0A98C307C3FE6598A374F95CE500022137033C848B67F5ADF6",
+    "analysis_manifest.json": "7EE5B67D1F6BB7F31053FB088062570E429A4845206B4A5FB5C2F360A47DC42A",
+    "controls/action_metrics_project.csv": "89E230AF0A9101C87529C6DBA089E29D3A769FE2106FD4E940E8225EC513D001",
+    "controls/action_metrics_seed.csv": "FAE81145527F60C5B8D45950AB17B9B483D22C4D92A7A052493045BC50A9DC13",
+    "controls/action_summary.csv": "7DED024F9E7D2FAEE3AF39C2AA4C9ECB6E93461732EF35D86875238B99903B68",
+    "controls/cost_summary.csv": "AD256D1D73AFAB03BB0C1D9DE5C316BC35E73516647841FDE0B3620C919F6855",
+    "controls/matched_cost_comparisons.csv": "A6CEFF3F8A3D70CE60DDFE726EED9C0FCB3BDB69467414C2888DB48CB09955B5",
+    "controls/matched_paired_comparisons.csv": "A352AECD21C0F6EA6B1421A7A3419A46223598DF72D67A45F9CCE5FAFEEDE36E",
+    "controls/selection_invariants_seed.csv": "D3D4B7AE9D856B27ACA2915E9CBC0C016581F845C203F201A73636492D18D36E",
+    "controls/source_calibration_fits.csv": "D6430BD1EF58D76727E1133C6A965B2A1915D50D6F2131D1068F42100BEE64AB",
+    "controls/analysis_manifest.json": "00A78D2BE1DA7FE6624FD7DA72EE845CD9D3A539C19062F343D1668D8A5F6608"
+  },
+  "analysis_source_sha256": {
+    "src/analyze_neurocomputing_revision.py": "79BC311C06C8007A309E9F44D34F1E3677F7869712DCCDF518F75F250F01A9AC",
+    "src/analyze_neurocomputing_controls.py": "E3928130052D2106744D06AFB9B2E3A4B8391AA4620CE551D75012AD1A781548",
+    "src/vultriage/empirical_bootstrap.py": "45D3DEE9028E5C45A03DDDBE97C936BD2F534103F8F429574CDFAD18DB79677F"
+  }
+}

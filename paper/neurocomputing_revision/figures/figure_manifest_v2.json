@@ -1,0 +1,58 @@
+{
+  "cohort": "24 eligible project groups selected by the frozen vulnerable-count/total-count/name ranking; technical seed addresses averaged",
+  "controls_manifest_sha256": "00A78D2BE1DA7FE6624FD7DA72EE845CD9D3A539C19062F343D1668D8A5F6608",
+  "operational_manifest_sha256": "7EE5B67D1F6BB7F31053FB088062570E429A4845206B4A5FB5C2F360A47DC42A",
+  "figures": {
+    "fig_matched_tradeoff": {
+      "contract": {
+        "archetype": "quantitative grid",
+        "claim": "Coverage-only gain does not persist after action-allocation matching",
+        "panels": {
+          "a": "miss trade-off at matched workload",
+          "b": "false-alert cost of the trade-off",
+          "c": "allocation control for missed vulnerabilities",
+          "d": "allocation control for false alerts"
+        },
+        "projects_per_panel": 24
+      },
+      "sha256": {
+        "pdf": "52A2DE79B1BE3D76FD2E4ACA41E5FC18ABCE13645EB28C5E0D74B3E1987161A6",
+        "svg": "B1A30CA642041788FFB522FB810728061BD52240CAE5D30CA8AD926C066AB32A",
+        "png": "168578E07BCA541FB29842EB1D4B28EC8C265925CB14B5A786781C5C1DCAA8AE",
+        "tiff": "FC6CD274A149895A2FE161BF812AA5B8C550183F06112E170E9A4FB84949D01C"
+      }
+    },
+    "fig_cost_sensitivity": {
+      "contract": {
+        "archetype": "quantitative grid",
+        "claim": "Economic benefit changes with miss cost and detector representation",
+        "panels": {
+          "a": "hashing cost boundary",
+          "b": "neural transfer contrast"
+        },
+        "uncertainty": "95% exact empirical bootstrap percentile interval",
+        "projects_per_point": 24
+      },
+      "sha256": {
+        "pdf": "3A00BE4F99642EACC6AC95522D1AE2B36702D6868A9D8B891068DE9646D41B69",
+        "svg": "9A60526D1C9AFD0E1DA56289346CF4ADF94E1C3EA0DBB9B5E3A73F0FBE66F274",
+        "png": "4412917709E7B85D5E53842F076164081E4AB94CFA0CB35EB39719AEB1525408",
+        "tiff": "8FDB8C90E6D08B18B3C4D130DABBBCAF02EE3806BEA9B669379BCA12D23ED046"
+      }
+    }
+  },
+  "archived_workflow_receipt": {
+    "contract": {
+      "archetype": "schematic",
+      "claim": "Policy replay and prediction outcomes are different checks",
+      "data": "conceptual explanation only; no invented quantitative observations"
+    },
+    "sha256": {
+      "pdf": "AF8FAAEA33C278B342A2B966E7A35293D79E870021AD620159F6ACC7610C2435",
+      "svg": "2ECA4B20ABB208C4F85F3A6223E6F5EB3684CFA3984A486160A986F0C14FB6B8",
+      "png": "FD2A183D2199710B6578DEFCDFAD2FB427144DD3C4D2F966540A8A23D4866B0D",
+      "tiff": "1239E8BA1D1E248F65A1682FCB896651D042F58958DA57AAA62D053134562555"
+    }
+  },
+  "scope": "Current original-audit quantitative figures only. The archived workflow receipt is historical and does not bind the new workflow."
+}

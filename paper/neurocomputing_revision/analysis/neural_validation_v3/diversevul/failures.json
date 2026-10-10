@@ -1,0 +1,383 @@
+{
+  "domain_failures": [
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "finetuned_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "frozen_codebert",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 13,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 37,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "bdwgc",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "evolution-ews",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 2 has an empty training domain",
+      "project": "jerryscript",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 3 has an empty training domain",
+      "project": "psutil",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "stunnel",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    },
+    {
+      "action": "review fallback for weighted-dependent policies; no inferential exclusion",
+      "dataset": "diversevul",
+      "detector": "hashing_sgd",
+      "error": "Grouped fold 1 has an empty training domain",
+      "project": "unbound",
+      "seed": 73,
+      "stage": "grouped_domain_fit"
+    }
+  ],
+  "final_training_failures": []
+}

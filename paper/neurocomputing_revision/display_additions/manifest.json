@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "display_additions/action_fractions.csv": "584459EEA556E37B98217806DFB983D6D8977BAC87D3D5DF37B642909EF5B25A",
+    "display_additions/allocation_sensitivity.csv": "D11C08C0E718AE08D27C8E2FF49A1CD0065853738A98F0354F455B4F9BE8C74C",
+    "display_additions/cost_grid_summary.csv": "D1C89A30E3673C430358C921D79DAAC2795DBFEE495924EEDF4012FD3B8901C1",
+    "neural_allocation_display.tex": "C30EFC4CEA223C762021119EE9E79B3F6C060ACA455BE51CA762DE48FCAB9F20",
+    "neural_sensitivity_display.tex": "58FC353808A881FAF76537B3E1C6C990C3CCEA00CAB1FF0A4CF2A1C4BFF7AA68"
+  },
+  "original_release_or_generated_tables_modified": false,
+  "public_analysis_manifest_sha256": "453FDD46359A47123422CE67459AB0BEA36A8E55259ACB3F48ACEA3ECD1DF6E1",
+  "schema_version": "trace-neural-display-additions-1",
+  "scope": "Existing primary action counts and complete frozen sensitivity grids exposed for readability",
+  "source_script_sha256": "504CD36BFA638A96B78E0878D002313561790DE91FFECBADA706FE0073AC4417"
+}

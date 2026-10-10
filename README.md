@@ -1,5 +1,39 @@
 # VulTriage reproducibility artifact
 
+## TRACE additional neural validation
+
+**TRACE: Revealing allocation effects in neural vulnerability triage under project shift**
+
+TRACE means Triage Risk, Allocation and Cost Evaluation. The versioned
+artifact adds three full CodeBERT fits, three hashing fits and a frozen
+reference on common PrimeVul source roles, with 38 DiverseVul and six
+MegaVul groups reported separately. Four group names overlap; the seven
+source-fitted objects are reused, so the collections are not pooled.
+
+Use the [trace-validation-v3-2026-10-10](https://github.com/bianyanbo44-afk/vultriage-fcs/releases/tag/trace-validation-v3-2026-10-10) release for the manifest-bound ZIP,
+metadata and aggregate reproduction instructions. The complete original
+18-member and additional 48-member releases, selected-fit receipts and
+figure data are also available in this checkout under
+`paper/neurocomputing_revision/analysis/`, with current and frozen code.
+[TRACE_REPRODUCIBILITY.md](TRACE_REPRODUCIBILITY.md) lists the three
+aggregate commands, and [DATA_DICTIONARY.md](DATA_DICTIONARY.md) defines
+endpoints, aggregation, missing values and inference limits.
+
+At the primary setting, weighted neural policies reduce misses while
+increasing false alerts against equal-volume confidence selection.
+Matching both assigned-label counts does not establish a consistent
+miss advantage. Free review-volume cost comparisons are scoped to the
+stated prices, with stricter-budget exceptions retained. The local
+extension follows known original outcomes; it is not public preregistration.
+
+Exact-path .gitattributes rules preserve the released byte hashes across
+Windows and Unix checkouts.
+
+This update does not publish the current TRACE manuscript, cover letter,
+author Word files or mock reviews. Raw functions, weights, predictions,
+decisions and vaults remain excluded. No additional licence is assigned.
+
+
 This repository contains the reproducibility artifact for the manuscript
 **VulTriage: Proof-Carrying Detector--Shift Knowledge Contracts for Selective
 Vulnerability Triage**, prepared for *Knowledge-Based Systems* (Elsevier). The

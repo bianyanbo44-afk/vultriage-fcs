@@ -1,0 +1,295 @@
+{
+  "schema_version": "trace-neural-figures-v3",
+  "created_at_utc": "2026-10-09T23:34:23.970384+00:00",
+  "backend": "Python/matplotlib",
+  "source_script_sha256": "A157A3AC7BDE5B9F7E5B0980BF8E8CB77A31E413B4B685B821739309C0CA3488",
+  "plotting_source_sha256": "A157A3AC7BDE5B9F7E5B0980BF8E8CB77A31E413B4B685B821739309C0CA3488",
+  "public_analysis_manifest_sha256": "453FDD46359A47123422CE67459AB0BEA36A8E55259ACB3F48ACEA3ECD1DF6E1",
+  "workflow_only": false,
+  "aggregate_target_effects_opened": true,
+  "predictions_decisions_raw_datasets_or_vaults_opened": false,
+  "input_hashes": {
+    "source_preparation_manifest": "33ED47E961301418AA746B87536674EC0EEE0469A7EC2FE5AE464F45ED3E3AA0",
+    "megavul_preparation_manifest": "236E77F4C8E095970F040DAB2CA28F7885F324490AA2F8C400E1ABD9970B1A0B",
+    "public_analysis_manifest.json": "453FDD46359A47123422CE67459AB0BEA36A8E55259ACB3F48ACEA3ECD1DF6E1",
+    "diversevul/dataset_receipt.json": "97E797865C093E155F6B6EC374B4F1D8E6C1B51369D94DBDECA53C3F94A277B5",
+    "diversevul/domain_fit_availability.csv": "59386AE7492C35E165E9B1E8063C05A19CA2C0D45C111E993CFBD78640F72BD3",
+    "diversevul/domain_cell_diagnostics.json": "62B17864B94F8EBF57A3FA241263410BE073EE6E2EBD8BDA3F3CA10CCAA0F578",
+    "megavul/dataset_receipt.json": "97F833D3F4222619F73773EFA80AF69203622A653A8F33B35ABA13F0FAC12417",
+    "megavul/domain_fit_availability.csv": "F97C0AF2EDCF7C1F023738BB45CB1588C60B0CC7476B174456EDFB2A489B6F3C",
+    "megavul/domain_cell_diagnostics.json": "CD594F7AEFAD1E0CC58E0EC0F4C039B6008DB9BFBD38421E6B7E0644833EFF44",
+    "primary_budget_project_actions.csv": "EBA4C9BBF618C1CC6820DFFFA193448CFF02F9AFC840344711DE7CD674BCF674",
+    "primary_budget_paired_summaries.csv": "E02664A4FF6E7B0B2CE5C29C6438B3C24C957D5457F4A8E6FA64EDFF8D3BA191"
+  },
+  "figures": {
+    "fig_workflow": {
+      "contract": {
+        "archetype": "schematic-led composite",
+        "claim": "Frozen model-selection, source-calibration and target-label boundaries are separate.",
+        "uncertainty": "Not applicable: factual role/count schematic, no outcome estimates.",
+        "facts": {
+          "source_counts": {
+            "train": [
+              15620,
+              3124
+            ],
+            "model_validation": [
+              6296,
+              192
+            ],
+            "calibration": [
+              4400,
+              204
+            ]
+          },
+          "datasets": {
+            "diversevul": 38,
+            "megavul": 6
+          },
+          "actual_seeds": {
+            "finetuned_codebert": [
+              13,
+              37,
+              73
+            ],
+            "frozen_codebert": [
+              13
+            ],
+            "hashing_sgd": [
+              13,
+              37,
+              73
+            ]
+          },
+          "eligibility": {
+            "minimum_total": 200,
+            "minimum_vulnerable": 20,
+            "minimum_safe": 20
+          }
+        },
+        "target_effects_accessed": false
+      },
+      "width_mm": 160.0,
+      "height_mm": 125.0,
+      "alignment_verdict": "NOT APPLICABLE",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 40,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "requested": true,
+        "collision": "PASS (strict)",
+        "source_preflight": "PASS; explicit 160-mm width warning reviewed"
+      },
+      "visual_review": "PASS; complete exact final figure and each quantitative panel inspected against the fixed physical layout.",
+      "files_sha256": {
+        "fig_workflow.alignment-layout.json": "82B7AC0528951B820FD99BA35E0134A95EDB334A30715DFCA0368E13FC80C3D9",
+        "fig_workflow.alignment.json": "15F78948099588DF32D247E71F66414521F08A30C5637AD9ED0D70D44E50D55A",
+        "fig_workflow.geometry.json": "07BACC3D0F31025648F0652F09DF6401C6E73F53406AB196856270218B877A2E",
+        "fig_workflow.pdf": "E15B9826BB1F82873AADC25D1AA8AAABF67B0DAFCE9BEF236F0A2D38660CF628",
+        "fig_workflow.svg": "A1C4C40E5A62BEA1FE15AD5D45DB6436A41BC7FF3AA1C6718148F3414C81993A",
+        "fig_workflow.png": "648D01B8E332E496C554EDFEF8B7FB26B1B0E8313F32DFB8E4123E576D693F4C",
+        "fig_workflow.tiff": "067222F8D15608076283F507BC5991A081030F67FA0CBD2FC4424F7A183F7143",
+        "fig_workflow.pdf-geometry.json": "01F5B15563F03BD6067A85CFCE429AB9D1367B75D448F51C291DEABFD0E7CAAF",
+        "fig_workflow.glyph-audit.json": "C97AB18ACC1FA818ACF7D20B68619FCDAAB70FEB9DAA3292A648871E171C4654",
+        "fig_workflow.collision-audit.json": "5B5ED2509B424EA998356A6BB659B7707CE1C6F85CC16E03A2B51DB8B620A9E0",
+        "fig_workflow.alignment.svg": "82B2E0F2952836B9109E0A5B91B0B5CCAE27C2C918126D1F2AF0F757770428AA",
+        "fig_workflow.source-preflight.json": "23E95C82381A55289E930D62D9AE32B84E3B1317171A1EA319317CF8F60F25C9",
+        "fig_workflow.collision-audit.pdf": "98531F4F49375B2040057E7FE23E6664CD67FF3A73149CED7920E6D4B80B93AA",
+        "fig_workflow.node-geometry.json": "8AF9FD65FF66668C02FB76F97773EDBD13E8E203BDCC6B36281D083515A751E6",
+        "fig_workflow.visual-audit.json": "E707E1BE5AC1192EE466045C70D6D09EAAA90BE919AB9CFB74F8EAC55C859DBB"
+      },
+      "source_csv_sha256": {
+        "fig_workflow_nodes.csv": "B639D6311444F17EA38F300D3835C3331ACA9413C1AF0385BF1CBD4743F3214E",
+        "fig_workflow_source_counts.csv": "C2DEC02776D048A69991E26CE651A1BB912FDCC7A2A8DCE74D3791B7B2A8AD18"
+      },
+      "visual_review_record": {
+        "file": "fig_workflow.visual-audit.json",
+        "sha256": "E707E1BE5AC1192EE466045C70D6D09EAAA90BE919AB9CFB74F8EAC55C859DBB"
+      }
+    },
+    "fig_neural_allocation": {
+      "contract": {
+        "archetype": "quantitative grid",
+        "claim": "All-project paired evidence tests workload and allocation explanations of automatic misses.",
+        "panels": {
+          "a": "Fine-tuned D38 weighted vs MSP",
+          "b": "Same projects vs allocation tails",
+          "c": "Three detectors, all D38 projects",
+          "d": "Three detectors, all M6 projects"
+        },
+        "n": {
+          "diversevul": 38,
+          "megavul": 6
+        },
+        "interval": "Median paired project difference; 10,000 project-bootstrap percentile 95% CI",
+        "display_units": "Scatter percent; forest percentage points",
+        "review_fallback_project_counts": {
+          "diversevul": {
+            "finetuned_codebert": 6,
+            "frozen_codebert": 6,
+            "hashing_sgd": 6
+          },
+          "megavul": {
+            "finetuned_codebert": 0,
+            "frozen_codebert": 0,
+            "hashing_sgd": 0
+          }
+        },
+        "supported_project_counts": {
+          "diversevul": {
+            "finetuned_codebert": 32,
+            "frozen_codebert": 32,
+            "hashing_sgd": 32
+          },
+          "megavul": {
+            "finetuned_codebert": 6,
+            "frozen_codebert": 6,
+            "hashing_sgd": 6
+          }
+        },
+        "endpoint_scope": "Fv action-error comparisons do not assert equal empty/doubleton set composition or set miscoverage."
+      },
+      "width_mm": 160.0,
+      "height_mm": 151.0,
+      "alignment_verdict": "PASS",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 57,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "requested": true,
+        "collision": "PASS (strict)",
+        "source_preflight": "PASS; explicit 160-mm width warning reviewed"
+      },
+      "visual_review": "PASS; complete exact final figure and each quantitative panel inspected against the fixed physical layout.",
+      "files_sha256": {
+        "fig_neural_allocation.alignment-layout.json": "7D60D68A1AEE56755CA5F4A2E8422110A0DD016B1E0D2D4B8519D224358B1D67",
+        "fig_neural_allocation.alignment.json": "3773D3D8925A8506589E77C3536432289093A3250F1849233D2167740B00659B",
+        "fig_neural_allocation.geometry.json": "1C67F90B904E08EFAEC532ACBDE7587068DE78C036F07D07681B5B9A73D7C38F",
+        "fig_neural_allocation.pdf": "68912CE96EDB8A14A0707052F3A16785B46E089B79403BC4BD23312C556E51F6",
+        "fig_neural_allocation.svg": "E579272D7352F670AB7BE155DEC2592011CF176A1D89D8E4EA3B8A6C273440D3",
+        "fig_neural_allocation.png": "6E5B5486C6F9DAE39089A6345E7802B4BF1338F906FA9BE458D64E62DC122C4E",
+        "fig_neural_allocation.tiff": "9780DB27C1458894C1D9BF0F31299957147F9550FC77CEC175EDCC2D252C537F",
+        "fig_neural_allocation.pdf-geometry.json": "2D8B1DD8F29ACA93238B3D797ECED6D2356AD459BB877937DFE4A43842FCA4DE",
+        "fig_neural_allocation.glyph-audit.json": "56722DDE5152FC25C39ED04E2F9DC3634526C0E414DDA795A9B560E673F033CC",
+        "fig_neural_allocation.collision-audit.json": "D4CB3681E20028176CF635EE0F185DC6CEB2F2DDC909A4D6ACBCC107EFA996C2",
+        "fig_neural_allocation.alignment.svg": "21A0E82E61C49A5D6E5BD78F03CA1299F77ACB252743D22E36642CBFC3C49422",
+        "fig_neural_allocation.source-preflight.json": "23E95C82381A55289E930D62D9AE32B84E3B1317171A1EA319317CF8F60F25C9",
+        "fig_neural_allocation.collision-audit.pdf": "47CCDE4CF7E428FCFA0A18172B3A5C44004D7B616FD9BCD17D0F02ED0F7AB96A",
+        "fig_neural_allocation.visual-audit.json": "073505F892EB346221435C5CC6681DE925648C9E5BDE2200F354A90B7900DF73"
+      },
+      "source_csv_sha256": {
+        "fig_neural_allocation_forest.csv": "C2C3A63E8CEA4AFA7483F5F9EA881EEA106A4908CFD04BC084428645198434CE",
+        "fig_neural_allocation_scatter.csv": "243706002566D5842ABEBDC5A593B118B42310195F89BE20B860DE7224DB9457"
+      },
+      "visual_review_record": {
+        "file": "fig_neural_allocation.visual-audit.json",
+        "sha256": "073505F892EB346221435C5CC6681DE925648C9E5BDE2200F354A90B7900DF73"
+      }
+    },
+    "fig_neural_costs": {
+      "contract": {
+        "archetype": "quantitative grid",
+        "claim": "All-project paired costs compare volume constraints and complete review separately within each dataset.",
+        "panels": {
+          "a": "D38 cost boundary",
+          "b": "M6 cost boundary"
+        },
+        "n": {
+          "diversevul": 38,
+          "megavul": 6
+        },
+        "miss_costs": [
+          10,
+          50
+        ],
+        "false_alert_cost": 1,
+        "review_cost": 0.1,
+        "review_accuracy": "Correct review assumed",
+        "interval": "Median paired project difference; 10,000 project-bootstrap percentile 95% CI",
+        "all_review_benchmark_included": true,
+        "supported_project_counts": {
+          "diversevul": {
+            "finetuned_codebert": 32,
+            "frozen_codebert": 32,
+            "hashing_sgd": 32
+          },
+          "megavul": {
+            "finetuned_codebert": 6,
+            "frozen_codebert": 6,
+            "hashing_sgd": 6
+          }
+        }
+      },
+      "width_mm": 160.0,
+      "height_mm": 175.0,
+      "alignment_verdict": "PASS",
+      "pdf_glyphs": {
+        "verdict": "PASS",
+        "auditable": true,
+        "minimum_required_pt": 5,
+        "minimum_found_pt": 9.0,
+        "text_span_count": 48,
+        "clipped_text_count": 0
+      },
+      "external_QA": {
+        "requested": true,
+        "collision": "PASS (strict)",
+        "source_preflight": "PASS; explicit 160-mm width warning reviewed"
+      },
+      "visual_review": "PASS; complete exact final figure and each quantitative panel inspected against the fixed physical layout.",
+      "files_sha256": {
+        "fig_neural_costs.alignment-layout.json": "E76DE0ACD40ED721D3507C07A5B81C551EA26C2C2D395DC5C0C0C7F3C4EDD621",
+        "fig_neural_costs.alignment.json": "A930A682AEDDE678D2488D638657329EDE229EBB3B4FEA792B01D7DC7560BC4C",
+        "fig_neural_costs.geometry.json": "9976032C8B7AFA6E5936D4D53229F39A4E6C8D2CEBB9747B6CA2117588CABB05",
+        "fig_neural_costs.pdf": "3753C385B15FEEA1405AA17A36107591CDA6D7036614C483A11E0399EA75C28A",
+        "fig_neural_costs.svg": "58E184AC3F7FD1863652AF99AC60914ED5EE04B8E61DE0F15166585D7BF611FF",
+        "fig_neural_costs.png": "6375E9EEED591962B25449FAF22A4D3866C4DDD084E74F7DAFE7E0AB3607CAB7",
+        "fig_neural_costs.tiff": "9B50D1FF47BD5C5D42854073AB93F4EF0E195893A0D3E98C412B473A7EF028A0",
+        "fig_neural_costs.pdf-geometry.json": "A291AD2EFED9083AB6C16DECBC3A4539E37C1383D679CF59ABE1B18089A7CFD7",
+        "fig_neural_costs.glyph-audit.json": "A34FFAF23B6D0113866376ED3208CDD7E89BA6BE7F0E1C1E0725EB626CF52D87",
+        "fig_neural_costs.collision-audit.json": "FFBD741DEFCC5889B3DEA77B69302AC1A44918D073CBA011DCF02C13F97B54B9",
+        "fig_neural_costs.alignment.svg": "32B6B2F8760F6CF8CD7D494453DE8CFAF9AC23931BB5FC75F97A6E8FEFDAC47D",
+        "fig_neural_costs.source-preflight.json": "23E95C82381A55289E930D62D9AE32B84E3B1317171A1EA319317CF8F60F25C9",
+        "fig_neural_costs.collision-audit.pdf": "7025318416725EC833501482A75F8FC9110D50E78634BB6F23C35636CC7FD37E",
+        "fig_neural_costs.visual-audit.json": "F1ABD6FDC90E3C682CE0E68BE7E7A7D7F05B7B5718FFAB9E6B067DA8D948ED8E"
+      },
+      "source_csv_sha256": {
+        "fig_neural_costs_forest.csv": "4178A8D58D2AEFF3943E4F8D67AFB1BD11C81EE694FB5627C528D1C89D6E0C45",
+        "fig_neural_costs_project_pairs.csv": "4C8D3C994537DA427A829D229DBD533FFFA4A1C5B3AF6E0BA6E100C50EE094E7"
+      },
+      "visual_review_record": {
+        "file": "fig_neural_costs.visual-audit.json",
+        "sha256": "F1ABD6FDC90E3C682CE0E68BE7E7A7D7F05B7B5718FFAB9E6B067DA8D948ED8E"
+      }
+    }
+  },
+  "quantitative_status": "Rendered from complete bound aggregate evidence",
+  "statistical_unit": "Project within dataset; actual fits averaged; no dataset pooling or independent-fit replication claim",
+  "numerical_source_audit": {
+    "status": "PASS",
+    "file": "figure_numeric_audit_v3.json",
+    "sha256": "55F0D48E70C23D777E21AB62A697ACB8D96E7D9FA1743E359BB0B5043784FFC4"
+  },
+  "export_integrity_audit": {
+    "status": "PASS",
+    "file": "figure_export_audit_v3.json",
+    "sha256": "C226BF1C294EE146F39E175C50D485138B2148B386677A316946ECC694C62FE2"
+  },
+  "aggregate_checker_gate": {
+    "status": "PASS",
+    "report": "tmp/neurocomputing-strengthening/neural_aggregate_reconstruction_full.json",
+    "report_sha256": "10AC8E58064B0DB6D80A372A7DB5DEB23AB5AD9DBFCE1B722BE643EB22AE65E2",
+    "public_analysis_manifest_sha256": "453FDD46359A47123422CE67459AB0BEA36A8E55259ACB3F48ACEA3ECD1DF6E1"
+  },
+  "visual_review_completed_at_utc": "2026-10-09T23:38:45.453520+00:00"
+}

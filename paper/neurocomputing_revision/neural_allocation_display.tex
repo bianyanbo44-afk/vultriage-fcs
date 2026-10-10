@@ -1,0 +1,11 @@
+\begin{table}[htbp]\centering\small
+\caption{Assigned automatic-action fractions for fine-tuned CodeBERT at $(\alpha_{\mathrm v},\alpha_{\mathrm s})=(0.10,0.20)$ and clip 20. Each entry is a project median after averaging the three actual fits. All 38 DiverseVul and six MegaVul groups enter, including review fallback. Workload matching preserves review count; tail matching also preserves both automatic-label counts, so its fractions repeat the weighted fractions by construction. Separate marginal medians need not sum to one.}
+\label{tab:assignedactions}
+\begin{tabular}{@{}llrrr@{}}\toprule Collection & Policy & Auto safe & Auto vulnerable & Review\\\midrule
+DiverseVul & Weighted & 0.3557 & 0.1672 & 0.4421\\
+DiverseVul & Matched MSP & 0.5579 & 0.0000 & 0.4421\\
+DiverseVul & Matched tails & 0.3557 & 0.1672 & 0.4421\\
+MegaVul & Weighted & 0.2909 & 0.1738 & 0.5353\\
+MegaVul & Matched MSP & 0.4627 & 0.0013 & 0.5353\\
+MegaVul & Matched tails & 0.2909 & 0.1738 & 0.5353\\
+\bottomrule\end{tabular}\end{table}

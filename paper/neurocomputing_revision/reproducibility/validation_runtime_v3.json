@@ -1,0 +1,143 @@
+{
+  "schema_version": "trace-runtime-record-1",
+  "status": "PASS",
+  "recorded_at_utc": "2026-10-10T00:19:25.208264+00:00",
+  "scope": "Dedicated .venv-strengthening environment used for additional fitting, source-isotonic calibration and aggregate analysis",
+  "collection_timing": "Post-execution collection from the same unmodified scientific environment, not a contemporaneous or externally timestamped environment lock",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "interpreter": "F:\\CCFA\\vultriage-fcs-sync\\.venv-strengthening\\Scripts\\python.exe",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "psutil": "7.2.2",
+    "ijson": "3.5.1",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3",
+    "tokenizers": "0.21.4",
+    "safetensors": "0.8.0",
+    "threadpoolctl": "3.7.0",
+    "PyMuPDF": "1.28.2",
+    "Pillow": "12.3.0",
+    "pytest": "9.1.1"
+  },
+  "distribution_metadata": {
+    "numpy": {
+      "metadata_sha256": "229F3544B02805E0F6A12030E155D8A45FD3A4100B3291574175E6A76F20E1E1",
+      "metadata_last_write_utc": "2026-10-09T19:34:08.226153+00:00"
+    },
+    "pandas": {
+      "metadata_sha256": "9EB4D20FC21B7851D6F782BD5186DED152FCE80A48AC93120BF88E03C89EBC39",
+      "metadata_last_write_utc": "2026-10-09T19:35:19.826810+00:00"
+    },
+    "scipy": {
+      "metadata_sha256": "C8313D18CA0168FF291FE0A3B50532F3A18B14547695E9AA7CA1C1CE6ECA92DC",
+      "metadata_last_write_utc": "2026-10-09T19:34:41.866084+00:00"
+    },
+    "scikit-learn": {
+      "metadata_sha256": "32E503C710A61E4E04BE4EDB450F9F8141233AC6AF3F3DB59A877667538FA4EC",
+      "metadata_last_write_utc": "2026-10-09T19:35:06.527570+00:00"
+    },
+    "matplotlib": {
+      "metadata_sha256": "E5F532226D1025AF2DD15FF951DF27391F66D46403B8244EA61E6B8EB3E4D806",
+      "metadata_last_write_utc": "2026-10-09T19:35:43.426491+00:00"
+    },
+    "psutil": {
+      "metadata_sha256": "A263A40220D921D9CB963FC636D34F817AA2EB72C2696E3E3465D088CDB1976B",
+      "metadata_last_write_utc": "2026-10-09T19:34:04.494149+00:00"
+    },
+    "ijson": {
+      "metadata_sha256": "D5FD752E23BFCC38E60ECD6C5955C54EC02D7E0DF1D8A6088F114BED6250E707",
+      "metadata_last_write_utc": "2026-10-09T19:52:38.619413+00:00"
+    },
+    "torch": {
+      "metadata_sha256": "D28AC83095D1DF286693D57B81219B8A23C2487A8F945964A8FE175B0E28A78D",
+      "metadata_last_write_utc": "2026-10-09T19:32:07.800893+00:00"
+    },
+    "transformers": {
+      "metadata_sha256": "A7FC5EDBAB63CE77B74B91957A376D101A5159C1B20036AAA33B9349034141AC",
+      "metadata_last_write_utc": "2026-10-09T19:35:55.969632+00:00"
+    },
+    "tokenizers": {
+      "metadata_sha256": "CE3BA043E5263C19B034386688782DD8A6C103F951C26E407E0E1AFF0A629EF1",
+      "metadata_last_write_utc": "2026-10-09T19:35:53.824316+00:00"
+    },
+    "safetensors": {
+      "metadata_sha256": "597731D1BAF7A94219753FA0A74ABD1A8A18562D50D98B2E25D91E11E3224D36",
+      "metadata_last_write_utc": "2026-10-09T19:33:56.565832+00:00"
+    },
+    "threadpoolctl": {
+      "metadata_sha256": "09B19E721560CD12246402D44E53C1EDE5194B8398EF60822F02CAB86CCF8D1F",
+      "metadata_last_write_utc": "2026-10-09T19:33:52.199844+00:00"
+    },
+    "PyMuPDF": {
+      "metadata_sha256": "5C1FC460889BD3FF8D213E6C0F29154A8CD3576505F4844D7C3E089FA45EED40",
+      "metadata_last_write_utc": "2026-10-09T20:49:19.699542+00:00"
+    },
+    "Pillow": {
+      "metadata_sha256": "2C4378001803CFAC65809A50722D46E0DA4CE8061E717F103E5D52734BAB30F5",
+      "metadata_last_write_utc": "2026-10-09T19:34:05.111861+00:00"
+    },
+    "pytest": {
+      "metadata_sha256": "C5D032518012789CABC870D46589ACA3AEDA36CF9FA4399EE88BDA3D10438451",
+      "metadata_last_write_utc": "2026-10-09T19:35:01.683588+00:00"
+    }
+  },
+  "fine_tuned_receipt_runtime_matches": [
+    {
+      "receipt": "analysis/neural_validation_v3/training/finetuned_codebert_seed-13.json",
+      "sha256": "70332FC7BEFE6D1476D1D21B5AEF7FA1D6EDBA8BC3ED9DA4660713B9C00DE52B",
+      "contemporaneously_recorded_runtime": {
+        "cpu_threads": 4,
+        "cuda": "12.4",
+        "deterministic_algorithms": true,
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.10",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.51.3"
+      }
+    },
+    {
+      "receipt": "analysis/neural_validation_v3/training/finetuned_codebert_seed-37.json",
+      "sha256": "0992F438DCFF49002FE6FB1D63B9D9888BCD47AC22EC55EEDE882325AC9AF2F1",
+      "contemporaneously_recorded_runtime": {
+        "cpu_threads": 4,
+        "cuda": "12.4",
+        "deterministic_algorithms": true,
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.10",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.51.3"
+      }
+    },
+    {
+      "receipt": "analysis/neural_validation_v3/training/finetuned_codebert_seed-73.json",
+      "sha256": "8701545376865A9AD069A9F3EB2DE9B4C1944F268A153F998B45B0EBC0A80864",
+      "contemporaneously_recorded_runtime": {
+        "cpu_threads": 4,
+        "cuda": "12.4",
+        "deterministic_algorithms": true,
+        "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "python": "3.12.10",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.51.3"
+      }
+    }
+  ],
+  "reference_receipts_had_no_runtime_dictionary": true,
+  "original_controls_runtime_as_recorded": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "pandas": "2.2.3",
+    "sklearn": "1.9.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "old_fit_receipts_or_public_release_modified": false,
+  "scope_limit": "The recorded versions aid recreation; hardware and library effects can change retraining, and this sidecar is not proof of historical immutability."
+}

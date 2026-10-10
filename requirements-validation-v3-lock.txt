@@ -1,0 +1,19 @@
+# Post-execution record from the dedicated v3 Python 3.12.10 environment.
+# Historical v2 control versions remain in their unchanged analysis manifest.
+# CUDA Torch wheel uses https://download.pytorch.org/whl/cu124 .
+# This records direct libraries, not a complete transitive/hardware lock.
+numpy==2.2.6
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+psutil==7.2.2
+ijson==3.5.1
+torch==2.6.0+cu124
+transformers==4.51.3
+tokenizers==0.21.4
+safetensors==0.8.0
+threadpoolctl==3.7.0
+PyMuPDF==1.28.2
+Pillow==12.3.0
+pytest==9.1.1

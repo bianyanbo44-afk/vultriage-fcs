@@ -1,0 +1,28 @@
+node,x_mm,y_mm,width_mm,height_mm,title,body
+train,4,104,46,19,Source train,"15,620 functions
+3,124 vulnerable"
+model_validation,57,104,46,19,Model validation,"6,296 functions
+192 vulnerable"
+source_calibration,110,104,46,19,Source calibration,"4,400 functions
+204 vulnerable"
+detectors,4,78,46,20,Source detector fits,"3 fine-tuned CodeBERT fits
+1 frozen CodeBERT head
+3 Hashing-SGD fits"
+selection,57,78,46,20,Model selection,"Highest source-valid AP
+Select checkpoint / head"
+policy_calibration,110,78,46,20,Policy calibration,"Class budgets + isotonic
+Separate calibration role"
+eligibility,4,53,46,19,Target eligibility,"DiverseVul 38; MegaVul 6
+200 total; 20 per class
+Published-label counts"
+unlabeled,57,53,46,19,Label-free inputs,"Target code + metadata
+Labels in separate vault"
+prediction,110,53,46,19,Probabilities / weights,"Detector probabilities
+Label-free domain fit"
+policies,4,29,152,20,Source-calibrated policies and comparison controls,"Weighted / unweighted sets | MSP / tails | Source isotonic | Forced argmax / all review
+Domain-fit failure: complete review
+Legacy gate reported only for original audit"
+seal,4,9,73,15,Seal both datasets first,"Complete predictions + decisions
+Before joining evaluation labels"
+evaluate,83,9,73,15,Evaluate after both seals,"Join held-out target labels
+Report datasets separately"

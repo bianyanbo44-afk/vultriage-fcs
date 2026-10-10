@@ -1,0 +1,33 @@
+\begin{table}[H]\centering\small
+\caption{Complete supported fine-tuned allocation-miss sensitivity. Entries are paired weighted-minus-tail medians. Columns retain every fixed clip for all nine budget pairs, using 32 domain-available DiverseVul groups and all six MegaVul groups. All 27 pointwise 95\% project-bootstrap intervals in each collection include zero. These shared-cohort summaries are descriptive, and are neither independent replications nor equivalence tests. The accompanying CSV retains every interval and direction count.}
+\label{si:allocsensitivity}
+\begin{tabular}{@{}ccrrrrrr@{}}\toprule & & \multicolumn{3}{c}{DiverseVul} & \multicolumn{3}{c}{MegaVul}\\
+$\alpha_{\mathrm v}$ & $\alpha_{\mathrm s}$ & Clip 10 & Clip 20 & Clip 50 & Clip 10 & Clip 20 & Clip 50\\\midrule
+0.01 & 0.05 & 0.0066 & 0.0077 & 0.0066 & 0.0000 & 0.0000 & 0.0000\\
+0.01 & 0.10 & 0.0066 & 0.0077 & 0.0066 & 0.0000 & 0.0000 & 0.0000\\
+0.01 & 0.20 & 0.0066 & 0.0077 & 0.0066 & 0.0000 & 0.0000 & 0.0000\\
+0.05 & 0.05 & 0.0000 & 0.0000 & 0.0000 & -0.0010 & 0.0000 & 0.0000\\
+0.05 & 0.10 & 0.0000 & 0.0000 & 0.0000 & -0.0010 & 0.0000 & 0.0000\\
+0.05 & 0.20 & 0.0000 & 0.0000 & 0.0000 & -0.0010 & -0.0010 & -0.0010\\
+0.10 & 0.05 & 0.0000 & 0.0000 & 0.0000 & -0.0020 & 0.0000 & 0.0000\\
+0.10 & 0.10 & 0.0000 & 0.0000 & 0.0000 & -0.0020 & 0.0000 & 0.0000\\
+0.10 & 0.20 & 0.0000 & 0.0000 & 0.0000 & -0.0030 & 0.0000 & 0.0000\\
+\bottomrule\end{tabular}\end{table}
+
+\begin{table}[H]\centering\small
+\caption{Complete free-volume cost sensitivity. Each row summarizes all nine budget pairs and three clips in the all-project deployment roster. Median ranges and counts of pointwise 95\% intervals describe weighted-minus-source-free-volume cost. W and F count intervals strictly favoring weighted and free-volume policies; Z counts intervals including zero. Every row contains 27 reused grid cells. Costs use correct review, false-alert cost one and review cost 0.1. This complete family does not preserve the primary setting's ordering throughout.}
+\label{si:costgrid}
+\begin{tabular}{@{}llrrrrrr@{}}\toprule Collection & Detector & $c_v$ & Min median & Max median & W & F & Z\\\midrule
+DiverseVul & Fine-tuned & 10 & -0.0014 & 0.1629 & 0 & 23 & 4\\
+DiverseVul & Fine-tuned & 50 & -0.0254 & 0.4449 & 0 & 19 & 8\\
+DiverseVul & Frozen & 10 & 0.0096 & 0.1998 & 0 & 24 & 3\\
+DiverseVul & Frozen & 50 & 0.0144 & 0.5966 & 0 & 27 & 0\\
+DiverseVul & Hashing & 10 & -0.0464 & 0.1353 & 6 & 9 & 12\\
+DiverseVul & Hashing & 50 & -0.0026 & 0.3168 & 0 & 24 & 3\\
+MegaVul & Fine-tuned & 10 & 0.0202 & 0.1583 & 0 & 27 & 0\\
+MegaVul & Fine-tuned & 50 & 0.0099 & 0.2712 & 0 & 19 & 8\\
+MegaVul & Frozen & 10 & 0.0220 & 0.1421 & 0 & 24 & 3\\
+MegaVul & Frozen & 50 & 0.0222 & 0.2136 & 0 & 26 & 1\\
+MegaVul & Hashing & 10 & 0.0094 & 0.1128 & 0 & 11 & 16\\
+MegaVul & Hashing & 50 & -0.0104 & 0.1089 & 0 & 9 & 18\\
+\bottomrule\end{tabular}\end{table}
